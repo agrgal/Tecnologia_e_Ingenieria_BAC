@@ -1,0 +1,49 @@
+---
+title: "Ejercicio 6. Ánodo de sacrificio"
+author: "Aurelio Gallardo Rodríguez"
+date: "4 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 40. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 6. Ánodo de sacrificio.
+<p style="text-align:justify;">
+¿Durante cuánto tiempo será efectiva la protección mediante un ánodo de sacrificio de 5Kg de magnesio, si la corriente media es de 10 A? Peso equivalente del magnesio 12.15 g/mol.
+</p>
+<hr>
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+m=set_units(5,kg)
+F=set_units(96500,C/mol)
+I=set_units(10,A)
+Peq=set_units(12.15,g/mol)
+t=m*F/(I*Peq)
+## Cambio de unidades a días
+t2=t
+units(t2)=with(ud_units,d)
+```
+<p style="text-align:justify;">
+Usaremos la fórmula de Faraday $$ m=\frac{I\cdot t\cdot P_{eq}}{F} \; \rightarrow \; t = \frac{m\cdot F}{I\cdot P_{eq}} $$
+</p>
+<p style="text-align:justify;">
+$$ t = \frac{m\cdot F}{I\cdot P_{eq}}=\frac{ `r m`\,kg \cdot `r F`\,C/mol}{ `r I`\,A \cdot `r Peq`\,g/mol}\\= `r t`\,s =\mathbf{`r round(t2,2)`\,días}$$
+
+</p>
+<p style="text-align:justify;">
+
+</p>
+
+
+

@@ -1,0 +1,13 @@
+Estructuras cristalinas
+
+Red BCC FCC HCP
+Relación a = 4R/\/3— a = 4R/\/í a = 2R
+‘ Índice de coordinación 8 12 12
+Átomos por celda 2 4 6
+
+ FEA 0,68 0,74 0,74
+
+Octaédricos R¡/R = 0,155 R¡/R = 0,414 R/R = 0,414
+x Huecos '
+Tetraédricos R¡/R = 0,291 R¡/R = 0,225 R¡/R z: 0,225
+

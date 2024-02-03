@@ -1,0 +1,56 @@
+---
+title: "Ejercicio 5. Cambio teórico de volumen de red FCC a BCC"
+author: "Aurelio Gallardo Rodríguez"
+date: "2 de septiembre de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 63. Everest. Ej. 3. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 3. Cambio teórico de volumen desde una red FCC a otra BCC
+
+<p style="text-align:justify;">
+El cambio de volumen es un cambio alotrópico. Pasamos de una red cristalina FCC a otra BCC
+</p>
+<hr>
+<p style="text-align:justify;">
+En la red BCC, $V_{celda\,BCC}=\left (\frac{4 \cdot R}{\sqrt{3}}  \right )^3=\frac{64}{9} \sqrt{3} R^3$ y número de átomos por celda __2__.
+</p>
+<p style="text-align:justify;">
+En la red FCC, $V_{celda\,FCC}=\left (\frac{4 \cdot R}{\sqrt{2}}  \right )^3=16 \sqrt{2} R^3$ y número de átomos por celda __4__.
+</p>
+<p style="text-align:justify;">
+Luego el volumen por átomo, en la red FCC,  sería $V_{celda\,FCC/at}= \left (16 \sqrt{2} R^3  \right ) / 4 = 4 \sqrt{2} R^3$ 
+</p>
+<p style="text-align:justify;">
+Luego el volumen por átomo, en la red BCC,  sería $V_{celda\,BCC/at}= \left (\frac{64}{9} \sqrt{3} R^3  \right ) / 2 = \frac{32}{9} \sqrt{3} R^3$ 
+</p>
+
+## Calculo su diferencia relativa
+
+<p style="text-align:justify;">
+La diferencia relativa, en valor absoluto, es la diferencia entre ambos volúmenes entre el volumen de partida (FCC). 
+</p>
+<p style="text-align:center;">
+$$\left |\frac{V_{celda\,FCC/at}-V_{celda\,BCC/at}}{V_{celda\,FCC/at}}   \right |= \left |1 - \frac{V_{celda\,BCC/at}}{V_{celda\,FCC/at}}  \right | = \\ = \left |1 - \frac{\frac{32}{9} \sqrt{3} R^3}{4 \sqrt{2} R^3}  \right | = \left |1- \frac{32 \sqrt{3} }{36 \sqrt{2}}  \right | = \mathbf{0.088}$$
+</p>
+
+<p style="text-align:justify;">
+Podemos concluir entonces que la diferencia relativa de volumen es de un __8.8%__
+</p>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+
+```

@@ -1,0 +1,100 @@
+---
+title: "Ejercicio 6. Materiales"
+author: "Aurelio Gallardo Rodríguez"
+date: "10 de junio de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 26. Everest. TINII
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Enunciado Ejercicio 6
+<p style="text-align: justify;">
+En un ensayo de tracción, con una probeta de 15mm de diámetro y 150mm de longitud se obtuvieron los siguientes datos. 
+</p>
+
+<center>
+```{r tabla, echo = FALSE}
+library("units")
+library("knitr")
+esfuerzos=c(0,500,1000,2000,3000,4000,4500,5000,4000,3750)
+units(esfuerzos)=with(ud_units,kgf/cm^2)
+longitudes=c(150,150.01,150.02,150.03,150.04,150.05,150.06,151.28,151.87,153.28)
+units(longitudes)=with(ud_units,mm)
+d1=data.frame(cbind(esfuerzos,longitudes))
+# names(d1)
+kable(d1, format = "markdown", padding = 2,
+      align=c("c","c"),
+      col.names=c("Esfuerzos (kp/cm2)","Longitud (mm)"))
+```
+</center>
+
+
+<p style="text-align: justify;">
+Donde el último resultado corresponde a la rotura del material, momento en el cual el diámetro es 14.3mm
+
+Calcular:
+
+a) Diagrama esfuerzo - deformación
+b) Módulo de la elasticidad
+c) Alargamiento de rotura
+
+</p>
+
+## A) Diagrama esfuerzos-deformación
+
+<p style="text-align: center;">
+```{r calculosA, echo = FALSE}
+# cálculos de deformacion
+L0=set_units(150,mm)
+ee=(longitudes-L0)/L0 # Calculo las longitudes
+plot(ee,esfuerzos,col="darkblue",pch=22,bg="darkcyan",type="b",
+     main="Diagrama de esfuerzos - deformación"  )
+# axis(1,at=seq(0,as.numeric(ee[10]),by=5e-4),labels=seq(0,as.numeric(ee[10]),by=5e-4),las=2,cex.axis=0.6)
+etiquetas=paste0(
+  "[",round(ee,5),",",round(esfuerzos,2)," kp/cm^2","]")
+text(ee[1:5],esfuerzos[1:5],etiquetas[1:5],pos=4,col="mediumpurple4")
+text(ee[6:7],esfuerzos[6:7]*0.95,etiquetas[6:7],pos=4,col="mediumpurple4")
+text(ee[8:10],esfuerzos[8:10]*0.7,etiquetas[6:7],pos=1,col="mediumpurple4",srt=90)
+```
+</p>
+
+## B) Módulo de la elasticidad
+
+<p style="text-align: justify;">
+Calculo el módulo de Young para los dos primeros puntos no nulos. En ellos el material seguro que es elástico:
+
+$E_{1}=\sigma / \epsilon= \frac{`r esfuerzos[2]` \cdot kp/cm^2}{`r ee[2]`} =`r esfuerzos[2]/ee[2]` \cdot kp/cm^2$
+
+$E_{2}=\sigma / \epsilon= \frac{`r esfuerzos[3]` \cdot kp/cm^2}{`r ee[3]`} = `r esfuerzos[3]/ee[3]` \cdot kp/cm^2$
+
+Luego podemos decir que el módulo de Young es 
+
+<center>
+__$E=`r esfuerzos[3]/ee[3]` \cdot kp/cm^2$__
+</center>
+
+</p>
+
+## C) El alargamiento de rotura
+
+```{r calculosC, echo = FALSE}
+# el alargamiento del último punto es 
+A=ee[10]
+```
+<p style="text-align: justify;">
+El alargamiento del último punto es $\epsilon_{rup}= `r A`$
+  
+En porcentaje tenemos que: $\epsilon_{rup}(\%)= `r round(A*100,2)` \%$
+
+</p>

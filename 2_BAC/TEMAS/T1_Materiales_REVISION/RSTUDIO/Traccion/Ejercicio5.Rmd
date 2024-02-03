@@ -1,0 +1,68 @@
+---
+title: "Ejercicio 5. Materiales"
+author: "Aurelio Gallardo Rodríguez"
+date: "10 de junio de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 26. Everest. TINII
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Enunciado Ejercicio 5
+<p style="text-align: justify;">
+¿Cuál es la sección mínima de un elemento cilíndrico, que soporta 100kN de tracción, con un límite elástico de $500\cdot MN/m^{2}$ siendo el coeficiente de mayoración de cargas 1.2 y el de minoración de resistencia del material 1.1? Si el módulo de Young es $E=2\cdot MN/cm^{2}$, ¿Cuál es su deformación unitaria?
+</p>
+
+## Cálculos en el límite elástico.
+
+```{r calculosA, echo = FALSE}
+library("units")
+F = set_units(100,kN) # Fuerza máxima de tracción
+SigE=set_units(500,MN/m^2) #Tensión elástica.
+Kmaycar=1.2
+Kminres=1.1
+
+F2 = F*Kmaycar
+SigE2 = round(SigE/Kminres,2)
+
+S0 = F2/SigE2
+units(S0)=with(ud_units,cm^2)
+S0=round(S0,2)
+```
+
+<p style="text-align: justify;">
+
+Si tenemos que $F=`r F` \cdot kN$ es la mayor carga que va a soportar, usamos el número $F^{*}=F \cdot K_{may}= `r F` \cdot kN \cdot `r Kmaycar` = `r F2` \cdot kN$ como margen de seguridad.
+
+Asimismo, si el material tiene un límite de resistencia elástica de $\sigma_{e}=`r SigE` \cdot MN/m^2$, como margen de seguridad, podemos pensar que su límite es menor, usando un coeficiente de minoración de la resistencia del material; en este caso $K_{min}=`r Kminres`$ y tenemos:
+
+$\sigma_{e}^{*}=\sigma_{e} / K_{min} = \frac{`r SigE` \cdot MN/m^2} {`r Kminres`} = `r SigE2` \cdot MN/m^2$
+
+Luego si $\sigma_{e}^{*}< \frac{F^{*}}{S_{0}} \; \Rightarrow \; S_{0}>\frac{F^{*}}{\sigma_{e}^{*}}=\frac{ `r F` \cdot kN}{`r SigE2` \cdot MN/m^2 } = `r S0` \cdot cm^2$
+
+</p>
+
+## ¿Cuál es la máxima deformación esperada del material?
+
+```{r calculosB, echo = FALSE}
+E = set_units(2,MN/cm^2)
+ep = F / (S0 * E)
+```
+
+<p style="text-align: justify;">
+Aunque el cálculo lo hayamos hecho con un coeficiente de seguridad para las fuerzas soportadas, la mayor fuerza a la que vamos a someter el material será $F=`r F` \cdot kN$
+
+Luego $\epsilon = \frac{\sigma}{E} = \frac{F}{S_{0} \cdot E}=\frac{ `r F` \cdot kN}{ `r S0` \cdot cm^2 \cdot `r E` \cdot MN/cm^2} = `r ep`$
+
+$\epsilon(\%)= `r round(ep*100,2)`$
+
+</p>

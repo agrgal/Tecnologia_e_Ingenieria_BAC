@@ -1,0 +1,52 @@
+---
+title: "Ejercicio 4. Ganancia lineal"
+author: "Aurelio Gallardo Rodríguez"
+date: "4 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 32-33. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 4
+<p style="text-align:justify;">
+Del ejercicio 3... ¿Y si el material presenta una oxidación lineal y tiene el mismo comportamiento?  Expresar el resultado en miligramos por centímetro cuadrado.
+</p>
+<hr>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+t0=set_units(2,h)
+w0=set_units(100*10^(-6),g/cm^2)
+kp=w0 /t0
+## Nuevo parametro
+t1=set_units(10,d) #En días
+w1=kp*t1
+units(t1)=with(ud_units,h) #paso a horas
+w2=w1
+units(w2)=with(ud_units,mg/cm^2)
+```
+<p style="text-align:justify;">
+Tenemos que la ganancia lineal sigue la fórmula $w=k_p \cdot t$
+</p>
+<p style="text-align:justify;">
+Para $t_0= `r t0` \; h$ y para $w_0= `r w0` \,g/cm^2$ calculamos $k_p= `r kp`\, \frac{g}{h\cdot cm^2}$
+</p>
+<p style="text-align:justify;">
+Luego $$ w= k_p \cdot t= `r kp` \,\frac{g}{h\cdot cm^2} \cdot `r t1`\,h = `r w1` \,g/cm^2$$
+</p>
+<p style="text-align:justify;">
+$$ w = `r round(w2,2)` \, mg/cm^2$$
+</p>
+
+

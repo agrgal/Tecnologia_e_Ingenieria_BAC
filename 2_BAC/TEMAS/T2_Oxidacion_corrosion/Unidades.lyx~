@@ -1,0 +1,2825 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Magnitudes más importantes.
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/aurelio/Escritorio/TINII/Materiales_tema_1/imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Magnitudes más importantes By Aurelio Gallardo Rodríguez, 31667329D Is Licensed
+ Under A Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internaci
+onal License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Magnitud
+\series default
+: medida cuantitativa asociada a una propiedad física.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Unidad (de medida):
+\series default
+ es una cantidad estandarizada de una determinada magnitud física, definida
+ y adoptada por convención o por ley.
+ Sirve de patrón para comparar otras magnitudes de la misma propiedad.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Sistema de unidades:
+\series default
+ conjunto de unidades de medida consistente, normalizado y uniforme.
+\end_layout
+
+\begin_layout Standard
+Las unidades pueden llevar prefijos: múltiplos (ejemplo: kilo indica mil;
+ 1 km = 1000 m), o submúltiplos (ejemplo: mili indica milésima; 1 mA = 0.001
+ A).
+ Múltiplos (en mayúsculas a partir de Mega): deca (da), hecto (h), kilo
+ (k), mega (M), giga (G), tera (T), peta (P), exa (E), zetta (Z), yotta
+ (Y).
+ Submúltiplos (en minúsculas): deci (d), centi (c), mili (m), micro (μ),
+ nano (n), pico (p), femto (f), atto (a), zepto (z), yocto (y).
+ 
+\end_layout
+
+\begin_layout Section
+Sistemas de Unidades importantes
+\end_layout
+
+\begin_layout Subsection
+Sistema Internacional de Unidades (SI)
+\end_layout
+
+\begin_layout Standard
+Este 
+\begin_inset CommandInset href
+LatexCommand href
+name "sistema"
+target "https://es.wikipedia.org/wiki/Sistema_Internacional_de_Unidades"
+
+\end_inset
+
+ se acordó en 1960 y fue ratificado por todos los países del mundo excepto
+ Estados Unidos, Birmania y Liberia (ver Wikipedia).
+ Es el heredero del antiguo sistema métrico decimal.
+ Sus unidades básicas son el metro (m), kilogramo (kg), segundo (s), amperio
+ (A), kelvin (K) , candela (cd) y mol (mol).
+\end_layout
+
+\begin_layout Subsection
+Sistema CGS (Cegesimal)
+\end_layout
+
+\begin_layout Standard
+Aún usado en muchos contextos, el sistema 
+\begin_inset CommandInset href
+LatexCommand href
+name "CGS"
+target "https://es.wikipedia.org/wiki/Sistema_Cegesimal_de_Unidades"
+
+\end_inset
+
+ se basa en el centímetro (cm), gramo (g) y segundo (s)
+\end_layout
+
+\begin_layout Subsection
+Sistema anglosajón
+\end_layout
+
+\begin_layout Standard
+Este 
+\begin_inset CommandInset href
+LatexCommand href
+name "sistema"
+target "https://es.wikipedia.org/wiki/Sistema_anglosaj%C3%B3n_de_unidades"
+
+\end_inset
+
+ es usado básicamente en Estados Unidos y también en Reino Unido, puede
+ haber discrepancias en algunas unidades entre ambos países.
+ Algunas unidades muy conocidas son las pulgadas, la milla, la pinta, el
+ galón, las libras (de masa), la arroba, etc.
+\end_layout
+
+\begin_layout Section
+Unidades de longitud, superficie y volumen
+\end_layout
+
+\begin_layout Subsection
+Longitud
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+La longitud es una magnitud física fundamental en el S.I
+\series default
+.
+ 
+\shape italic
+Se define su unidad fundamental, el metro (m), como la longitud del trayecto
+ recorrido por la luz en el vacío en un intervalo de tiempo de 1/299 792
+ 458 segundos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Sus múltiplos más usuales son: 
+\series bold
+kilómetro
+\series default
+ (km): 
+\begin_inset Formula $10^{3}$
+\end_inset
+
+ metros = 1 000 metros, 
+\series bold
+hectómetro
+\series default
+ (hm): 
+\begin_inset Formula $10^{2}$
+\end_inset
+
+ metros = 100 metros y 
+\series bold
+decámetro
+\series default
+ (dam): 
+\begin_inset Formula $10^{1}$
+\end_inset
+
+ metros = 10 metros
+\end_layout
+
+\begin_layout Itemize
+Los submúltiplos más habituales: 
+\series bold
+decímetro
+\series default
+ (dm): 
+\begin_inset Formula $10^{-1}$
+\end_inset
+
+ metros = 0,1 metros; 
+\series bold
+centímetro
+\series default
+ (cm): 
+\begin_inset Formula $10^{-2}$
+\end_inset
+
+ metros = 0,01 metros; 
+\series bold
+milímetro
+\series default
+ (mm): 
+\begin_inset Formula $10^{-3}$
+\end_inset
+
+ metros = 0,001 metros; 
+\series bold
+micrómetro
+\series default
+ (o 
+\begin_inset Quotes fld
+\end_inset
+
+micras
+\begin_inset Quotes frd
+\end_inset
+
+) (µm): 
+\begin_inset Formula $10^{-6}$
+\end_inset
+
+ metros = 0,000 001 metros; 
+\series bold
+nanómetro
+\series default
+ (nm): 
+\begin_inset Formula $10^{-9}$
+\end_inset
+
+ metros = 0,000 000 001 metros; 
+\series bold
+picómetro
+\series default
+ (pm): 
+\begin_inset Formula $10^{-12}$
+\end_inset
+
+ metros = 0,000 000 000 001 metros; 
+\series bold
+femtómetro
+\series default
+ (fm): 
+\begin_inset Formula $10^{-15}$
+\end_inset
+
+ metros = 0,000 000 000 000 001 metros.
+\end_layout
+
+\begin_layout Itemize
+Su unidad en el CGS es el 
+\series bold
+centímetro
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Una unidad muy usada es el 
+\series bold
+Angstrom
+\series default
+ 
+\begin_inset Quotes fld
+\end_inset
+
+ångström
+\begin_inset Quotes frd
+\end_inset
+
+ (
+\series bold
+Å
+\series default
+), cuando usamos magnitudes pequeñas que implican tamaños de moléculas y
+ átomos.
+ 
+\begin_inset Formula $1\cdot\textrm{Å}=10^{-10}\cdot m=100\cdot pm$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Entre las medidas anglosajonas destacamos por su importancia la 
+\series bold
+pulgada
+\series default
+.
+ 
+\begin_inset Formula $1"=2.54\cdot cm$
+\end_inset
+
+.
+ Otras son la 
+\series bold
+milla
+\series default
+ (1.609 km), la 
+\series bold
+legua
+\series default
+, la 
+\series bold
+yarda
+\series default
+, la 
+\series bold
+milla naútica
+\series default
+, etc.
+\end_layout
+
+\begin_layout Itemize
+Unidades importantes en Astronomía: el 
+\series bold
+año-luz
+\series default
+ (
+\series bold
+ly
+\series default
+), que es la distancia que tarda en recorrer la luz un año (9,46052840488·
+\begin_inset Formula $10^{15}$
+\end_inset
+
+ m) y la 
+\series bold
+unidad astronómica
+\series default
+ (
+\series bold
+UA
+\series default
+), que es aproximadamente la distancia media entre el Sol y la Tierra (1,495979·
+\begin_inset Formula $10^{11}$
+\end_inset
+
+ m).
+\end_layout
+
+\begin_layout Itemize
+En general, es una magnitud vectorial cuando se considera como posición
+ de un cuerpo respecto de un origen de coordenadas.
+ 
+\end_layout
+
+\begin_layout Subsection
+Superficie
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud derivada de la anterior, que describe las entidades que
+ tienen dos dimensiones.
+ La unidad básica de superficie en el S.I.
+ es el 
+\series bold
+metro cuadrado
+\series default
+ (
+\series bold
+
+\begin_inset Formula $m^{2}$
+\end_inset
+
+
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+La unidad básica en el CGS sería el 
+\series bold
+centímetro cuadrado
+\series default
+ (
+\begin_inset Formula $cm^{2}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Los múltiplos y submúltiplos en el S.I.
+ y su equivalencia con el metro cuadrado se obtienen tras multiplicar cada
+ uno por sí mismo (
+\begin_inset CommandInset href
+LatexCommand href
+name "ver web"
+target "http://www.elabueloeduca.com/aprender/matematicas/medidas/superficie.html"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Una 
+\series bold
+hectárea
+\series default
+ equivale 
+\begin_inset Formula $1\cdot hm^{2}$
+\end_inset
+
+ y un 
+\series bold
+acre
+\series default
+ aproximadamente a 0,4047 hectáreas.
+\end_layout
+
+\begin_layout Itemize
+La superficie puede considerarse como una magnitud vectorial, aunque muchas
+ veces se toma simplemente como módulo.
+\end_layout
+
+\begin_layout Subsection
+Volumen
+\end_layout
+
+\begin_layout Itemize
+Magnitud que describe las entidades que tienen tres dimensiones.
+ La unidad básica de superficie en el S.I.
+ es el 
+\series bold
+metro cúbico
+\series default
+ (
+\series bold
+
+\begin_inset Formula $m^{3}$
+\end_inset
+
+
+\series default
+).
+\end_layout
+
+\begin_layout Itemize
+La unidad básica en el CGS sería el 
+\series bold
+centímetro cúbico
+\series default
+ (
+\begin_inset Formula $cm^{3}$
+\end_inset
+
+).
+ Por cierto, en algunos contextos - motores principalmente -, los centímetros
+ cúbicos se expresan como 
+\series bold
+cc.
+\end_layout
+
+\begin_layout Itemize
+Los múltiplos y submúltiplos en el S.I.
+ y su equivalencia con el metro cúbico se obtienen tras multiplicar cada
+ uno por sí mismo y otra vezpor sí mismo (
+\begin_inset CommandInset href
+LatexCommand href
+name "ver web"
+target "http://www.elabueloeduca.com/aprender/matematicas/medidas/volumen.html"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+La otra unidad importante de volumen (o capacidad) es el 
+\series bold
+litro
+\series default
+ (l).
+ Está aceptado como unidad, por su importancia histórica, dentro del S.I.
+ aunque estrictamente no pertenezca a él.
+ Un litro equivale a 
+\begin_inset Formula $1\cdot dm^{3}$
+\end_inset
+
+ (el volumen de agua pura - de densidad 
+\begin_inset Quotes fld
+\end_inset
+
+1
+\begin_inset Quotes frd
+\end_inset
+
+ - que cabe en un cubo de un decímetro de lado).
+ Entre los submúltiplos encontramos el 
+\series bold
+decilitro
+\series default
+, el 
+\series bold
+centilitro
+\series default
+ y el 
+\series bold
+mililitro
+\series default
+, y entre los múltiplos el 
+\series bold
+decalitro
+\series default
+, 
+\series bold
+hectolitro
+\series default
+ y 
+\series bold
+kilolitro
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Itemize
+Jerez de la Frontera se caracteriza por su industria vitivinícola y la producció
+n del vino de la denominación de origen Sherry.
+ A modo de curiosidad, comentaros que se usan diversos recipientes de diversas
+ capacidades:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Arroba (@): unidad de volumen que equivale en Jerez a unos 16,66 litros
+ (en 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikipedia"
+target "https://es.wikipedia.org/wiki/Arroba_(unidad_de_volumen)"
+
+\end_inset
+
+ se afirma que son 16,133 l).
+\end_layout
+
+\begin_layout Itemize
+Bota: tonel de madera cuya capacidad oscila entre los 550 a 600 litros.
+\end_layout
+
+\begin_layout Itemize
+Bota Gorda: la bota habitual en la bodega dedicada a la crianza del vino
+ con una capacidad de 36 arrobas o 600 litros.
+\end_layout
+
+\begin_layout Itemize
+Bota de exportación: bota de 30 arrobas ó 500 litros
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename Botas.png
+	lyxscale 10
+	width 15cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Recipientes usados en tonelería de las bodegas de Jerez
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Unidades de masa
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+La masa es una propiedad fundamental de los cuerpos que describe la cantidad
+ de materia que poseen
+\series default
+.
+ No se debe confundir con el peso, que sería la fuerza con la que un cuerpo
+ masivo atrae a otro.
+ Hay una relación estrecha entre ambos conceptos, pero no son iguales.
+ 
+\end_layout
+
+\begin_layout Itemize
+La unidad fundamental en el S.I.
+ es el 
+\series bold
+kilogramo (kg)
+\series default
+, y tenemos, además como múltiplos el 
+\series bold
+quintal
+\series default
+ (métrico) 100Kg y la 
+\series bold
+tonelada
+\series default
+ (métrica) 1000Kg.
+ Los submúltiplos serían el 
+\series bold
+hectogramo
+\series default
+ (hg) 
+\begin_inset Formula $10^{-1}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+decagramo
+\series default
+ (dag) 
+\begin_inset Formula $10^{-2}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+gramo
+\series default
+ (g) 
+\begin_inset Formula $10^{-3}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+decigramo
+\series default
+ (dg) 
+\begin_inset Formula $10^{-4}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+centigramo
+\series default
+ (cg) 
+\begin_inset Formula $10^{-5}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+miligramo
+\series default
+ (mg) 
+\begin_inset Formula $10^{-6}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+microgramo
+\series default
+ (μg) 
+\begin_inset Formula $10^{-9}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+nanogramo
+\series default
+ (ng) 
+\begin_inset Formula $10^{-12}\cdot kg$
+\end_inset
+
+, el 
+\series bold
+picogramo
+\series default
+ (pg) 
+\begin_inset Formula $10^{-15}\cdot kg$
+\end_inset
+
+ y el 
+\series bold
+femtogramo
+\series default
+ (fg) 
+\begin_inset Formula $10^{-18}\cdot kg$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Un kilogramo equivale a un prototipo depositado la oficina internacional
+ de medidas de París en 1901.
+ en Este prototipo es un cilindro de 39 mm de altura y 39 mm de diámetro
+ de una aleación 90 % de platino y 10 % de iridio; tiene una densidad de
+ 21 500 kg/m3.
+\end_layout
+
+\begin_layout Itemize
+En el sistema CGS la unidad de masa es el 
+\series bold
+gramo
+\series default
+ (g).
+\end_layout
+
+\begin_layout Itemize
+En el sistema inglés podríamos nombrar la 
+\series bold
+onza
+\series default
+, la 
+\series bold
+libra
+\series default
+, la 
+\series bold
+arroba
+\series default
+...
+ 
+\end_layout
+
+\begin_layout Itemize
+En joyería podemos usar el 
+\series bold
+grano métrico
+\series default
+, que equivale a 50mg.
+ Un 
+\series bold
+quilate
+\series default
+ equivale a cuatro granos métricos.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades de cantidad de sustancia
+\end_layout
+
+\begin_layout Standard
+El átomo de carbono (isótopo) más común (98,89%) es el Carbono 12, que tiene
+ 6 protones y 6 neutrones (también 6 electrones, pero en cuanto a masa los
+ electrones son insignificantes comparados con los protones y neutrones).
+ Como la masa de un protón y un neutrón son casi iguales, el Carbono 12
+ 
+\begin_inset Quotes fld
+\end_inset
+
+pesa
+\begin_inset Quotes frd
+\end_inset
+
+ 12 unidades de masa atómica (uma), o, lo que es lo mismo 12 veces lo que
+ 
+\begin_inset Quotes fld
+\end_inset
+
+pesa
+\begin_inset Quotes frd
+\end_inset
+
+ un átomo simple de Hidrógeno con sólo un protón.
+\end_layout
+
+\begin_layout Standard
+Un átomo de carbono es algo sumamente pequeño, imposible de pesar.
+ Necesitamos pesar una cantidad mayor.
+ Imagina ahora que obtengo una cantidad en gramos de carbono-12 equivalente
+ a su masa atómica, o sea 12.
+ Tengo 12 gramos de átomos de Carbono-12.
+ ¿Cuántos átomos tendré? Pues se demuestra (el primero que llegó a esta
+ conclusión fue 
+\begin_inset CommandInset href
+LatexCommand href
+name "Jean Perrin"
+target "https://es.wikipedia.org/wiki/Jean_Perrin"
+
+\end_inset
+
+) que son aproximadamente
+\series bold
+ 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+átomos, y a este número se le llamó 
+\begin_inset CommandInset href
+LatexCommand href
+name "número o constante de Avogadro"
+target "https://es.wikipedia.org/wiki/Constante_de_Avogadro"
+
+\end_inset
+
+
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Y es una constante porque si tengo 1 gramo de átomos de Hidrógeno (cuya
+ masa atómica es 1), se demuestra que tengo 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+átomos de hidrógeno; si tengo 23 gramos de átomos de sodio (cuya masa atómica
+ es 23), tendré 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+ átomos de sodio; si tengo metano (de fórmula 
+\begin_inset Formula $CH_{4}$
+\end_inset
+
+), de masa atómica 16, y tengo 16 gramos de moléculas de metano, tendré
+ 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+moléculas de metano...
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, cuando tengo una sustancia, y tengo la cantidad de 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+ átomos o moléculas de esa sustancia, 
+\series bold
+se dice que tengo un mol de dicha sustancia
+\series default
+.
+ El concepto de mol es fundamental para trabajar con reacciones químicas;
+ es el concepto clave de la estequiometría.
+ Además está considerado como una unidad fundamental en el S.I.
+ de unidades.
+ 
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+mol
+\series default
+ es una unidad fundamental en el S.I.
+ y equivale a 
+\begin_inset Formula $6.022\cdot10^{23}$
+\end_inset
+
+átomos o moléculas de dicha sustancia.
+ ¿Qué masa es un mol? Dependerá de qué sustancia esté manejando y su masa
+ atómica.
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+molaridad
+\series default
+ (concentración molar) de una sustancia disuelta en otra sería el número
+ de moles de dicha sustancia presentes por cada litro de disolvente.
+ Por ejemplo, si tengo 3 moles de sal disueltos en 2 litros de agua, tendré
+ una molaridad de 
+\begin_inset Formula $3\cdot moles/2\cdot l=1.5\,mol/l$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+La 
+\series bold
+masa molar
+\series default
+ expresa la cantidad de masa atómica o molecular de una sustancia.
+ Por ejemplo, si el Fósforo (P) tiene una masa atómica de 31, su masa molar
+ es de 
+\begin_inset Formula $31\cdot g/mol$
+\end_inset
+
+.
+ En el sistema internacional , se expresaría en 
+\series bold
+kilogramos por mol
+\series default
+, o sea 
+\begin_inset Formula $0.031\cdot kg/mol$
+\end_inset
+
+ ; aunque por razones históricas se suele expresar en 
+\series bold
+gramos por mol
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Son magnitudes escalares.
+\end_layout
+
+\begin_layout Section
+Unidades de densidad
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+La densidad es la relación entre la masa y el volumen de un cuerpo
+\series default
+ (escalar), siendo una de las propiedades más usadas para determinar las
+ características básicas de un material.
+ La densidad media de un cuerpo se obtiene pues dividiendo su masa entre
+ su volumen: 
+\begin_inset Formula $\rho=m/V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Un cuerpo es homogéneo si la densidad de cualquier sección del cuerpo coincide
+ con su densidad media.
+ Un cuerpo es heterogéneo si existen secciones del mismo cuya densidad difiere
+ de esa densidad media.
+ 
+\end_layout
+
+\begin_layout Standard
+De un cuerpo podemos hablar también de 
+\series bold
+densidad relativa
+\series default
+, siendo su 
+\begin_inset Quotes fld
+\end_inset
+
+densidad
+\begin_inset Quotes frd
+\end_inset
+
+ normal la llamada absoluta.
+ La densidad relativa es la relación entre la densidad absoluta de un cuerpo
+ 
+\begin_inset Formula $\rho_{a}$
+\end_inset
+
+ y la densidad absoluta de una sustancia de referencia 
+\begin_inset Formula $\rho_{0}:$
+\end_inset
+
+ 
+\begin_inset Formula $\rho_{r}=\rho_{a}/\rho_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ la unidad básica de densidad (derivada) es el 
+\series bold
+kilogramo por metro cúbico
+\series default
+, 
+\begin_inset Formula $Kg/m^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el CGS la unidad básica de densidad es el 
+\series bold
+gramo por centímetro cúbico
+\series default
+, 
+\begin_inset Formula $g/cm^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Otras unidades muy usadas serían el 
+\series bold
+kilogramo por litro
+\series default
+ 
+\begin_inset Formula $Kg/l$
+\end_inset
+
+ (el agua pura líquida tiene una densidad de 
+\begin_inset Formula $1\cdot Kg/l$
+\end_inset
+
+ , aunque puede variar ligeramente según la temperatura), el 
+\series bold
+gramo por mililitro
+\series default
+ 
+\begin_inset Formula $g/ml$
+\end_inset
+
+ o el 
+\series bold
+gramo por litro
+\series default
+ 
+\begin_inset Formula $g/l$
+\end_inset
+
+ o 
+\begin_inset Formula $g/dm^{3}.$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades de tiempo
+\end_layout
+
+\begin_layout Standard
+El tiempo es uno de los parámetros físicos más esquivos y trascendentes.
+ La reflexión y el estudio de esta magnitud por parte de Einstein, en su
+ teoría de la relatividad especial, revolucionó a la Física moderna.
+ A pesar de ello, actualmente el tiempo es uno de los parámetros que mejor
+ se pueden medir.
+\end_layout
+
+\begin_layout Standard
+En Física Newtoniana el tiempo es un escalar positivo, igual para cualquier
+ sistema de referencia.
+ En Física Relativista, sigue siendo un escalar positivo, pero depende del
+ observador, de sus sistema de referencia.
+ Es muy curiosa la 
+\begin_inset CommandInset href
+LatexCommand href
+name "paradoja de los gemelos"
+target "https://es.wikipedia.org/wiki/Paradoja_de_los_gemelos"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En cualquier sistema, incluso teniendo en cuenta las teorías de la Relatividad,
+ no se puede incumplir 
+\begin_inset CommandInset href
+LatexCommand href
+name "el principio de causalidad"
+target "https://es.wikipedia.org/wiki/Causalidad_(f%C3%ADsica)"
+
+\end_inset
+
+: las causas siempre se producen antes que los efectos, y el tiempo siempre
+ mide el intervalo entre el efecto y la causa, por tanto es positivo.
+ Si se produjese un efecto antes de su causa, el tiempo sería negativo.
+\end_layout
+
+\begin_layout Itemize
+El sistema base para ambos, el S.I.
+ y el sistema CGS, es el 
+\series bold
+calendario gregoriano
+\series default
+.
+ También adoptado por lossistemas anglosajones.
+\end_layout
+
+\begin_layout Itemize
+La unidad básica de tiempo es el 
+\series bold
+segundo
+\series default
+ (s) para ambos sistemas.
+ Es una unidad fundamental, no derivada.
+ Durante mucho tiempo se consideraba una fracción de la duración del día
+ (la 86400 parte de la duración del mismo), pero desde 1967 se tiene del
+ segundo una definición más difícil pero más estable: 
+\shape italic
+es igual a 9.192.631.770 períodos de radiación correspondiente a la transición
+ entre los dos niveles hiperfinos del estado fundamental del isótopo 133
+ del átomo de cesio (
+\begin_inset Formula $^{133}Cs$
+\end_inset
+
+), medidos a 0 K.
+\end_layout
+
+\begin_layout Itemize
+Los submúltiplos del segundo serían: el 
+\series bold
+milisegundo
+\series default
+ (ms), el 
+\series bold
+microsegundo
+\series default
+ (μs), el 
+\series bold
+nanosegundo
+\series default
+ (ns), el 
+\series bold
+picosegundo
+\series default
+ (ps) y el 
+\series bold
+femtosegundo
+\series default
+ (fs).
+\end_layout
+
+\begin_layout Itemize
+Los múltiplos siguen, sin embargo, el sistema sexagesimal y el calendario
+ gregoriano: el 
+\series bold
+minuto
+\series default
+ (60s), la 
+\series bold
+hora
+\series default
+ (3600s) y el 
+\series bold
+día
+\series default
+ (24 horas o 86400 s).
+ Las definiciones de día, según se consideren, pueden ser diversas.
+ A partir de aquí semana, mes (de 28 a 31 días), trimestre, año, lustro,
+ década, siglo, milenio...
+\end_layout
+
+\begin_layout Section
+Unidades de Frecuencia
+\end_layout
+
+\begin_layout Standard
+Hay muchos fenómenos de la Naturaleza que son cíclicos: las fases de la
+ luna, el movimiento del Sol en el cielo, las estaciones, las mareas, los
+ latios del corazón, un péndulo, fenómenos de corriente alterna, ondas,
+ etc.
+ Por ejemplo, pensemos en la luna llena.
+ ¿Cuánto tiempo transcurre entre dos lunas llenas? A ese tiempo se le llama
+ período lunar, y es de 
+\begin_inset Formula $T\approx28\cdot días$
+\end_inset
+
+.
+ En cualquier fenómeno cíclico se puede definir un intervalo de tiempo en
+ el que se vuelve a repetir una situación concreta.
+ A este tiempo se llama 
+\series bold
+período
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Se define 
+\series bold
+la frecuencia como la inversa del período: 
+\begin_inset Formula $f=1/T$
+\end_inset
+
+.
+ 
+\series default
+En el caso del período lunar la frecuencia sería 
+\begin_inset Quotes fld
+\end_inset
+
+una vez cada 28 días
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\series bold
+
+\begin_inset Formula $f=1/T=1/(28\cdot días)=0.036\cdot días^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otro ejemplo: imagina una rueda que gira 2000 veces en un minuto, o lo que
+ es lo mismo, da 2000 vueltas en 60 s.
+ Una sencilla regla de tres me dice que tarda en dar una vuelta un período
+ de 
+\begin_inset Formula $T=0.03\cdot s$
+\end_inset
+
+ y por tanto la frecuencia de rotación sería 
+\begin_inset Formula $f=1/T=1/(0.03\cdot s)=33.3\cdot s^{-1}$
+\end_inset
+
+.
+ La frecuencia me está además indicando el número de vueltas que daría la
+ rueda en un segundo.
+\end_layout
+
+\begin_layout Itemize
+La unidad en cualquier sistema es el 
+\series bold
+Hertzio
+\series default
+ (
+\series bold
+Hercio
+\series default
+): 
+\begin_inset Formula $1\cdot s^{-1}=1\cdot Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Por lo tanto en el ejemplo anterior, 
+\begin_inset Formula $f=1/T=1/(0.03\cdot s)=33.3\cdot s^{-1}=33.3\cdot Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los múltiplos habituales, son el 
+\series bold
+kilohercio
+\series default
+, el 
+\series bold
+megahercio
+\series default
+, el 
+\series bold
+gigahercio
+\series default
+, 
+\series bold
+terahercio
+\series default
+...
+\end_layout
+
+\begin_layout Itemize
+Los submúltiplos el 
+\series bold
+milihercio
+\series default
+, 
+\series bold
+microhercio
+\series default
+, 
+\series bold
+nanohercio
+\series default
+, 
+\series bold
+picohercio
+\series default
+...
+\end_layout
+
+\begin_layout Itemize
+Otra unidad muy usada son las 
+\series bold
+vueltas o revoluciones por minuto
+\series default
+ (motores).
+ 
+\begin_inset Formula $1\cdot rpm=\frac{1}{60}\cdot Hz$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Al igual que el tiempo, es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades de velocidad y aceleración
+\end_layout
+
+\begin_layout Standard
+La velocidad se define como el cambio de la posición en el tiempo, y la
+ aceleración como el cambio de la posición en el tiempo, y otra vez en el
+ tiempo, o el cambio de la velocidad en el tiempo.
+ Por lo tanto en la magnitud velocidad hay implícitos una longitud y el
+ tiempo, y en la magnitud aceleración, una longitud y dos veces el tiempo.
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ la unidad fundamental de velocidad (derivada) es el 
+\series bold
+metro por segundo (m/s)
+\series default
+.
+ En el CGS, tenemos el 
+\series bold
+centímetro por segundo (cm/s)
+\series default
+, y en anglosajón los pies por segundo (ft/s).
+\end_layout
+
+\begin_layout Itemize
+Otras unidades muy usadas, son el 
+\series bold
+km/h
+\series default
+ y el 
+\series bold
+km/s
+\series default
+ (la velocidad de la luz es de 299.792,458 km/s).
+ En el sistema anglosajón las millas por hora 
+\series bold
+(mph)
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ la unidad fundamental de aceleración (derivada) es el 
+\series bold
+metro por segundo al cuadrado (m/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+)
+\series default
+.
+ En el CGS, tenemos el 
+\series bold
+centímetro por segundo al cuadrado (cm/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+)
+\series default
+, y en anglosajón los pies por segundo al cuadrado (ft/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+Una constante muy usada es el valor de la aceleración de atracción gravitatoria
+ en la superficie de la Tierra, o 
+\series bold
+gravedad
+\series default
+: 
+\begin_inset Formula $g=9.8\cdot m/s^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Un 
+\series bold
+nudo
+\series default
+ es una 
+\series bold
+milla marina por hora
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+En general son magnitudes vectoriales.
+\end_layout
+
+\begin_layout Section
+Ángulos
+\end_layout
+
+\begin_layout Standard
+Los ángulos miden curvaturas, 
+\begin_inset Quotes fld
+\end_inset
+
+distancias circulares
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Son magnitudes 
+\begin_inset Quotes fld
+\end_inset
+
+mudas
+\begin_inset Quotes frd
+\end_inset
+
+ , es decir, en ciertos cálculos que implican más magnitudes pueden ignorarse.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ y en el CGS la unidad fundamental de ángulos es el 
+\series bold
+radián
+\series default
+.
+ Un radián es la apertura de un arco que mide lo mismo que su radio.
+ Una circunferencia completa mide 
+\begin_inset Formula $2\cdot\pi$
+\end_inset
+
+ radianes, de manera que una semicircunferencia mide 
+\begin_inset Formula $\pi$
+\end_inset
+
+ radianes y un ángulo recto o un cuadrante de la circunferencia 
+\begin_inset Formula $\pi/2$
+\end_inset
+
+ radianes.
+\end_layout
+
+\begin_layout Itemize
+Otro sistema muy usado es el 
+\series bold
+sexagesimal
+\series default
+ (base 60) , 
+\begin_inset CommandInset href
+LatexCommand href
+name "sistema inglés"
+target "http://www.math-only-math.com/systems-of-measuring-angles.html"
+
+\end_inset
+
+, en el que la circunferencia tiene 360º.
+ Cada grado se divide a su vez en 60' (minutos de arco) y cada minuto en
+ 60'' (segundos de arco).
+ Para divisiones más pequeñas de segundo se utiliza el sistema decimal.
+\begin_inset Foot
+status open
+
+\begin_layout Itemize
+El 60 es un número muy conveniente; es múltiplo de 2, de 4, de 5, de 6,
+ de 10, de 12, de 15, de 20, de 30...
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Un sistema menos usado es el de grados 
+\series bold
+centesimales
+\series default
+, en el que el ángulo recto tiene 100
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+g
+\end_layout
+
+\end_inset
+
+ , 1g serían 100` (minutos centesimales) y 1` serían 100`` (segundos centesimale
+s).
+\end_layout
+
+\begin_layout Section
+Unidades de velocidades y aceleraciones angulares.
+\end_layout
+
+\begin_layout Standard
+La velocidad angular se define como el cambio de la curvatura en el tiempo,
+ y la aceleración como el cambio de la curvatura en el tiempo, y otra vez
+ en el tiempo, o el cambio de la velocidad angular en el tiempo.
+ Por lo tanto en la magnitud velocidad angular hay implícitos un ángulo
+ y el tiempo, y en la magnitud aceleración angular, un ángulo y dos veces
+ el tiempo.
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ y el CGS la unidad fundamental de velocidad angular (derivada) es el 
+\series bold
+radián por segundo (rad/s)
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ y el CGS la unidad fundamental de aceleración angular (derivada) es el
+ 
+\series bold
+radián por segundo al cuadrado (rad/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+)
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ejemplo: La Tierra rota sobre sí misma una vez cada 24 horas.
+ Su período de rotación es T = 24h = 86400 s.
+ La frecuencia 
+\begin_inset Formula $f=1/T=1/(86400\cdot s)=1,157\cdot10^{-5}\cdot Hz$
+\end_inset
+
+.
+ Su velocidad angular (da una vuelta completa o sea 
+\begin_inset Formula $2\cdot\pi$
+\end_inset
+
+ radianes) sería 
+\begin_inset Formula $w=\frac{2\cdot\pi}{T}=2\cdot\pi\cdot f=7.27\cdot10^{-5}\,rad/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Son magnitudes vectoriales.
+ 
+\end_layout
+
+\begin_layout Section
+Unidades de Fuerza
+\end_layout
+
+\begin_layout Standard
+Según la segunda ley de Newton, en Dinámica, la Fuerza (magnitud derivada)
+ es la causa por la cual un cuerpo acelera (acelerar es cambiar de velocidad).
+ La aceleración es por tanto el efecto de aplicar una fuerza a un cuerpo,
+ y es tanto más según la fórmula 
+\begin_inset Formula $F=m\cdot a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ , 
+\series bold
+cuando se aplica a un cuerpo de masa 1 Kg una fuerza de 1 N (Newton), éste
+ acelera hasta alcanzar 1 m/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el CGS, 
+\series bold
+cuando a un cuerpo de masa un gramo se le aplica la fuerza de 1 dina, éste
+ acelera hasta alcanzar 1 cm/s
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Otra unidad muy usada es el 
+\series bold
+kilopondio
+\series default
+ o 
+\series bold
+kilogramo-fuerza
+\series default
+, que sería la fuerza (peso) con la que la Tierra atrae a un kilogramo de
+ masa en su superficie.
+ Por tanto, 
+\begin_inset Formula $P=m\cdot g=1\cdot Kg\cdot9.8\cdot m/s^{2}=9.8\cdot N=1\cdot kp=1\cdot kgf$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+En el sistema anglosajón imperial, es la 
+\begin_inset CommandInset href
+LatexCommand href
+name "libra-fuerza (lbf)"
+target "http://laplace.us.es/wiki/index.php/Conversi%C3%B3n_de_unidades_del_sistema_imperial"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud vectorial.
+\end_layout
+
+\begin_layout Section
+Unidades de Presión
+\end_layout
+
+\begin_layout Standard
+La presión se define como la relación entre la fuerza aplicada por unidad
+ de superficie: 
+\begin_inset Formula $P=F/S$
+\end_inset
+
+.
+ Históricamente, en la medida de la presión se usan varias unidades.
+\end_layout
+
+\begin_layout Itemize
+En el S.I., se define 
+\series bold
+un Pascal (Pa)
+\series default
+ como la presión que se ejerce cuando 
+\series bold
+se aplica una fuerza de 1 N a una superficie de 1 m
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el CGS, se define una baria (apenas usada) como como la presión que se
+ ejerce cuando 
+\series bold
+se aplica una fuerza de 1 dyn a una superficie de 1 cm
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+
+
+\series default
+.
+ Se utiliza más la unidad 
+\series bold
+bar
+\series default
+, que equivale a un millón de barias.
+ Y también su submúltiplo, el 
+\series bold
+milibar
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Torricelli fue uno de los primeros en demostrar que el aire 
+\begin_inset Quotes fld
+\end_inset
+
+pesaba
+\begin_inset Quotes frd
+\end_inset
+
+, o sea, ejercía presión.
+ Llenó un tubo de mercurio y lo volteó creando el vacío en su parte superior.
+ El nivel que alcanzó el mercurio dentro del tubo fue de 76 cm.
+ Se usa pues dos unidades de presión: 
+\series bold
+la atmósfera (atm)
+\series default
+ que es la presión normal del aire y 
+\series bold
+el mmHg (o Torr)
+\series default
+ que es la presión que ejerce el mercurio contenido en una columna de 1mm
+ de alto y 1 cm
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ de sección.
+ 1 atm = 760 mmHg.
+ 
+\end_layout
+
+\begin_layout Itemize
+Otra unidad inglesa usada es el 
+\series bold
+PSI
+\series default
+ (libra-fuerza por pulgada cuadrada).
+ Equivale a 6894,76 Pa.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar que relaciona dos magnitudes vectoriales.
+\end_layout
+
+\begin_layout Section
+Unidades de Temperatura
+\end_layout
+
+\begin_layout Standard
+Otra magnitud fundamental en Física es la temperatura, relacionada con la
+ energía cinética interna de un conjunto de átomos o moléculas (tanto rotacional
+, como traslacional o en vibración).
+ 
+\end_layout
+
+\begin_layout Itemize
+En el S.I.
+ se define el
+\series bold
+ grado Kelvin (K)
+\series default
+ como la unidad del sistema de medición de temperaturas.
+ En esta escala lo más importante es su origen.
+ No existen temperaturas negativas, siendo la temperatura de 
+\series bold
+0 K el llamado cero absoluto
+\series default
+.
+ Nada puede enfriarse por debajo de ese punto.
+ En realidad es un límite inalcanzable, ya que significaría que la materia
+ no posee absolutamente ninguna energía.
+ En esta escala, el agua a 1 atm de presión congela a 273.15 K y se evapora
+ a 373.15 K.
+\end_layout
+
+\begin_layout Itemize
+También se acepta en el S.I.
+ 
+\series bold
+el grado Celsius o centígrado (ºC)
+\series default
+.
+ En esta escala el valor 0ºC es el punto de congelación del agua a 1 atm
+ de presión y 100ºC equivale al punto de ebullición a la misma presión.
+ El tamaño del grado Celsius y Kelvin es el mismo (hay 100 grados en ambas
+ escalas entre los puntos de congelación y ebullición del agua).
+ 
+\begin_inset Formula $T(\text{ºC)=T(K)-273.15}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Y la escala usada por los anglosajones es la escala Fahrenheit.
+ 
+\series bold
+El grado Fahrenheit (ºF)
+\series default
+ define su escala también con el agua, pero en este caso congela a 32ºF
+ y ebulle a 212ºF a la presión atmosférica normal.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades de Energía, Calor y Trabajo
+\end_layout
+
+\begin_layout Standard
+La energía es un concepto clave en Física.
+ 
+\series bold
+Es la capacidad que tiene un cuerpo de producir un trabajo
+\series default
+, es decir de causar el desplazamiento de otro o de sí mismo o de deformar
+ un cuerpo o a sí mismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Ejemplo: los músculos de mi brazo y mi mano poseen cierta energía almacenada
+ en moléculas de ATP.
+ Al liberarse esta energía, la pelota que tengo en mis manos la adquiere
+ en forma de velocidad (energía cinética).
+ La pelota, que inicialmente estaba quieta (velocidad 0 m/s) adquirirá cierta
+ velocidad, con lo cual la liberación de energía se ha traducido en la aplicació
+n de una 
+\series bold
+fuerza 
+\begin_inset Quotes fld
+\end_inset
+
+F
+\begin_inset Quotes frd
+\end_inset
+
+ que ha acelerado la pelota de masa 
+\begin_inset Quotes fld
+\end_inset
+
+m
+\begin_inset Quotes frd
+\end_inset
+
+ a una aceleración 
+\begin_inset Quotes fld
+\end_inset
+
+a
+\begin_inset Quotes frd
+\end_inset
+
+
+\series default
+.
+ Si la pelota, al final, se ha trasladado una distancia 
+\begin_inset Quotes fld
+\end_inset
+
+d
+\begin_inset Quotes frd
+\end_inset
+
+ , se dice que ha realizado 
+\series bold
+un trabajo 
+\begin_inset Formula $W=F\cdot d$
+\end_inset
+
+
+\series default
+.
+ El trabajo puede considerarse una 
+\begin_inset Quotes fld
+\end_inset
+
+energía en tránsito
+\begin_inset Quotes frd
+\end_inset
+
+, ya que cuando acaba el proceso la energía liberada por mi brazo se ha
+ transmitido a la pelota.
+ 
+\end_layout
+
+\begin_layout Itemize
+En el S.I., la unidad de 
+\series bold
+energía y de trabajo
+\series default
+ es el 
+\series bold
+Julio (J)
+\series default
+.
+ 
+\begin_inset Formula $1\cdot J=1\cdot N\cdot m=1\cdot kg\cdot m^{2}/s^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el CGS, la unidad de 
+\series bold
+energía y trabajo 
+\series default
+es el 
+\series bold
+ergio (erg)
+\series default
+.
+ 
+\begin_inset Formula $1\cdot erg=1\cdot dyn\cdot cm=1\cdot g\cdot cm^{2}/s^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el Sistema anglosajón, es la lbf-ft (libra-fuerza pie).
+\end_layout
+
+\begin_layout Itemize
+Por su importancia histórica y su uso, es muy usada 
+\series bold
+la caloría (cal) y su múltiplo, la kilocaloría (kcal)
+\series default
+.
+ 
+\begin_inset Formula $1\,cal=4,19\,J$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Otra unidad importante de energía es el 
+\series bold
+Kilowatio-hora (KW-h) 
+\series default
+que veremos posteriormente referida a la potencia.
+\end_layout
+
+\begin_layout Itemize
+Otra muy usada es el 
+\series bold
+electrón-Voltio
+\series default
+.
+ Es la energía (
+\begin_inset Formula $E=q\cdot\Delta V$
+\end_inset
+
+) que necesito para desplazar un electrón de carga 
+\begin_inset Formula $1.6\cdot10^{-19}\,C$
+\end_inset
+
+ en contra de un campo eléctrico de potencial 1 Voltio.
+ Equivale a 
+\begin_inset Formula $1.6\cdot10^{-19}\,J$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+En el ejemplo anterior, supusimos que la energía que transmite mi brazo
+ a la pelota se traspasaba completamente.
+ En la realidad, no ocurre; ese sería un proceso ideal.
+ En la realidad la energía no se transmite en su totalidad sino que se pierde
+ una parte por múltiples causas (rozamientos con el aire, entre superficies,
+ viscosidad, etc).
+ Esta energía suele adoptar la forma de 
+\series bold
+\shape italic
+calor
+\series default
+\shape default
+, aumentando la temperatura de los sistemas implicados.
+ El 
+\series bold
+\shape italic
+calor
+\series default
+\shape default
+, en Física, es la forma de energía que se transmite desde los cuerpos que
+ están a una temperatura a los cuerpos que entran en contacto con los primeros
+ estando a una temperatura menor.
+ 
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades de Potencia
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+Potencia
+\series default
+ es la relación entre 
+\series bold
+la Energía y el tiempo
+\series default
+.
+ En general, 
+\begin_inset Formula $P=E/t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La unidad de potencia en el S.I.
+ es el 
+\series bold
+Watio o Vatio (W).
+ Un Watio es la energía de 1 J proporcionada o perdida en un segundo
+\series default
+.
+ 
+\begin_inset Formula $1\cdot W=1\cdot J/1\cdot s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el CGS es el 
+\series bold
+erg/s
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Una unidad muy usada es el 
+\series bold
+caballo de vapor
+\series default
+ (
+\series bold
+CV
+\series default
+).
+ 
+\begin_inset Formula $1\cdot CV=735,49\cdot W$
+\end_inset
+
+.
+ Es la adaptación de una unidad equivalente inglesa llamada caballo de fuerza
+ o horsepower (hp) que equivale, prácticamente, a la misma cantidad.
+ Se define como la potencia necesaria para levantar 75 kp un metro de altura
+ en un segundo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Como la energía puede definirse como la potencia que entrega o pierde un
+ sistema en un tiempo dado, 
+\begin_inset Formula $E=P\cdot t$
+\end_inset
+
+, 
+\series bold
+una unidad de energía muy usada es el Vatio-hora (o su múltiplo, el Kilowatio-ho
+ra - KW-h -)
+\series default
+.
+ 
+\begin_inset Formula $1\cdot Wh=1\cdot W\cdot3600\cdot s=3600\cdot J$
+\end_inset
+
+ y 
+\begin_inset Formula $1\cdot KWh=1\cdot KW\cdot3600\cdot s=1000\cdot3600\cdot J=3,6\cdot10^{6}\cdot J$
+\end_inset
+
+.
+ Esta unidad es muy usada en electricidad como unidad básica del consumo
+ eléctrico.
+ 
+\end_layout
+
+\begin_layout Itemize
+Potencia en función de la fuerza y la velocidad: 
+\begin_inset Formula $P=\frac{E}{\Delta t}=\frac{W}{\Delta t}=\frac{F\cdot d}{\Delta t}=F\cdot v$
+\end_inset
+
+, por lo tanto 
+\begin_inset Formula $1\cdot W=1\cdot N\cdot m/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Unidades Eléctricas
+\end_layout
+
+\begin_layout Subsection
+Carga
+\end_layout
+
+\begin_layout Standard
+La carga eléctrica es una propiedad intrínseca de las partículas, al igual
+ que puede ser su masa.
+ Es la responsable de la atracción o repulsión eléctrica.
+ 
+\end_layout
+
+\begin_layout Itemize
+La unidad de carga eléctrica es el 
+\series bold
+Culombio (C)
+\series default
+, y un culombio equivale a la carga de 
+\begin_inset Formula $6.25\cdot10^{18}$
+\end_inset
+
+ electrones
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Sabemos que la carga del electrón se considera negativa mientras la carga
+ del protón es la misma pero considerada positiva
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+La carga más pequeña conocida es la de un electrón: 
+\begin_inset Formula $1.6\cdot10^{-19}\,C$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+La carga en el CGS, es el 
+\series bold
+estatculombio, ues o Franklin (statC - ues - Fr)
+\series default
+.
+ 
+\begin_inset Formula $1\cdot C=10\cdot c\cdot statC$
+\end_inset
+
+ donde 
+\begin_inset Quotes fld
+\end_inset
+
+c
+\begin_inset Quotes frd
+\end_inset
+
+ es el módulo de la velocidad de la luz en el vacío expresado en m/s (299792458).
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Subsection
+Amperaje
+\end_layout
+
+\begin_layout Itemize
+El 
+\series bold
+Amperio (A) es la unidad de amperaje o intensidad eléctrica
+\series default
+, y es una 
+\series bold
+unidad fundamental
+\series default
+ en el S.I.
+ de Unidades, de la cual derivan el resto de unidades eléctricas.
+ El Amperio se define como la intensidad eléctrica que circula por un cable
+ (de 1 cm
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ de sección) por el que pasa una carga de 1 C en 1 s, aunque su definición
+ formal es: 
+\begin_inset Quotes fld
+\end_inset
+
+el amperio es la intensidad de una corriente constante que, manteniéndose
+ en dos conductores paralelos, rectilíneos, de longitud infinita, de sección
+ circular despreciable y situados a una distancia de un metro uno de otro
+ en el vacío, produciría una fuerza igual a 2×10
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+–7
+\end_layout
+
+\end_inset
+
+ N por metro de longitud
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $I=\frac{Q}{\Delta t}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El Amperio es una unidad fundamental no derivada debido a su facilidad de
+ medición, más que la carga.
+\end_layout
+
+\begin_layout Itemize
+En el CGS, se denomina estatamperio (statA) a la unidad de intensidad: 1
+ statA = 3.335 641 × 10
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+-10
+\end_layout
+
+\end_inset
+
+ A
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar aunque su signo determina un sentido de la corriente.
+\end_layout
+
+\begin_layout Subsection
+Voltaje
+\end_layout
+
+\begin_layout Itemize
+En el S.I., 
+\series bold
+el Voltio (V) es la unidad de potencial eléctrico, voltaje o tensión eléctrica
+\series default
+.
+ Se define como el potencial al que está sometido un conductor por el que
+ circula 1 A cuando consume 1 W de potencia.
+ 
+\begin_inset Formula $V=\frac{P}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el CGS, 1 estatvoltio (statV) = 1 erg Fr
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+
+ = 299,7925 V
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Subsection
+Resistencia
+\end_layout
+
+\begin_layout Itemize
+En el S.I., 
+\series bold
+el Ohmio (Ω) es la unidad de resistencia eléctrica
+\series default
+.
+ Se define como la resistencia que presenta un material por el que circula
+ una intensidad de 1 A cuando se somete a un potencial de 1 V.
+ 
+\begin_inset Formula $R=\frac{V}{I}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+O bien la resistencia que tiene un material cuando disipa 1 W de potencia
+ y es atravesado por una corriente de 1 A.
+ 
+\begin_inset Formula $P=I^{2}\cdot R\Longrightarrow R=\frac{P}{I^{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En el CGS, 1 estatohmio (statΩ) equivale a 8.987 552 × 10
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+
+ Ω.
+\end_layout
+
+\begin_layout Itemize
+Es una magnitud escalar.
+\end_layout
+
+\begin_layout Section
+Otras
+\end_layout
+
+\begin_layout Itemize
+Capacidad eléctrica, 1 Faradio (S.I.
+ - escalar) : es la capacidad de un condensador entre cuyas armaduras existe
+ una diferencia de potencial eléctrico de 1 voltio (1 V) cuando está cargado
+ de una cantidad de electricidad igual a un culombio (1 C).
+ 
+\begin_inset Formula $C=\frac{Q}{\Delta V}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $1\cdot F=1\cdot C\cdot V^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conductancia eléctrica: es el inverso de la resistencia eléctrica y su unidad
+ es el 
+\series bold
+Siemens (S)
+\series default
+.
+ 
+\begin_inset Formula $1\cdot S=1\Omega^{-1}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Campo eléctrico: es la fuerza electroestática con la que una carga atrae
+ a otra unidad.
+ 
+\begin_inset Formula $F=q\cdot E$
+\end_inset
+
+ entonces 
+\begin_inset Formula $E=F/q$
+\end_inset
+
+ se mide en N/C o V/m.
+\end_layout
+
+\begin_layout Itemize
+Campo magnético 
+\series bold
+B
+\series default
+: la unidad de campo magnético en el Sistema Internacional es el tesla (
+\series bold
+T
+\series default
+).
+ Un tesla se define como el campo magnético que ejerce una fuerza de 1 N
+ (newton) sobre una carga de 1 C (culombio) que se mueve a velocidad de
+ 1 m/s dentro del campo y perpendicularmente a las líneas de campo.
+\end_layout
+
+\begin_layout Itemize
+Intensidad del campo magnético 
+\series bold
+H
+\series default
+: en el Sistema Internacional, tenemos el 
+\series bold
+Amperio/m
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Flujo del campo magnético (
+\begin_inset Formula $\Phi=\overrightarrow{B}\cdot\overrightarrow{S}$
+\end_inset
+
+): la unidad es el 
+\series bold
+Weber
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Luminancia: la unidad es la 
+\series bold
+candela (cd)
+\series default
+ y es una unidad fundamental en el S.I.
+\end_layout
+
+\begin_layout Itemize
+Ángulo sólido: la unidad es el 
+\series bold
+estereorradián
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para medir coeficientes de autoinducción magnética (L) e inducción mutua
+ (M) se utiliza el Henrio (H).
+\end_layout
+
+\begin_layout Itemize
+Ver más en: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://es.wikipedia.org/wiki/Sistema_Internacional_de_Unidades#Unidades_b.C3.A1sicas"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\end_body
+\end_document

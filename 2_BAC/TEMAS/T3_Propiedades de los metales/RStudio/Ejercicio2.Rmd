@@ -1,0 +1,68 @@
+---
+title: "Ejercicio 2. ¿A qué red pertenece?"
+author: "Aurelio Gallardo Rodríguez"
+date: "30 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 57. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 2. ¿A qué red pertenece?.
+<p style="text-align:justify;">
+La masa atómica de un elemento es 55.8 g/mol. Sabiendo que su radio atómico es 1.24 Å y su densidad 7.9 g/cm3 ¿Cristaliza en una red BCC o FCC?
+</p>
+<hr>
+
+<p style="text-align:justify;">
+1. Si la red es BCC, el número de átomos es 2 y el volumen de la celda viene dado por la expresión $V_{celda\,BCC}=\left (\frac{4 \cdot R}{\sqrt{3}}  \right )^3$
+</p>
+
+<p style="text-align:justify;">
+2. Si la red es FCC, el número de átomos es 4 y el volumen de la celda viene dado por la expresión $V_{celda\,FCC}=\left (\frac{4 \cdot R}{\sqrt{2}}  \right )^3$
+</p>
+
+<p style="text-align:justify;">
+3. Si uso para la expresión $V_{celda}=\left (\frac{4 \cdot R}{\alpha}  \right )^3$, tendremos que __$\alpha=\sqrt{3}$__ para la red __BCC__ y __$\alpha=\sqrt{2}$__ en el caso de la __FCC__
+</p>
+
+## Solución
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+d=set_units(7.9,g/cm^3) ## densidad
+mat=set_units(55.8,g/mol) ## masa atómica
+NumA=set_units(6.022e23,1/mol) ## Número de avogadro
+R=set_units(1.24,Å) ## tamaño celda en angstrong
+units(R)=with(ud_units,cm)
+## factor
+fac1 = d * R^3 * 4^3 / (mat / NumA )
+## fac1
+```
+<p style="text-align:justify;">
+De la expresión $$\rho = \frac{m_{celda}}{v_{celda}}=\frac{n_{at} \cdot m_{at} / N_{A}}{4^3 \cdot R^3} \cdot \alpha^3$$
+</p>
+
+<p style="text-align:justify;">
+Despejamos los factores $$n_{at} \cdot \alpha^3 = \frac{\rho \cdot 4^3  \cdot R^3}{m_{at} / N_{A}} = \frac{ `r d` \cdot g/cm^3  \cdot 4^3  \cdot ( `r R` \cdot cm)^3}{ `r mat` \cdot g/mol \cdot \frac{1\,mol}{`r NumA` \cdot at} } \\[2em] n_{at} \cdot \alpha^3 =`r round(fac1,3)` \cdot at$$
+</p>
+
+<p style="text-align:justify;">
+En el caso de BCC, tenemos que $n_{at} \cdot \alpha^3 =2 \cdot \left ({\sqrt{3}}  \right )^3 \simeq  10.39 \cdot at$
+</p>
+<p style="text-align:justify;">
+En el caso de FCC, tenemos que $n_{at} \cdot \alpha^3 =4 \cdot \left ({\sqrt{2}}  \right )^3 \simeq  11.31 \cdot at$
+</p>
+<p style="text-align:justify;">
+Por lo tanto, podemos concluir que la estructura es __BCC__
+</p>
+

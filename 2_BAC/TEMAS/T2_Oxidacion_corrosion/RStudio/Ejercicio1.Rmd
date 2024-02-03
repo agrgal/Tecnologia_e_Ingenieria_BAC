@@ -1,0 +1,60 @@
+---
+title: "Ejercicio 1. Relación Pilling-Bedworth"
+author: "Aurelio Gallardo Rodríguez"
+date: "3 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 32. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Enunciado Ejercicio 1
+<p style="text-align:justify;">
+Calcula la relación Pilling-Bedworth para el aluminio, sabiendo que la densidad del metal es $2.7\cdot g/cm^{3}$ y la de su óxido ($Al_{2}O_{3}$) $3.7\cdot g/cm^{3}$ . La masa atómica del aluminio es de 26.98 y la del oxígeno 16.
+</p>
+## Reacción química y fórmula de Pilling-Bedworth
+
+<p style="text-align:justify;">
+Reacción estequiométrica
+$$4 Al +3O_2 \longrightarrow 2Al_2O_3$$
+</p>
+
+<p style="text-align:justify;">
+Fórmula de Pilling-Bedworth
+$$PB=\tfrac{Volumen\;\acute{o}xido}{Volumen\;metal\;consumido} $$
+</p>
+
+## Resolución 
+```{r datos, echo=FALSE }
+library("units")
+dAl=set_units(2.7,g/cm^2)
+dOx=set_units(3.7,g/cm^2)
+mAl=set_units(26.98,g/mol)
+mOxig=set_units(16,g/mol)
+# masa del óxido
+mOxido=2*mAl+3*mOxig
+# Cálculo de la cantidad de masa que reacciona
+masaAl=4*mAl
+masaOx=2*mOxido
+#Cálculo de la cte de Pilling-Bedworth
+PB=(masaOx/dOx)/((masaAl/dAl))
+
+```
+<p style="text-align:justify;">
+Por lo tanto, 4 moles de alumino $m_{Al}=4\,g\cdot `r mAl` \,g/mol= `r masaAl`\,g$ reaccionan con 2 moles de óxido de aluminio $m_{2Al_2O_3}=2\,g\cdot `r mOxido` \,g/mol= `r masaOx`\,g$
+</p>
+<p style="text-align:justify;">
+$$ PB=\tfrac{Volumen\;\acute{o}xido}{Volumen\;metal\;consumido}=\tfrac{m_{ox}/\rho_{ox}}{m_{Al}/\rho_{Al}}=\tfrac{\tfrac{`r masaOx`\,g }{`r dOx` \,g/cm^3}}{\tfrac{`r masaAl` \,g }{`r dAl` \,g/cm^3}}=`r round(PB,2)`$$
+</p>
+
+

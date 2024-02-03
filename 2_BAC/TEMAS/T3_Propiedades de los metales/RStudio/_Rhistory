@@ -1,0 +1,185 @@
+---
+title: "Ejercicio 1. Densidad del Aluminio"
+author: "Aurelio Gallardo Rodríguez"
+date: "29 de Agosto de 1017"
+output:
+slidy_presentation:
+fig.align: center
+fig_caption: yes
+fig_height: 6
+fig_width: 10
+footer: Por Aurelio Gallardo
+highlight: pygments
+ioslides_presentation: default
+subtitle: Pag 57. Everest. TINII.
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Ejercicio 1. Densidad del aluminio.
+<p style="text-align:justify;">
+El aluminio tiene una masa atómica de 26.97 g/mol. Sabiendo que cristaliza en el sistema FCC y que la dimensión de la celda unidad es de a=4.049 Å ¿cuál es su densidad?
+</p>
+<hr>
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+nat=4 ## número de átomos
+mat=set_units(26.97,g/mol) ## masa atómica
+NumA=set_units(6.022e23,1/mol) ## Número de avogadro
+a=set_units(4.094,Å) ## tamaño celda en angstrong
+units(a)=with(ud_units,cm)
+## Volumen de celda
+Vcelda = a^3
+## Masa de celda
+mcelda=nat*mat/NumA
+## densidad
+d=mcelda / Vcelda
+d
+```
+xx  <- pi * 10^(-5:4)
+cbind(format(xx, digits = 4), formatC(xx))
+cbind(formatC(xx, width = 9, flag = "-"))
+cbind(formatC(xx, digits = 5, width = 8, format = "f", flag = "0"))
+cbind(format(xx, digits = 4), formatC(xx, digits = 4, format = "fg"))
+formatC(    c("a", "Abc", "no way"), width = -7)  # <=> flag = "-"
+formatC(c((-1:1)/0,c(1,100)*pi), width = 8, digits = 1)
+## note that some of the results here depend on the implementation
+## of long-double arithmetic, which is platform-specific.
+xx <- c(1e-12,-3.98765e-10,1.45645e-69,1e-70,pi*1e37,3.44e4)
+##       1        2             3        4      5       6
+formatC(xx)
+formatC(xx, format = "fg")       # special "fixed" format.
+formatC(xx[1:4], format = "f", digits = 75) #>> even longer strings
+formatC(c(3.24, 2.3e-6), format = "f", digits = 11, drop0trailing = TRUE)
+r <- c("76491283764.97430", "29.12345678901", "-7.1234", "-100.1","1123")
+## American:
+prettyNum(r, big.mark = ",")
+## Some Europeans:
+prettyNum(r, big.mark = "'", decimal.mark = ",")
+(dd <- sapply(1:10, function(i) paste((9:0)[1:i], collapse = "")))
+prettyNum(dd, big.mark = "'")
+## examples of 'small.mark'
+pN <- stats::pnorm(1:7, lower.tail = FALSE)
+cbind(format (pN, small.mark = " ", digits = 15))
+cbind(formatC(pN, small.mark = " ", digits = 17, format = "f"))
+cbind(ff <- format(1.2345 + 10^(0:5), width = 11, big.mark = "'"))
+## all with same width (one more than the specified minimum)
+## individual formatting to common width:
+fc <- formatC(1.234 + 10^(0:8), format = "fg", width = 11, big.mark = "'")
+cbind(fc)
+## Powers of two, stored exactly, formatted individually:
+pow.2 <- formatC(2^-(1:32), digits = 24, width = 1, format = "fg")
+## nicely printed (the last line showing 5^32 exactly):
+noquote(cbind(pow.2))
+## complex numbers:
+r <- 10.0000001; rv <- (r/10)^(1:10)
+(zv <- (rv + 1i*rv))
+op <- options(digits = 7) ## (system default)
+(pnv <- prettyNum(zv))
+stopifnot(pnv == "1+1i", pnv == format(zv),
+pnv == prettyNum(zv, drop0trailing = TRUE))
+## more digits change the picture:
+options(digits = 8)
+head(fv <- format(zv), 3)
+prettyNum(fv)
+prettyNum(fv, drop0trailing = TRUE) # a bit nicer
+options(op)
+## The  '  flag :
+doLC <- FALSE # R warns, so change to TRUE manually if you want see the effect
+if(doLC)
+oldLC <- Sys.setlocale("LC_NUMERIC", "de_CH.UTF-8")
+formatC(1.234 + 10^(0:4), format = "fg", width = 11, flag = "'")
+## -->  .....  "      1'001" "     10'001"   on supported platforms
+if(doLC) ## revert, typically to  "C"  :
+Sys.setlocale("LC_NUMERIC", oldLC)
+# Averiguar una unidad
+library("units")
+lista=ud_units()
+averiguar="Å"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+## be careful with the format: most things in R are floats
+## only integer-valued reals get coerced to integer.
+sprintf("%s is %f feet tall\n", "Sven", 7.1)      # OK
+try(sprintf("%s is %i feet tall\n", "Sven", 7.1)) # not OK
+sprintf("%s is %i feet tall\n", "Sven", 7  )  # OK
+## use a literal % :
+sprintf("%.0f%% said yes (out of a sample of size %.0f)", 66.666, 3)
+## various formats of pi :
+sprintf("%f", pi)
+sprintf("%.3f", pi)
+sprintf("%1.0f", pi)
+sprintf("%5.1f", pi)
+sprintf("%05.1f", pi)
+sprintf("%+f", pi)
+sprintf("% f", pi)
+sprintf("%-10f", pi) # left justified
+sprintf("%e", pi)
+sprintf("%E", pi)
+sprintf("%g", pi)
+sprintf("%g",   1e6 * pi) # -> exponential
+sprintf("%.9g", 1e6 * pi) # -> "fixed"
+sprintf("%G", 1e-6 * pi)
+## no truncation:
+sprintf("%1.f", 101)
+## re-use one argument three times, show difference between %x and %X
+xx <- sprintf("%1$d %1$x %1$X", 0:15)
+xx <- matrix(xx, dimnames = list(rep("", 16), "%d%x%X"))
+noquote(format(xx, justify = "right"))
+## More sophisticated:
+sprintf("min 10-char string '%10s'",
+c("a", "ABC", "and an even longer one"))
+## Platform-dependent bad example from qdapTools 1.0.0:
+## may pad with spaces or zeroes.
+sprintf("%09s", month.name)
+n <- 1:18
+sprintf(paste0("e with %2d digits = %.", n, "g"), n, exp(1))
+## Using arguments out of order
+sprintf("second %2$1.0f, first %1$5.2f, third %3$1.0f", pi, 2, 3)
+## Using asterisk for width or precision
+sprintf("precision %.*f, width '%*.3f'", 3, pi, 8, pi)
+## Asterisk and argument re-use, 'e' example reiterated:
+sprintf("e with %1$2d digits = %2$.*1$g", n, exp(1))
+## re-cycle arguments
+sprintf("%s %d", "test", 1:3)
+## binary output showing rounding/representation errors
+x <- seq(0, 1.0, 0.1); y <- c(0,.1,.2,.3,.4,.5,.6,.7,.8,.9,1)
+cbind(x, sprintf("%a", x), sprintf("%a", y))
+# Averiguar una unidad
+library("units")
+lista=ud_units()
+averiguar="Å"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+ud_units
+# Averiguar una unidad
+library("units")
+lista=ud_units
+averiguar="Å"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+library("units")
+lista=ud_units
+averiguar="m"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+# Averiguar una unidad
+library("units")
+lista=ud_units
+averiguar="m"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+listado[33]
+# Averiguar una unidad
+library("units")
+lista=ud_units
+averiguar="m"
+nombres=names(lista) ## nombres de la lista
+listado=nombres[grep(averiguar,nombres)]
+listado
+as.character(listado[33])

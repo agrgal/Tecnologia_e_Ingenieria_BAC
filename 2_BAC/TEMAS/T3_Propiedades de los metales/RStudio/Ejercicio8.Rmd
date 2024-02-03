@@ -1,0 +1,48 @@
+---
+title: "Ejercicio 8 . Densidad del Oro"
+author: "Aurelio Gallardo Rodríguez"
+date: "3 de Septiembre de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 63. Everest. Ej. 6. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 8. Densidad del Oro.
+<p style="text-align:justify;">
+Calcular la densidad del oro sabiendo que su radio atómico es de R=1.44 Å, que empaqueta en una red FCC y su masa atómica es de 197 g/mol
+</p>
+<hr>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+nat=4 ## número de átomos
+mat=set_units(197,g/mol) ## masa atómica
+NumA=set_units(6.022e23,1/mol) ## Número de avogadro
+R=set_units(1.44,Å) ## tamaño celda en angstrong
+units(R)=with(ud_units,cm)
+## Volumen de celda
+Vcelda = (4*R/sqrt(2))^3
+## Masa de celda
+mcelda=nat*mat/NumA
+## densidad
+d=mcelda / Vcelda
+```
+<p style="text-align:justify;">
+El sistema es FCC luego tenemos 4 átomos por celda. El volumen de la celda en este caso es $V_{celda}={\left ( \frac{4 \cdot R}{ \sqrt{2}} \right )} ^3$
+$$\rho = \frac{m_{celda}}{V_{celda}}=\frac{n_{at} \cdot m_{at} / N_{A}}{ {\left ( \frac{4 \cdot R}{ \sqrt{2}} \right )} ^3}=\frac{ \frac {`r nat` at \cdot `r mat` g/mol}{`r NumA` at/mol}  }{`r Vcelda` cm^3} \\[2em]  \rho= `r formatC(d,digits=5,format="fg")` \cdot g/cm^3$$
+</p>
+
+
+
+

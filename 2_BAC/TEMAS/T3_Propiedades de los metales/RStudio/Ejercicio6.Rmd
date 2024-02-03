@@ -1,0 +1,47 @@
+---
+title: "Ejercicio 6. ¿Cuántos átomos?"
+author: "Aurelio Gallardo Rodríguez"
+date: "2 de septiembre de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 63. Everest. Ej. 4.  TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 6
+<p style="text-align:justify;">
+Un metal cristaliza en una red BCC. Su radio atómico es de 1.24 nm. ¿Cuántos átomos habrá en 1 cm3?
+</p>
+<hr>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+R=set_units(1.24,nm) ## tamaño celda en angstrong
+units(R)=with(ud_units,cm)
+## Volumen celda
+Vcelda= ( 4*R/sqrt(3) )^3
+## Vcelda
+Nceldas = set_units(1,cm^3) / Vcelda ## número de celdas
+nat = Nceldas * 2 ## número de átomos
+```
+<p style="text-align:justify;">
+Si la red es BCC, el número de átomos es __2__ y el volumen de la celda viene dado por la expresión $$V_{celda\,BCC}=\left (\frac{4 \cdot R}{\sqrt{3}}  \right )^3 = \\ = \left (\frac{4 \cdot `r R` \cdot cm}{\sqrt{3}}  \right )^3 = `r Vcelda` \cdot cm^3$$
+</p>
+## Solución
+<p style="text-align:justify;">
+El número de celdas que hay en un centímetro cúbico puede calcularse como 
+$$ N_{celdas}=\frac{1 \cdot cm^3}{V_{celda\,BCC}}=\frac{1 \cdot cm^3}{`r formatC(Vcelda,format="G",digits=4)` \cdot cm^3} = `r formatC(Nceldas,format="G",digits=4)` $$
+</p>
+<p style="text-align:justify;">
+Por lo tanto, como por celda hay dos átomos en la red BCC, tendremos que el número de átomos es $$N_{átomos}=2 \cdot N_{celdas}=`r nat`\;átomos $$
+</p>

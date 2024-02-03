@@ -1,0 +1,843 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+knitr
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Materiales: ensayos y medidas de propiedades.
+ Ejercicios Resueltos.
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Materiales: Ensayos Y Medidas De Propiedades, Ejercicios Resueltos.
+ By Aurelio Gallardo Rodríguez, 31667329D Is Licensed Under A Creative Commons
+ Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ejercicios Resueltos de Ensayo de tracción.
+\end_layout
+
+\begin_layout Subsection
+Ejercicio 1
+\end_layout
+
+\begin_layout Standard
+\begin_inset Graphics
+	filename ejercicios/ejercicio1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+# Tenemos los siguientes datos:
+\end_layout
+
+\begin_layout Standard
+# Diámetro de la probeta 10mm
+\end_layout
+
+\begin_layout Standard
+# Longitud de la probeta 100mm
+\end_layout
+
+\begin_layout Standard
+# instalar el paquete udunits, antes apt-get install libudunits2-dev
+\end_layout
+
+\begin_layout Standard
+library(units)
+\end_layout
+
+\begin_layout Standard
+# diámetro
+\end_layout
+
+\begin_layout Standard
+D = set_units(10,mm)
+\end_layout
+
+\begin_layout Standard
+# units(D) = with(ud_units,m) #convierte la unidad a metros
+\end_layout
+
+\begin_layout Standard
+S0=pi*((D/2)^2) # calculo de la superficie S0
+\end_layout
+
+\begin_layout Standard
+# Longitud
+\end_layout
+
+\begin_layout Standard
+L0 = set_units(100,mm)
+\end_layout
+
+\begin_layout Standard
+units(L0) = with(ud_units,m) #convierte la unidad a metros
+\end_layout
+
+\begin_layout Standard
+# Limite proporcional
+\end_layout
+
+\begin_layout Standard
+Fp = set_units(3,kN)
+\end_layout
+
+\begin_layout Standard
+Lp = set_units(0.2,mm)
+\end_layout
+
+\begin_layout Standard
+Sigp = Fp / S0
+\end_layout
+
+\begin_layout Standard
+units(Sigp) = with(ud_units, N/m^2)
+\end_layout
+
+\begin_layout Standard
+Ep = Lp / L0
+\end_layout
+
+\begin_layout Standard
+# Limite elástico
+\end_layout
+
+\begin_layout Standard
+Fe = set_units(3.2,kN)
+\end_layout
+
+\begin_layout Standard
+Le = set_units(0.22,mm)
+\end_layout
+
+\begin_layout Standard
+Sige = Fe / S0
+\end_layout
+
+\begin_layout Standard
+units(Sige) = with(ud_units, N/m^2)
+\end_layout
+
+\begin_layout Standard
+Ee = Le / L0
+\end_layout
+
+\begin_layout Standard
+# Resistencia a la tracción
+\end_layout
+
+\begin_layout Standard
+FR = set_units(16,kN)
+\end_layout
+
+\begin_layout Standard
+LR = set_units(4,mm)
+\end_layout
+
+\begin_layout Standard
+SigR = FR / S0
+\end_layout
+
+\begin_layout Standard
+units(SigR) = with(ud_units, N/m^2)
+\end_layout
+
+\begin_layout Standard
+ER = LR / L0
+\end_layout
+
+\begin_layout Standard
+# Resistencia a la rotura
+\end_layout
+
+\begin_layout Standard
+FU = set_units(14,kN)
+\end_layout
+
+\begin_layout Standard
+LU = set_units(4.5,mm)
+\end_layout
+
+\begin_layout Standard
+SigU = FU / S0
+\end_layout
+
+\begin_layout Standard
+units(SigU) = with(ud_units, N/m^2)
+\end_layout
+
+\begin_layout Standard
+EU = LU / L0
+\end_layout
+
+\begin_layout Standard
+# representando
+\end_layout
+
+\begin_layout Standard
+epsilon = c(Ep,Ee,ER,EU)
+\end_layout
+
+\begin_layout Standard
+sigma = c(Sigp,Sige,SigR,SigU)
+\end_layout
+
+\begin_layout Standard
+plot(epsilon,sigma
+\end_layout
+
+\begin_layout Standard
+,pch=22,col="blue"
+\end_layout
+
+\begin_layout Standard
+,main="Ensayo de tracción - Ejercicio 1"
+\end_layout
+
+\begin_layout Standard
+,xlim=c(0,0.05), ylim=c(0,2.1e+8))
+\end_layout
+
+\begin_layout Standard
+segments(0,1,Ep,Sigp,col="red")
+\end_layout
+
+\begin_layout Standard
+segments(Ee,Sige,Ep,Sigp,col="red")
+\end_layout
+
+\begin_layout Standard
+segments(Ee,Sige,ER,SigR,col="red")
+\end_layout
+
+\begin_layout Standard
+segments(EU,SigU,ER,SigR,col="red")
+\end_layout
+
+\begin_layout Standard
+# Módulo de young 
+\end_layout
+
+\begin_layout Standard
+E = Sigp / Ep
+\end_layout
+
+\begin_layout Standard
+cat("El módulo de Young es E = ", as.character(E),as_cf(E))
+\end_layout
+
+\begin_layout Standard
+units(E) = with(ud_units,GPa)
+\end_layout
+
+\begin_layout Standard
+cat("El módulo de Young es E = ", as.character(E),as_cf(E))
+\end_layout
+
+\begin_layout Standard
+# texto
+\end_layout
+
+\begin_layout Standard
+sigma2=sigma
+\end_layout
+
+\begin_layout Standard
+units(sigma)= with(ud_units,MPa) #lo pongo en Mega Pascales
+\end_layout
+
+\begin_layout Standard
+etiquetas = paste0(
+\end_layout
+
+\begin_layout Standard
+"(",
+\end_layout
+
+\begin_layout Standard
+round(epsilon,4),
+\end_layout
+
+\begin_layout Standard
+" , ",
+\end_layout
+
+\begin_layout Standard
+round(sigma,2),
+\end_layout
+
+\begin_layout Standard
+as_cf(sigma),
+\end_layout
+
+\begin_layout Standard
+")")
+\end_layout
+
+\begin_layout Standard
+posiciones=c(1,3,2,1)
+\end_layout
+
+\begin_layout Standard
+text(epsilon,sigma2,etiquetas,col="blue",pos=posiciones,cex=0.8)
+\end_layout
+
+\begin_layout Standard
+text(0.03,sigma2[1],paste0("El módulo de Young es E = ", as.character(round(E,2)),
+as_cf(E)),col="black")
+\end_layout
+
+\begin_layout Subsection
+Ejercicio 2
+\end_layout
+
+\begin_layout Standard
+Añadir al script anterior de R STUDIO lo siguiente
+\end_layout
+
+\begin_layout Standard
+# Trabajo bajo la curva
+\end_layout
+
+\begin_layout Standard
+W1=Fp*Lp/2
+\end_layout
+
+\begin_layout Standard
+W2=Fp*(Le-Lp)
+\end_layout
+
+\begin_layout Standard
+W3=(Fe-Fp)*(Le-Lp)/2
+\end_layout
+
+\begin_layout Standard
+W4=Fe*(LR-Le)
+\end_layout
+
+\begin_layout Standard
+W5=(FR-Fe)*(LR-Le)/2
+\end_layout
+
+\begin_layout Standard
+W6=FU*(LU-LR)
+\end_layout
+
+\begin_layout Standard
+W7=(FR-FU)*(LU-LR)/2
+\end_layout
+
+\begin_layout Standard
+W=W1+W2+W3+W4+W5+W6+W7
+\end_layout
+
+\begin_layout Standard
+units(W)=with(ud_units,J)
+\end_layout
+
+\begin_layout Standard
+cat("El trabajo realizado es W=",as.character(W),as_cf(W))
+\end_layout
+
+\begin_layout Standard
+text(0.03,sigma2[1]/2,paste0("El trabajo realizado es W=",as.character(W),as_cf(W)
+),col="black")
+\end_layout
+
+\begin_layout Subsection
+Ejercicio 3
+\end_layout
+
+\begin_layout Standard
+\begin_inset Flex Chunk
+status collapsed
+
+\begin_layout Plain Layout
+
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+
+\lang english
+calculando3, echo=TRUE, results='markup', warnings=FALSE, message=FALSE
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Barra cuadrada
+\end_layout
+
+\begin_layout Plain Layout
+
+# instalar el paquete udunits, antes apt-get install libudunits2-dev
+\end_layout
+
+\begin_layout Plain Layout
+
+library(units)
+\end_layout
+
+\begin_layout Plain Layout
+
+# Lado y L0
+\end_layout
+
+\begin_layout Plain Layout
+
+a = set_units(1,cm)
+\end_layout
+
+\begin_layout Plain Layout
+
+L0 = set_units(10,cm)
+\end_layout
+
+\begin_layout Plain Layout
+
+# Superficie
+\end_layout
+
+\begin_layout Plain Layout
+
+S0=a^2 # Ya que es cuadrado
+\end_layout
+
+\begin_layout Plain Layout
+
+# Fuerza de Tracción
+\end_layout
+
+\begin_layout Plain Layout
+
+F = set_units(8,kN)
+\end_layout
+
+\begin_layout Plain Layout
+
+# Módulo de Young
+\end_layout
+
+\begin_layout Plain Layout
+
+E=set_units(2,MN/cm^2)
+\end_layout
+
+\begin_layout Plain Layout
+
+# Límite de proporcionalidad
+\end_layout
+
+\begin_layout Plain Layout
+
+SigP =set_units(100,MPa)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# --- Resolución ----
+\end_layout
+
+\begin_layout Plain Layout
+
+Sigma = F / S0
+\end_layout
+
+\begin_layout Plain Layout
+
+epsilon = Sigma / E
+\end_layout
+
+\begin_layout Plain Layout
+
+units(Sigma)=with(ud_units,MPa)
+\end_layout
+
+\begin_layout Plain Layout
+
+deltaL=epsilon*L0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+# Carga de 80 kN
+\end_layout
+
+\begin_layout Plain Layout
+
+F2 = set_units(80,kN)
+\end_layout
+
+\begin_layout Plain Layout
+
+Sigma2 = F2 /S0
+\end_layout
+
+\begin_layout Plain Layout
+
+Sigma2
+\end_layout
+
+\begin_layout Plain Layout
+
+units(Sigma2)=with(ud_units,MPa) # cambiar a Mega Pascales
+\end_layout
+
+\begin_layout Plain Layout
+
+Sigma2
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Probando 
+\begin_inset Flex S/R expression
+status open
+
+\begin_layout Plain Layout
+
+Sigma
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ejercicio 4
+\end_layout
+
+\end_body
+\end_document

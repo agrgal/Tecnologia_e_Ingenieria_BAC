@@ -1,0 +1,5244 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{mhchem}
+\usepackage[titletoc]{appendix}
+\usepackage{colortbl} % colores de las tablas
+
+% Colores de las secciones y reglas.
+\usepackage{sectsty,ulem}
+% Del paquete sectsty
+% \allsectionsfont{\raggedleft} no lo entiendo. No parece afectar. raggedright, centering
+% \allsectionsfont{\raggedright\sffamily\underline} %. OK. Este solo funciona si después los demás NO se definen por separado.
+% underline también funciona con paragraph, pero hay que usar el paquete ulem
+% \allsectionsfont{\raggedright\ulemheading{\uuline}}. Usando underline con el paquete ulem; subrayado doble.
+\definecolor{Muyazul}{rgb}{0.1,0.1,0.5}
+\definecolor{Muyverde}{rgb}{0.1,0.5,0.1}
+\definecolor{Morado}{rgb}{0.43,0.07,1}
+\sectionfont{\color{Muyazul}\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}  % sets colour of sections
+% \sectionfont{\color{Muyazul}\noindent\fbox}  % sets colour of sections
+\subsectionfont{\color{Morado}\sectionrule{0pt}{0pt}{-5pt}{0.8pt}}  % sets colour of subsections
+\subsubsectionfont{\color{Muyverde}}  % sets colour of subsubsections
+\paragraphfont{\color{Muyverde}\underline}  % sets colour of sections
+
+% enumeraciones
+% Ver opciones de enumeración
+
+% Tabla de contenidos
+\usepackage{tocloft}
+% \renewcommand{\cftsecfont}{\bfseries\scshape{Sección }}
+\renewcommand{\cftsecfont}{\scshape\bfseries} % o \normalfont en vez de \scshape
+% \renewcommand{\cftchapfont}{\scshape\bfseries} % Creo que no funciona porque no hay definidos capitulos
+\renewcommand{\cftsubsecfont}{\scshape\bfseries}
+\renewcommand{\cftsubsubsecfont}{\scshape\bfseries}
+\renewcommand{\cftdotsep}{5} %Separación de los puntitos con las páginas
+\renewcommand{\cftsecleader}{\bfseries\cftdotfill{\cftsecdotsep}} % Puntos en bold. NO LO ENTIENDO MUY BIEN
+
+% Figuras y Tablas
+% \renewcommand{\cftfigfont}{Figure }
+% \renewcommand{\cfttabfont}{Table }
+
+% \renewcommand{\cftchapfont}{\normalfont\bfseries}% titles in bold
+% \renewcommand{\cftchappagefont}{\normalfont\bfseries}% page numbers in bold
+% \renewcommand{\cftdotsep}{1}
+% \renewcommand{\cftchapleader}{\bfseries\cftdotfill{\cftsecdotsep}}% dot leaders in bold
+
+% Si en la configuración activo (propiedades PDF) Hyperref, sale en rojo los enlaces.
+% Lo hago desde aquí
+\usepackage[breaklinks,colorlinks=true,linkcolor=Morado,
+citecolor=black, urlcolor=Muyazul]{hyperref}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "libertine-ntxm" "auto"
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing single
+\use_hyperref false
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 0 10 -1
+\bullet 1 0 15 -1
+\bullet 2 5 27 -1
+\bullet 3 2 7 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Propriedades de los Metales
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename /home/aurelio/Escritorio/TINII/Materiales_tema_1/imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Propiedades de los Metales By Aurelio Gallardo Rodríguez, 31667329D Is Licensed
+ Under A Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internaci
+onal License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addtocontents{toc}{~
+\backslash
+hfill
+\backslash
+textbf{Página}
+\backslash
+par}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Añade página a la tabla de contenido, a la derecha
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{tocdepth}{2}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Quotes fld
+\end_inset
+
+profundidad
+\begin_inset Quotes frd
+\end_inset
+
+ de las entradas en el índice de contenido.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Para añadir una sección a la tabla de contenidos manualmente 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+addcontentsline{toc}{section}{Mi seccion}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+appendixname}{Apéndice}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El progreso de la humanidad siempre ha ido en paralelo al desarrollo de
+ la metalurgia.
+ No en balde, las épocas prehistóricas han sido llamadas la Edad del Bronce
+ o la Edad del Hierro.
+ Abordaremos en este tema cuáles son las propiedades más sobresalientes
+ de los metales, su importancia, y cómo podemos potenciar sus propiedades
+ en base al estudio de su estructura interna.
+\end_layout
+
+\begin_layout Paragraph
+Generalidades
+\end_layout
+
+\begin_layout Standard
+En general, los metales presentan una serie de características:
+\end_layout
+
+\begin_layout Itemize
+Son buenos conductores térmicos y eléctricos.
+\end_layout
+
+\begin_layout Itemize
+Suelen ser resistentes mecánicamente.
+\end_layout
+
+\begin_layout Itemize
+Gran plasticidad, ductilidad y tenacidad: es decir, una gran capacidad de
+ deformación antes de romperse.
+\end_layout
+
+\begin_layout Itemize
+Muy maleables.
+\end_layout
+
+\begin_layout Itemize
+Pueden ser reciclados, ya que se pueden fundir y conformar de nuevo.
+\end_layout
+
+\begin_layout Section
+Estructura interna
+\end_layout
+
+\begin_layout Standard
+Los átomos en un metal se encuentran 
+\begin_inset Quotes fld
+\end_inset
+
+muy empaquetados
+\begin_inset Quotes frd
+\end_inset
+
+ o próximos entre sí, formando disposiciones geométricas en tres dimensiones
+ que se repiten.
+ Estas estructuras tridimensionales se denominan 
+\series bold
+cristales
+\series default
+ (
+\series bold
+estado cristalino
+\series default
+) de los metales.
+ Además de los metales, forman estructuras cristalinas las aleaciones metálicas,
+ algunas cerámicas y algunos polímeros 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "par:Estado-amorfo"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Los átomos en una estructura cristalina se mantienen unidos gracias a un
+ tipo de enlace llamado 
+\series bold
+enlace metálico
+\series default
+ (los otros dos tipos de enlaces son el iónico y el covalente).
+ En el enlace metálico los electrones de mayor energía de las últimas capas
+ están deslocalizados, es decir, no pertenecen a ningún átomo concreto y
+ son 
+\begin_inset Quotes fld
+\end_inset
+
+compartidos
+\begin_inset Quotes frd
+\end_inset
+
+ por toda la estructura cristalina (llamada 
+\series bold
+nube electrónica
+\series default
+).
+ Los electrones así deslocalizados explican la alta conductividad térmica
+ y eléctrica, ya que tienen mucha movilidad.
+ 
+\end_layout
+
+\begin_layout Subsection
+Estructura cristalina
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tres_planos_puntos.jpg
+	lyxscale 25
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tres planos se cortan en un punto
+\begin_inset CommandInset label
+LatexCommand label
+name "fig: Figura-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+En la figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig: Figura-1"
+
+\end_inset
+
+, podemos observar cómo tres planos en el espacio (
+\begin_inset Formula $\alpha,\beta\;y\;\gamma$
+\end_inset
+
+) se cortan en un punto.
+ Podemos pues considerar que en una estructura cristalina existen 3 familias
+ de planos, paralelos, que se repiten indefinidamente en el espacio.
+ Todos los puntos así formados es lo que llamamos una 
+\series bold
+red puntual tridimensional
+\series default
+.
+ Una propiedad de esta red es que un punto cualesquiera tiene los mismos
+ vecinos alrededor, dispuestos de la misma manera, por lo que podemos identifica
+r a la red por simplemente una porción pequeña de la misma que consideramos
+ se repite: es la 
+\series bold
+celda unidad
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/celda_unidad.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda unidad.
+ Vectores y ángulos.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Matemáticamente la celda unidad queda definida por seis parámetros: tres
+ vectores 
+\begin_inset Formula $\vec{a}$
+\end_inset
+
+, 
+\begin_inset Formula $\vec{b}$
+\end_inset
+
+ y 
+\begin_inset Formula $\vec{c}$
+\end_inset
+
+ o ejes cristalográficos y tres ángulos (
+\begin_inset Formula $\alpha,\beta\;y\;\gamma$
+\end_inset
+
+)
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+No confundir con el nombre de los planos en la figura anterior.
+\end_layout
+
+\end_inset
+
+ que forman los vectores entre sí.
+ Modificando estos parámetros obtenemos los siete primeros tipos posibles
+ de redes cristalinas.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+Las redes cristalinas (celdas primitivas) son:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/tema3_redes_cristalinas_simples.png
+	lyxscale 25
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Redes cristalinas: celdas primitivas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero además, el físico y mineralogista francés Auguste Bravais , que estudió
+ estas redes cristalinas encontró variaciones de las mismas que cumplían
+ con las leyes de la vecindad.
+ 
+\shape italic
+\color blue
+En estos casos los átomos no se disponían sólo en los vértices, sino en
+ otros lugares
+\shape default
+\color inherit
+.
+ A las celdas de las redes cristalinas ya descubiertas las llamó 
+\series bold
+celdas primitivas
+\series default
+ y a estas nuevas celdas 
+\series bold
+no primitivas
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Podía existir un átomo justo en el centro de la celda (
+\series bold
+\color brown
+centrada en el cuerpo
+\series default
+\color inherit
+).
+ Podía haber un átomo justo en el centro de cada cara (
+\series bold
+\color brown
+centrada en las caras
+\series default
+\color inherit
+) o podía haber un átomo centrado en caras opuestas (
+\series bold
+\color brown
+centrada en la base
+\series default
+\color inherit
+).
+ En total se encontraron en la Naturaleza 14 redes cristalinas correspondientes
+ a 14 celdas unidad, y son llamadas 
+\series bold
+redes de Bravais
+\series default
+.
+ Además de las 7 celdas primitivas ya encontradas , las otras siete son:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/tema3_redes_cristalinas_de_Bravais.png
+	lyxscale 20
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celdas no primitivas, que completan las catorce redes de Bravais
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La mayor parte de los metales (aproximadamente un 90%) tienen una estructura
+ cristalina correspondiente a dos redes cristalinas simples (de Bravais)
+ y a una red cristalina más compleja.
+ En una red cristalina compleja los átomos no se disponen exactamente en
+ los lugares que antes hemos descrito sino en posiciones respecto a esos
+ lugares.
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "30col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/HCP.gif
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+HCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+BCC
+\series default
+: cúbica centrada en el cuerpo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+FCC
+\series default
+: cúbica centrada en las caras.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+HCP
+\series default
+: hexagonal compacta.
+\end_layout
+
+\begin_layout Standard
+Estas estructuras son densamente empaquetadas y los átomos están muy próximos
+ entre sí.
+ La energía liberada por los átomos al formar el cristal es mayor si el
+ empaquetamiento es denso.
+ 
+\end_layout
+
+\begin_layout Standard
+En lo que sigue siempre consideraremos que los átomos son esferas rígidas
+ situados en puntos de una red tridimensional.
+ Esta simplificación es útil para escribir las estructuras cristalinas aunque
+ no es exacta.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="18" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+\color blue
+Elemento
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+\color blue
+Red cristalina 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+\color blue
+Radio atómico (Å)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+\color blue
+Dimensión de la red a (Å)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Aluminio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,431
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+4,049
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Berilio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+HCP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,142
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,286
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Cromo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+BCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,249
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,884
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Cobalto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+HCP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,254
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,507
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Cobre
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,278
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,615
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Oro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,441
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+4,079
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Hierro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+BCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,241
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,866
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Plomo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+4,951
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Magnesio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+HCP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,604
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,209
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Níquel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,246
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,524
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Paladio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,375
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,89
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Platino
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,388
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,923
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Potasio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+BCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,312
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+5,334
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Plata
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,444
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+4,086
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Titanio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+HCP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,475
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,95
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Vanadio
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+BCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,316
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+3,039
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\series bold
+\size scriptsize
+Cinc
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+HCP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+1,332
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family sans
+\size scriptsize
+2,665
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla de metales con sus redes, radio atómico y dimensión de la red
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estructura cristalina BCC
+\end_layout
+
+\begin_layout Standard
+En la estructura cristalina BCC (body centered cubic - cúbica centrada en
+ el cuerpo) los átomos se encuentran en los vértices y en el centro del
+ cubo.
+ El átomo central está rodeado por 8 átomos, luego su
+\series bold
+ índice de coordinación
+\series default
+ es 8.
+\end_layout
+
+\begin_layout Subsubsection
+Número de átomos por celda.
+\end_layout
+
+\begin_layout Itemize
+Cada átomo de cada vértice pertenece a 8 celdas, luego a cada celda corresponde
+ un átomo de ocho: 
+\begin_inset Formula $N_{v}/8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Cada átomo de cada cara pertenece a 2 celdas, luego a cada celda corresponde
+ un átomo de dos: 
+\begin_inset Formula $N_{c}/8$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El átomo central o interior pertenece a la celda: 
+\begin_inset Formula $N_{i}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Luego en general, el número de átomos que pertenece a una celda es: 
+\begin_inset Formula $N=N_{i}+N_{c}/2+N_{v}/8$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+En el caso de una red BCC tenemos que son 
+\series bold
+2 átomos por celda
+\series default
+: 
+\begin_inset Formula $N=N_{i}+N_{c}/2+N_{v}/8=1+0/2+8/8=2$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tamaño de la celda unidad según el radio atómico
+\end_layout
+
+\begin_layout Standard
+De la figura se desprende fácilmente que el tamaño de la celda (a) en función
+ del radio atómico (R) es 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{3}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/BCC_centrada_en_el_cuerpo.png
+	lyxscale 15
+	width 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename imagenes/BCC_calculo_tamaño.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+BCC.
+ Cálculo del tamaño 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{3}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Factor de empaquetamiento atómico
+\end_layout
+
+\begin_layout Standard
+La relación entre el volumen ocupado por los átomos en la celda unidad y
+ el volumen de la celda.
+ Recordemos que la celda unidad BCC tiene 2 átomos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+FEA_{BCC}=\frac{2\cdot\frac{4}{3}\cdot\pi\cdot R^{3}}{a^{3}}=\frac{2\cdot\frac{4}{3}\cdot\pi\cdot R^{3}}{\left(\frac{4\cdot R}{\sqrt{3}}\right)^{3}}=\frac{2\cdot4\cdot\pi\cdot3^{3/2}}{3\cdot4^{3}}=\frac{\pi\cdot\sqrt{3}}{8}=0.68
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo cual nos da una relación de compactación de un 68%.
+ Los espacios huecos representan el 32%.
+ No es la estructura más compactada; hay una en la que se pueden compactar
+ aún más.
+\end_layout
+
+\begin_layout Subsection
+Estructura cristalina FCC
+\end_layout
+
+\begin_layout Standard
+En esta estructura cada átomo se rodea por 12 vecinos más próximos.
+ 
+\series bold
+Su índice de coordinación es 12
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Número de átomos por celda.
+\end_layout
+
+\begin_layout Itemize
+Tenemos 8 átomos en los vértices, ninguno en el interior y 6 en cada una
+ de las seis caras.
+\end_layout
+
+\begin_layout Itemize
+En el caso de una red FCC tenemos que son 
+\series bold
+4 átomos por celda
+\series default
+: 
+\begin_inset Formula $N=N_{i}+N_{c}/2+N_{v}/8=0+6/2+8/8=4$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tamaño de la celda unidad según el radio atómico
+\end_layout
+
+\begin_layout Standard
+De la figura se desprende fácilmente que el tamaño de la celda (a) en función
+ del radio atómico (R) es 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{2}}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/celda_FCC.png
+	lyxscale 15
+	width 3cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename imagenes/tamaño_FCC.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FCC.
+ Cálculo del tamaño 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Factor de empaquetamiento atómico
+\end_layout
+
+\begin_layout Standard
+La relación entre el volumen ocupado por los átomos en la celda unidad y
+ el volumen de la celda.
+ Recordemos que la celda unidad FCC tiene 4 átomos.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+FEA_{FCC}=\frac{4\cdot\frac{4}{3}\cdot\pi\cdot R^{3}}{a^{3}}=\frac{4\cdot\frac{4}{3}\cdot\pi\cdot R^{3}}{\left(\frac{4\cdot R}{\sqrt{2}}\right)^{3}}=\frac{4\cdot4\cdot\pi\cdot2^{3/2}}{3\cdot4^{3}}=\frac{\pi\cdot\sqrt{2}}{6}=0.74
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Lo cual nos da una relación de compactación de un 74%.
+ Los espacios huecos representan el 26%.
+ Esta estructura es la más compactada, ya que los átomos considerados como
+ esferas rígidas ya no pueden estar más próximos entre sí.
+\end_layout
+
+\begin_layout Paragraph
+Forma de empaquetarse
+\end_layout
+
+\begin_layout Standard
+Imagina una mesa de billar y las llenas de bolas.
+ Esta capa de bolas la llamas capa A.
+ Ahora, en los intersticios de las bolas dejas caer otra nueva capa de bolas
+ (capa B) y sobre ella otra capa (capa C).
+ A partir de la tercera capa, vuelve a repetirse ABCABCABC...
+ Esta imagen visual representa muy bien la estructura FCC.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Secuencia_FCC.png
+	lyxscale 20
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Secuencia de planos FCC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Estructura cristalina hexagonal compacta (HCP)
+\end_layout
+
+\begin_layout Standard
+En esta estructura tenemos un átomo en cada vértice de la celda, en el centro
+ de las bases y tres átomos más.
+ Al igual que la FCC cada átomo se rodea por 12 vecinos más próximos y por
+ tanto 
+\series bold
+su índice de coordinación es también 12
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/hcp.jpeg
+	lyxscale 20
+	width 8cm
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/HCP_tamaño_2.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Red-HCP"
+
+\end_inset
+
+Red HCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Número de átomos por celda.
+\end_layout
+
+\begin_layout Itemize
+Tenemos en el interior de la celda 3 átomos, 2 átomos en las caras base
+ compartidos con dos celdas, y 12 átomos en los vértices compartidos con
+ seis celdas.
+\end_layout
+
+\begin_layout Itemize
+En el caso de una red HCP tenemos que son 
+\series bold
+6 átomos por celda
+\series default
+: 
+\begin_inset Formula $N=N_{i}+N_{c}/2+N_{v}/6=3+2/2+12/6=6$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Tamaño de la celda unidad según el radio atómico
+\end_layout
+
+\begin_layout Standard
+De la figura 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Red-HCP"
+
+\end_inset
+
+ se desprende fácilmente que el tamaño de la celda (a) en función del radio
+ atómico (R) es 
+\begin_inset Formula $a=2\cdot R$
+\end_inset
+
+ ; para ello nos fijamos en la base.
+ La máxima compactación se da cuando dos átomos ocupan los vértices de la
+ base y 
+\begin_inset Quotes fld
+\end_inset
+
+se tocan
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Factor de empaquetamiento atómico
+\end_layout
+
+\begin_layout Standard
+Tendríamos que realizar una serie de cálculos...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/area_base_hcp_con_apotema.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename imagenes/apotema.png
+	lyxscale 10
+	width 6cm
+
+\end_inset
+
+ 
+\begin_inset Graphics
+	filename imagenes/TETRAEDRO-1.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:apotema"
+
+\end_inset
+
+Área de la base.
+ Cálculo de la apotema.
+ Altura de un tetraedro regular.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Volumen de los átomos de la celda:
+\series default
+ hemos considerado que tenemos 6 átomos por celda luego 
+\begin_inset Formula $V_{átomos}=6\cdot\frac{4}{3}\cdot\pi\cdot R^{3}=8\cdot\pi\cdot R^{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Volumen de la celda:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+Área de la base hexagonal:
+\series default
+ El área de la base de un hexágono sería 6 veces el área del triángulo de
+ la figura 10 donde tenemos la apotema 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:apotema"
+
+\end_inset
+
+.
+ Luego calculamos el área como 
+\begin_inset Formula $A=6\cdot2\cdot\frac{b\cdot h}{2}=6\cdot2\cdot\frac{R\cdot\sqrt{3}\cdot R}{2}=6\sqrt{3}R^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+La altura de un tetraedro regular
+\series default
+, una figura geométrica de 4 triángulos iguales de arista 
+\series bold
+a
+\series default
+, sería: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+La altura 
+\series bold
+h
+\series default
+ de una de sus caras: 
+\begin_inset Formula $h^{2}=a^{2}-\left(\frac{a}{2}\right)^{2}=\frac{3}{4}\cdot a^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+La altura 
+\series bold
+H
+\series default
+ del tetraedro: 
+\begin_inset Formula $H^{2}=h^{2}-\left(\frac{h}{3}\right)^{2}=\frac{8}{9}\cdot h^{2}=\frac{8}{9}\cdot\frac{3}{4}\cdot a^{2}=\frac{2}{3}\cdot a^{2}$
+\end_inset
+
+ luego tenemos que 
+\begin_inset Formula $H=\sqrt{\frac{2}{3}}\cdot a$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+La altura de la celda sería 2H
+\series default
+, ya que forma un tetraedro cada uno de los átomos centrales con tres átomos
+ de las caras tanto arriba como abajo.
+ 
+\begin_inset Formula $H_{celda}=2H=2\cdot\sqrt{\frac{2}{3}}\cdot a$
+\end_inset
+
+ y si la arista a equivale a 2R, tendremos que 
+\begin_inset Formula $H_{celda}=4\cdot\sqrt{\frac{2}{3}}\cdot R=\frac{4R\sqrt{6}}{3}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Por fin el volumen de la celda es área por altura: 
+\begin_inset Formula $V_{celda}=A\cdot H_{celda}=\left(6\sqrt{3}R^{2}\right)\cdot\left(\frac{4R\sqrt{6}}{3}\right)=24\cdot\sqrt{2}\cdot R^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+
+\series bold
+El factor de empaquetamiento atómico es
+\series default
+: 
+\begin_inset Formula $FEA_{HCP}=\frac{V_{átomos}}{V_{celda}}=\frac{8\cdot\pi\cdot R^{3}}{24\cdot\sqrt{2}\cdot R^{3}}=\frac{\pi}{3\cdot\sqrt{2}}=\mathbf{0.74}$
+\end_inset
+
+, un factor de empaquetamiento muy parecido al de la red FCC.
+ Ambas estructuras son densamente empaquetadas.
+\end_layout
+
+\begin_layout Standard
+En la siguiente imagen se muestran bien los planos de apilamientos en las
+ redes FCC y HCP.
+ En esta última aparece una secuencia ABAB...
+ mientras que en la red FCC es del tipo ABCABC...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/HCP&FCC.jpg
+	lyxscale 20
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Planos de apilamiento, estructuras FCC y HCP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Intersticios cristalinos
+\end_layout
+
+\begin_layout Standard
+El volumen de las celdas es siempre mayor que el volumen de los átomos,
+ luego en las mismas existen huecos o 
+\series bold
+intersticios
+\series default
+.
+ Estos huecos pueden ser de dos tipos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/intersticios.png
+	lyxscale 10
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Intersticios tipos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+color{Morado}{
+\backslash
+textbf{
+\backslash
+alph*})}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Octaédricos: rodeados por seis átomos.
+ 
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Con esas opciones de numeración letras, en negrita.
+ y con color, definido en el preámbulo, encima de colores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Tetraédricos: rodeados por cuatro átomos.
+\end_layout
+
+\begin_layout Subsubsection
+Red FCC.
+ Intersticios o huecos octaédricos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement i
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/hueo_octaedrico_FCC.jpeg
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+FCC.
+ Intersticios Octaédricos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Se sitúan en el centro del cubo y en el centro de las aristas.
+ En cada celda existe un hueco interior y doce aristas (compartida cada
+ arista por cuatro celdas) luego corresponden 4 huecos por celda.
+ 
+\end_layout
+
+\begin_layout Standard
+Fijémonos en el hueco central: El tamaño de la celda a debe ser igual al
+ tamaño de dos radios 
+\begin_inset Quotes fld
+\end_inset
+
+R
+\begin_inset Quotes frd
+\end_inset
+
+ de los átomos de la misma más el tamaño del hueco 
+\begin_inset Formula $2R_{i}$
+\end_inset
+
+, por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+2R+2R_{i}=a
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y como sabíamos que para la red FCC el tamaño de la celda es de 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{2}}$
+\end_inset
+
+ , podemos deducir la relación entre los radios del átomo y del hueco.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\frac{R_{i}}{R}=\sqrt{2}-1=\mathbf{0.41}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto cabe preguntarse...
+ ¿Podría caber en ese hueco un átomo distinto al de la red cristalina de
+ tamaño un 41% menor que los de la red?
+\end_layout
+
+\begin_layout Subsubsection
+Red FCC.
+ Intersticios o huecos tetraédricos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement R
+overhang 0in
+width "20page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/huecos_intersticiales_tetraedricos_FCC.png
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Intersticios tetraédricos FCC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Los huecos tetraédricos se forman entre tres átomos del centro de las caras
+ y uno de las aristas.
+ Si cada celda se subdivide en 8 cubos, existirán 8 huecos de este tipo.
+ En la figura , los huecos se representan por círculos blancos.
+ 
+\end_layout
+
+\begin_layout Standard
+Como teníamos en la red FCC 4 átomos por celda y hay 8 huecos tetraédricos,
+ tenemos dos huecos por átomo.
+ 
+\end_layout
+
+\begin_layout Itemize
+De esquina a esquina en la celda FCC, la diagonal del cubo es 
+\begin_inset Formula $\sqrt{3}\cdot a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En esa diagonal, a un cuarto de la misma encontramos el primer hueco.
+ Luego la distancia 
+\begin_inset Formula $R+R_{i}=\frac{\sqrt{3}}{4}\cdot a=\frac{\sqrt{3}}{4}\cdot\frac{4\cdot R}{\sqrt{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Y tenemos que: 
+\begin_inset Formula $\frac{R_{i}}{R}=\frac{\sqrt{3}}{\sqrt{2}}-1=\mathbf{0.225}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Red HCP
+\end_layout
+
+\begin_layout Standard
+Sin entrar en más detalles, los huecos o intersticios tanto octaédricos
+ como tetraédricos tienen el mismo comportamiento que en la red FCC, con
+ la misma relación de tamaño: 
+\begin_inset Formula $R_{i}/R=0.41$
+\end_inset
+
+para los octaédricos y 
+\begin_inset Formula $R_{i}/R=0.225$
+\end_inset
+
+ para los tetraédricos.
+\end_layout
+
+\begin_layout Subsubsection
+Red BCC
+\end_layout
+
+\begin_layout Standard
+Recordamos primero que el número de átomos por celda es 2.
+ Además, en una red BCC 
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{3}}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Paragraph
+Red BCC.
+ Intersticios octaédricos 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+octaédricos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Tetraédricos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/BCC_hueco_octoedrico.jpg
+	lyxscale 30
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/BCC_hueco_tetraedrico.jpg
+	lyxscale 30
+	width 3cm
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1 hueco compartido con otra cara
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4 huecos por cada cara
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Intersticios octaédricos y tetraédricos en una red BCC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+color{Morado}{
+\backslash
+textbf{
+\backslash
+arabic*}.
+ 
+\backslash
+ensuremath{
+\backslash
+Rightarrow}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Tenemos 6 huecos octaédricos (uno por cada cara) compartido con otra celda,
+ luego son 3 huecos octaédricos por celda.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Además tenemos en los centros de las aristas otros 12 posibles huecos octaédrico
+s compartidos cada uno con 4 celdas, así que 3 huecos octaédricos más por
+ celda.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+En total tenemos 6 huecos octaédricos
+\series default
+.
+ Si el número de átomos por celda es 2, tenemos que por 
+\series bold
+átomo existen 3 huecos octaédricos
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Cada hueco octaédrico está rodeado de un átomo superior e inferior, luego
+ está a una distancia 
+\begin_inset Formula $a/2=0.5a$
+\end_inset
+
+ de cada uno; y en la base del octaedro, están a una distancia menor 
+\begin_inset Formula $\frac{a\sqrt{2}}{2}=0.707a$
+\end_inset
+
+.
+ Tomando la distancia menor, a/2, tenemos que 
+\begin_inset Formula $2R+2R_{i}=a=\frac{4\cdot R}{\sqrt{3}}$
+\end_inset
+
+ con lo que 
+\begin_inset Formula $\frac{R}{R_{i}}=\frac{2}{\sqrt{3}}-1=\mathbf{0.155}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Red BCC.
+ Intersticios tetraédricos
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/BCC_hueco_tetraedrico_2.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hueco tetraédrico en red BCC.
+ Distancia al hueco.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+color{Morado}{
+\backslash
+textbf{
+\backslash
+arabic*}.
+ 
+\backslash
+ensuremath{
+\backslash
+Rightarrow}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Por otra parte, en cada cara BCC tenemos cuatro huecos tetraédricos, por
+ lo que corresponden a dos huecos por cada cara de una celda, en total 
+\series bold
+12 huecos tetraédricos por celda
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+Como tenemos 2 átomos por celda, corresponde a 
+\series bold
+6 huecos tetraédricos por átomo
+\series default
+.
+\end_layout
+
+\begin_layout Enumerate
+La distancia entre un vértice y el hueco es de 
+\begin_inset Formula $d^{2}=\left(\frac{a}{2}\right)^{2}+\left(\frac{a}{4}\right)^{2}$
+\end_inset
+
+ luego 
+\begin_inset Formula $d=\frac{\sqrt{5}}{4}a=\frac{\sqrt{5}}{4}\cdot\frac{4\cdot R}{\sqrt{3}}=\sqrt{\frac{5}{3}}R$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Por otra parte, 
+\begin_inset Formula $d=R+R_{i}=\sqrt{\frac{5}{3}}R$
+\end_inset
+
+ luego tenemos que 
+\begin_inset Formula $\frac{R}{R_{i}}=\frac{\sqrt{5}}{\sqrt{3}}-1=\mathbf{0.291}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como conclusión de la red BCC, podemos decir que aunque el factor de empaquetami
+ento es menor 
+\begin_inset Formula $FEA_{BCC}=0.68$
+\end_inset
+
+ , los huecos son menores (aunque hay más).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+extrarowheight}{4pt}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="4">
+<features tabularvalignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{cyan!25}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color blue
+Estructuras cristalinas
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{Morado!10}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Red
+\series default
+   
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+BCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+FCC
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+HCP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Morado!10}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Relación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{3}}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a=\frac{4\cdot R}{\sqrt{2}}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a=2R$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Morado!10}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Índice de coordinación
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+12
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Morado!10}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Átomos por celda
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+6
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Morado!10}
+\end_layout
+
+\end_inset
+
+
+\series bold
+FEA
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0,68
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0,74
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+0,74
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{cyan!25}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Huecos Octaédricos 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,155
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,414
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,414
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{cyan!25}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Huecos Tetraédricos
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,291 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,225
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+R¡/R = 0,225
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla resumen de las estructuras cristalinas con sus datos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Polimorfismo o alotropía
+\end_layout
+
+\begin_layout Standard
+A diferentes presiones o temperaturas un elemento químico que forma una
+ estructura cristalina puede cristalizar de otra.
+ Este fenómeno es la 
+\series bold
+alotropía
+\series default
+.
+ En caso de tener no elementos químicos sino compuestos, se le denomina
+ 
+\series bold
+polimorfismo
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, el hierro alfa (ferrita) a presión atmosférica presenta una
+ estructura BCC desde los -273ºC, pero entre los 910ºC y los 1394ºC, su
+ estructura alotrópica es FCC (hierro gamma).
+ Y desde los 1394ºC hasta la temperatura de fusión de 1538ºC vuelve a tener
+ una estructura BCC (hierro delta), pero con un tamaño mayor de celda.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tratamiento-trmico-diagramas-fec-ttt-estados-alotropicos-del-hierro-13-638.jpg
+	lyxscale 50
+	width 6cm
+	BoundingBox 0bp 0bp 469bp 352bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estados alotrópicos del hierro.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Defectos en la estructura cristalina
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/tema3_defectos_en_la_estructura_cristalina.png
+	lyxscale 30
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Defectos en la estructura cristalina
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Defectos atómicos puntuales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Defectos_puntuales.png
+	lyxscale 25
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Defectos puntuales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+color{Morado}{
+\backslash
+textbf{
+\backslash
+arabic*}.
+ 
+\backslash
+ensuremath{
+\backslash
+Rightarrow}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\series bold
+Átomos intersticiales:
+\series default
+ átomos que ocupan intersticios o huecos en las redes BCC, FCC o HCP.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Vacantes o lagunas:
+\series default
+ puntos de la red vacíos, sin ningún átomo.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Átomos extraños:
+\series default
+ átomos que no forman parte de la red cristalina, y que pueden estar en
+ vértices de la red o en los huecos (impureza).
+\end_layout
+
+\begin_layout Standard
+En un metal puro sin impurezas, la existencia de átomos intersticiales o
+ lagunas no es extraña.
+ Es más, confiere las propiedades macroscópicas del metal y le da mayor
+ estabilidad que si la red fuese perfecta.
+ Al aumentar la temperatura del metal, aumenta la agitación térmica, y la
+ concentración de átomos intersticiales y de lagunas aumenta.
+ En el cobre , a temperatura ambiente, hay un 
+\begin_inset Formula $10^{-13}\%$
+\end_inset
+
+ de este tipo de defectos y cerca de su punto de fusión aumenta al 0.1%.
+\end_layout
+
+\begin_layout Subsubsection
+Difusión
+\end_layout
+
+\begin_layout Standard
+Consiste, en los metales, el desplazamiento de átomos de sus posiciones
+ de equilibrio a otras posiciones, al existir una diferencia de concentraciones
+ átomicas.
+ Los átomos suelen alcanzar una nueva posición de equilibrio en el que la
+ concentración atómica se homogeneiza.
+ 
+\end_layout
+
+\begin_layout Standard
+Al aumentar la temperatura e incrementar la agitación térmica, se producen
+ diferencias locales de concentración y se favorece la difusión atómica.
+ También favorece la difusión átómica la presencia de vacantes, ya que la
+ energía necesaria que necesita un átomo para moverse a la posición de un
+ átomo de la red es mucho mayor que la que necesita para moverse a una vacante
+ o laguna.
+ 
+\end_layout
+
+\begin_layout Standard
+Los átomos intersticiales (pequeños en comparación con los átomos de la
+ red) también pueden moverse de hueco en hueco.
+ Por ejemplo, en el acero, los átomos de carbono más pequeños que los de
+ hierro, se difunden entre los intersticios de los mismos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Defectos atómicos lineales
+\end_layout
+
+\begin_layout Standard
+Son defectos de la red cristalina en los que la longitud es mucho mayor
+ que la anchura.
+ Los defectos más importantes se llaman 
+\series bold
+dislocaciones
+\series default
+, y pueden ser de dos tipos:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+setlength{
+\backslash
+extrarowheight}{4pt}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0pt">
+<column alignment="center" valignment="top" width="0pt">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Muyverde!25}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color teal
+En cuña o en borde
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Muyverde!25}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color teal
+En hélice
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 0
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "2pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "teal"
+backgroundcolor "teal"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/dislocación en cuña o borde.jpg
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Boxed
+position "t"
+hor_pos "c"
+has_inner_box 0
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width ""
+special "none"
+height "1in"
+height_special "totalheight"
+thickness "2pt"
+separation "3pt"
+shadowsize "4pt"
+framecolor "teal"
+backgroundcolor "teal"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/screw_dislocation.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+De Wikityke de la Wikipedia en inglés, CC BY-SA 3.0 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size scriptsize
+\begin_inset Flex URL
+status collapsed
+
+\begin_layout Plain Layout
+
+http://education.sptech.xyz/screw_dislocation.gif
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tipos de dislocaciones
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La existencia de dislocaciones no se sostiene bajo un punto de vista energético,
+ luego se producen por desequilibrios tales como 
+\series bold
+tensiones de origen térmico
+\series default
+, 
+\series bold
+deformaciones en frío o existencia de átomos extraños en la red
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Las dislocaciones no acaban en un punto interno del cristal.
+ O se 
+\series bold
+cierran sobre sí mismas, o acaban en la superficie del cristal o en otra
+ dislocación
+\series default
+.
+ Pueden llegar a formar una estructura lineal tridimensional muy grande
+ en relación al volumen del mismo.
+ 
+\end_layout
+
+\begin_layout Standard
+Las dislocaciones pueden hacer disminuir muy notablemente la resistencia
+ mecánica de un material (relación entre su límite elástico y el módulo
+ de elasticidad longitudinal).
+ 
+\end_layout
+
+\begin_layout Standard
+Por otra parte, la presencia de dislocaciones y sus movimientos en las aleacione
+s metálicas explican su deformación plástica, y la capacidad de los mismos
+ de ser conformados mediante laminación, forja , etc.
+\end_layout
+
+\begin_layout Subsection
+Defectos atómicos superficiales
+\end_layout
+
+\begin_layout Standard
+Este tipo de defectos consiste en una falla en la secuencia de los planos
+ cristalográficos; son defectos cuya profundidad es muy pequeña en relación
+ a su largo y ancho.
+ Por ejemplo, si tenemos una red FCC con secuencia de planos ABCABCABC...
+ y falla un plano 
+\begin_inset Quotes fld
+\end_inset
+
+A
+\begin_inset Quotes frd
+\end_inset
+
+ tendremos una secuencia A
+\series bold
+\color blue
+BCBC
+\series default
+\color inherit
+ABC.
+ La secuencia 
+\series bold
+\color blue
+BCBC
+\series default
+\color inherit
+ sigue el patrón de la compactación HCP.
+ Tendríamos por tanto una lámina delgada de red HCP dentro de una red FCC.
+ Este es un 
+\series bold
+defecto de apilamiento
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Además, cuando un metal en estado líquido se enfría empieza a cristalizarse.
+ La red empieza a ordenarse en múltiples puntos del mismo, y los cristales
+ crecen en direcciones aleatorias entre sí.
+ Cada zona de crecimiento es un 
+\series bold
+cristal
+\series default
+ o 
+\series bold
+grano
+\series default
+ (zona ordenada) 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "Crecimiento-de-un"
+
+\end_inset
+
+.
+ Cuando las fronteras entre dos granos se 
+\begin_inset Quotes fld
+\end_inset
+
+juntan
+\begin_inset Quotes frd
+\end_inset
+
+ se suele crear una zona de imperfección superficial llamada 
+\series bold
+junta de grano
+\series default
+ (zona desordenada).
+ 
+\end_layout
+
+\begin_layout Standard
+Al igual que en el caso de los defectos atómicos lineales, no se explican
+ los defectos atómicos superficiales en base a un punto de vista energético,
+ sino al proceso de formación de cristales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/borde_grano.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Granos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La microestructura de un metal o una aleación depende de tres factores:
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+color{Morado}{
+\backslash
+textbf{
+\backslash
+arabic*}.
+ 
+\backslash
+ensuremath{
+\backslash
+Rightarrow}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\series bold
+Tamaño del grano
+\series default
+: las juntas de grano interrumpen el movimiento de las dislocaciones; por
+ lo tanto, si 
+\series bold
+los granos son pequeños aumenta la resistencia del material.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Forma de los granos:
+\series default
+ suele ser equiáxica, es decir, los granos en cualquiera de las tres dimensiones
+ suelen tener la misma longitud.
+ Aunque si el material se deforma en frío, podemos tener granos de formas
+ alargadas.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Orientación de los granos:
+\series default
+ suelen ser isótropos (los granos se orientan en direcciones aleatorias)
+ lo que resulta en propiedades que no dependen de la orientación.
+ En ocasiones, debido a procesos de conformado con deformación plástica
+ producimos anisotropía (una orientación preferente).
+\end_layout
+
+\begin_layout Section
+Soluciones sólidas
+\end_layout
+
+\begin_layout Standard
+Los metales son raramente usados en un estado puro.
+ Son muchas más las 
+\series bold
+aleaciones
+\series default
+: mezcla de dos o más elementos en los que uno es un metal.
+ Pero con dos condiciones:
+\end_layout
+
+\begin_layout Enumerate
+Los elementos deben ser miscibles en estado líquido, para que al solidificar
+ la estructura sea homogénea.
+\end_layout
+
+\begin_layout Enumerate
+La estructura interna de la aleación debe ser idéntica a la de los metales.
+\end_layout
+
+\begin_layout Standard
+En las aleaciones solemos indicar las concentraciones de cada metal en %
+ de masa, o en % de volumen o masa atómica.
+ 
+\end_layout
+
+\begin_layout Standard
+Las aleaciones pueden ser simples, como el latón (cobre más cinc) o el bronce
+ (cobre más estaño), o complejas, con más de diez elementos.
+ 
+\end_layout
+
+\begin_layout Standard
+Una mezcla de metales en estado líquido, que después dé lugar por cristalización
+ a una aleación, no deja de ser una solución.
+ Tenemos dos casos: 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label={
+\backslash
+textbf{
+\backslash
+alph*})}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+En caso de que los metales de la aleación cristalicen según la misma red
+ tridimensional:
+\series default
+ llamaremos disolvente al compuesto de mayor proporción y soluto al de menor
+ proporción.
+ 
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+En caso de que los metales de la aleación 
+\color red
+no
+\color inherit
+ cristalicen según la misma red tridimensional:
+\series default
+ llamaremos disolvente al compuesto que cristalice según la misma red tridimensi
+onal de la aleación, y solutos al resto, independientemente de su proporción.
+\end_layout
+
+\begin_layout Subsection
+Soluciones sólidas de sustitución
+\end_layout
+
+\begin_layout Standard
+Los átomos de soluto sustituyen a algunos átomos de disolvente en la red
+ cristalina.
+ En general, dos metales A y B deben cumplir varias condiciones:
+\end_layout
+
+\begin_layout Enumerate
+Los metales A y B deben actuar con la misma valencia, cediendo así el mismo
+ número de electrones a la nube electrónica.
+\end_layout
+
+\begin_layout Enumerate
+Ambos deben tener electronegatividades muy semejantes, porque si no formarían
+ enlaces covalentes, no metálicos.
+\end_layout
+
+\begin_layout Enumerate
+Sus diámetros no deben diferir en más de un 15%.
+\end_layout
+
+\begin_layout Enumerate
+Cristalizar en el mismo sistema (ambos BCC, ambos FCC o ambos HCP).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si el metal A cristaliza en un sistema y B en otro, cierta proporción de
+ átomos de B podrán pertenecer a la red de A, pero hasta un límite.
+\end_layout
+
+\begin_layout Enumerate
+Al contrario, otra proporción de átomos de A podrá pertenecer a la red de
+ B, pero hasta un límite.
+\end_layout
+
+\begin_layout Enumerate
+Esos límites proporcionales se denominan 
+\series bold
+límites de solubilidad.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Cumpliendo estas condiciones, los metales A y B son ilimitadamente solubles
+ (teóricamente, porque en la práctica es imposible una solubilidad ilimitada).
+ Pueden cumplirlo las mezclas de 
+\series bold
+oro
+\series default
+ y 
+\series bold
+plata
+\series default
+, 
+\series bold
+cobre
+\series default
+ con 
+\series bold
+níquel
+\series default
+ u 
+\series bold
+oro
+\series default
+, etc.
+\end_layout
+
+\begin_layout Subsection
+Soluciones sólidas de inserción
+\end_layout
+
+\begin_layout Standard
+Los átomos de soluto se insertan en los intersticios o huecos de la red
+ cristalina del disolvente.
+\end_layout
+
+\begin_layout Enumerate
+Diferencia de tamaños muy grande: los átomos de soluto deben tener tamaños
+ parecidos a los de los huecos.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los átomos de soluto suelen ser un 
+\begin_inset Quotes fld
+\end_inset
+
+no metal
+\begin_inset Quotes frd
+\end_inset
+
+ pequeño como el carbono, hidrógeno, oxígeno o nitrógeno.
+\end_layout
+
+\begin_layout Enumerate
+Los átomos del disolvente suelen ser metales de transición: hierro, cobalto,
+ níquel, manganeso, cromo...
+\end_layout
+
+\begin_layout Enumerate
+Un ejemplo es el hierro 
+\begin_inset Formula $\gamma$
+\end_inset
+
+ (gamma) en red FCC.
+ En él, el radio atómico del hierro es de 0.129nm y del carbono 0.075nm.
+ A pesar de la diferencia de tamaños, a 1148ºC sólo se disuelve un 2.08%
+ de carbono ya que el tamaño del hueco es menor que el tamaño del átomo
+ de carbono.
+ Los átomos que logran ocupar esas posiciones distorsionan la red cristalina
+ del hierro 
+\begin_inset Formula $\gamma$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/soluciones_solidas.png
+	lyxscale 20
+	width 60page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Soluciones sólidas de sustitución y de inserción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Mecanismos de endurecimiento de los metales
+\end_layout
+
+\begin_layout Standard
+De forma general, y como vimos, el que un material sea más o menos resistente
+ o duro depende del movimiento de las dislocaciones bajo una fuerza exterior.
+ Cuanto menor 
+\series bold
+sea la movilidad de esas dislocaciones, mayor será la resistencia mecánica
+ del material
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Para endurecer las aleaciones metálicas podemos:
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\color purple
+Deformación en frío (a temperatura ambiente):
+\series default
+\color inherit
+ al deformar plásticamente un material aumenta la densidad de dislocaciones;
+ las interacciones entre estas dislocaciones disminuye su movilidad, por
+ lo que aumenta su resistencia mecánica, baja la ductilidad pero aumenta
+ su fragilidad.
+ Es un estado del metal llamado 
+\series bold
+agrio
+\series default
+ o 
+\series bold
+con acritud
+\series default
+.
+ Es frecuente que un material deformado plásticamente en frío se someta
+ a un 
+\series bold
+recocido
+\series default
+ (tratamiento térmico) que el devuelva su plasticidad.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\color purple
+Afino de grano:
+\series default
+\color inherit
+ las juntas de grano actúan como barreras para el movimiento de las dislocacione
+s, con lo que si el tamaño de grano es menor, más difícil es que estas se
+ muevan y mayor será la resistencia del material.
+ De hecho, se puede expresar el límite elástico de una material en función
+ del tamaño medio de grano 
+\begin_inset Quotes fld
+\end_inset
+
+d
+\begin_inset Quotes frd
+\end_inset
+
+ como 
+\begin_inset Formula $\sigma_{E}=\sigma_{0}+\frac{K}{\sqrt{d}}$
+\end_inset
+
+ ,siendo 
+\begin_inset Formula $\sigma_{0}$
+\end_inset
+
+ y K dos constantes que dependen de cada material y de la temperatura.
+ El tamaño de grano de un material depende de las características del proceso
+ de solidificación del mismo.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\color purple
+Solución sólida
+\series default
+\color inherit
+: normalmente una solución sólida, sea de inserción o de sustitución, es
+ más dura que la estructura del metal original.
+ Normalmente hay deformaciones mecánicas: en las de sustitución porque los
+ tamaños de los átomos no son iguales y en las de inserción porque los átomos
+ insertados son mayores que los huecos.
+ Estas deformaciones evitan el movimiento de las dislocaciones.
+ En el caso de inserción, además, los átomos de soluto son atraídos por
+ las dislocaciones, lo cual hace que éstas también se estabilicen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/disolución_cu_fe_inserción.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/cobre_solucion_solida.png
+	lyxscale 20
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Distorsión mecánica Cu en Fe
+\begin_inset Formula $\gamma$
+\end_inset
+
+ ; Endurecimiento del cobre por solución sólida
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "80col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Es necesario en el preámbulo añadir 
+\backslash
+usepackage[titletoc]{appendix}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\lang english
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{appendices}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Estado-amorfo"
+
+\end_inset
+
+Estado amorfo
+\end_layout
+
+\begin_layout Standard
+Otros sólidos no presentan estado cristalino; su regularidad en la disposición
+ espacial se limita a muy pocos átomos.
+ Este estado es típico de los vidrios y polímeros vítreos.
+\end_layout
+
+\begin_layout Section
+Vídeos
+\end_layout
+
+\begin_layout Itemize
+Repaso general: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://www.youtube.com/watch?v=hd4unkd5Y-c
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset label
+LatexCommand label
+name "Crecimiento-de-un"
+
+\end_inset
+
+Crecimiento de un cristal al microscopio: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://youtu.be/gPYc7_rFuW4
+\end_layout
+
+\end_inset
+
+ y la dirección: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://youtu.be/RSrLwG25euc
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Haciendo zoom en el acero: 
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://youtu.be/gO5gPdJxe_o
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{appendices}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

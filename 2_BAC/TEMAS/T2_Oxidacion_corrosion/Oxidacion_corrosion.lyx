@@ -1,0 +1,2909 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{mhchem}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "libertine-ntxm" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\float_placement H
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 0 10 -1
+\bullet 1 0 15 -1
+\bullet 2 5 27 -1
+\bullet 3 2 7 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Oxidación y corrosión
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Oxidación y Corrosión By Aurelio Gallardo Rodríguez, 31667329D Is Licensed
+ Under A Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internaci
+onal License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Hay muchos materiales tecnológicos que se ven sometidos a ataques químicos
+ continuados; por ejemplo, los álabes de la turbina de un avión, el tubo
+ de escape de los coches, los recipientes de diversas sustancias.
+ Estudiaremos en este tema el comportamiento de diversos materiales frente
+ al ataque de varios agentes químicos.
+\end_layout
+
+\begin_layout Section
+Oxidación
+\end_layout
+
+\begin_layout Standard
+En general, un material se oxida cuando se combina con el oxígeno.
+ La reacción química se describe como:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+Material + Oxígeno 
+\begin_inset Formula $\Longrightarrow$
+\end_inset
+
+ Óxido 
+\begin_inset Formula $\pm$
+\end_inset
+
+ Energía
+\end_layout
+
+\begin_layout Standard
+Normalmente la reacción es exotérmica (signo + en la energía) que es el
+ caso de las reacciones espontáneas.
+ Si la energía fuese negativa implicaría que hay que aportar energía para
+ que se produzca, con lo cual el material difícilmente se oxidará espontáneament
+e (siempre que no haya una fuente de energía).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Energía+de+oxidación+de+metales.jpg
+	lyxscale 25
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Energías de oxidación, a 273 K (0º C)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Observando la tabla se puede apreciar que muchísimos metales tienen una
+ energía de oxidación positiva, por lo tanto se encuentran en la Naturaleza
+ en forma de óxido (excepto el oro).
+ Otro elemento químico cuya oxidación proporciona la energía básica que
+ usamos en nuestros cuerpos, y en nuestros coches, es el carbono, presente
+ en infinidad de moléculas más complejas, orgánicas.
+\end_layout
+
+\begin_layout Subsection
+Velocidad de oxidación
+\end_layout
+
+\begin_layout Standard
+Otro factor importante es saber cómo se produce esta oxidación ¿Es lenta?
+ ¿Es rápida? Si un material es oxidable, pero se oxida muy, muy lentamente
+ (por ejemplo, la plata) puede no necesitar protección.
+ Al contrario, un elemento que se oxide rápidamente puede causarnos problemas
+ (por ejemplo, hierro).
+ En general, la oxidación aumenta considerablemente la fragilidad de los
+ materiales.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Velocidad+de+oxidación+de+metales.jpg
+	lyxscale 25
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Horas transcurridas para que a una temperatura 
+\begin_inset Formula $0.7\cdot T_{F}$
+\end_inset
+
+ se produzca una oxidación de al menos 0.1mm de profundidad
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+No hay una relación directa entre 
+\series bold
+la energía de oxidación
+\series default
+ y 
+\series bold
+la velocidad de oxidación
+\series default
+.
+ Por ejemplo, el aluminio tiene una energía de oxidación superior a la del
+ hierro.
+ Sin embargo, en la práctica, el hierro se oxida más rápidamente que el
+ aluminio: tarda 24 horas frente a tiempos muy elevados del aluminio.
+ Está claro que en la velocidad de oxidación entran en juego otros factores,
+ aparte de tener una mayor o menor energía de oxidación el material a estudiar.
+\end_layout
+
+\begin_layout Standard
+Antes de continuar, pongamos en claro dos términos importantes en química:
+\end_layout
+
+\begin_layout Itemize
+Un material (un metal M, por ejemplo) se 
+\shape italic
+oxida
+\shape default
+ (
+\series bold
+proceso de oxidación
+\series default
+) cuando sus átomos pierden electrones y adquiere una carga positiva.
+\end_layout
+
+\begin_layout Itemize
+Un material o una sustancia (por ejemplo el átomo de oxígeno, O) se 
+\shape italic
+reduce
+\shape default
+ (
+\series bold
+proceso de reducción
+\series default
+) cuando sus átomos adquieren electrones y carga negativa.
+\end_layout
+
+\begin_layout Itemize
+Para que 
+\shape italic
+un material se oxide es necesario un agente que se reduzca
+\shape default
+.
+ Ambos procesos son complementarios.
+\end_layout
+
+\begin_layout Standard
+Estudiemos el caso particular de un átomo metálico de valencia 2 (número
+ de oxidación +2), es decir, que forma enlaces iónicos perdiendo dos electrones
+ de las últimas capas.
+ En este caso se uniría a un átomo de oxígeno capaz de aceptar dos electrones.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $\ce{{\ce{M + 1/2 O2 -> MO}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta reacción puede expresarse como dos reacciones parciales de la siguiente
+ forma:
+\end_layout
+
+\begin_layout Itemize
+Proceso de oxidación: 
+\begin_inset Formula $M\Rightarrow M^{2+}+2e^{-}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Proceso de reducción: 
+\begin_inset Formula ${1/2}\,O_{2}+2e^{-}\Rightarrow O^{2-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/capa_protectora_oxidacion_pag31.png
+	lyxscale 25
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Proceso de formación de la capa de óxido
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Una vez formada la primera capa, la velocidad de corrosión dependerá de
+ la velocidad de difusión de los cationes o de los aniones a través de esa
+ capa.
+ Esa primera capa de óxido actúa como capa protectora, y será mejor o peor,
+ dependiendo de muchos factores; protegerá más si la adherencia de la capa
+ de óxido al metal es buena, el punto de fusión del óxido es elevado, el
+ óxido no es frágil o no conduce bien la electricidad y , por supuesto,
+ de la velocidad de difusión del catión o el anión a través del óxido.
+ 
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, podemos poner el aluminio.
+ Es un metal que se oxida en una primera fase muy rápidamente, porque su
+ energía de ionización es relativamente elevada.
+ Pero una vez que crea una capa protectora, es difícil que continúe el proceso.
+ Lo contrario le pasa, por ejemplo, al hierro.
+ No es tan fácil como en el aluminio la creación de esa primera capa, pero
+ una vez formada el proceso continúa más fácilmente que en el aluminio.
+ El aluminio crea una capa de óxido que lo protege eficazmente.
+\end_layout
+
+\begin_layout Standard
+Hay otro factor que influye.
+ La llamada relación de 
+\series bold
+Pilling-Bedworth
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+PB=\tfrac{Volumen\;óxido}{Volumen\;metal\;consumido}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que resulta de dividir el volumen de óxido creado entre el volumen de metal
+ consumido.
+ Tenemos tres casos:
+\end_layout
+
+\begin_layout Enumerate
+Que 
+\begin_inset Formula $PB<1$
+\end_inset
+
+, el volumen de óxido es menor que de metal consumido.
+ En ese caso la capa de óxido siempre se agrieta y la oxidación rápida se
+ favorece.
+ Es el caso de los metales alcalinos.
+\end_layout
+
+\begin_layout Enumerate
+Que 
+\begin_inset Formula $PB>1$
+\end_inset
+
+, el volumen de óxido es mayor que el de metal consumido.
+ En ese caso, la capa de óxido ejerce presión sobre el metal y acaba agrietándol
+o.
+ Es el caso del hierro.
+\end_layout
+
+\begin_layout Enumerate
+Que 
+\begin_inset Formula $PB\approx1$
+\end_inset
+
+, con lo que la capa sí actúa como verdadera capa protectora.
+ En el caso del aluminio, sería 1.38
+\end_layout
+
+\begin_layout Standard
+Una forma habitual de medir la velocidad de oxidación de un material consiste
+ en determinar 
+\series bold
+la ganancia en peso por unidad de superficie (w) a lo largo del tiempo
+\series default
+.
+ Se habla siempre de ganancia en peso porque el óxido incorpora átomos de
+ oxígeno, con lo cual la molécula de óxido es más pesada que el átomo de
+ metal correspondiente.
+ Calculando el aumento de peso se puede determinar la tensión a la que se
+ ve sometida el material.
+\end_layout
+
+\begin_layout Standard
+La oxidación, además, siempre se verá favorecida si la temperatura ambiente
+ se eleva o la presión del oxígeno ya que ambos factores favorecen la difusión
+ de los aniones O
+\begin_inset script superscript
+
+\begin_layout Plain Layout
+2-
+\end_layout
+
+\end_inset
+
+ o los cationes metálicos.
+ 
+\end_layout
+
+\begin_layout Standard
+Experimentalmente se ha comprobado que la ganancia en peso por unidad de
+ área sigue dos comportamientos:
+\end_layout
+
+\begin_layout Subsubsection
+Comportamiento lineal
+\end_layout
+
+\begin_layout Standard
+En este caso, la ganancia en peso por unidad de área es proporcional al
+ tiempo transcurrido: 
+\begin_inset Formula $w=k_{L}\cdot t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El comportamiento es típico de elementos porosos, con PB muy bajas (ejemplo,
+ el potasio, PB=0.45) o PB muy altas (tántalo, con PB=2.5).
+ Son casos en los que la capa de óxido agrieta el material o se desprende.
+ 
+\end_layout
+
+\begin_layout Standard
+Hay elementos en los que el óxido es volátil, es decir se evapora al formarse
+ (reacción exotérmica muy rápida), como los elementos Wolframio o Molibdeno.
+ En estos elementos incluso hay una pérdida de peso, por lo que 
+\begin_inset Formula $k_{L}<0$
+\end_inset
+
+, es negativa.
+ En estos casos la oxidación se denomina 
+\series bold
+catastrófica
+\series default
+.
+\end_layout
+
+\begin_layout Subsubsection
+Comportamiento parabólico
+\end_layout
+
+\begin_layout Standard
+En este caso, la ganancia en peso por unidad de área es proporcional a la
+ raíz cuadrada del tiempo transcurrido: 
+\begin_inset Formula $w^{2}=k_{P}\cdot t$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es típica de los elementos como aluminio, hierro, cobalto...
+ Que tienen una velocidad elevada al comienzo del proceso pero al transcurrir
+ el tiempo disminuye por el efecto de la capa de óxido.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/ganancia_peso_lineal_parabólica_pag33.png
+	lyxscale 25
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Oxidaciones lineal y parabólica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las velocidades de oxidación siguen la ley de Arrhenius, es decir, las constante
+s 
+\begin_inset Formula $k_{L}$
+\end_inset
+
+ y 
+\begin_inset Formula $k_{P}$
+\end_inset
+
+ aumentan exponencialmente con la temperatura siguiendo las leyes:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $K_{L}=A_{L}\cdot e^{-\frac{Q_{L}}{R\cdot T}}$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+y
+\begin_inset space \space{}
+\end_inset
+
+ 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\uuline off
+\uwave off
+\noun off
+\color none
+\lang english
+
+\begin_inset Formula $K_{P}=A_{P}\cdot e^{-\frac{Q_{P}}{R\cdot T}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+...donde 
+\begin_inset Formula $A_{L},A_{P},Q_{L}$
+\end_inset
+
+ y 
+\begin_inset Formula $Q_{P}$
+\end_inset
+
+ son constantes que dependen de cada material, la temperatura media (T)
+ se expresa en Kelvin y 
+\begin_inset Formula $R=8.31\cdot J\cdot mol^{-1}\cdot K^{-1}$
+\end_inset
+
+ es la constante de los gases ideales.
+\end_layout
+
+\begin_layout Subsection
+Protección contra la oxidación
+\end_layout
+
+\begin_layout Standard
+El acero dulce (aleación de hierro con bajo contenido en carbono) es barato,
+ resiste mecánicamente y es fácil de conformar.
+ Sin embargo, se oxida fácilmente.
+ Normalmente se alea con un material de mayor energía de oxidación que crea
+ una capa protectora que proteja tanto al acero dulce como al material aleado.
+ Esta capa frenará el proceso de oxidación de ambos, que seguirá produciéndose
+ pero ahora a una velocidad muy lenta.
+\end_layout
+
+\begin_layout Standard
+El mejor aleante para el acero dulce es el cromo, aunque también son factibles
+ el aluminio y el silicio.
+ El cromo tiene una energía de oxidación menor que la de los otros dos y
+ una velocidad de oxidación mayor y a priori parece menos aconsejable, pero
+ también influye que el hierro y el cromo se mezclan bien a nivel atómico.
+ 
+\series bold
+El cromo consigue reducir en 100 veces el proceso de oxidación del acero
+ dulce a 900ºC
+\series default
+.
+ Este es el fundamento de los llamados
+\series bold
+ aceros inoxidables
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+Otra forma de protección menos eficaz es el 
+\series bold
+recubrimiento superficial
+\series default
+.
+ Podemos hablar de cromado o dorado.
+ Es menos eficaz porque una rayadura en la capa protectora no evita el proceso
+ de oxidación.
+ El cromado consiste en difundir una capa de material con átomos de cromo
+ sobre las superficies de los aceros (el contenido en la superficie llega
+ al 30% Cr y a 0.1mm de profundidad no alcanza el 12%) lo cual los protege
+ de la oxidación y también les confiere dureza.
+ El proceso suele hacerse a unos 1000ºC.
+\end_layout
+
+\begin_layout Section
+Corrosión
+\end_layout
+
+\begin_layout Standard
+La corrosión es la oxidación en presencia de humedad o sustancias agresivas
+ para el material.
+ En un ambiente húmedo, la capa de óxido no se deposita sino que se disuelve
+ por lo que acaba por desprenderse y desprotege al material continuamente.
+ 
+\end_layout
+
+\begin_layout Standard
+Los fenómenos corrosivos se deben a reacciones electroquímicas, que estudiaremos
+ a continuación:
+\end_layout
+
+\begin_layout Subsection
+Reacciones electroquímicas
+\end_layout
+
+\begin_layout Standard
+Son reacciones de oxidación-reducción (reacciones redox) que tiene lugar
+ entre dos componentes sumergidos en un electrólito.
+ Por ejemplo:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Zn_{(solido)}\:+\:CuSO_{4}{}_{(disuelto)}\rightarrow Cu_{(solido)}\:+\:ZnSO_{4}{}_{(disuelto)}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El cinc en contacto con el sulfato de cobre (disolución acuosa - electrólito
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+Un electrólito es una disolución acuosa de un ácido, una base o una sal
+ que conduce la electricidad
+\end_layout
+
+\end_inset
+
+ -) es una reacción espontánea que produce cobre y sulfato de cinc 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "enu:Oxidación-redox-en"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+En este caso el ión sulfato (
+\begin_inset Formula $SO_{4}^{2-}$
+\end_inset
+
+) no sufre transformación.
+ Podemos dividir la reacción anterior en dos reacciones:
+\end_layout
+
+\begin_layout Enumerate
+Semirreacción de 
+\series bold
+oxidación
+\series default
+: el cinc se oxida, pierde electrones.
+ 
+\begin_inset Formula $Zn\rightarrow Zn_{(aq)}^{2+}+2e^{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Semirreacción de 
+\series bold
+reducción
+\series default
+: el cobre se reduce, gana dos electrones.
+ 
+\begin_inset Formula $Cu_{(aq)}^{2+}+2e^{-}\rightarrow Cu$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos fabricar pues una pila con este dispositivo (llamada pila Daniell
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "enu:John-Frederic-Daniell"
+
+\end_inset
+
+).
+ Esta pila consiste en un par de electrodos, uno de cinc y otro de cobre.
+ El de cinc sumergido en una disolución de sulfato de cinc y el de cobre
+ sumergido en una disolución de sulfato de cobre.
+ La pared que separa ambas disoluciones es porosa dejando pasar únicamente
+ el ión sulfato.
+ 
+\end_layout
+
+\begin_layout Standard
+Al conectar mediante un cable el cinc y el cobre, circula corriente por
+ él.
+ Se puede medir un potencial eléctrico entre ambos electrodos.
+ El proceso es el siguiente:
+\end_layout
+
+\begin_layout Enumerate
+El Zn se oxida, perdiendo dos electrones.
+ Se convierte en catión 
+\begin_inset Formula $Zn^{2+}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Los electrones llegan por el cable al cobre y a su disolución.
+ Reducen al 
+\begin_inset Formula $Cu^{2+}$
+\end_inset
+
+ del sulfato de cobre y se convierte en cobre sólido que se deposita en
+ el electrodo de cobre.
+\end_layout
+
+\begin_layout Enumerate
+El ión sulfato resultante en la disolución del lado del cobre 
+\begin_inset Formula $SO_{4}^{2-}$
+\end_inset
+
+ se siente atraído por la carga positiva de la parte del cinc, atraviesa
+ la pared porosa, y se completa la reacción de oxidación.
+ 
+\end_layout
+
+\begin_layout Itemize
+Donde se pierde electrones (lado del cinc), se produce la oxidación, es
+ el polo negativo o también llamado 
+\series bold
+ánodo
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+Donde se ganan electrones (lado del cobre), se produce la reducción, es
+ el polo positivo o también llamado 
+\series bold
+cátodo
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La pila de Daniell 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "enu:pila-de-Daniell"
+
+\end_inset
+
+ así formada tiene un 
+\series bold
+voltaje o fuerza electromotriz de 1.1 Voltios
+\series default
+ aproximadamente.
+ La única consideración a tener en cuenta es que las pilas de Daniell se
+ suelen construir ahora usando no un tabique poroso sino un 
+\series bold
+puente salino
+\series default
+: un tubo en forma de 
+\begin_inset Quotes cld
+\end_inset
+
+U
+\begin_inset Quotes crd
+\end_inset
+
+ invertido que contiene una disolución inerte que sólo deja pasar los iones
+ sulfato.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/daniel.gif
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+ 
+\begin_inset space \hspace{}
+\length 2cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/Esquema_Pila_Daniell.svg.png
+	lyxscale 10
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Pila Daniell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Qué importancia tiene esta reacción electroquímica de ejemplo en lo que
+ nos concierne? Pues imagina que un elemento constructivo tiene cinc y otro
+ contiene cobre, y ambos están en un ambiente húmedo (al lado del mar, por
+ ejemplo).
+ Si encuentran un electrólito que haga de 
+\begin_inset Quotes cld
+\end_inset
+
+intermediario
+\begin_inset Quotes crd
+\end_inset
+
+ la reacción se producirá espontáneamente haciendo que el cinc se descomponga,
+ y peligrando el elemento estructural del que forme parte (porque ya sabemos
+ que perderá masa, disminuirá su sección, aumentará la tensión a la que
+ esté sometido y podrá provocar la rotura del mismo).
+\end_layout
+
+\begin_layout Subsection
+Potencial de electrodo
+\end_layout
+
+\begin_layout Standard
+En la pila Daniell descrita se obtiene experimentalmente un potencial de
+ 1.1 Voltios aproximadamente, en el que se comparan dos metales, cinc y cobre.
+ Pero hay muchísimos elementos y aún más combinaciones, así que para saber
+ si espontáneamente se produciría una reacción electroquímica y por tanto
+ corrosión entre dos de ellos, lo que se suele determinar es 
+\series bold
+el potencial generado por un metal respecto a un electrodo normal de hidrógeno
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Construimos pues una 
+\begin_inset Quotes cld
+\end_inset
+
+pila Daniell
+\begin_inset Quotes crd
+\end_inset
+
+ pero esta vez con un electrodo consistente en un tubo en cuyo interior
+ se introduce una lámina de platino (Pt) y por el cual se hace burbujear
+ hidrógeno gaseoso a 1 atm (temperatura 25ºC).
+ La disolución de este electrodo debe tener una concentración de iones 
+\begin_inset Formula $[H^{+}]=1\cdot M$
+\end_inset
+
+ 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+La concentración de iones 
+\begin_inset Formula $H^{+}$
+\end_inset
+
+ es uno molar
+\series default
+, es decir en un litro de disolución debe haber 1 mol de dichos iones.
+\end_layout
+
+\end_inset
+
+ .
+ Al otro lado de la pila se sumerge el metal a estudiar en una disolución
+ uno molar de una sal que lo contenga 
+\begin_inset Formula $[M^{+}]=1\cdot M$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "7cm"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/pila_normal_con_plata.gif
+	lyxscale 25
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Medida del potencial normal de la plata Ag
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Por ejemplo, consideremos el caso de la plata Ag.
+ En este caso el hidrógeno se oxida, pierde electrones (ánodo), y circulan
+ electrones hacia el cátodo de plata.
+ La reacción que tiene lugar en el hidrógeno (oxidación) sería 
+\begin_inset Formula $H_{2}\rightarrow2H^{+}+2e^{-}$
+\end_inset
+
+ y en el cátodo de plata (reducción) 
+\begin_inset Formula $Ag^{+}+e^{-}\rightarrow Ag$
+\end_inset
+
+.
+ La reacción global es 
+\begin_inset Formula $2Ag^{+}+H_{2}\rightarrow2Ag+2H^{+}$
+\end_inset
+
+.
+ El potencial medido desde el catión plata (+) al anión hidrógeno (-) es
+ de +0.799 Voltios.
+ Se dice que la plata, entonces, tiene un 
+\series bold
+potencial de electrodo normal
+\series default
+ o 
+\series bold
+estándar
+\series default
+ 
+\begin_inset Formula $E\text{⁰}=0.799\cdot V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero hay elementos en los que, al compararlos con el electrodo normal de
+ hidrógeno la reacción redox tiene otro sentido, es decir el hidrógeno se
+ reduce y el metal se oxida.
+ Ya conocemos al cinc.
+ En este caso el hidrógeno se reduce (gana electrones) y se convierte en
+ el polo positivo (catión).
+ La reacción del hidrógeno sería 
+\begin_inset Formula $2H^{+}+2e^{-}\rightarrow H_{2}$
+\end_inset
+
+ creándose hidrógeno molecular de la disolución, y en el lado del cinc,
+ éste se oxida (pierde electrones) y se convierte en el polo negativo (anión).
+ Su reacción sería 
+\begin_inset Formula $Zn\rightarrow Zn^{2+}+2e$
+\end_inset
+
+.
+ La reacción global: 
+\begin_inset Formula $Zn+2H^{+}\rightarrow Zn^{2+}+H_{2}$
+\end_inset
+
+.
+ En este caso el potencial de electrodo normal se considera negativo y el
+ cinc tendría un potencial de electrodo normal de 
+\begin_inset Formula $E^{0}=-0.763\cdot V$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "7cm"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/pila_normal_con_zinc.gif
+	lyxscale 25
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Caso del Cinc.
+ El cinc se oxida y el hidrógeno se reduce.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Por lo tanto los elementos que se reducen (ganan electrones) y hacen que
+ el hidrógeno los pierda son 
+\series bold
+elementos catódicos
+\series default
+ respecto del hidrógeno y su potencial normal de electrodo es positivo.
+ Los elementos que se oxidan (pierden electrones) y hacen que el oxígeno
+ se reduzca son 
+\series bold
+elementos aniónicos
+\series default
+ respecto del hidrógeno y su potencial normal es negativo.
+ Si la reacción global entre dos elementos cualesquiera tiene un potencial
+ (fem de la pila) positivo, la reacción se verifica espontáneamente en el
+ sentido que está descrita; si es negativo, al contrario.
+ 
+\end_layout
+
+\begin_layout Standard
+Fijémonos de nuevo en la pila Daniell.
+ El cobre acepta electrones, luego se reduce.
+ Su potencial de electrodo 
+\begin_inset Formula $E\text{⁰=0.337\cdot V}$
+\end_inset
+
+.
+ Por otra parte, el cinc actúa como oxidante, ya que pierde electrones.
+ Su potencial de electrodo es negativo 
+\begin_inset Formula $E\text{⁰=-0.763\cdot V}$
+\end_inset
+
+.
+ El potencial de la pila puede calcularse como el potencial de electrodo
+ del elemento que actúa como cátodo (se reduce) menos el potencial de electrodo
+ del elemento que actúa como ánodo (se oxida):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\text{E_{pila}^{0}=E_{Catodo}^{0} - E_{Anodo}^{0} = 0.337\cdot V - (-0.763\cdot V)=1.1\cdot V}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/potenciales_reduccion_electrodo.jpg
+	lyxscale 25
+	width 50page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+potenciales de electrodo normales
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Efecto de la concentración y la temperatura en los potenciales de electrodo
+\end_layout
+
+\begin_layout Standard
+El potencial de electrodo normal se ha calculado a una temperatura de 25ºC
+ y las disoluciones son 1 M, pero ¿y si la temperatura o la concentración
+ es distinta? El potencial, por supuesto cambia.
+ En concreto sigue la ecuación de 
+\series bold
+Nernst
+\series default
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+E=E^{0}-2.303\cdot\frac{RT}{nF}\cdot log(C)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En esta ecuación:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+E
+\series default
+ es el potencial de electrodo a unas determinadas condiciones de concentración
+ y temperatura
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $E^{0}$
+\end_inset
+
+
+\series default
+ es el potencial de electrodo normalizado o estándar.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+R
+\series default
+ es la constante de los gases ideales: 
+\begin_inset Formula $R=8.31\cdot J\cdot mol^{-1}\cdot K^{-1}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+T
+\series default
+ la temperatura absoluta en Kelvin
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+n
+\series default
+ es el número de electrones puestos en juego.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+F
+\series default
+ es la constante de Faraday: la carga de 1 mol de electrones.
+ 
+\begin_inset Formula $F=N_{A}\cdot e\text{⁻}=6.022\cdot10^{23}\cdot1.602\cdot10^{-19}=96485\cdot C/mol\approx96500\cdot C/mol$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+C
+\series default
+ es el producto de las concentraciones molares de las especies químicas
+ en la semirreacción de oxidación del electrodo dividido entre el producto
+ de las concentraciones molares en la semirreacción de reducción elevadas,
+ cada una, a su coeficiente estequiométrico.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ejemplo
+\end_layout
+
+\begin_layout Standard
+Pero mejor vamos a verlo con el ejemplo de la pila de Daniell; recordamos
+ que la ecuación global de la pila sería:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Zn\:+\:Cu^{2+}\overset{2e^{-}}{\longrightarrow}Cu\:+\:Zn^{2+}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Vamos a calcular el potencial de electrodo a una temperatura de 25ºC pero
+ con concentraciones 
+\begin_inset Formula $[Cu^{2+}]=0.5M$
+\end_inset
+
+ y 
+\begin_inset Formula $[Zn^{2+}]=1.5M$
+\end_inset
+
+.
+ ¿Cuál es el resto de parámetros a considerar?
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $E^{0}=1.1\cdot V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+El número de electrones implicados es n=2
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $T=273.15+25\text{ºC=298.15 K}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Los coeficientes estequiométricos son 1 del ión Zn y 1 del ión Cu (ver ecuación).
+\end_layout
+
+\begin_layout Standard
+Por lo tanto tendremos que: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\begin{array}{c}
+E=E^{0}-2.303\cdot\frac{RT}{nF}\cdot log\left(\frac{[Zn^{2+}]}{[Cu^{2+}]}\right)=\\
+=1.1\cdot V-2.303\cdot\frac{8.31\cdot J\cdot mol^{-1}\cdot K^{-1}\cdot298.15\,K}{2\cdot96500\cdot C/mol}\cdot log\left(\frac{1.5}{0.5}\right)=\\
+=1.1\cdot V-0.0296\cdot V\cdot0.477=1.086\cdot V
+\end{array}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Con electrodos iguales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "15col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/celda_concentración_iónica_hierro.png
+	lyxscale 25
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda de concentración iónica, de hierro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+De la ecuación de Nernst se deduce que podemos tener una pila con dos electrodos
+ iguales sumergidos en disoluciones de sus sales a concentraciones distintas.
+ De hecho, estudiemos el siguiente ejemplo: dos electrodos de hierro, separados
+ por un tabique poroso, a una temperatura de 25ºC (298K) y concentraciones
+ de una sal de 
+\begin_inset Formula $Fe^{2+}$
+\end_inset
+
+ distintas.
+ En un caso 
+\begin_inset Formula $[Fe^{2+}]=0.001\cdot M$
+\end_inset
+
+ y en el otro caso 
+\begin_inset Formula $[Fe^{2+}]=0.1\cdot M$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La ecuación de Nernst para un sólo electrodo, con n=2, se reduce a: 
+\begin_inset Formula $E=E^{0}-2.303\cdot\frac{RT}{nF}\cdot log\left(\frac{1}{[Fe^{2+}]}\right)=-0.44\cdot V-2.303\cdot\frac{8.31\cdot J\cdot mol^{-1}\cdot K^{-1}\cdot T}{2\cdot96500\cdot C/mol}\cdot log\left(\frac{1}{[Fe^{2+}]}\right)=-0.44+9.92\cdot10^{-5}\cdot T\cdot log\left([Fe^{2+}]\right)$
+\end_inset
+
+ (V).
+ Hay que tener en cuenta que siempre se considera el caso de reducción.
+\end_layout
+
+\begin_layout Itemize
+Para una concentración de 0.001 M y T=298K, tenemos: 
+\begin_inset Formula $E=-0.44+9.92\cdot10^{-5}\cdot298K\cdot log\left(0.001\right)=-0.529\cdot V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Para una concentración de 0.1 M y T=298K, tenemos: 
+\begin_inset Formula $E=-0.44+9.92\cdot10^{-5}\cdot298K\cdot log\left(0.1\right)=-0.47\cdot V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El electrodo con mayor potencial (el de mayor concentración), actuará como
+ cátodo y recibirá electrones (se reducirá).
+ El de menor concentración actuará como ánodo y se oxidará.
+ El proceso tiende a igualar las concentraciones en ambos electrodos.
+\end_layout
+
+\begin_layout Subsubsection
+El caso del oxígeno.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "25col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/corrosion_hierro_catodo_oxigeno.jpg
+	lyxscale 25
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda de concentración iónica hierro - oxígeno
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Es habitual los fenómenos de corrosión que afectan al hierro.
+ Pero en este caso la realidad es que hay en determinadas ocasiones 
+\begin_inset Quotes cld
+\end_inset
+
+electrodos
+\begin_inset Quotes crd
+\end_inset
+
+ de hierro que están en contacto con disoluciones unas más ricas en oxígeno
+ y otras menos, lo cual provoca una reacción redox.
+\end_layout
+
+\begin_layout Enumerate
+En un lado de la celda, el electrodo de hierro está en contacto con una
+ baja concentración de O
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+
+ y se provoca la oxidación del hierro: 
+\begin_inset Formula $Fe\rightarrow Fe^{2+}+2e^{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Al otro lado de la celda, el electrodo de hierro está sumergido en una concentra
+ción más rica de oxígeno, y se daría una reducción del oxígeno en el agua:
+ 
+\begin_inset Formula $O_{2}+2H_{2}O+4e^{-}\rightarrow4OH^{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este proceso podría darse por ejemplo en una viga de hierro en contacto
+ con agua.
+ Cualquier imperfección o grieta en la viga implica que esa zona, de forma
+ local, esté en contacto con menos cantidad de oxígeno mientras el resto
+ está en contacto con una mayor cantidad, produciéndose la reacción redox.
+\end_layout
+
+\begin_layout Subsubsection
+Celda galvánica en la corrosión
+\end_layout
+
+\begin_layout Standard
+Imagina dos electrodos, uno de hierro (
+\begin_inset Formula $E^{0}=-0.44\cdot V)$
+\end_inset
+
+ y otro de cobre (
+\begin_inset Formula $E^{0}=+0.37\cdot V)$
+\end_inset
+
+ inmersos en agua, sin tabique poroso, y sin electrólitos de sus sales.
+ ¿Se producirá corrosión? ¿Habrá reacción electroquímica? Podemos deducir
+ lo siguiente:
+\end_layout
+
+\begin_layout Itemize
+Como el potencial de reducción del hierro es negativo y el del cobre positivo,
+ está claro que el hierro se oxidaría.
+ Se produciría la reacción oxidativa 
+\begin_inset Formula $Fe\rightarrow Fe^{2+}+2e^{-}$
+\end_inset
+
+.
+ El hierro actuaría como ánodo.
+\end_layout
+
+\begin_layout Itemize
+Los dos electrones 
+\begin_inset Quotes cld
+\end_inset
+
+viajarían
+\begin_inset Quotes crd
+\end_inset
+
+ hacia el cátodo de cobre.
+ Pero allí no hay sales 
+\begin_inset Formula $Cu^{2+}$
+\end_inset
+
+ con las que se produjese una reducción.
+ Pero...
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si la disolución es 
+\series bold
+ácida
+\series default
+ (hay iones 
+\begin_inset Formula $H^{+}$
+\end_inset
+
+) se reducirían: 
+\begin_inset Formula $2H^{+}+2e^{-}\longrightarrow H_{2}$
+\end_inset
+
+ produciéndose hidrógeno.
+\end_layout
+
+\begin_layout Itemize
+Si la disolución además de ácida 
+\series bold
+tiene un agente oxidante
+\series default
+ como el oxígeno: 
+\begin_inset Formula $O_{2}+4H^{+}+4e^{-}\longrightarrow2H_{2}O$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Si la disolución es neutra o básica, pero sigue existiendo oxígeno: 
+\begin_inset Formula $O_{2}+2H_{2}O+4e^{-}\longrightarrow4OH^{-}$
+\end_inset
+
+ se producirían iones hidróxido que pueden recombinarse con los iones de
+ hierro: 
+\begin_inset Formula $2\cdot Fe^{+}+4\cdot OH^{-}\longrightarrow2\,Fe(OH)_{2}$
+\end_inset
+
+ produciéndose dihidróxido de hierro (precipitando) que, en un tercer paso,
+ podría originar un trihidróxido.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Concluyendo: en cualquier caso el hierro se oxida y se produce corrosión,
+ sea cual sea el producto final de la misma., aunque no haya un electrólito
+ con su sal disuelta.
+ 
+\end_layout
+
+\begin_layout Standard
+Los metales y las aleaciones, de forma microscópica, están compuestos por
+ granos.
+ En las fronteras entre estos granos y en las impurezas se observan tensiones
+ correspondientes a las pilas galvánicas que forman.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/corrosion_galvanica_fe_cu.jpg
+	lyxscale 25
+	width 6cm
+
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/granos_corrosión.jpg
+	lyxscale 25
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Celda electrolítica sin iones metálicos Fe-Cu.
+ Pilas galvánicas en granos.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Velocidad de corrosión
+\end_layout
+
+\begin_layout Standard
+La velocidad de corrosión fue estudiada por primera vez por el gran químico
+ y físico 
+\begin_inset CommandInset href
+LatexCommand href
+name "Michael Faraday"
+target "https://es.wikipedia.org/wiki/Michael_Faraday"
+literal "false"
+
+\end_inset
+
+, famoso por sus estudios sobre la inducción electromagnética.
+ El potencial de electrodo determina, en condiciones de equilibrio, la tendencia
+ a corroerse, pero no suministra información de a qué velocidad lo hará.
+\end_layout
+
+\begin_layout Standard
+Faraday demostró que la cantidad de elemento disuelto en el ánodo o depositado
+ en el cátodo sigue la ley:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+m=\frac{I\cdot t\cdot P_{eq}}{F}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+donde tenemos que: 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+I
+\series default
+ es la intensidad de corriente que circula por el electrodo.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Es común usar otra versión de la ecuación: 
+\begin_inset Formula $m=\frac{j\cdot A\cdot t\cdot P_{eq}}{F}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En esta versión se usa la densidad de corriente eléctrica: 
+\begin_inset Formula $j=\frac{I}{A}$
+\end_inset
+
+, que se mide en 
+\begin_inset Formula $A/m^{2}$
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+t 
+\series default
+el tiempo transcurrido.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+F
+\series default
+ es la constante de Faraday: la carga de 1 mol de electrones.
+ 
+\begin_inset Formula $F=N_{A}\cdot e\text{⁻}=6.022\cdot10^{23}\cdot1.602\cdot10^{-19}=96485\cdot C/mol\approx96500\cdot C/mol$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Formula $P_{eq}$
+\end_inset
+
+
+\series default
+ es el peso equivalente; se obtiene dividiendo la masa atómica entre la
+ valencia del elemento.
+\end_layout
+
+\begin_layout Standard
+La velocidad de corrosión se suele expresar en masa perdida (en mg) por
+ 
+\begin_inset Formula $dm^{2}$
+\end_inset
+
+ y por día.
+ Así viene expresada en la unidad 
+\series bold
+mdd
+\series default
+.
+ También es frecuente usar una medida como los milímetros perdidos por una
+ superficie de material al año (
+\series bold
+mm/año
+\series default
+).
+\end_layout
+
+\begin_layout Subsection
+Tipos de corrosión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Tipos de Corrosión_41_42.png
+	lyxscale 20
+	width 80text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tipos de corrosión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ejercicio
+\series default
+: ampliar los conocimientos de los tipos de corrosión existentes, sobre
+ todo de la 
+\series bold
+corrosión intergranular 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "enu:Corrosión-intergranular-y"
+
+\end_inset
+
+ y bajo tensión
+\series default
+ 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "enu:Corrosión-bajo-tensión:"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Controlando la corrosión
+\end_layout
+
+\begin_layout Standard
+A veces es más económico reemplazar el material corroído que someterlo a
+ tratamiento.
+ De todas formas, siempre se pueden ejecutar una serie de procedimientos
+ anti-corrosión como:
+\end_layout
+
+\begin_layout Subsubsection
+Selección de materiales
+\end_layout
+
+\begin_layout Standard
+Lo más lógico: elegir materiales de construcción que, en el ambiente donde
+ se encontrarán, resistan la corrosión; por ejemplo, aceros inoxidables
+ o algunos materiales cerámicos (que tienen el inconveniente de ser frágiles).
+\end_layout
+
+\begin_layout Subsubsection
+Recubrimientos
+\end_layout
+
+\begin_layout Standard
+Creando una pátina de un material que proteja las superficies de los elementos
+ que pueden corroerse.
+\end_layout
+
+\begin_layout Paragraph
+Recubrimientos metálicos
+\end_layout
+
+\begin_layout Standard
+Finas capas sobre piezas metálicas para aislarlas del ambiente corrosivo.
+ 
+\end_layout
+
+\begin_layout Itemize
+Por ejemplo, se deposita cinc sobre el acero (acero galvanizado).
+ Como el cinc es más anódico que el hierro, se sacrifica (
+\begin_inset Quotes cld
+\end_inset
+
+ánodo de sacrificio
+\begin_inset Quotes crd
+\end_inset
+
+), en beneficio de no corroer el acero, incluso si existen arañazos., cuando
+ se encuentre en atmósfera corrosiva.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+El cinc se deposita por electrodeposición o mediante un baño fundido.
+ La capa de cinc es del orden de varias decenas de micrómetros.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+En el ejemplo de la 
+\begin_inset CommandInset href
+LatexCommand href
+name "hojalata"
+target "https://es.wikipedia.org/wiki/Hojalata"
+literal "false"
+
+\end_inset
+
+, esta se recubre de estaño que posee un comportamiento frente a la corrosión
+ parecido al hierro del acero (
+\begin_inset Formula $E_{Fe}^{0}=-0.44\cdot V$
+\end_inset
+
+ y 
+\begin_inset Formula $E_{Sn}^{0}=-0.136\cdot V)$
+\end_inset
+
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+En presencia de oxígeno, el hierro es más anódico que el estaño y se corroerá
+ antes.
+\end_layout
+
+\begin_layout Itemize
+Pero si no hay presencia de oxígeno, como en el interior de las latas es
+ al revés.
+ El estaño se comporta como ánodo y protege al hierro.
+ Esta situación es la que se observa en el interior de las latas, y, como
+ además, las sales de estaño no son tóxicas, es una solución muy usada en
+ la industria alimenticia.
+\end_layout
+
+\end_deeper
+\begin_layout Subparagraph
+Recubrimientos metálicos: formas de crear los recubrimientos
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color darkgray
+Electrolíticamente:
+\series default
+\color inherit
+ usando corrientes de hasta 10KA y 100 V en continua.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Galvanoplastia"
+target "https://prezi.com/d_fvvmbekhse/galvanoplastia-y-galvanostegia/"
+literal "false"
+
+\end_inset
+
+: reproducción de objetos metálicos sobre moldes de madera, yeso o cera.
+ Para hacer estatuillas, medallas, objetos en relieve...
+\end_layout
+
+\begin_layout Itemize
+\begin_inset CommandInset href
+LatexCommand href
+name "Galvanostegia"
+target "https://prezi.com/d_fvvmbekhse/galvanoplastia-y-galvanostegia/"
+literal "false"
+
+\end_inset
+
+: recubrir un metal con una capa más o menos fina de otro metal más noble
+ por procedimiento electrolítico: dorado, plateado, cromado...
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+
+\series bold
+\color darkgray
+Por inmersión en caliente: 
+\series default
+\color inherit
+bañando el material en metal fundido.
+ Podemos estañar, galvanizar (con cinc), aluminizar y plombear.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color darkgray
+Por difusión o cementación: 
+\series default
+\color inherit
+consiste en formar una aleación superficial del material de recubrimiento
+ con el metal base, usando temperaturas elevadas (400ºC hasta 2500ºC) y
+ entre los metales de recubrimiento tenemos cromo, aluminio, boro y cinc.
+\end_layout
+
+\begin_layout Paragraph
+Recubrimientos inorgánicos
+\end_layout
+
+\begin_layout Standard
+A veces, para proteger el acero de la corrosión se utiliza capas de vidrio
+ fundido, que le da un acabado duradero.
+ Con ellos se fabrican recipientes para la industria química.
+\end_layout
+
+\begin_layout Paragraph
+Recubrimientos orgánicos
+\end_layout
+
+\begin_layout Standard
+Se recubren con pinturas, barnices, lacas y otros polímeros, para protegerlos
+ de la corrosión.
+ Pero este recubrimiento debe ser adecuado.
+ Por ejemplo, es más perjudicial pintar un acero galvanizado porque un arañazo
+ profundo que llegue al acero atravesando la capa de cinc, si está pintado,
+ deja expuesto al aire una pequeña porción del cinc y hará que el acero
+ se corroa antes.
+\end_layout
+
+\begin_layout Standard
+Los recubrimientos plásticos (PVC - para chapas - , poliésteres, poliamidas,
+ acrílicos...) no conducen la electricidad, son flexibles y muy resistentes
+ a la electricidad, pero tienen una desventaja: son poco resistentes al
+ calor.
+\end_layout
+
+\begin_layout Subsubsection
+Diseño
+\end_layout
+
+\begin_layout Standard
+Ciertas soluciones de diseño protegen mejor frente a la corrosión:
+\end_layout
+
+\begin_layout Itemize
+Uniones soldadas en vez de remachadas.
+\end_layout
+
+\begin_layout Itemize
+Si se usan remaches, deben ser de un material catódico respecto de las uniones
+ que une.
+\end_layout
+
+\begin_layout Itemize
+Utilizar metales galvánicamente similares y, si no es posible dejar de usarlos,
+ aislarlos con arandelas de material no conductor.
+\end_layout
+
+\begin_layout Itemize
+En las tuberías con líquidos a alta velocidad, evitar ángulos pronunciados
+ para minimizar los efectos de la corrosión por erosión.
+ 
+\end_layout
+
+\begin_layout Itemize
+También en las tuberías, evitar que haya zonas o puntos calientes.
+\end_layout
+
+\begin_layout Itemize
+Tener en cuenta en las estructuras, cuando se calculen las secciones, el
+ efecto de la corrosión.
+\end_layout
+
+\begin_layout Itemize
+Los tanques y depósitos de sustancias corrosivas deben tener sistemas de
+ desagüe que permitan su limpieza.
+\end_layout
+
+\begin_layout Itemize
+Los elementos que se prevean sufrirán a lo largo de su vida corrosión deben
+ ser, en la medida de lo posible, fáciles de inspeccionar y de sustituir
+ cuando sea necesario.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Alteración del entorno
+\end_layout
+
+\begin_layout Itemize
+Por regla general, si bajamos la temperatura del entorno, este será menos
+ corrosivo.
+ Excepto en algunas condiciones, como el agua de mar, que es al contrario:
+ al bajar la temperatura del agua es más fácil que el oxígeno se solubilice
+ en ella, y se torna más corrosiva.
+\end_layout
+
+\begin_layout Itemize
+Si disminuye la velocidad de un líquido por la tubería se reduce la corrosión
+ por erosión; pero tampoco debe ser tan lenta como para estancarse.
+\end_layout
+
+\begin_layout Itemize
+Reducir el oxígeno en las disoluciones acuosas suele ser beneficioso.
+\end_layout
+
+\begin_layout Itemize
+Reducir el contenido de iones corrosivos en las disoluciones (como el 
+\begin_inset Formula $Cl^{-}$
+\end_inset
+
+ - sobre todo en presencia de aceros inoxidables -).
+\end_layout
+
+\begin_layout Itemize
+Usar inhibidores o catalizadores de retardo:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\series bold
+\color purple
+Tipo retardo:
+\series default
+\color inherit
+ forman una película sobre las superficie, que los va absorbiendo.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color purple
+Desoxidantes:
+\series default
+\color inherit
+ eliminan el oxígeno de una disolución.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Protección catódica
+\end_layout
+
+\begin_layout Standard
+En el cátodo de una pila de Daniell siempre se produce una reducción.
+ Si la pieza a proteger la conseguimos situar de cátodo, no sufrirá corrosión.
+\end_layout
+
+\begin_layout Standard
+En otros casos, como una estructura de acero en ambiente ácido, en el que
+ ya vimos se dan las reacciones:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{multicols}{2}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reacción oxidativa: 
+\begin_inset Formula $Fe\rightarrow Fe^{2+}+2e^{-}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Reacción de reducción: 
+\begin_inset Formula $2H^{+}+2e^{-}\longrightarrow H_{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{multicols}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si suministro continuamente al cátodo electrones, su reacción se detendrá.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="50page%">
+<column alignment="center" valignment="middle" width="20page%">
+<row>
+<cell multicolumn="1" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color blue
+Tipo de Protección Catódica
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\series bold
+\color blue
+Corriente impresa:
+\series default
+\color inherit
+ la pieza que se quiere proteger se conecta al polo negativo de una fuente
+ de c.c.
+ externa.
+ El polo positivo a un ánodo consumible (chatarra de acero).
+ Se puede usar también ánodos con electrodos inertes que no necesitan sustituirs
+e como titanio recubierto de platino, pero es mucho más caro
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/proteccion_catodica_fuente_corriente.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align left
+
+\series bold
+\color blue
+Por ánodo de sacrificio:
+\series default
+\color inherit
+ se utiliza un material que sirva de ánodo respecto del acero, como el magnesio
+ (también aluminio y cinc).
+ El medio en el que estén los elementos debe ser húmedo y conductor, sin
+ demasiada resistencia eléctrica.
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/proteccion_catodica_anodo_sacrificio.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Este tipo de protecciones suele usarse en elementos enterrados, como tuberías
+ o depósitos.
+\end_layout
+
+\begin_layout Subsubsection
+Protección anódica
+\end_layout
+
+\begin_layout Standard
+Se basa en la formación de películas pasivas protectoras, en la superficie
+ de los metales (como antes en el caso de los óxidos).
+ Es complejo conocer el proceso de su formación, pero con tratamientos adecuados
+ se puede conseguir en aceros inoxidables, titanio, níquel, aluminio y sus
+ aleaciones.
+\end_layout
+
+\begin_layout Standard
+Un método es conseguir dicha capa empleando una corriente elevada, para
+ provocar su corrosión.
+ Una vez formada, solo se necesita aplicar una densidad de corriente baja.
+ Es un método que tiene que ser controlado: una picadura en el material
+ provocaría la ruptura de la capa pasivada, que debe ser restaurada aplicando
+ de nuevo una corriente eléctrica elevada.
+ Por ello, se necesita un sistema de control de alto coste.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ejercicio
+\series default
+: haz una presentación de dos o tres diapositivas resumiendo el proceso
+ de anodizado del aluminio.
+\end_layout
+
+\begin_layout Section
+Anexo: electrólisis
+\end_layout
+
+\begin_layout Standard
+La 
+\begin_inset CommandInset href
+LatexCommand href
+name "electrólisis"
+target "http://acer.forestales.upm.es/basicas/udfisica/asignaturas/fisica/electro/pila.html"
+literal "false"
+
+\end_inset
+
+ es el proceso inverso de la corrosión.
+ Se consigue poniendo en el ánodo (negativo) una tensión externa positiva
+ y en el cátodo (positivo) el negativo de la fuente externa, haciendo circular
+ electrones esta vez del cátodo al ánodo.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/electrolisis_cuba_electrolítica.png
+	lyxscale 25
+	width 7cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Electrólisis del Zn y del Cu
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+appendixname}{Apéndice}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Apéndice
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Oxidación-redox-en"
+
+\end_inset
+
+Oxidación redox en youtube: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://youtu.be/cYZyjCok7HA"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:John-Frederic-Daniell"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "John Frederic Daniell"
+target "https://es.wikipedia.org/wiki/John_Frederic_Daniell"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:pila-de-Daniell"
+
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Pila de Daniell"
+target "https://youtu.be/O_OJ60lO2eI"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Corrosión-intergranular-y"
+
+\end_inset
+
+Corrosión intergranular y galvánica: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.inoxidable.com/corrosion.htm"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset label
+LatexCommand label
+name "enu:Corrosión-bajo-tensión:"
+
+\end_inset
+
+ Corrosión bajo tensión: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://es.slideshare.net/Gozsgi/corrosin-bajo-tensin"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

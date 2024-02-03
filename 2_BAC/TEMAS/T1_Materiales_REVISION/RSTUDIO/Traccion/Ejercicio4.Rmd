@@ -1,0 +1,96 @@
+---
+title: "Ejercicio 4. Materiales"
+author: "Aurelio Gallardo Rodríguez"
+date: "9 de junio de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 26. Everest. TINII
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+## Enunciado Ejercicio 4
+<p style="text-align: justify;">
+Una barra elástica de acero, con un límite elástico de $5000kp/cm^{2}$,es sometida a una fuerza de tracción $8500kp$. Sabiendo que la longitud de la barra de acero es de 400mm, y su módulo de elasticidad $E=2.1\cdot10^{6}kp/cm^{2}$, calcular el diámetro de la barra para que su alargamiento total no supere las 50 centésimas de milímetro. </p>
+
+## Cálculos en el límite elástico.
+
+```{r datos, echo = FALSE}
+library("units")
+# L0
+L0 = set_units(400,mm)
+# Fuerza de Tracción
+F = set_units(8500,kgf)
+# Módulo de Young
+E=set_units(2.1e6,kgf/cm^2)
+# Límite elástico de 
+SigE =set_units(5000,kgf/cm^2)
+# SigE --> Usando kgf, como kilopondio.
+# units(SigE)=with(ud_units,N/cm^2)
+
+# Datos del límite elástico.
+Ee = SigE / E
+dLe = Ee * L0
+```
+<p style="text-align: justify;">
+En el punto del límite elástico, sabemos que $\sigma_{e}=E\cdot\epsilon_{e}$ luego, podemos calcular el alargamiento como...
+
+$\epsilon_{e}=\sigma_{e} / E = \frac{`r SigE` \cdot kp/cm^2}{`r E` \cdot kp/cm^2} = `r Ee`$
+
+Y de aquí, $\Delta L = \epsilon_ {e} \cdot L_{0} =  `r Ee` \cdot `r L0` `r as_cf(L0)` = `r dLe` \cdot `r as_cf(dLe)`$
+
+</p>
+
+## En el punto problema
+
+```{r datos2, echo = FALSE}
+# Punto problema
+dLx = set_units(50*0.01,mm) # 50 centésimas de milímetro
+Ex = dLx / L0 # alargamiento.
+Sigx = round(Ex * E,2) # calculo la tensión
+S0 = round(F / Sigx,2) # calculo la superficie transversal.
+D = round(sqrt(4*as.numeric(S0)/pi),2)
+```
+<p style="text-align: justify;">
+Calculamos ahora el punto problema. Sabemos que tenemos un alargamiento máximo de $\Delta L_{x}=`r dLx` \cdot  `r as_cf(dLx)`$
+
+Alargamiento --> $\epsilon_{x}=\frac{\Delta L_{x}}{L0}= \frac{`r dLx` \cdot  `r as_cf(dLx)`}{`r L0` \cdot  `r as_cf(L0)`} = `r Ex`$
+
+Tensión --> $\sigma_ {x} = \epsilon_{x} \cdot E = `r Ex`\cdot `r E` \cdot kp/cm^2 = `r Sigx` \cdot kp/cm^2$
+
+Superficie --> $S_{0} = F / \sigma_ {x} = `r F` \cdot kp / `r Sigx` \cdot kp/cm^2 = `r S0` \cdot cm^2$
+
+Diámetro --> $\Phi=\sqrt{\frac{4 \cdot S_{0}}{\pi}}=\sqrt{\frac{4 \cdot `r S0` \cdot cm^2}{\pi}}= `r D` \cdot cm$
+
+</p>
+
+``` {r grafica, echo = FALSE}
+plot(c(Ex,Ee),c(Sigx,SigE)
+     ,col="blue", xlim=c(0,Ee*1.1)
+     ,ylim=c(0,5000))
+segments(0,0,Ee,SigE,col="red")
+e1 = paste0(
+  "(",
+  round(Ex,4),
+  " , ",
+  round(Sigx,2),
+  as_cf(Sigx),
+  ")")
+text(Ex,Sigx,e1,col="blue",pos=2,cex=0.8)
+e2 = paste0(
+  "(",
+  round(Ee,4),
+  " , ",
+  round(SigE,2),
+  as_cf(SigE),
+  ")")
+text(Ee,SigE,e2,col="blue",pos=2,cex=0.8)
+```

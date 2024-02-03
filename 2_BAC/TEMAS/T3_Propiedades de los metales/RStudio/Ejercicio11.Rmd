@@ -1,0 +1,56 @@
+---
+title: "Ejercicio 11. Endurecimiento en metales"
+author: "Aurelio Gallardo Rodríguez"
+date: "3 de septiembre de 2017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 63. Everest. Ej. 17.  TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 11. 
+<p style="text-align:justify;">
+Se sabe que el diámetro medio de grano de un material son $10\cdot\mu$ m y su límite elástico 10.32 MPa. Si manteniendo constante la temperatura, reduzco el tamaño de grano a $5\cdot\mu$ m y su límite elástico pasa a ser de 10.45 MPa, calcula los valores de K y $\sigma_{0}$.
+</p>
+<hr>
+
+<p style="text-align:justify;">
+Seguimos la ecuación $\sigma_{E}=\sigma_{0}+\frac{k}{\sqrt{d}}$ 
+</p>
+<p style="text-align:justify;">
+Si despejamos el valor k, con dos valores...
+$$k=\frac{\sigma_{E_{A}}-\sigma_{E_{B}}}{\frac{1}{\sqrt{d_{A}}}-\frac{1}{\sqrt{d_{B}}}}$$
+</p>
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+sigmaA=set_units(10.32,MPa)
+sigmaB=set_units(10.45,MPa)
+dA=set_units(10,µm)
+dB=set_units(5,µm)
+units(dA)=with(ud_units,m)
+units(dB)=with(ud_units,m)
+k=(sigmaA-sigmaB)/((1/sqrt(dA))-(1/sqrt(dB)))
+sigma0=round(sigmaA-k/sqrt(dA),2)
+```
+
+## Solución
+<p style="text-align:justify;">
+$$\mathbf{k}=\frac{\sigma_{E_{A}}-\sigma_{E_{B}}}{\frac{1}{\sqrt{d_{A}}}-\frac{1}{\sqrt{d_{B}}}}=\frac{`r sigmaA`\,MPa -`r sigmaB`\,MPa}{\frac{1}{\sqrt{ `r dA`\,m}}-\frac{1}{\sqrt{ `r dB`\,m}}}= \\ = \mathbf{`r k` \cdot MPa \cdot m^{1/2}}$$
+</p>
+
+<hr>
+
+<p style="text-align:justify;">
+$$\mathbf{\sigma_{0}}=\sigma_{E_{A}}-\frac{k}{\sqrt{d_{A}}}=  \\ =`r sigmaA`\,MPa-\frac{`r k` \cdot MPa \cdot m^{1/2}}{\sqrt{`r dA`\,m}}= \\ =\mathbf{`r sigma0`\,MPa} $$
+</p>
+

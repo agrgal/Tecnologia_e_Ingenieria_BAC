@@ -1,0 +1,57 @@
+---
+title: "Ejercicio 3. Factores de empaquetamiento"
+author: "Aurelio Gallardo Rodríguez"
+date: "30 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 57. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 3.
+<p style="text-align:justify;">
+¿Por qué la estructura BCC, teniendo un factor de empaquetamiento menor que HCP y FCC, tiene también el tamaño de los huecos octaédricos menor?
+</p>
+<hr>
+
+<p style="text-align:justify;">
+En la red BCC el factor de empaquetamiento es del 68% quedando un 32% para los huecos. En la red FCC, es del 74% y un 26% para los huecos; asimismo en la red HCP.
+</p>
+
+<p style="text-align:justify;">
+En la red FCC hay 4 huecos octaédricos y 8 tetraédricos. En la red BCC hay más huecos: 6 octaédricos y 12 tetraédricos por celda. 
+</p>
+
+<p style="text-align:justify;">
+El intersticio de la red FCC octaédrico como máximo es de radio 41% del radio del átomo, siendo en la red BCC del 15.5%, pero el radio del hueco tetraédrico en FCC es del 22.5% y en la red BCC del 29.1%
+</p>
+
+<p style="text-align:justify;">
+En relación con el radio del átomo, la red BCC tiene más hueco disponible:
+$$\begin{matrix}
+\mathbf{{\color{Purple} {FCC}}} & \, & \mathbf{{\color{Purple} {BCC}}} \\ 
+4 \cdot 0.41 + 8 \cdot 0.225 = \mathbf{3.44} & \mathbf{<} & 6 \cdot 0.155 + 12 \cdot 0.291 = \mathbf{4.422}
+\end{matrix}$$
+</p>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+d=set_units(7.9,g/cm^3) ## densidad
+mat=set_units(55.8,g/mol) ## masa atómica
+NumA=set_units(6.022e23,1/mol) ## Número de avogadro
+R=set_units(1.24,Å) ## tamaño celda en angstrong
+units(R)=with(ud_units,cm)
+## factor
+fac1 = d * R^3 * 4^3 / (mat / NumA )
+## fac1
+```

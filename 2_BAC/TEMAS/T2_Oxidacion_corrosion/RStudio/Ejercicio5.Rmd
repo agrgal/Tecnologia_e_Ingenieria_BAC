@@ -1,0 +1,53 @@
+---
+title: "Ejercicio 5. Pila galvánica"
+author: "Aurelio Gallardo Rodríguez"
+date: "4 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 37-38. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 5. Pila galvánica.
+<p style="text-align:justify;">
+Una pila galvánica está diseñada con una barra de hierro sumergida en una disolución 1 M de $Fe^{2+}$ y una barra de plata sumergida en una solución 1 M de $Ag^{+}$ . Sabiendo que a 25ºC los potenciales normales de electrodo son $E_{Fe}^0=-0.44 \cdot V$ y $E_{Ag}^0=+0.8 \cdot V$ , responde:
+
+1. ¿Qué electrodo es el ánodo y pierde electrones - se oxida -? ¿Cuál es la especie oxidante?
+2. Escribir las semirreacciones de oxidación y reducción, y la reacción global.
+3. Calcular el potencial de la ecuación redox (R=1.24V).
+</p>
+
+## Cálculos
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+EoFE=set_units(-0.44,V)
+EoAG=set_units(0.8,V)
+Eo=EoAG-EoFE
+```
+<p style="text-align:justify;">
+(1) Como el potencial de reducción estándar del Fe es negativo, es el que se oxida o pierde electrones. La especie que gana electrones es la plata Ag (se reduce y es el oxidante).
+</p>
+<p style="text-align:justify;">
+(2) $$\left.\begin{matrix}
+Fe \longrightarrow Fe^{+2} + 2e^-\\ 
+2Ag^+ + 2e^- \longrightarrow 2Ag
+\end{matrix}\right\} Fe + 2Ag^+ \longrightarrow Fe^{+2} + 2Ag $$
+
+</p>
+<p style="text-align:justify;">
+(3) $$E^0=E_{cat}-E_{ani}=E_{Ag}^0-E_{Fe}^0=\\= `r EoAG`\,V-(`r EoFE`\,V)=`r Eo`\,V $$
+</p>
+
+
+

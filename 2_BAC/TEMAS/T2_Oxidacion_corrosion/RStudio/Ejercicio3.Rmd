@@ -1,0 +1,53 @@
+---
+title: "Ejercicio 3. Ganancia parabólica"
+author: "Aurelio Gallardo Rodríguez"
+date: "4 de Agosto de 1017"
+output:
+  slidy_presentation:
+    fig.align: center
+    fig_caption: yes
+    fig_height: 6
+    fig_width: 10
+    footer: Por Aurelio Gallardo
+    highlight: pygments
+  ioslides_presentation: default
+subtitle: Pag 33. Everest. TINII.
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Ejercicio 3
+<p style="text-align:justify;">
+Un material muestra una oxidación parabólica en la que gana $100\cdot\mu g/cm^{2}$ en 2 horas. ¿Qué ganancia presentará al cabo de 10 días?
+</p>
+<hr>
+
+```{r datos0, echo=FALSE, warning=FALSE}
+library("units")
+t0=set_units(2,h)
+w0=set_units(100*10^(-6),g/cm^2)
+kp=(w0^2)/t0
+## Nuevo parametro
+t1=set_units(10,d) #En días
+w1=exp(0.5*log(kp*t1)) #manera de caluclar la raíz
+units(w1)=with(ud_units,g/cm^2) #recalculando las unidades
+units(t1)=with(ud_units,h) #paso a horas
+w2=w1
+units(w2)=with(ud_units,ug/cm^2)
+```
+<p style="text-align:justify;">
+Tenemos que la ganancia parabólica sigue la fórmula $w^2=k_p \cdot t$
+</p>
+<p style="text-align:justify;">
+Para $t_0= `r t0` \; h$ y para $w_0= `r w0` \,g/cm^2$ calculamos $k_p= `r kp`\, \frac{g^2}{h\cdot cm^4}$
+</p>
+<p style="text-align:justify;">
+Luego $$ w= \sqrt{k_p \cdot t}=\sqrt{ `r kp` \,\frac{g^2}{h\cdot cm^4}  \cdot `r t1`\,h} = `r w1` \,g/cm^2$$
+</p>
+<p style="text-align:justify;">
+$$ w = `r round(w2,2)` \, \mu g/cm^2$$
+</p>
+
+

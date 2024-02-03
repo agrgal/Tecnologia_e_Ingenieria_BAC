@@ -1,0 +1,1749 @@
+#LyX 2.2 created this file. For more info see http://www.lyx.org/
+\lyxformat 508
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+\usepackage{amsmath}
+\usepackage{multicol}
+\usepackage{xcolor}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Materiales: ensayos y medidas de propiedades.
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Materiales: Ensayos Y Medidas De Propiedades By Aurelio Gallardo Rodríguez,
+ 31667329D Is Licensed Under A Creative Commons Reconocimiento-NoComercial-Compa
+rtirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+El diseño de los elementos que forman parte de estructuras y máquinas deben
+ cumplir con una serie de requisitos; no sólo económicos, sino también cumpliend
+o especificaciones de seguridad.
+ Para cumplirlas, cobra importancia el estudio de las propiedades de los
+ materiales, las cuales se obtienen a través de diversos ensayos normalizados.
+\end_layout
+
+\begin_layout Standard
+El organismo de normalización español es 
+\begin_inset CommandInset href
+LatexCommand href
+name "AENOR"
+target "http://www.aenor.es/aenor/inicio/home/home.asp"
+
+\end_inset
+
+, y las normas que publica son las especificaciones UNE (Una Norma Española).
+ 
+\end_layout
+
+\begin_layout Section
+Tipos de Ensayos
+\end_layout
+
+\begin_layout Standard
+Los ensayos son los procedimientos de medida de las propiedades de los materiale
+s, simulando las condiciones de trabajo o uso a las que estarán expuestos
+ los mismos.
+ Hay una gran diversidad de ensayos, que pueden clasificarse según diversos
+ criterios:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/D1_pag7_1A.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquemas Tipos de Ensayo según rigurosidad y naturaleza
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/D2_pag7_1C.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Esquema según utilidad de la pieza tras el ensayo y sobre velocidad del
+ mismo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ensayo de tracción
+\end_layout
+
+\begin_layout Standard
+El ensayo de tracción es considerado como uno de los más importantes a la
+ hora de determinar las propiedades mecánicas de cualquier material.
+ Sirve para comparar distintos materiales y si una pieza de determinado
+ material podrá soportar determinadas condiciones de carga.
+\end_layout
+
+\begin_layout Standard
+Consiste en someter a una pieza (
+\series bold
+probeta
+\series default
+), cilíndrica o prismática, a fuerzas de tracción, de forma lenta y progresiva.
+ Se miden en el ensayo los alargamientos (
+\series bold
+∆L
+\series default
+) en función de la Fuerza 
+\series bold
+F
+\series default
+ aplicada, y se hace una representación de los mismos hasta la rotura de
+ la probeta.
+ Aunque, para evitar que las dimensiones de la probeta influyan en las medicione
+s se suele representar con diagramas de tensión-deformación.
+\end_layout
+
+\begin_layout Standard
+La tensión es la fuerza por unidad de superficie aplicada, siendo la superficie
+ la sección transversal 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ de la probeta:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $σ=\dfrac{F}{S_{0}}$
+\end_inset
+
+ y se mide en 
+\begin_inset Formula $N/m\text{²}=Pa$
+\end_inset
+
+ (Pascales)
+\end_layout
+
+\begin_layout Standard
+La deformación se calcula de forma relativa, en función de la longitud inicial
+ 
+\begin_inset Formula $L_{o}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $ε=\frac{L-L_{0}}{L_{0}}=\frac{\text{∆L}}{L_{0}}$
+\end_inset
+
+ , siendo la deformación ε una magnitud adimensional.
+\end_layout
+
+\begin_layout Standard
+También puede expresarse en forma de tanto por ciento 
+\begin_inset Formula $ε(\%)=\frac{\text{∆L}}{L_{0}}\,\cdot100$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Estudio del diagrama
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Diagrama tensión deformación pag8_seccion2.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama tensión deformación y esquemas de tracción y fuerzas.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Zonas del diagrama tensión deformación_pag8_9_seccion2.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zonas del diagrama tensión - deformación
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la zona plástica, si elijo un punto cualquiera, A, y cesa el ensayo,
+ disminuye el alargamiento provocado, pero
+\series bold
+ no recupera la probeta la longitud inicial
+\series default
+.
+ En general ocurre que:
+\end_layout
+
+\begin_layout Itemize
+Recupera algo de la deformación (deformación elástica), el alargamiento
+ 
+\begin_inset Formula $\epsilon_{\theta}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conserva una deformación remanente o plástica, 
+\begin_inset Formula $\epsilon_{p}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Formas y dimensiones de la probeta
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/probetas_normalizadas.png
+	lyxscale 25
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Probetas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las probetas pueden ser de dos tipos: o cilíndricas o de sección rectangular.
+ La parte central de la probeta debe mecanizarse de tal forma que esta sección
+ sea constante.
+ 
+\end_layout
+
+\begin_layout Standard
+Si la probeta es 
+\series bold
+\shape italic
+cilíndrica
+\series default
+\shape default
+:
+\end_layout
+
+\begin_layout Enumerate
+Sobre la parte de sección constante, o calibrada, se marca una longitud
+ 
+\begin_inset Formula $L_{0}$
+\end_inset
+
+, o longitud inicial.
+\end_layout
+
+\begin_layout Enumerate
+La longitud calibrada debe ser superior.
+ Si 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es el diámetro de la probeta, la longitud de la parte calibrada debe estar
+ en el intervalo 
+\begin_inset Formula $[L_{0}+\nicefrac{\phi}{2},L_{0}+2\phi]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si la probeta es de 
+\series bold
+\shape italic
+sección rectangular 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ 
+\series default
+\shape default
+:
+\end_layout
+
+\begin_layout Enumerate
+Al igual que antes se marca una longitud 
+\begin_inset Formula $L_{0}$
+\end_inset
+
+, o longitud inicial.
+\end_layout
+
+\begin_layout Enumerate
+La longitud calibrada debe estar en el intervalo 
+\begin_inset Formula $[L_{0}+1.5\cdot\sqrt{S_{0}},L_{0}+2.5\cdot\sqrt{S_{0}}]$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Las probetas acaban en zonas de mayor sección (llamadas 
+\series bold
+cabezas
+\series default
+) para que las mordazas de la máquina de tracción sujeten mejor la probeta.
+ Para que los ensayos con probetas de distintas longitudes sean comparables
+ deben cumplir la relación:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\series bold
+\shape italic
+\begin_inset Formula $K=\frac{L_{01}}{\sqrt{S_{01}}}=\frac{L_{02}}{\sqrt{S_{02}}}$
+\end_inset
+
+ 
+\series default
+\shape default
+siendo K una constante.
+\end_layout
+
+\begin_layout Subsection
+Resultados del ensayo
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Limites_elasticos_zonas_pag10_seccion2.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estudio de la Zona elástica.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Limites_pláticos y rotura_pag10_y_11_seccion2.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Estudio de la Zona Plástica.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+También podemos hablar del 
+\series bold
+trabajo de deformación
+\series default
+, el área bajo la curva de fuerza-alargamiento 
+\begin_inset Formula $F-\triangle L$
+\end_inset
+
+.
+ Es el trabajo necesario para conseguir la rotura del material: 
+\begin_inset Formula $\intop F\cdot dl$
+\end_inset
+
+, o, también puede verse como la cantidad de energía que es capaz de absorber
+ un material sin romperse, lo cual tiene interés en algunos ensayos relacionados
+ con la industria automovilística.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Fluencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Fluencia.jpg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zona de Fluencia: De Hans Topo1993
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ En algunos materiales metálicos, como el acero, al finalizar la zona elástica
+ se produce una zona en la que se experimenta una deformación plástica considera
+ble bajo una tensión fluctuante.
+ Esta zona es la llamada zona de 
+\series bold
+fluencia
+\series default
+ o 
+\series bold
+cedencia
+\series default
+, y los valores de las tensiones entre las que se produce se llaman tensiones
+ límites de fluencia superior e inferior.
+ 
+\end_layout
+
+\begin_layout Standard
+La fluencia es un fenómeno debido a la presencia, en el acero, de impurezas
+ de nitrógeno.
+\end_layout
+
+\begin_layout Subsubsection
+Curva de tracción verdadera
+\end_layout
+
+\begin_layout Standard
+Hasta ahora hemos considerado que la tensión que usamos en nuestro experimento
+ viene dado por la relación 
+\begin_inset Formula $\sigma=\frac{F}{S_{0}}$
+\end_inset
+
+ y que por tanto 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ era constante, pero sabemos que no es así, que la superficie transversal,
+ en general, va disminuyendo al aumentarse las deformaciones y alcanzar
+ en la estricción antes de la rotura su mínima sección.
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, si conociésemos en todo momento la sección S verdadera, podríamos
+ calcular la verdadera tensión aplicada: 
+\begin_inset Formula $\sigma_{v}=\dfrac{F}{S}$
+\end_inset
+
+ ; por lo tanto, a la tensión 
+\begin_inset Formula $\sigma$
+\end_inset
+
+ se le llama 
+\series bold
+\shape italic
+tensión aparente 
+\series default
+\shape default
+y a 
+\begin_inset Formula $\sigma_{v}$
+\end_inset
+
+ 
+\series bold
+\shape italic
+tensión verdadera.
+ 
+\series default
+\shape default
+La curva I, corresponde a la tensión aparente frente a las deformaciones
+ y la II a la tensión verdadera.
+ 
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tension_aparente_verdadera.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramas de tracción aparente y de tracción verdadera
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero eso no es todo.
+ También podemos corregir la deformación.
+ En efecto, tomamos 
+\begin_inset Formula $ε=\frac{\text{∆L}}{L_{0}}$
+\end_inset
+
+, pero en realidad es una 
+\series bold
+\shape italic
+deformación aparente
+\series default
+\shape default
+, ya que la longitud varía con el tiempo.
+ Si tomamos la 
+\series bold
+\shape italic
+deformación verdadera
+\series default
+\shape default
+, L, podríamos obtener que: 
+\begin_inset Formula $ε_{v}=\frac{L-L_{0}}{L}=\frac{\text{∆L}}{L}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Representamos dichas curvas con el número III (
+\begin_inset Formula $\sigma-ε_{v}$
+\end_inset
+
+) y IV (
+\begin_inset Formula $\sigma_{v}-ε_{v}$
+\end_inset
+
+).
+ Esta última curva, se denomina 
+\series bold
+\shape italic
+curva de tracción verdadera
+\series default
+\shape default
+, pero apenas se utiliza por la dificultad de obtenerla en la práctica (habría
+ que conocer la sección exacta en cada punto del ensayo).
+ Sin embargo, hay una relación exacta en muchos metales entre la tensión
+ y deformación verdaderas: la relación de Hollomon 
+\begin_inset Formula $\sigma_{v}=K\cdot\epsilon_{v}^{n}$
+\end_inset
+
+, donde K y n son constantes características de cada material.
+\end_layout
+
+\begin_layout Subsubsection
+Tensión máxima de trabajo
+\end_layout
+
+\begin_layout Standard
+Cuando en una estructura queremos asegurarnos que sus elementos responderán
+ de forma segura a los esfuerzos a los que se verán sometidos cada uno,
+ debemos asegurarnos que éstos trabajan en la zona de 
+\series bold
+\shape italic
+deformación elástica
+\series default
+\shape default
+, para que cualquier variación pueda ser reversible (se eligen por tanto
+ materiales con más o menos resistencia y se calculan sus secciones).
+ A veces, estos esfuerzos son casi imposibles de ponderar; pensemos, por
+ ejemplo, en el tirante de un puente.
+ No sólo debemos calcular el peso de la estructura que soporta y de los
+ vehículos que circularán por él sino otros imponderables, como nieve acumulada
+ o la fuerza del viento.
+ 
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, y dependiendo de la reglamentación de cada país, se suele
+ actuar de una de estas dos formas:
+\end_layout
+
+\begin_layout Enumerate
+Maximizando las fuerzas a las que se pueda ver sometida cada pieza.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Minimizando la resistencia del material.
+\end_layout
+
+\begin_layout Standard
+En el primer caso, las fuerzas que pensamos que actuarán sobre un elemento
+ se multiplican por un factor mayor que la unidad (
+\series bold
+\shape italic
+coeficiente de seguridad
+\series default
+\shape default
+) y se realizan los cálculos de longitudes y secciones en función de este
+ factor.
+ En el segundo, una tensión indicativa del material (por ejemplo, el límite
+ superior de la zona de fluencia o el límite de rotura) y 
+\series bold
+\shape italic
+se divide por un coeficiente mayor que la unidad
+\series default
+\shape default
+, tomando como la tensión máxima que aguantará el material.
+\end_layout
+
+\begin_layout Subsubsection
+Máquinas de tracción
+\end_layout
+
+\begin_layout Standard
+Suele tener estas características: 
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/maquina-hidraulic-ensayo-traccion-umib.png
+	lyxscale 50
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\shape italic
+\size footnotesize
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Máquina de tracción
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Consta de dos dispositivos: uno productor de cargas y otro medidor de cargas
+ y desplazamientos.
+\end_layout
+
+\begin_layout Itemize
+La tracción se realiza siguiendo el eje de la probeta.
+\end_layout
+
+\begin_layout Itemize
+Debe ser posible regular la velocidad tanto a la carga como a la descarga
+ .
+\end_layout
+
+\begin_layout Itemize
+Normalmente el sistema de producción de cargas es neumático.
+ 
+\end_layout
+
+\begin_layout Paragraph
+Algunos vídeos de YouTube
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset href
+LatexCommand href
+name "Ensayo de tracción de la Universidad de Almería"
+target "https://youtu.be/4p7bvJGN4Po"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset CommandInset href
+LatexCommand href
+name "Ensayo de Tracción Universidad Nacional De Trujillo - Escuela De Ingeniería Mecánica"
+target "https://youtu.be/Klx9KO1gOdI"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ensayos de dureza
+\end_layout
+
+\begin_layout Standard
+La dureza es una propiedad mecánica importante de los materiales , pero
+ no muy claramente definida.
+ En algunos se obtiene por comparación con otros materiales que lo rayan
+ y en otros por otros materiales que penetran.
+ Por lo tanto, existe dos tipos de ensayos de dureza,y , en cada caso siempre
+ hay que indicar el procedimiento usado:
+\end_layout
+
+\begin_layout Itemize
+Ensayos de dureza al rayado.
+\end_layout
+
+\begin_layout Itemize
+Ensayos de dureza a la penetración.
+\end_layout
+
+\begin_layout Standard
+La dureza depende de:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Elasticidad del material.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Estructura cristalina.
+\end_layout
+
+\begin_layout Standard
+En los 
+\series bold
+metales
+\series default
+ 
+\series bold
+puros
+\series default
+, la dureza aumenta 
+\series bold
+proporcionalmente a la cohesión y número de átomos por unidad de volumen
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+En las 
+\series bold
+aleaciones
+\series default
+, la dureza puede aumentar usando 
+\series bold
+tratamientos térmicos o deformaciones
+\series default
+.
+\end_layout
+
+\begin_layout Standard
+La dureza es una propiedad de gran importancia práctica, ya que el desgaste
+ del material depende de ella así como su comportamiento ante la mecanización
+ de piezas.
+\end_layout
+
+\begin_layout Subsection
+Ensayos de dureza al rayado
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Ensayos de dureza al rayado_pag14_seccion4.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ensayos de dureza al rayado.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ensayos de dureza a la penetración
+\end_layout
+
+\begin_layout Standard
+En estos ensayos una pieza, llamada 
+\series bold
+penetrador
+\series default
+, se aplica en la pieza con una fuerza controlada durante un tiempo.
+ La velocidad de aplicación de la carga debe ser lenta para no influir en
+ la medida.
+ La relación entre la fuerza y la superficie de la huella nos dará la medida
+ (a menor huella para una misma fuerza, mayor dureza).
+\end_layout
+
+\begin_layout Subsubsection
+Ensayo Brinell 
+\end_layout
+
+\begin_layout Itemize
+Propuesto por Johann August Brinell (1849-1925) en los año 1900.
+\end_layout
+
+\begin_layout Itemize
+Penetrador: esfera de acero templado de gran dureza, de diámetro entre 1
+ y 10mm.
+\end_layout
+
+\begin_layout Itemize
+Carga: entre los 3000kp y 1.25kp
+\end_layout
+
+\begin_layout Itemize
+Intervalo de tiempo: suele ser de 15 s, a menos que sea un material muy
+ blando y se necesite más.
+\end_layout
+
+\begin_layout Standard
+La fórmula de la dureza BRINELL es (ver problema 1 de demostración) 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/dureza brinell.jpg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dureza Brinell
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+HB=\frac{2\cdot F}{\pi D\cdot\left(D-\sqrt{D^{2}-d^{2}}\right)}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siendo F la fuerza ejercida en el ensayo, D el diámetro de la bola y d el
+ diámetro de la huella.
+ Para que el ensayo sea válido se ha demostrado que 
+\begin_inset Formula $0.25D<d<0.5D$
+\end_inset
+
+; así no hay ni rebajes ni realces en la huella y el ensayo es válido.
+\end_layout
+
+\begin_layout Standard
+Más consideraciones
+\end_layout
+
+\begin_layout Enumerate
+Ladureza Brinell suele expresarse en 
+\begin_inset Formula $kp/mm^{2}$
+\end_inset
+
+ (kilopondios por milímetro cuadrado).
+\end_layout
+
+\begin_layout Enumerate
+El diámetro de la bola no puede ser mayor que el espesor del material.
+ Por ejemplo, si el espesor es 5mm, la bola tiene que tener un diámetro
+ de 2.5mm
+\end_layout
+
+\begin_layout Enumerate
+Según los materiales, los ensayos deben cumplir que la fuerza aplicada sea
+ proporcional al Diámetro de la bola según una constante 
+\begin_inset Formula $F=K\cdot D^{2}$
+\end_inset
+
+.
+ Esa constante es distinta para cada material; por ejemplo, para el bronce
+ y el latón K=5, pero para materiales férricos K=30
+\end_layout
+
+\begin_layout Enumerate
+Para cada material, hay una proporcionalidad entre la dureza Brinell y su
+ resistencia a la tracción.
+\end_layout
+
+\begin_layout Enumerate
+La dureza Brinell se puede aplicar en materiales no muy duros, con durezas
+ muy inferiores al penetrador.
+\end_layout
+
+\begin_layout Enumerate
+Si d es muy pequeña, se pueden cometer grandes errores.
+\end_layout
+
+\begin_layout Enumerate
+No se puede aplicar a materiales de por sí esféricos o cilíndricos.
+\end_layout
+
+\begin_layout Enumerate
+Ejemplo de medición y nomenclatura: 
+\series bold
+250 HB 10 500 30
+\series default
+ indicaría que se ha obtenido una dureza de 
+\begin_inset Formula $250\cdot kp/mm^{2}$
+\end_inset
+
+, y el ensayo se ha obtenido con una bola de 10mm de diámetro, ejerciendo
+ una carga de 500kp durante 30 segundos.
+\end_layout
+
+\begin_layout Subsubsection
+Ensayo Vickers
+\end_layout
+
+\begin_layout Standard
+En el ensayo Vickers se usa una punta de diamante con forma de pirámide
+ de base cuadrada, con un ángulo de 136º entre caras opuestas.
+ 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+El ángulo de 136º no es casual.
+ Coincide con el ángulo 
+\begin_inset Formula $2\cdot\phi$
+\end_inset
+
+ del ensayo Brinell cuando se cumple que 
+\begin_inset Formula $d/D=0.375$
+\end_inset
+
+.
+ Así las durezas Brinell y Vickers coinciden, hasta, aproximadamente, el
+ valor 300.
+ A partir de ese valor la dureza Vickers es superior a la Brinell, ya que
+ la deformación de la bola falsea los resultados.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En realidad, la dureza Vickers usa la misma fórmula que la Brinell: 
+\begin_inset Formula $HV=\frac{F}{S}$
+\end_inset
+
+ , pero la superficie de penetración, lógicamente, no será la misma, y la
+ expresión cambia.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Dureza Vickers_pag17_seccion3_2_2.png
+	groupId Esquemas
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Dureza Vickers
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+La diagonal de la huella se mide mediante el uso de un microscopio.
+\end_layout
+
+\begin_layout Enumerate
+Si la penetración no ha sido totalmente vertical, la huella tendrá dos diagonale
+s (no será cuadrada).
+ Se cogería el valor medio de ambas.
+\end_layout
+
+\begin_layout Enumerate
+Se suele usar una carga de 30kp, aunque pueden variar entre 1 y 120 kp.
+\end_layout
+
+\begin_layout Enumerate
+Debe cumplirse que el espesor de la prueba cumpla 
+\begin_inset Formula $s>8\cdot h\cdot cos(68\text{) \rightarrow s>8\cdot d/7}$
+\end_inset
+
+ y para mayor seguridad, 
+\begin_inset Formula $s>1.2\cdot d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Presenta algunas ventajas: el penetrador siempre es el mismo, y no hay que
+ cambiarlo según la carga; las superficies pueden ser curvas; el valor es
+ independiente prácticamente del valor de la carga y se puede realizar sobre
+ materiales muy duros.
+\end_layout
+
+\begin_layout Subsubsection
+Ensayo Rockwell
+\end_layout
+
+\begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+\noindent
+
+\series bold
+\shape smallcaps
+\size giant
+Apéndices
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+appendixname}{Apéndice}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Apéndice 1
+\end_layout
+
+\end_body
+\end_document

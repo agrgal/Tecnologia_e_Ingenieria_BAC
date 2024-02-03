@@ -1,0 +1,10279 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}
+\end_preamble
+\options spanish, dvipsnames,usenames,nointegrals
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End
+\end_local_layout
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 5
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\begin_layout Plain Layout
+6.- https://www.mathcha.io/editor –> para hacer dibujos en tikz
+\end_layout
+
+\begin_layout Plain Layout
+7.- Listas.
+ Primer nivel opciones de enumeración –> 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+8.- Listas.
+ Segundo nivel –> label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) Uso de referencia enumi.
+ o tambien label=
+\backslash
+theenumi.
+\backslash
+arabic*) .
+ theenumi es completo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Electrónica Digital.
+ Circuitos combinacionales
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Date
+29 - Octubre - 2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Electrónica Digital.
+ Circuitos Combinacionales.
+ By Aurelio Gallardo Rodríguez, Is Licensed Under A Creative Commons Reconocimie
+nto-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OLxcolorList2.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+Una primera clasificación de los circuitos digitales implica establecer
+ las diferencias entre un circuito combinacional y otro secuencial.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+arabic*.-  
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\series default
+ En un circuito 
+\series bold
+\color purple
+combinacional
+\series default
+\color inherit
+, en todos y cada uno de los instantes de tiempo, las salidas son función
+ exclusivamente de las entradas.
+\end_layout
+
+\begin_layout Enumerate
+En un circuito 
+\series bold
+\color purple
+secuencial
+\series default
+\color inherit
+, las salidas son función de las entradas y del historial que hayan tomado
+ las salidas en instantes anteriores.
+ 
+\end_layout
+
+\begin_layout Standard
+Un recurso genial para trabajar este tema lo encontramos en: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://angelmicelti.github.io/4ESO/EDI/index.html"
+
+\end_inset
+
+.
+ Además de información encontraremos simuladores, tanto online como descargables
+ y ejecutables.
+\end_layout
+
+\begin_layout Section
+Sistemas de numeración
+\end_layout
+
+\begin_layout Standard
+Los circuitos digitales están formados por componentes físicos que son capaces
+ de trabajar con dos estados o valores.
+ Estos estados pueden asimilarse matemáticamente a un sistema de numeración
+ binario o base 2.
+ Por lo tanto, cualquier información que deba ser tratada por un sistema
+ digital debe ser codificada previamente al sistema binario.
+\end_layout
+
+\begin_layout Standard
+Esto significa que cualquier número puede expresarse como una combinación
+ de 
+\series bold
+\color purple
+
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+\color black
+ y
+\series bold
+\color purple
+ 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+\color inherit
+ en el sistema binario, de forma análoga a como cualquier número es representado
+ en el sistema decimal con los dígitos del 0 al 9 (diez dígitos).
+\end_layout
+
+\begin_layout Standard
+Por ejemplo, el número 453.25 es un número decimal.
+ Podríamos decir de él que se forma con 4 centenas, 5 decenas, 3 unidades,
+ 2 décimas y 5 centésimas.
+ Ese número se expresa perfectamente con los dígitos del 0 al 9, dígitos
+ que adquieren un significado 
+\begin_inset Quotes cld
+\end_inset
+
+mayor
+\begin_inset Quotes crd
+\end_inset
+
+ cuanto más a la izquierda se escriben y 
+\begin_inset Quotes cld
+\end_inset
+
+menor
+\begin_inset Quotes crd
+\end_inset
+
+ cuanto más a la derecha.
+ No solemos pensarlo, pero en realidad al escribir ese número en formato
+ decimal, que nos es tan habitual, estamos expresando el número en función
+ de diversas potencias de diez, cuyos exponentes vienen dados por el lugar
+ que ocupa el dígito (forma polinómica).
+ De derecha a izquierda de la coma se numeran empezando por el 0.
+ A la derecha de la coma, se empieza a numerar por el -1, -2, etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+453.25=4\cdot10^{2}+5\cdot10^{1}+3\cdot10^{0}+2\cdot10^{-1}+5\cdot10^{-2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y si tuviésemos el número 1101,01 en formato binario, tendríamos que expresarlo
+ en función de las potencias del número 2.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+1101,01=1\cdot2^{3}+1\cdot2^{2}+0\cdot2^{1}+1\cdot2^{0}+0\cdot2^{-1}+1\cdot2^{-2}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En general, si necesito representar un número 
+\series bold
+N
+\series default
+ en una base 
+\series bold
+b
+\series default
+, necesitaré unos coeficientes (dígitos) 
+\begin_inset Formula $a_{i}$
+\end_inset
+
+ que se posicionan en el lugar i-ésimo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+N=a_{n}\cdot b^{n}+a_{n-1}\cdot b^{n-1}+\cdots+a_{2}\cdot b^{2}+a_{1}\cdot b^{1}+a_{0}\cdot b^{0}+a_{-1}\cdot b^{-1}+\cdots a_{-m}\cdot b^{-m}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Llamamos 
+\series bold
+\color brown
+código binario natural 
+\series default
+\color inherit
+o
+\series bold
+\color brown
+ sistema binario
+\series default
+\color inherit
+, al sistema de representación numérica que utiliza dos dígitos, el 0 y
+ el 1.
+ A cada uno de estos símbolos lo denominamos bit.
+ 
+\end_layout
+
+\begin_layout Subsection
+Expresar un número binario en su equivalente decimal
+\end_layout
+
+\begin_layout Standard
+Se utiliza una expresión polinómica; a veces nos ayudamos de una tabla.
+ Por ejemplo, para el número binario 10111101,11
+\end_layout
+
+\begin_layout Standard
+Comprobar en la web: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.calcuvio.com/conversion-binario-decimal"
+target "https://www.calcuvio.com/conversion-binario-decimal"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="11">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<column alignment="center" valignment="middle" width="1cm">
+<row>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{yellow!25!white} 
+\backslash
+cellcolor{blue!10!white}
+\end_layout
+
+\end_inset
+
+Bits
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+, 1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!10!white}
+\end_layout
+
+\end_inset
+
+Posición
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!10!white}
+\end_layout
+
+\end_inset
+
+Factor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{7}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{6}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{5}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{4}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{3}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{0}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{-1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset Formula $2^{-2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!10!white}
+\end_layout
+
+\end_inset
+
+Número
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+128
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+16
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.25
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\size small
+\begin_inset Formula 
+\[
+10111101,11_{(2}=2^{7}+2^{5}+2^{4}+2^{3}+2^{2}+2^{0}+2^{-1}+2^{-2}=128+32+16+8+4+1+0.5+0.25=189.75_{(10}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Expresar un número decimal en su equivalente binario
+\end_layout
+
+\begin_layout Standard
+Haremos el proceso con el mismo número, para comprobar el resultado.
+\end_layout
+
+\begin_layout Standard
+La parte entera se obtiene dividiendo entre dos sucesivamente.
+ El bit más significativo (el de más a la izquierda) es el último cociente,
+ y los demás son los restos, tomados de derecha a izquierda.
+\end_layout
+
+\begin_layout Standard
+La parte decimal se obtiene multiplicando sucesivamente por dos y tomando
+ la parte entera.
+ Hasta que el resultado no sea más que cero u hasta obtener la precisión
+ requerida.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/binarioAdecimal.png
+	lyxscale 20
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cálculo de número binario a partir del número decimal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Ejercicios:
+\series default
+ calcular el paso de número decimal a binario del 235.186
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Reflexiona
+\series default
+: ¿cómo se sabe que un número es par o impar en binario? ¿Cómo se puede
+ multiplicar por 2 en binario? 
+\end_layout
+
+\begin_layout Subsubsection*
+Importante
+\end_layout
+
+\begin_layout Itemize
+Si tengo un número binario de 
+\series bold
+n
+\series default
+ bits, podré representar los números del 0 al número 
+\begin_inset Formula $2^{n}-1$
+\end_inset
+
+, en total 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ números.
+\end_layout
+
+\begin_layout Itemize
+Si quiero representar el número 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+, necesitaré 
+\series bold
+n+1 
+\series default
+bits.
+ Un 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ como bit más significativo y 
+\series bold
+n
+\series default
+ ceros.
+ 
+\end_layout
+
+\begin_layout Itemize
+Por ejemplo, si tengo 10 bits, puedo representar los números entre el 0
+ y el 1023 (
+\begin_inset Formula $2^{10}-1=1023$
+\end_inset
+
+) que son 1024 números.
+ El número 1024 es 
+\begin_inset Formula $1024_{(10}=1{\color{purple}00\,0000\,0000}_{(2}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Subsection
+Sistema hexadecimal
+\end_layout
+
+\begin_layout Standard
+En este sistema, utilizamos dieciséis dígitos: del 0 al 9 y de la A a la
+ F.
+ La correspondencia de los primeros 16 números enteros positivos decimales
+ con la numeración binaria y hexadecimal es:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="17">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+13
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+15
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+Bin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+Hex
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+9
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+B
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+C
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+D
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+E
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+F
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/binarioAhexadecimal.png
+	lyxscale 30
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+binario a hexadecimal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Para pasar un número binario a hexadecimal, se agrupan los bits en grupos
+ de 4; a la izquierda a partir de la coma para la parte entera y a la derecha
+ para la parte decimal.
+ Y se sustituye cada grupo de 4 por su símbolo.
+ Para la conversión contraria, se hace el procedimiento contrario.
+ 
+\end_layout
+
+\begin_layout Standard
+Para convertir de números decimal a hexadecimal o viceversa, se convierte
+ de forma intermedia a binarios.
+ De hexadecimal a decimal se puede usar la expresión binómica con base 16.
+\end_layout
+
+\begin_layout Standard
+
+\size footnotesize
+\begin_inset Formula 
+\[
+127F_{(16}=1\cdot16^{3}+2\cdot16^{2}+7\cdot16^{1}+F\cdot16^{0}=1\cdot4096+2\cdot256+7\cdot16+15\cdot1=4735_{(10}
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El sistema hexadecimal se utiliza en el mundo de la informática para expresar
+ números binarios muy grandes de forma más compacta y sencilla.
+ Los ordenadores pueden manejar números de 64 o de 32 bits y es fácil equivocars
+e usando números binarios de esa longitud.
+\end_layout
+
+\begin_layout Standard
+Calculadora de conversión: 
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://www.disfrutalasmatematicas.com/numeros/binario-decimal-hexadecimal-conversor.html"
+target "https://www.disfrutalasmatematicas.com/numeros/binario-decimal-hexadecimal-conversor.html"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sistema Octal
+\end_layout
+
+\begin_layout Standard
+El sistema octal, como el hexadecimal, convierte los números binarios a
+ un sistema de números más compacto; esta vez de tres en tres dígitos.
+ Se trabaja de forma análoga pero en grupos de tres.
+ La base es el número 8.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="9">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<column alignment="center" valignment="middle" width="0.6cm">
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+
+\begin_inset Formula $\mathbb{Z}$
+\end_inset
+
++
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+Bin
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row topspace="1pt" bottomspace="1pt" interlinespace="4pt">
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+Oct
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size large
+\color purple
+7
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Códigos binarios
+\end_layout
+
+\begin_layout Standard
+Ya hemos visto el código binario natural.
+ A cada número decimal le asigno un número binario usando los símbolos 0
+ y 1 de forma alterna.
+ Sin embargo, hay otras formas de representar números usando códigos binarios.
+ 
+\end_layout
+
+\begin_layout Subsection
+Representación BCD
+\end_layout
+
+\begin_layout Standard
+En la representación 
+\series bold
+\color purple
+BCD
+\series default
+\color inherit
+ (Binary-Coded Decimal o Decimal codificado en binario), los dígitos del
+ sistema decimal de 0 al 9 se representa por un código de cuatro dígitos.
+ Y posteriormente cualquier número se conforma a esa representación.
+ 
+\end_layout
+
+\begin_layout Standard
+El primer código BCD que vamos a ver es el 
+\series bold
+\color purple
+BCD natural
+\series default
+\color inherit
+, en el que los dígitos del 0 al 9 se representan con su número binario
+ natural (4 bits).
+ Así, por ejemplo, el número 385 se representa como:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{yellow!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color blue
+Número decimal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+Representación en código binario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+BCD natural
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+385.75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+110000001.110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0011 1000 0101.0111 0101
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El segundo es el 
+\series bold
+\color brown
+código Aiken BCD
+\series default
+\color inherit
+.
+ En este código se utilizan representaciones para los dígitos del 0 al 4
+ como en el binario natural, y del 5 al 9 con las últimas posibles combinaciones
+ con 4 dígitos.
+ 
+\end_layout
+
+\begin_layout Standard
+El tercer código es el 
+\series bold
+\color brown
+Exceso-a-tres BCD
+\series default
+\color inherit
+.
+ El código usado para representar los dígitos del 0 al 3 sería el código
+ natural binario más tres.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="11">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<column alignment="center" valignment="middle" width="0.7cm">
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+Decimal
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+BCD natural
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1001
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+BCD Aiken
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1111
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size scriptsize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\size default
+BCD Exceso a tres
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0100
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0101
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0110
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+0111
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1000
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1001
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1010
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1011
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+1100
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Otros códigos
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset CommandInset href
+LatexCommand href
+name "Código de paridad: "
+target "https://es.wikipedia.org/wiki/Paridad_(telecomunicaciones)"
+literal "false"
+
+\end_inset
+
+
+\series default
+utilizo el código binario natural o BCD natural, por ejemplo, y añado un
+ bit a la derecha (menos significativo) que será 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si el número de unos que aparece en el código es impar, y un 0 si es par.
+ Por ejemplo, el número 
+\begin_inset Formula $5_{(10}=0101_{(2}=0101{\color{brown}0}$
+\end_inset
+
+.
+ El número 
+\begin_inset Formula $7_{(10}=0111_{(2}=0101{\color{brown}1}$
+\end_inset
+
+.
+ Este código, normalmente se aplica en transmisión de datos con números
+ más grandes y sirve para detectar que hayan existido o no errores en la
+ transmisión.
+ Forma parte de un conjunto de códigos de corrección y detección de errores;
+ otros de esta familia es el 
+\begin_inset CommandInset href
+LatexCommand href
+name "biquinario"
+target "https://es.wikipedia.org/wiki/C%C3%B3digo_biquinario"
+literal "false"
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Códigos progresivos: 
+\series default
+cada combinación difiere en la anterior en un solo bit.
+ La veremos posteriormente en el tema.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Códigos 
+\begin_inset CommandInset href
+LatexCommand href
+name "ASCII"
+target "https://es.wikipedia.org/wiki/ASCII"
+literal "false"
+
+\end_inset
+
+:
+\series default
+ representación de símbolos alfanuméricos con códigos binarios.
+ Los hay de 7 bits y extendidos de 8 bits.
+ La evolución de este código ha dado lugar a otros códigos como el 
+\series bold
+
+\begin_inset CommandInset href
+LatexCommand href
+name "UTF-8"
+target "https://es.wikipedia.org/wiki/UTF-8"
+literal "false"
+
+\end_inset
+
+ (
+\begin_inset CommandInset href
+LatexCommand href
+name "Unicode"
+target "https://es.wikipedia.org/wiki/Unicode"
+literal "false"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Section
+Álgebra de Boole
+\end_layout
+
+\begin_layout Standard
+En 1847 el matemático inglés George Boole desarrolló un álgebra cuyo objetivo
+ consiste en representar las formas de razonamiento lógico, sistematizarlas
+ y profundizar en el conocimiento de sus mecanismos.
+ En 1948 Claude Shamon adoptó el álgebra de Boole para el estudio de los
+ circuitos 
+\series bold
+\color purple
+que contienen elementos que adoptan dos estados estables
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+El álgebra de Boole opera con variables que adquieren solo dos valores,
+ designados por 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ y 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Estos dos valores en realidad no son números, sino símbolos que significan:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➟
+\end_layout
+
+\end_inset
+
+0 ➤ estado bajo, o apagado (luces), o abierto (interruptor).
+ También llamado 
+\begin_inset Quotes cld
+\end_inset
+
+LOW
+\begin_inset Quotes crd
+\end_inset
+
+.
+ En programación, también 
+\begin_inset Quotes cld
+\end_inset
+
+falso
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+1 ➤ estado alto, o encendido (luces), o cerrado (interruptor).
+ También llamado 
+\begin_inset Quotes cld
+\end_inset
+
+HIGH
+\begin_inset Quotes crd
+\end_inset
+
+.
+ En programación, también 
+\begin_inset Quotes cld
+\end_inset
+
+verdadero
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Lógica de niveles
+\end_layout
+
+\begin_layout Standard
+Un circuito digital, en el fondo, no es más que un circuito electrónico
+ que trabaja a dos valores de tensión determinados.
+ Por ejemplo, en los circuitos de la familia TTL se trabaja con los valores
+ de referencia 0 Voltios y 5 Voltios.
+ 
+\end_layout
+
+\begin_layout Standard
+Cuando se corresponde el valor 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ del álgebra de Boole con el valor más bajo, 0 Voltios, y el valor 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ con el más alto, 5 Voltios, se dice que estamos trabajando con 
+\series bold
+\color blue
+lógica positiva
+\series default
+\color inherit
+.
+ Si lo hacemos al contrario, el valor 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ corresponde a 5 Voltios, y el 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ a 0 Voltios, estamos trabajando con 
+\series bold
+\color green
+lógica negativa
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/FttNg3B.jpg
+	lyxscale 20
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lógicas positiva y negativa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Será más normal trabajar con lógica positiva, aunque el uso de la lógica
+ negativa puede simplificar mucho algunos cálculos.
+ 
+\end_layout
+
+\begin_layout Standard
+Otra familia de circuitos puede trabajar con otras tensiones.
+ Por ejemplo, -15V y 15V, 0V y 3V, etc.
+ 
+\end_layout
+
+\begin_layout Subsection
+Variables y funciones lógicas.
+ Las tablas de la verdad
+\end_layout
+
+\begin_layout Standard
+Podemos definir una 
+\series bold
+\color purple
+proposición
+\series default
+\color inherit
+, en términos sencillos, como una oración gramatical que expresa una acción
+ que el sujeto de ella podrá hacer o no.
+ Por ejemplo, si le digo a alguien que 
+\begin_inset Quotes cld
+\end_inset
+
+pulse el botón verde
+\begin_inset Quotes crd
+\end_inset
+
+, esa persona podrá decidir hacerlo o no hacerlo.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap table
+lines 9
+placement r
+overhang 0in
+width "20text%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="1">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{blue!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tablas de la verdad de una y dos variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Imaginemos que a la proposición 
+\begin_inset Quotes cld
+\end_inset
+
+pulsa el botón verde
+\begin_inset Quotes crd
+\end_inset
+
+ 
+\color purple
+le asigno la variable 
+\series bold
+a
+\series default
+\color inherit
+.
+ Esta proposición podrá ser verdadera (si el sujeto pulsa el botón) o falsa
+ (si no lo pulsa), con lo cual la variable 
+\series bold
+a 
+\series default
+tomará en el primer caso el valor 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ y en el segundo el valor 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Las proposiciones suelen combinarse.
+ En la siguiente frase: 
+\begin_inset Quotes cld
+\end_inset
+
+enchufa el cable y acciona la llave de contacto
+\begin_inset Quotes crd
+\end_inset
+
+ hay una unión 
+\begin_inset CommandInset href
+LatexCommand href
+name "gramaticalmente copulativa"
+target "http://descargas.pntic.mec.es/recursos_educativos/It_didac/Leng_ESO/1/09/03_Preposciones_conjunciones_interjecciones/las_conjunciones.html"
+literal "false"
+
+\end_inset
+
+.
+ Normalmente se expresa una tercera proposición, consecuencia de las otras
+ dos, que depende de ellas: 
+\begin_inset Quotes cld
+\end_inset
+
+enchufa el cable y acciona la llave de contacto, y se encenderá el motor
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+En este caso, puedo asignar una variable 
+\series bold
+a
+\series default
+ a la primera frase, una variable 
+\series bold
+b 
+\series default
+a la segunda frase, y un resultado 
+\series bold
+s
+\series default
+ a la consecuencia.
+ Tanto 
+\series bold
+a 
+\series default
+como 
+\series bold
+b
+\series default
+ tomarán dos valores de forma independiente: el operario a cargo del motor
+ podrá elegir entre 
+\begin_inset Quotes cld
+\end_inset
+
+enchufar o no el cable
+\begin_inset Quotes crd
+\end_inset
+
+, o 
+\begin_inset Quotes cld
+\end_inset
+
+accionar o no la llave de contacto
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Pero está claro que solo si lleva a cabo las dos acciones se 
+\begin_inset Quotes cld
+\end_inset
+
+encenderá el motor
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Por lo tanto...
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=⇒ 
+\end_layout
+
+\end_inset
+
+Si 
+\begin_inset Quotes cld
+\end_inset
+
+enchufo el cable
+\begin_inset Quotes crd
+\end_inset
+
+ (a=1) y 
+\begin_inset Quotes cld
+\end_inset
+
+acciono la llave
+\begin_inset Quotes crd
+\end_inset
+
+ (b=1), el resultado es 
+\begin_inset Quotes cld
+\end_inset
+
+se encenderá el motor
+\begin_inset Quotes crd
+\end_inset
+
+ (s=1)
+\end_layout
+
+\begin_layout Itemize
+En cualquier otro caso, o no enchufo el cable o no acciono la llave, o ambas;
+ el motor no se encenderá (s=0)
+\end_layout
+
+\begin_layout Standard
+Las distintas combinaciones que pueden darse se pueden resumir en forma
+ de tabla.
+ Estas tablas se conocen como 
+\series bold
+\color brown
+
+\begin_inset Quotes cld
+\end_inset
+
+tablas de la verdad
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+\color inherit
+.
+ En el caso de la tabla anterior con dos variables y un resultado, existen
+ cuatro combinaciones (
+\begin_inset Formula $2^{2})$
+\end_inset
+
+ posibles para el resultado.
+ En general, si tengo una tabla con 
+\series bold
+n
+\series default
+ proposiciones de entrada, o 
+\series bold
+n
+\series default
+ variables independientes, tendré 
+\begin_inset Formula $2^{n}$
+\end_inset
+
+ posibles combinaciones para el resultado.
+ 
+\end_layout
+
+\begin_layout Standard
+Además, en matemáticas, cuando tengo variables independientes y una variable
+ dependiente de ellas, puedo tener una función.
+ Por ejemplo, si tengo la expresión 
+\begin_inset Formula $p=3\cdot x+\log(y)$
+\end_inset
+
+ tengo una función 
+\begin_inset Formula $p(x,y)$
+\end_inset
+
+ que dependen de x e y según la expresión algebraica anterior, de forma
+ que a una combinación de la variable x e y, puedo asignar un valor a la
+ p.
+ 
+\end_layout
+
+\begin_layout Standard
+Nuestras tablas de la verdad podrán tener una función asociada en el álgebra
+ de Boole.
+ En la tabla anterior de dos variables se puede asociar la función 
+\begin_inset Formula $s=a\cdot b$
+\end_inset
+
+ , o producto lógico (no confundir con el producto aritmético).
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Operaciones básicas en el álgebra de Boole
+\end_layout
+
+\begin_layout Subsubsection
+Suma lógica: puertas OR
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas.
+ 
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ForestGreen!85!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ForestGreen!85!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ForestGreen!85!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=a+b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_verdad_OR.png
+	lyxscale 50
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/equivalente_OR.png
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ForestGreen!85!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{ForestGreen!85!white}
+\end_layout
+
+\end_inset
+
+Circuito 7432 familia TTL 
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OR_1.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OR_2.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/7432_TTL.png
+	lyxscale 30
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Producto lógico: puertas AND
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!85!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!85!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!85!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_verdad_AND.png
+	lyxscale 50
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/equivalente_AND.png
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!85!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{blue!85!white}
+\end_layout
+
+\end_inset
+
+Circuito 7408 familia TTL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/AND_2.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/AND_1.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/7408_TTL.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Negación o complementación: puerta NOT
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{orange!85!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{orange!85!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{orange!85!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=\overline{a}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=a'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_verdad_NOT.png
+	lyxscale 50
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/equivalente_NOT.png
+	lyxscale 25
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{orange!85!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{orange!85!white}
+\end_layout
+
+\end_inset
+
+Circuito 7404 familia TTL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOT_1.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOT_2.png
+	lyxscale 25
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/7404_TTL.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "4mm"
+width "25page%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Estas puertas / funciones lógicas son las más básicas del álgebra de Boole.
+ Cualquier otra función lógica puede expresarse como una combinación de
+ estas tres funciones lógicas.
+ Por lo tanto, se dice que 
+\series bold
+\color purple
+el conjunto de puertas OR, AND y NOT es un conjunto completo
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Subsection
+Postulados, propiedades y teoremas del álgebra booleana
+\end_layout
+
+\begin_layout Subsubsection
+Propiedades
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Conmutativa de la suma lógica: 
+\begin_inset Formula $a+b=b+a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Conmutativa del producto lógico: 
+\begin_inset Formula $a\cdot b=b\cdot a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Asociativa de la suma lógica: 
+\begin_inset Formula $a+b+c=(a+b)+c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Asociativa del producto lógico: 
+\begin_inset Formula $a\cdot b\cdot c=a\cdot(b\cdot c)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Distributiva del producto respecto de la suma: 
+\begin_inset Formula $a\cdot(b+c)=a\cdot b+a\cdot c$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color brown
+\begin_inset Argument item:1
+status open
+
+\begin_layout Plain Layout
+⇝
+\end_layout
+
+\end_inset
+
+Distributiva de la suma respecto del producto:
+\series default
+\color inherit
+ 
+\begin_inset Formula $a+b\cdot c=(a+b)\cdot(a+c)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Postulados
+\end_layout
+
+\begin_layout Standard
+Nota: en el álgebra de Boole hay simetría.
+ Si un postulado es cierto, el simétrico (cambiando suma por producto y
+ 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ por 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+) también es cierto.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $a+1=1$
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y también 
+\begin_inset Formula $a\cdot0=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a+0=a$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y también 
+\begin_inset Formula $a\cdot1=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a+a=a$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y también 
+\begin_inset Formula $a\cdot a=a$
+\end_inset
+
+ (ley de idempotencia) 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a+a'=1$
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y también 
+\begin_inset Formula $a\cdot a'=0$
+\end_inset
+
+.
+ Lo puedo escribir como 
+\begin_inset Formula $a+\overline{a}=1$
+\end_inset
+
+ , 
+\begin_inset Formula $a\cdot\overline{a}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $\left(a'\right)'=a$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+.
+\begin_inset space \space{}
+\end_inset
+
+Lo puedo escribir como 
+\begin_inset Formula $\overline{\overline{a}}=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Teoremas
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Leyes de absorción: 
+\begin_inset Formula $a+a\cdot b=a$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y por simetría 
+\begin_inset Formula $a\cdot(a+b)=a$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $a+\overline{a}\cdot b=a+b$
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y por simetría 
+\begin_inset Formula $a\cdot(\overline{a}+b)=a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color brown
+Leyes de Morgan:
+\series default
+\color inherit
+ 
+\begin_inset Formula $\overline{(a+b)}=\overline{a}\cdot\overline{b}$
+\end_inset
+
+ 
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset space \space{}
+\end_inset
+
+, y por simetría 
+\begin_inset Formula $\overline{(a\cdot b)}=\overline{a}+\overline{b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Otras funciones lógicas
+\end_layout
+
+\begin_layout Subsubsection
+Puerta NAND (negativa AND)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<column alignment="left" valignment="middle" width="4cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+NAND TTL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=\overline{a\cdot b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color brown
+\begin_inset Formula $s=\overline{a}+\overline{b}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NAND_tabla.png
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NAND_equivalente.png
+	lyxscale 50
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" mroffset="-1cm" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/nand_ttl_circuito.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!85!white}
+\end_layout
+
+\end_inset
+
+Circuito 7400 familia TTL
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NAND_2.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NAND_1.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/NAND_7400_TTLpng.png
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La puerta lógica NAND es muy importante, por las siguientes razones:
+\end_layout
+
+\begin_layout Enumerate
+Forma por sí misma 
+\series bold
+un conjunto completo
+\series default
+.
+ Con puertas NAND se puede representar cualquier función lógica.
+ También se puede decir de ella que es una 
+\series bold
+puerta universal
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Constructivamente es la puerta más fácil de fabricar dentro de la familia
+ TTL.
+ Consta de al menos cuatro transistores (uno multiemisor) y cuatro resistencias.
+\end_layout
+
+\begin_layout Subsubsection
+Puerta NOR (negativa OR)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Sepia!85!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Sepia!85!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Sepia!85!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=\overline{a+b}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color brown
+\begin_inset Formula $s=\overline{a}\cdot\overline{b}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOR_tabla.png
+	lyxscale 50
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOR_equivalente.png
+	lyxscale 50
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Sepia!85!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Sepia!85!white}
+\end_layout
+
+\end_inset
+
+Circuito 7402 familia TTL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOR_2.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOR_1.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/7402_NOR_TTL.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La puerta NOR también forma un 
+\series bold
+conjunto completo
+\series default
+, y es una 
+\series bold
+puerta universal
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Puerta XOR (exclusiva OR)
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="2.5cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Apricot!95!white}
+\end_layout
+
+\end_inset
+
+Función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Apricot!95!white}
+\end_layout
+
+\end_inset
+
+Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Apricot!95!white}
+\end_layout
+
+\end_inset
+
+Circuito equivalente con interruptores
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=a\oplus b$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size footnotesize
+\color brown
+\begin_inset Formula $s=\overline{a}\cdot b+a\cdot\overline{b}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/XOR_tabla.png
+	lyxscale 50
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/XOR_equivalente.png
+	lyxscale 50
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Apricot!95!white}
+\end_layout
+
+\end_inset
+
+Símbolos lógicos
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Apricot!95!white}
+\end_layout
+
+\end_inset
+
+Circuito 7486 familia TTL
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/XOR_2.png
+	lyxscale 50
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/XOR_1.png
+	lyxscale 50
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/7486_XOR.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La puerta XOR es una puerta también importante porque compara dos entradas
+ de un bit.
+ Si ambas valen lo mismo, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Si son distintas , 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Funciones lógicas de varias variables
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para obtener una función lógica cualquiera el procedimiento pasa por construir
+ su tabla de la verdad.
+ Por ejemplo, obtendremos la expresión de la función lógica en la que para
+ tres variables, su salida es como en la de la tabla:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<column alignment="center" valignment="top">
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{Apricot!85!white}
+\end_layout
+
+\end_inset
+
+término
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+a
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+b
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+c
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color purple
+1
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de función lógica de tres variables
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Suma de productos
+\end_layout
+
+\begin_layout Standard
+Si observamos la tabla, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ cuando tenemos los términos 1, 3,4,6 y 7.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+En el término 1, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ c es [0,0,1].
+ En este caso, el producto 
+\begin_inset Formula $a'\cdot b'\cdot c$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 3, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ c es [0,1,1].
+ En este caso, el producto 
+\begin_inset Formula $a'\cdot b\cdot c$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 4, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ c es [1,0,0].
+ En este caso, el producto 
+\begin_inset Formula $a\cdot b'\cdot c'$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 6, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ c es [1,1,0].
+ En este caso, el producto 
+\begin_inset Formula $a\cdot b\cdot c'$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 7, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+y
+\series default
+\color inherit
+ c es [1,1,1].
+ En este caso, el producto 
+\begin_inset Formula $a\cdot b\cdot c$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y la función que buscamos será 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si se produce 
+\series bold
+\color blue
+o
+\series default
+\color inherit
+ la combinación 1, 
+\series bold
+\color blue
+o
+\series default
+\color inherit
+ la 3, 
+\series bold
+\color blue
+o
+\series default
+\color inherit
+ la 4
+\series bold
+\color blue
+ o
+\series default
+\color inherit
+ la 6 
+\series bold
+\color blue
+o
+\series default
+\color inherit
+ la 7.
+ 
+\end_layout
+
+\begin_layout Standard
+Luego la función de salida s puede expresarse como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+s=a'\cdot b'\cdot c+a'\cdot b\cdot c+a\cdot b'\cdot c'+a\cdot b\cdot c'+a\cdot b\cdot c\label{eq:2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando tenga las combinaciones correctas la función valdrá 1, porque uno
+ de los productos lógicos será 1, y sumados lógicamente con los otros términos
+ producirá un 1 a la salida.
+ Si tengo una combinación que produce un 0 en la función, ninguno de los
+ términos valdrá 1, todos serán ceros.
+ Por lo tanto al sumar todos los ceros obtendré un cero a la salida.
+ 
+\end_layout
+
+\begin_layout Standard
+Esta forma de expresar la salida de una función lógica, como la suma lógica
+ de todos los productos que dan 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ se denomina 
+\series bold
+\color purple
+primera forma canónica
+\series default
+\color inherit
+.
+ Cada producto se denomina 
+\series bold
+\color blue
+mintérmino
+\series default
+\color inherit
+ o 
+\series bold
+\color blue
+minterm
+\series default
+\color inherit
+.
+ También podemos expresar simbólicamente la expresión de la salida s como
+ suma de mintérminos de la forma:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+s=\underset{3}{\sum}(1,3,4,6,7)=m_{1}+m_{3}+m_{4}+m_{6}+m_{7}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Productos de sumas
+\end_layout
+
+\begin_layout Standard
+¿Hay simetría en el álgebra de Boole? Ya lo vimos en un apartado anterior.
+ Pues en la forma de expresar una salida, tenemos otra posibilidad simétrica.
+ En vez de fijarnos en los productos en los que la función es 1, nos podemos
+ fijar en las sumas en las que la función es 0.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+En el término 0, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ c es [0,0,0].
+ En este caso, la suma 
+\begin_inset Formula $a+b+c$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 2, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ c es [0,1,0].
+ En este caso, la suma 
+\begin_inset Formula $a+b'+c$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+En el término 5, la salida es 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si la combinación de a 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ b 
+\series bold
+\color brown
+o
+\series default
+\color inherit
+ c es [1,0,1].
+ En este caso, la suma 
+\begin_inset Formula $a'+b+c'$
+\end_inset
+
+ valdría 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Y la función que buscamos será 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si se produce la combinación 0, 
+\series bold
+\color blue
+y
+\series default
+\color inherit
+ la 2, 
+\series bold
+\color blue
+y
+\series default
+\color inherit
+ la 5.
+ Entonces la función se puede expresar como:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+s=(a+b+c)\cdot(a+b'+c)\cdot(a'+b+c')=M_{0}\cdot M_{2}\cdot M_{5}\label{eq:4}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si cualquiera de los términos de la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ es cero, da igual el valor de los otros que la salida será cero.
+ Esta forma de expresar la salida de una función lógica, como el producto
+ lógico de los términos que dan 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ se denomina 
+\series bold
+\color purple
+segunda forma canónica
+\series default
+\color inherit
+.
+ Cada sumando es un 
+\series bold
+\color blue
+maxtérmino
+\series default
+\color inherit
+ o un 
+\series bold
+\color blue
+maxterm
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+s=\underset{3}{\prod}(0,2,5)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Economía en las expresiones lógicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Cuando quiero construir un circuito lógico, necesitaré un determinado número
+ de puertas lógicas que tendré que fabricar o comprar.
+ Además, los circuitos lógicos no dejan de ser circuitos electrónicos que
+ hay que conectar a una fuente de tensión y consumen energía eléctrica.
+ Cuantas más puertas lógicas necesite, más energía gastaré.
+ 
+\end_layout
+
+\begin_layout Standard
+En el ejemplo de la función anterior, ¿cuántas puertas necesitaré?
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+ En la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:2"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ aparece la complementación de la variables a, b y c (a' , b' y c'), luego
+ necesitaré tres puertas NOT.
+\end_layout
+
+\begin_layout Itemize
+Y hay 5 mintérminos, que suponen diez multiplicaciones; o necesito diez
+ puertas AND de dos entradas o cinco puertas AND de tres entradas.
+\end_layout
+
+\begin_layout Itemize
+Y hay cuatro sumas, lo que supone al menos cuatro puertas OR de dos entradas,
+ o una de cinco entradas.
+\end_layout
+
+\begin_layout Itemize
+Considerando que tengo puertas de dos entradas, necesito tres NOT, diez
+ AND y cuatro OR.
+ En total 17 circuitos.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0ex"
+width "20col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=⇛
+\end_layout
+
+\end_inset
+
+ En la expresión 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq:4"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ también aparece la complementación de las tres variables a, b y c (a' ,
+ b' y c').
+ Sigo necesitando tres puertas NOT.
+\end_layout
+
+\begin_layout Itemize
+Hay tres sumas, en total seis puertas OR de dos entradas.
+\end_layout
+
+\begin_layout Itemize
+Hay dos multiplicaciones, dos puertas AND de dos entradas.
+\end_layout
+
+\begin_layout Itemize
+En total necesito tres NOT, seis OR y dos AND.
+ En total 11 circuitos.
+\end_layout
+
+\begin_layout Standard
+Así que, desde un punto de vista económico, 
+\shape slanted
+es más recomendable en este caso construir la función por el método de maxtérmin
+os
+\shape default
+, en la segunda forma canónica.
+ 
+\end_layout
+
+\begin_layout Standard
+¿Y no sería genial obtener métodos que me simplificara aún más la función
+ lógica y necesitar menos puertas para representar una función? Eso es lo
+ que estudiaremos en el siguiente apartado.
+\end_layout
+
+\begin_layout Subsection
+Simplificación de funciones.
+\end_layout
+
+\begin_layout Standard
+Hay tres métodos para simplificar funciones.
+ El primero es usar directamente los postulados y teoremas del álgebra de
+ Boole para simplificar los términos.
+ El segundo, como el Quine-McCluskey, es un método numérico usado informáticamen
+te para la reducción de términos.
+ Por ejemplo, usando el 
+\begin_inset CommandInset href
+LatexCommand href
+name "primer método"
+target "https://es.symbolab.com/solver/boolean-algebra-calculator/%C3%A1lgebra%20booleana%20a%2Babc%2Bab?or=input"
+literal "false"
+
+\end_inset
+
+...
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather*}
+s=abc+ab'c+abc'\\
+s=ab(c+c')+ab'c=ab+ab'c=a(b+b'c)\\
+b+b'c=b+c\\
+s=a(b+c)
+\end{gather*}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El tercero consiste en el método gráfico de las tablas de Karnaugh.
+ Se puede simplificar con este método funciones de hasta seis variables,
+ pero nosotros lo haremos con funciones de tres o cuatro variables.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Ejemplo de mapa de Karnaugh
+\end_layout
+
+\begin_layout Standard
+Mapas de Karnaugh en el simulador web: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.32x8.com/var4.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="4cm">
+<column alignment="center" valignment="top" width="0.1cm">
+<column alignment="center" valignment="middle" width="5.5cm">
+<column alignment="center" valignment="top" width="0.1cm">
+<column alignment="center" valignment="middle" width="5.5cm">
+<row>
+<cell alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+1º) Obtengo la tabla de la verdad de la función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color white
+2º) Dispongo los valores en 
+\series default
+\color inherit
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+un tabla 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+3º) Hacemos grupos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Graphics
+	filename imagenes/karnaugh_1.png
+	lyxscale 50
+	height 7cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/karnaugh_2.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/karnaugh_5.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+A la izquierda en columna los dos bits más significativos AB, en el orden
+ 00-01-11-10.
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+En la fila superior los bits CD en el orden 00-01-11-10
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Agrupamos los 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+, primero en grupos de 8.
+ Si no hay de 4, y si no de 2, y por último los 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ sueltos.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/karnaugh_3.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+En el grupo rosa observamos que A siempre vale 1 y C siempre vale 0.
+ B y D varían.
+ Luego la función tendrá el término 
+\series bold
+AC'
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Quotes cld
+\end_inset
+
+A
+\begin_inset Quotes crd
+\end_inset
+
+ es el bit más significativo, 
+\begin_inset Quotes cld
+\end_inset
+
+D
+\begin_inset Quotes crd
+\end_inset
+
+ el menos significativo e 
+\begin_inset Quotes cld
+\end_inset
+
+Y
+\begin_inset Quotes crd
+\end_inset
+
+ la salida
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+Pondré el valor de la función en la celda que corresponde al mintérmino
+ correspondiente
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+En el grupo verde A siempre es cero, C y D valen 1.
+ B varía.
+ Luego la función tendrá el término 
+\series bold
+A'CD
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/karnaugh_4.png
+	lyxscale 50
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size small
+La función simplificada es:
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size small
+\color purple
+\begin_inset Formula $s=a\cdot c'+a'\cdot c\cdot d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\size small
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\size small
+\color purple
+\begin_inset Formula $s=a\cdot\overline{c}+\overline{a}\cdot c\cdot d$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multicolumn="1" alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Representación circuito con puertas lógicas 
+\size largest
+⇨
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Karnaugh_6_resultado.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando simplificamos una función por Karnaugh debemos tener en cuenta lo
+ siguiente (
+\size small
+
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+
+\size small
+Sería conveniente en el examen indicar si vamos a usar 
+\begin_inset Quotes cld
+\end_inset
+
+'
+\begin_inset Quotes crd
+\end_inset
+
+ para complementar o la barra superior 
+\begin_inset Quotes cld
+\end_inset
+
+¯
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\size default
+):
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Para ingresar un código utf8 específico, como por ejemplo U+203E, pulso
+ CTRL+MAYUSC+U, y aparece el símbolo 
+\begin_inset Quotes cld
+\end_inset
+
+u
+\begin_inset Quotes crd
+\end_inset
+
+.
+ Escribir encima el código y pulsar INTRO
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=⇾
+\end_layout
+
+\end_inset
+
+ Siempre se consiguen los grupos con mayor número de 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ posibles, 
+\series bold
+aunque se solapen
+\series default
+.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Las esquinas, y las partes superior e inferior de la tabla forman grupos
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+Es posible resolver un mapa de Karnaugh 
+\series bold
+agrupando ceros
+\series default
+.
+ Se consigue una expresión en productos de sumas.
+\end_layout
+
+\begin_layout Itemize
+Algunas tablas presentan funciones válidas distintas, dependiendo de agrupacione
+s diferentes pero posibles.
+ 
+\end_layout
+
+\begin_layout Standard
+La resolución de mapas de Karnaugh es un aspecto importante de este tema,
+ que se tratará ampliamente en los problemas.
+ Ayudarse del simulador servirá para corregir y observar los fallos cometidos
+ en los ejercicios:
+\size tiny
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://www.32x8.com/var4.html"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Implementar funciones con puertas NAND o NOR
+\end_layout
+
+\begin_layout Standard
+Las puertas NAND o NOR, por sí mismas forman un conjunto completo.
+ Cualquier función puede expresarse como una combinación exclusivamente
+ de puertas NAND o de puertas NOR.
+ De hecho, las tres puertas básicas pueden obtenerse como combinación de
+ una o de otra.
+ Para las puertas NAND
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="5cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color brown
+NOT ➫ NAND NOT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color brown
+AND ➫ NAND AND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Plum!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color brown
+OR ➫ NAND OR
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\shape smallcaps
+\color brown
+puertas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOT_NAND.png
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/AND_NAND.png
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/OR_NAND.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\shape smallcaps
+\color brown
+función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=(a\cdot a)'=a'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=\left((a\cdot b)'\right)'=a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=(a'\cdot b')'=(a')'+(b')'=a+b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para las puertas NOR...
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1.5}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="6cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cyan!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+NOT ➫ NOR NOT
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cyan!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+AND ➫ NOR AND
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cyan!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+OR ➫ NOR OR
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\shape smallcaps
+\color blue
+puertas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/NOT_NOR.png
+	lyxscale 50
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/AND_NOR.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OR_NOR.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\shape smallcaps
+\color blue
+función
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=(a+a)'=a'$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=(a'+b')'=(a')'\cdot(b')'=a\cdot b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $s=\left((a+b)'\right)'=a+b$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Cómo se puede implementar un circuito cualquiera por...?
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Puertas NAND
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Se resuelve el mapa de Karnaugh y se da una solución como suma de productos
+ (reducción de mintérminos).
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Se complementa toda la función dos veces.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Se resuelve la primera complementación
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Puertas NOR
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+
+\size small
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Se resuelve el mapa de Karnaugh y se da una solución como productos de sumas
+ (reducción de maxtérminos).
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Se complementa dos veces la función.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Se resuelve la primera complementación.
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Circuitos combinacionales integrados
+\end_layout
+
+\begin_layout Standard
+En un circuito combinacional ya sabemos que la o las salidas dependen exclusivam
+ente de sus entradas.
+ Hemos estudiado los circuitos lógicos combinacionales más sencillos, las
+ llamadas puertas lógicas y la forma de implementar circuitos más complicados
+ combinando estas puertas lógicas.
+ 
+\end_layout
+
+\begin_layout Standard
+Estudiaremos en este apartado algunos circuitos más complejos con funciones
+ específicas.
+ Normalmente los trataremos como 
+\begin_inset Quotes cld
+\end_inset
+
+cajas negras
+\begin_inset Quotes crd
+\end_inset
+
+, es decir, estudiaremos sus salidas en función de sus entradas pero no
+ nos molestaremos en averiguar el circuito combinacional intrínseco a los
+ mismos.
+ Todos estos circuitos tienen un equivalente comercial (o más de uno).
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Codificador o encoder
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/codificador.jpg
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/74147.png
+	lyxscale 30
+	width 4cm
+	rotateOrigin center
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Codificador a binario
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+Es un circuito combinacional que tiene 
+\series bold
+n
+\series default
+ salidas y 
+\begin_inset Formula $\boldsymbol{2^{n}}$
+\end_inset
+
+entradas.
+ Las salidas son la señal codificada en binario de la activación de una,
+ y solo una, de las entradas.
+ Las entradas se corresponden con un valor en decimal.
+ 
+\end_layout
+
+\begin_layout Standard
+Existen dos variantes: codificador sin prioridad o con prioridad.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+
+\series bold
+Sin prioridad:
+\series default
+ no es posible activar dos o más de dos entradas a la vez.
+ Sólo una.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Con prioridad:
+\series default
+ es posible activar más de una entrada.
+ La salida representa la entrada que se haya activado de mayor peso, de
+ mayor valor decimal.
+\end_layout
+
+\begin_layout Subsubsection
+Decodificador 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement h
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="5cm">
+<column alignment="center" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="3cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/decodificador_4028.png
+	lyxscale 25
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/bcd_7_segmentos.png
+	lyxscale 20
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/demultiplexador_symbol.png
+	lyxscale 70
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Decodificadores y demultiplexador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Contrario al anterior, posee 
+\series bold
+n
+\series default
+ entradas y 
+\series bold
+
+\begin_inset Formula $\boldsymbol{2^{n}}$
+\end_inset
+
+
+\series default
+salidas (o algo menor).
+ Básicamente convierten información codificada a otra sin codificar.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Las salidas pueden decodificarse a nivel alto o bajo.
+ A nivel alto se activa la salida con un 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ lógico y las demás son 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+ A nivel bajo, se activa la salida con un 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ lógico y las demás salidas están a nivel alto, 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ lógico.
+ 
+\end_layout
+
+\begin_layout Itemize
+Un decodificador binario puede servir como parte de un circuito lógico complejo
+ de n entradas.
+ Cada salida del decodificador es la activación de un mintérmino.
+ Solo necesito poner una puerta OR que sume los mintérminos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Decodificadores importantes son, por ejemplo, el CMOS 4028 o el muy usado
+ decodificador BCB a 7 segmentos 74LS47 o 74LS48.
+ Este último se usa para convertir un código BCD natural (del 0 al 9) al
+ código necesario para activar un 
+\begin_inset CommandInset href
+LatexCommand href
+name "display de barras led de 7 segmentos"
+target "https://www.geeksforgeeks.org/bcd-to-7-segment-decoder/"
+literal "false"
+
+\end_inset
+
+, que tienen muchos aparatos, como contadores, relojes, etc.
+ El decodificador BCD a 7 segmentos también se puede clasificar como convertidor
+ de código.
+ 
+\end_layout
+
+\begin_layout Itemize
+Para saber más: 
+\begin_inset CommandInset href
+LatexCommand href
+name "¿qúe es un decodificador?"
+target "https://www.electrically4u.com/what-is-a-decoder-operation-types-and-applications/"
+literal "false"
+
+\end_inset
+
+ y 
+\begin_inset CommandInset href
+LatexCommand href
+name "aplicaciones de los decodificadores"
+target "https://www.codingninjas.com/studio/library/application-of-decoder"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection*
+Variante del decodificador: demultiplexador o demultiplexor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "30page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/demultiplexador_tabla.png
+	lyxscale 30
+	width 5cm
+
+\end_inset
+
+
+\begin_inset VSpace defskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/demultiplexador_tabla_2.png
+	lyxscale 50
+	width 4.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Demultiplexador 2 to 4
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Demultiplexador-2-to"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un demultiplexador es un circuito que posee 
+\series bold
+una entrada de información D
+\series default
+, 
+\series bold
+n
+\series default
+ entradas de control y 
+\series bold
+
+\begin_inset Formula $\boldsymbol{2^{n}}$
+\end_inset
+
+
+\series default
+ salidas.
+ 
+\end_layout
+
+\begin_layout Standard
+Imaginemos el caso de un demultiplexador de n=2 entradas, cuya tabla de
+ la verdad podemos ver en la 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Demultiplexador-2-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ En este caso, el valor de la entrada
+\series bold
+ D
+\series default
+, se traslada a una de las salidas, codificadas en las entradas de control.
+ 
+\end_layout
+
+\begin_layout Standard
+Si nos damos cuenta, un demultiplexador de 2 entradas de control y una señal
+ de datos es el mismo concepto que un decodificador 3÷8, teniendo en cuenta
+ de que la señal de entrada considerada como datos (ejemplo, el bit más
+ significativo 
+\series bold
+A
+\series default
+ lo escojo como señal de entrada) me activará el grupo de salidas 
+\begin_inset Formula $S_{4},S_{5},S_{6},S_{7}$
+\end_inset
+
+ o me dará cero en ellas (en la figura 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Demultiplexador-2-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ en verde).
+ Si considero la señal complementada de A, 
+\series bold
+
+\begin_inset Formula $\boldsymbol{\overline{A}},$
+\end_inset
+
+ 
+\series default
+tendré que considerar las otras salidas (en rojo).
+\end_layout
+
+\begin_layout Standard
+Ver: 
+\begin_inset CommandInset href
+LatexCommand href
+name "demultiplexador"
+target "https://www.electronics-tutorials.ws/combination/comb_3.html"
+literal "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Multiplexador o multiplexor
+\end_layout
+
+\begin_layout Standard
+Un multiplexador es el circuito contrario al demultiplexador.
+ Tiene 
+\series bold
+
+\begin_inset Formula $\boldsymbol{2^{n}}$
+\end_inset
+
+
+\series default
+ entradas, 
+\series bold
+n
+\series default
+ entradas de control y una señal de salida.
+ El multiplexador traslada la señal que tiene una de sus entradas (seleccionada
+ mediante las entradas de control) a la salida.
+ En la figura 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Multiplexador-1-to"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ cuando tengo la entrada de control 00, el valor de la entrada 
+\begin_inset Formula $I_{0}$
+\end_inset
+
+ se traslada a la salida, siendo 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si 
+\begin_inset Formula $I_{0}=0$
+\end_inset
+
+ y 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si 
+\begin_inset Formula $I_{1}=1$
+\end_inset
+
+.
+ Por lo tanto tendré a la salida el producto 
+\begin_inset Formula $s=a'\cdot b'\cdot I_{0}.$
+\end_inset
+
+ Asimismo, si tengo la entrada de control 01,el valor de la entrada 
+\begin_inset Formula $I_{1}$
+\end_inset
+
+ se traslada a la salida, siendo 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si 
+\begin_inset Formula $I_{1}=0$
+\end_inset
+
+ y 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si 
+\begin_inset Formula $I_{0}=1$
+\end_inset
+
+.
+ Por lo tanto tendré a la salida el producto 
+\begin_inset Formula $s=a'\cdot b\cdot I_{1}...$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En general a la salida tendré la combinación de todos los posibles productos:
+ 
+\begin_inset Formula $s=a'\cdot b'\cdot I_{0}+a'\cdot b\cdot I_{1}+a\cdot b'\cdot I_{2}+a\cdot b\cdot I_{3}$
+\end_inset
+
+.
+ Los términos 
+\series bold
+ab
+\series default
+ son los mintérminos de una señal de dos variables, luego podré expresar
+ la salida como 
+\begin_inset Formula $s=m_{0}\cdot I_{0}+m_{1}\cdot I_{1}+m_{2}\cdot I_{2}+m_{3}\cdot I_{3}=\underset{i=0}{\overset{3}{\sum}}m_{i}\cdot I_{i}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/multiplexador_1_to_4.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/tabla_multiplexador.png
+	width 3cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/mult_demulti_esquema.png
+	lyxscale 40
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Multiplexador 1 to 4
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Multiplexador-1-to"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El uso de multiplexores y demultiplexores cobra importancia dentro de la
+ comunicación de datos por cable.
+ Imaginemos que tenemos cuatro señales de teléfono digitales por la que
+ se están transmitiendo datos.
+ La frecuencia a la que se transmiten los datos de esas señales telefónicas
+ es de 
+\begin_inset Formula $f=40KHz$
+\end_inset
+
+, es decir, cada bit de información se transmite con un período de 
+\begin_inset Formula $T=25\mu s$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Usando una señal 4 veces más rápida, de frecuencia 
+\begin_inset Formula $f^{*}=160KHz$
+\end_inset
+
+, obtengo una señal de período más corto 
+\begin_inset Formula $T^{*}=6.25\mu s$
+\end_inset
+
+.
+ Aplico esta señal como base de tiempo para generar las señales de control.
+ Como en un ciclo de cambio de las señales de teléfono, las señales de control
+ cambian cuatro veces más rápido, a la salida del multiplexador tengo una
+ señal de frecuencia 
+\begin_inset Formula $4f=160KHz$
+\end_inset
+
+ 
+\series bold
+\shape italic
+con la información del primer bit de las cuatro señales
+\series default
+\shape default
+.
+ Esta información es capaz de viajar 
+\series bold
+\shape italic
+\color brown
+por un único cable
+\series default
+\shape default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Al llegar al destino, las señales se retornan a su forma original aplicando
+ el proceso contrario con un demultiplexor.
+\end_layout
+
+\begin_layout Standard
+Este proceso de 
+\series bold
+\emph on
+multiplexación
+\series default
+\emph default
+ tuvo mucha importancia en el desarrollo de la telefonía comercial.
+ Con él, varios abonados estaban comunicados con una centralita.
+ La centralita era capaz de enviar por un sólo cable una señal que contenía,
+ 
+\series bold
+\emph on
+a la vez
+\emph default
+, 
+\series default
+las conversaciones de varios abonados.
+ 
+\end_layout
+
+\begin_layout Standard
+Dependiendo del material o los materiales de los que estuvieran hechos los
+ cables, de su grosor y otros parámetros, los cables pueden transmitir así
+ un número determinado de conversaciones.
+ Normalmente se hace un cálculo estadístico de cuantos abonados puedo conectar
+ a una centralita para que usen un sólo cable, ya que si tenemos 
+\series bold
+N 
+\series default
+abonados, normalmente no están hablando todos a la vez y se dimensiona el
+ cable para 
+\series bold
+M
+\series default
+ conversaciones con M<N.
+ Si alguna vez el abonado M+1 intenta establecer comunicación, le dará un
+ aviso de error denominado 
+\series bold
+saturación de líneas
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Circuito sumador aritmético
+\end_layout
+
+\begin_layout Standard
+Este circuito suma dos entradas, pero no con la suma lógica, sino aritmética.
+ El circuito tiene una salida S, la suma, y una salida 
+\begin_inset Formula $C_{0}$
+\end_inset
+
+llamada acarreo, que es un bit que vale 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ si la suma no desborda y 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ si desborda (llevarse 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+).
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Ver animación."
+target "https://es.wikipedia.org/wiki/Sumador#/media/Archivo:Halfadder.gif"
+literal "false"
+
+\end_inset
+
+ La salida S se consigue con una puerta XOR y el acarreo con una puerta
+ AND.
+ Se le denomina 
+\series bold
+\emph on
+semi-sumador o half-adder
+\series default
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/semi_sumador_tv.png
+	width 4cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/semi_sumador.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla verdad y semi-sumador 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Por qué al circuito anterior se le denomina 
+\begin_inset Quotes cld
+\end_inset
+
+semi
+\begin_inset Quotes crd
+\end_inset
+
+? Es que no está completo...
+ Así sumamos dos bits pero...
+ ¿Y si necesitamos sumar números binarios de n bits? El sumador tendrá que
+ tener en cuenta el acarreo del bit menos significativo anterior.
+ En este caso el circuito tiene tres entradas (los dos bits más el acarreo)
+ y dos salidas (la suma y el acarreo de salida).
+ Y ya se llama 
+\series bold
+\emph on
+sumador
+\series default
+\emph default
+ o 
+\series bold
+\emph on
+sumador completo
+\series default
+\emph default
+ o 
+\series bold
+\emph on
+full-adder
+\series default
+\emph default
+.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+name "Ver animación."
+target "https://es.wikipedia.org/wiki/Sumador#/media/Archivo:Fulladder.gif"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/sumador_completo_tv.png
+	width 4cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/SumadorCompleto.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/4-bit_ripple_carry_adder.svg.png
+	lyxscale 25
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tabla verdad y sumador completo.
+ Implementación.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Otros
+\end_layout
+
+\begin_layout Standard
+Hay otros circuitos combinacionales posibles.
+ Por ejemplo, el comparador, que compara si dos números de 
+\series bold
+n bits 
+\series default
+A y B cumplen si A>B, A=B o A<B.
+ Tienen 
+\series bold
+2n
+\series default
+ entradas digitales y tres salidas, una por cada comparación.
+ Circuito comercial 7485.
+\end_layout
+
+\begin_layout Standard
+También hay substractores, buffers, inversores, etc.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://en.wikipedia.org/wiki/List_of_7400-series_integrated_circuits"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\color purple
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "80col%"
+height "3pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Vocabulario
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Código
+\series default
+: sistema de signos que permite comprender y formular mensajes.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Código binario
+\series default
+: utiliza los signos 0 y 1
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Bit
+\series default
+: unidad mínima de información, con dos estados posibles 0 y 1.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Bit más significativo o MSB: 
+\series default
+bit más a la izquierda, el de mayor peso.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Bit menos significativo o LSB:
+\series default
+ bit más a la derecha, el de menor peso.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Hexadecimal:
+\series default
+ código con 16 símbolos, del 0 al 9 y de la A a la F
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Octal:
+\series default
+ código con 8 símbolos, del 0 al 7.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+BCD:
+\series default
+ digital codificado en binario.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+ASCII:
+\series default
+ American Standard Code for Information Interchange
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+TTL
+\series default
+: familia de circuitos integrados transistor-transistor-logic.
+ Otras pueden ser CMOS, DTL, etc.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+AND, OR, NOT:
+\series default
+ puertas lógicas básicas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NAND,NOR,XOR:
+\series default
+ otras puertas lógicas.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Forma canónica:
+\series default
+ función expresada mediante la combinación de todos los términos que la
+ hacen 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ (primera forma canónica) o que la hacen 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ (segunda forma canónica).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Mintérmino
+\series default
+: término que se hace 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ en una función lógica, caracterizado por el producto de las variables,
+ complementadas o no.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Maxtérmino
+\series default
+: término que se hace 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ en una función lógica, caracterizado por la suma de las variables, complementad
+as o no.
+\end_layout
+
+\end_body
+\end_document

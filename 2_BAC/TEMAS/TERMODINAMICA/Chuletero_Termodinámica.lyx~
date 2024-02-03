@@ -1,0 +1,1798 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage[nointegrals]{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}
+\end_preamble
+\options spanish, dvipsnames,usenames
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End
+\end_local_layout
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 1.5cm
+\rightmargin 1cm
+\bottommargin 1.5cm
+\footskip 0.1cm
+\secnumdepth 3
+\tocdepth 5
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\begin_layout Plain Layout
+6.- https://www.mathcha.io/editor –> para hacer dibujos en tikz
+\end_layout
+
+\begin_layout Plain Layout
+7.- Listas.
+ Primer nivel opciones de enumeración –> 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+8.- Listas.
+ Segundo nivel –> label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) Uso de referencia enumi.
+ o tambien label=
+\backslash
+theenumi.
+\backslash
+arabic*) .
+ theenumi es completo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Fórmulas de Termodinámica, motores térmicos y máquinas frigoríficas
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Date
+2 - Diciembre - 2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Fórmulas de Termodinámica, motores térmicos y máquinas frigoríficas.
+ By Aurelio Gallardo Rodríguez, Is Licensed Under A Creative Commons Reconocimie
+nto-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OLxcolorList2.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Center Header
+Hola
+\end_layout
+
+\begin_layout Center Footer
+Hola
+\end_layout
+
+\begin_layout Section
+Termodinámica 
+\end_layout
+
+\begin_layout Subsection
+Generales
+\end_layout
+
+\begin_layout Standard
+Primer principio de Termodinámica: 
+\begin_inset Formula $\textcolor{RawSienna}{\Delta U=Q-W}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Calor que absorbe una sustancia líquida o sólida para aumentar su temperatura:
+ 
+\begin_inset Formula $\boldsymbol{\textcolor{RawSienna}{\boldsymbol{Q=m\cdot c_{esp}\cdot\left(T_{fin}-T_{ini}\right)}=m\cdot c_{esp}\cdot\Delta T}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Del agua líquida: 
+\begin_inset Formula $\boldsymbol{\textcolor{RawSienna}{c_{esp}=1\cdot\frac{cal}{g\cdot\text{ºC}}}}$
+\end_inset
+
+ ; Calor latente (necesario para cambiar de fase): 
+\begin_inset Formula $\textcolor{RawSienna}{Q=m\cdot L}$
+\end_inset
+
+
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "20page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/signos_calor_trabajo.png
+	lyxscale 20
+	scale 25
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Signos Calor-Trabajo en el sistema
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Segundo principio de la Termodinámica
+\end_layout
+
+\begin_layout Itemize
+Carnot: mientras es posible convertir todo el trabajo en calor 
+\begin_inset Formula $W\rightarrow Q$
+\end_inset
+
+, 
+\series bold
+\emph on
+lo contrario es imposible 
+\begin_inset Formula $Q\rightarrow W$
+\end_inset
+
+
+\series default
+\emph default
+.
+ No se puede convertir todo el calor en trabajo.
+\end_layout
+
+\begin_layout Itemize
+Clausius: espontáneamente (sin aportar trabajo),
+\series bold
+\emph on
+ es imposible que fluya calor de un cuerpo frío a uno caliente
+\series default
+\emph default
+.
+\end_layout
+
+\begin_layout Subsection
+Gases
+\end_layout
+
+\begin_layout Standard
+Calor Presión constante (se usa 
+\series bold
+n
+\series default
+, número de moles): 
+\series bold
+
+\begin_inset Formula $\boldsymbol{\textcolor{RawSienna}{𝑄_{p}=𝑛·𝐶_{p}·∆𝑇}}$
+\end_inset
+
+
+\series default
+ ; Volumen constante: 
+\begin_inset Formula $\boldsymbol{\textcolor{RawSienna}{𝑄_{v}=𝑛·𝐶_{v}·∆𝑇}}$
+\end_inset
+
+, siendo 
+\begin_inset Formula $C_{p}$
+\end_inset
+
+ la capacidad calorífica 
+\series bold
+\emph on
+molar
+\series default
+\emph default
+ a presión constante y 
+\begin_inset Formula $C_{v}$
+\end_inset
+
+ a volumen constante.
+\end_layout
+
+\begin_layout Standard
+Valor de la constante de los gases ideales: 
+\begin_inset Formula $\boldsymbol{\textcolor{RawSienna}{𝑅=8.1344\frac{J}{mol\cdot K}=0.082\frac{atm\cdot l}{mol\cdot K}=1.9872\frac{cal}{mol\cdot K}\simeq2\cdot\frac{cal}{mol\cdot K}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Relación de Mayer: 
+\begin_inset Formula $\textcolor{RawSienna}{\boldsymbol{C_{p}-C_{v}=R}}$
+\end_inset
+
+; Coeficiente adiabático: 
+\begin_inset Formula $\textcolor{RawSienna}{\gamma=C_{p}/V_{v}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para gases monoatómicos: 
+\begin_inset Formula $\textcolor{RawSienna}{C_{v}=3\frac{cal}{mol\cdot K}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\textcolor{RawSienna}{C_{p}=5\frac{cal}{mol\cdot K}}$
+\end_inset
+
+ ; para gases diatómicos: 
+\begin_inset Formula $\textcolor{RawSienna}{C_{v}=5\frac{cal}{mol\cdot K}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\textcolor{RawSienna}{C_{p}=7\frac{cal}{mol\cdot K}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ecuación del gas ideal: 
+\begin_inset Formula $\textcolor{RawSienna}{p\cdot V}=n\cdot R\cdot T$
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Transformaciones en gases ideales
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tabla_transformaciones_termodinamicas.png
+	lyxscale 25
+	scale 48
+	BoundingBox 0bp 0bp 1437bp 587bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Transformaciones termodinámicas básicas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Máquina térmica y máquina frigorífica (bomba de calor)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "20text%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ciclo_carnot.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ciclo Carnot
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Son las que conforman un ciclo termodinámico.
+ Como la energía interna es una función de estado 
+\begin_inset Formula $\textcolor{RawSienna}{\Delta U=0}\cdot J$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Teniendo en cuenta el primer principio y el segundo, entonces 
+\begin_inset Formula $\textcolor{RawSienna}{Q_{1}+Q_{2}=W}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Rendimiento y/o eficiencia: 
+\series default
+es siempre lo que se obtiene entre lo que se entrega.
+ El rendimiento/eficiencia de una máquina real es siempre un porcentaje
+ de la máquina ideal, que tiene el máximo rendimiento /eficiencia.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="1.8cm">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="left" valignment="middle" width="2cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="4cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{cyan!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color blue
+Tipo de máquina
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+Esquema
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+\color blue
+Temperatura / Calor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+Rendimiento o eficiencia
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+Si es 
+\emph on
+máquina ideal de Carnot
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Motor Térmico
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/maquina_termica.png
+	lyxscale 25
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle T_{1}>T_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle \left|Q_{1}\right|-\left|Q_{2}\right|=W}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle Q_{1}>0,Q_{2}<0,W>0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\eta=\frac{W}{\left|Q_{1}\right|}=1-\frac{\left|Q_{2}\right|}{\left|Q_{1}\right|}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\eta<1}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máquina reversible
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\Delta S=0\;\Longrightarrow\;\frac{\left|Q_{1}\right|}{T_{1}}=\frac{\left|Q_{2}\right|}{T_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{ideal}=1-\frac{T_{2}}{T_{1}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Máquina frigorífica
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/maquina_frigorifica.png
+	lyxscale 25
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle T_{1}>T_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle \left|Q_{1}\right|-\left|Q_{2}\right|=\left|W\right|}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\size small
+\begin_inset Formula $\textcolor{RawSienna}{{\scriptstyle Q_{1}<0,Q_{2}>0,W<0}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\begin_inset Formula $\textcolor{RawSienna}{\varepsilon_{FR}=\frac{\left|Q_{2}\right|}{\left|W\right|}=\frac{\left|Q_{2}\right|}{\left|Q_{1}\right|-\left|Q_{2}\right|}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\varepsilon_{FR_{ideal}}=\frac{T_{2}}{T_{1}-T_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bomba de calor
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\varepsilon_{BC}=\frac{\left|Q_{1}\right|}{\left|W\right|}=\frac{\left|Q_{1}\right|}{\left|Q_{1}\right|-\left|Q_{2}\right|}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\varepsilon_{BC}=1+\varepsilon_{FR}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\varepsilon_{BC_{ideal}}=\frac{T_{1}}{T_{1}-T_{2}}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Motores térmicos
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="4">
+<features booktabs="true" tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="1.8cm">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="6cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+rowcolor{yellow!15!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color blue
+Tipo de máquina
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color blue
+Ciclo
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+\color blue
+Fórmulas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\emph on
+\color blue
+Conceptos
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Motor de vapor
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rankine
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Rankine.png
+	lyxscale 20
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{P=p·L·S·f}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Potencia en el pistón
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+p, presión; L, carrera del pistón; S, superficie émbolo; f, frecuencia.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Motor gasolina
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Otto
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/otto_gasolina.png
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{V_{c}=V_{1}-V_{2}=V_{PMI}-V_{PMS}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{V_{c}=\pi\cdot\left(\frac{\phi}{2}\right)^{2}\cdot L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{R=V_{PMI}/V_{PMS}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\eta=1-\frac{1}{R^{\gamma-1}}}$
+\end_inset
+
+ (rendimiento)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Cilindrada motor 4T: 
+\begin_inset Formula $\textcolor{RawSienna}{4V_{c}}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Vc: volumen cilindro.
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula $V_{PMS}$
+\end_inset
+
+: volumen punto muerto superior o de la cámara de combustión.
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula $V_{PMI}$
+\end_inset
+
+: volumen punto muerto inferior.
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+R: relación de compresión.
+\begin_inset Newline newline
+\end_inset
+
+L: carrera.
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Formula $\phi$
+\end_inset
+
+: calibre.
+\begin_inset Newline newline
+\end_inset
+
+Ro:la relación entre el volumen de la mezcla al cesar la entrada de combustible
+ y el volumen de la recámara
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Motor gasoil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Diesel
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/diesel.png
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Idem fórmulas cilindrada
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{R_{o}=V_{3}/V_{2}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula $\textcolor{RawSienna}{\eta=1-\frac{1}{R^{\gamma-1}}\cdot\left(\frac{R_{o}^{\gamma}-1}{\gamma\cdot(R_{o}-1)}\right)}$
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Sistema motor
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "30text%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/sistema_motor.png
+	lyxscale 30
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+esquema sistema motor
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Considero sólo motor: 
+\end_layout
+
+\begin_layout Standard
+Dado el poder calorífico de la gasolina (gasoil) en calorías o julios por
+ unidad de masa o volumen, por ejemplo: 
+\begin_inset Formula $\textcolor{RawSienna}{H_{c}=7800\cdot Kcal/l}$
+\end_inset
+
+ o 
+\begin_inset Formula $\textcolor{RawSienna}{H_{c}=9900\cdot Kcal/Kg}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Me darán la masa o el volumen que se gasta en el motor.
+ Por ejemplo, 
+\begin_inset Formula $\dot{m}=3\cdot Kg/h$
+\end_inset
+
+ o 
+\begin_inset Formula $\dot{V}=7\cdot l/h$
+\end_inset
+
+.
+ Normalmente la velocidad a la que se consume (punto arriba).
+\end_layout
+
+\begin_layout Standard
+Calculo la potencia absorbida como 
+\begin_inset Formula $\textcolor{RawSienna}{P_{a}=\dot{Q}_{1}=\dot{m}\cdot Hc}$
+\end_inset
+
+ o bien 
+\begin_inset Formula $\textcolor{RawSienna}{P_{a}=\dot{Q}_{1}=\dot{V}\cdot Hc}$
+\end_inset
+
+, o quizás necesite un cálculo de densidad 
+\begin_inset Formula $\textcolor{RawSienna}{\dot{m}=\rho\cdot\dot{V}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El rendimiento del motor se puede calcular con las fórmulas anteriores para
+ el motor Otto o Diesel, pero también con la relación 
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{T}=\frac{P_{útil}}{P_{abs}}=\frac{\dot{W}}{\dot{Q}_{1}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La potencia útil tiene una relación con el par motor: 
+\begin_inset Formula $\textcolor{RawSienna}{P_{útil}=M\cdot w}$
+\end_inset
+
+, siendo 
+\begin_inset Formula $\textcolor{RawSienna}{w=2\cdot\pi\cdot f}$
+\end_inset
+
+.
+ Usualmente se usa la fórmula 
+\begin_inset Formula $\textcolor{RawSienna}{P_{util}=\frac{M\cdot\pi\cdot n}{30}}$
+\end_inset
+
+ .
+ 
+\begin_inset Quotes cld
+\end_inset
+
+n
+\begin_inset Quotes crd
+\end_inset
+
+ en rpm, P en watios y M en Nm.
+ 
+\end_layout
+
+\begin_layout Subsection
+Sistema motor - transmisión
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "30text%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/sistema_motor_transmision.png
+	lyxscale 20
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+esquema sistema motor con transmisión
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{T}=\frac{P_{i}}{P_{abs}}=\frac{\dot{W}}{\dot{Q}_{1}}}$
+\end_inset
+
+ ahora el rendimiento térmico es la relación entre la potencia intermedia
+ y la absorbida.
+\end_layout
+
+\begin_layout Standard
+El rendimiento total sí es 
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{TOT}=\frac{P_{útil}}{P_{abs}}}$
+\end_inset
+
+.
+ El rendimiento del sistema mecánico 
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{mec}=\frac{P_{útil}}{P_{i}}}$
+\end_inset
+
+.
+ Se cumple que 
+\begin_inset Formula $\textcolor{RawSienna}{\eta_{TOT}=\eta_{T}\cdot\eta_{mec}}$
+\end_inset
+
+.
+ La potencia útil es la entregada a las ruedas.
+ 
+\end_layout
+
+\begin_layout Standard
+Se puede considerar que 
+\begin_inset Formula $\textcolor{RawSienna}{P_{i}=P_{roz}+P_{útil}}$
+\end_inset
+
+, la potencia intermedia es la suma de una potencia de rozamiento y la potencia
+ útil.
+ 
+\end_layout
+
+\begin_layout Standard
+Si quiero calcular el momento o par motor en el eje debo despejar de la
+ fórmula: 
+\begin_inset Formula $\textcolor{RawSienna}{P_{i}=\frac{M\cdot\pi\cdot n}{30}}$
+\end_inset
+
+ ; si quiero calcular el momento o par motor en las ruedas 
+\begin_inset Formula $\textcolor{RawSienna}{P_{útil}=\frac{M\cdot\pi\cdot n}{30}}$
+\end_inset
+
+ .
+ También puedo usar la fórmula general 
+\begin_inset Formula $\textcolor{RawSienna}{P=F\cdot v}$
+\end_inset
+
+ si es necesario.
+ 
+\end_layout
+
+\end_body
+\end_document

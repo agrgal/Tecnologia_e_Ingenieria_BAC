@@ -1,0 +1,1226 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+\usepackage[]{xcolor}
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage[nointegrals]{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[font=scriptsize,labelfont=bf]{caption}
+% scriptsize, footnotesize,  small, normalsize, large, Large
+
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{violet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{blue}}
+\subsubsectionfont{\color{brown}}
+\end_preamble
+\options spanish
+\use_default_options true
+\begin_modules
+customHeadersFooters
+\end_modules
+\maintain_unincluded_children false
+\language spanish
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Corriente Continua y fenómenos electromagnéticos.
+ Repaso.
+ Ejercicios
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Date
+6 - Octubre - 2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Corriente Continua y fenómenos electromagnéticos.
+ Repaso.
+ Ejercicios.
+ By Aurelio Gallardo Rodríguez, 31667329D Is Licensed Under A Creative Commons
+ Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section*
+Problemas de corriente continua
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape italic
+\color blue
+Problema 1:
+\color inherit
+ 
+\series default
+\shape default
+calcula el valor de 
+\begin_inset Formula $\epsilon_{0}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape italic
+\color blue
+Problema 2
+\series default
+\shape default
+\color inherit
+: hallar el campo eléctrico creado por una carga positiva puntual de 
+\begin_inset Formula $4\cdot10^{-5}C$
+\end_inset
+
+ en un punto P a una distancia de 44 mm de ella.
+ Hallar la fuerza eléctrica que experimentaría una carga de 
+\begin_inset Formula $-3\cdot10^{-5}C$
+\end_inset
+
+ que se situase en dicho punto.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape italic
+\color blue
+Problema 3: 
+\series default
+\shape default
+\color inherit
+hallar la diferencia de potencial creada por una carga puntual de 
+\begin_inset Formula $66\cdot10^{-7}C$
+\end_inset
+
+ entre dos puntos A y B que distan de ella 86 y 45 mm respectivamente.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape italic
+\color blue
+Problema 4:
+\series default
+\shape default
+\color inherit
+ dos cargas Q1 = 
+\begin_inset Formula $2\mu C$
+\end_inset
+
+ y Q2 = 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $4\mu C$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ están situadas, respectivamente, en los puntos (0,2) y (0,-2) m.
+ Calcular: 
+\end_layout
+
+\begin_layout Enumerate
+Campo y potencial electrostáticos en el punto (4,0) m.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Trabajo necesario para trasladar una carga de 
+\family roman
+\series medium
+\shape up
+\size normal
+\emph off
+\bar no
+\strikeout off
+\xout off
+\uuline off
+\uwave off
+\noun off
+\color none
+
+\begin_inset Formula $6\mu C$
+\end_inset
+
+
+\family default
+\series default
+\shape default
+\size default
+\emph default
+\bar default
+\strikeout default
+\xout default
+\uuline default
+\uwave default
+\noun default
+\color inherit
+ desde el infinito hasta el punto (4,0) m.
+\end_layout
+
+\begin_layout Standard
+
+\size small
+Ver: 
+\begin_inset CommandInset href
+LatexCommand href
+name "Ejercicios en PDF"
+target "https://fq.iespm.es/documentos/janavarro/fisica2bach/T3_Electrostatico_ejercicios.pdf"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 5:
+\series default
+\emph default
+\color inherit
+ Si la intensidad de corriente que circula a través de la sección de un
+ conductor es 30 mA, ¿Cuanta carga habrá atravesado dicha sección durante
+ 2 minutos?.
+ ¿Cuántos electrones habrán circulado? (datos: 
+\begin_inset Formula $q_{e}=-1.6·10^{-19}C$
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 6:
+\series default
+\emph default
+\color inherit
+ ¿A cuántos julios equivalen 10 
+\begin_inset Formula $kW\cdot h$
+\end_inset
+
+?
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\shape slanted
+\color blue
+Problema 7:
+\series default
+\shape default
+\color inherit
+ A) Aplicamos 3mV de tensión a una resistencia de 
+\begin_inset Formula $50\mu\Omega.$
+\end_inset
+
+Hallar la intensidad que circula.
+ B) Al aplicar 1 kV a una resistencia disipa 800W.
+ Hallar su valor.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 8
+\series default
+\emph default
+\color inherit
+: Un rollo de cable unifilar de cobre de 
+\begin_inset Formula $2.5\cdot mm^{2}$
+\end_inset
+
+tiene una longitud de 950m.
+ Hallar su resistencia a 20ºC y 100ºC.
+ Su coeficiente de temperatura es 
+\begin_inset Formula $\alpha=0.00393$
+\end_inset
+
+.
+ (
+\begin_inset Formula $\rho_{Cu}=0.01785{\textstyle \Omega\cdot mm^{2}/m}$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 9:
+\series default
+\emph default
+\color inherit
+ A una resistencia de 12 Ω le aplicamos una tensión de 220V.
+ ¿Cuánto tiempo debe estar conectada para producir 180 Kcal?
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100text%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 10:
+\end_layout
+
+\begin_layout Standard
+En el siguiente circuito hallar la intensidad total, si todas las resistencias
+ tienen el mismo valor de 
+\begin_inset Formula $2\Omega$
+\end_inset
+
+ y aplicamos una tensión de 12 V.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}[scale=0.9]
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Resistencias en el triángulo
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l_=2$
+\backslash
+Omega$] (2,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l_=2$
+\backslash
+Omega$] (1,{sqrt(3)});
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (1,{sqrt(3)}) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l_=2$
+\backslash
+Omega$] (0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Resistencias abajo
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (0,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l=2$
+\backslash
+Omega$] (0,-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (2,0) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l_=2$
+\backslash
+Omega$] (2,-3);
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw (3,-2) to[/tikz/circuitikz/bipoles/length=0.5cm, R, l=2$
+\backslash
+Omega$] (3,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+  % Conexiones
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+draw 
+\end_layout
+
+\begin_layout Plain Layout
+
+	 (0,-3) to[battery1, l_=$12
+\backslash
+,V$] (2,-3)
+\end_layout
+
+\begin_layout Plain Layout
+
+	 (2,-2) -- (3,-2)
+\end_layout
+
+\begin_layout Plain Layout
+
+	 (3,0) -- (3,{sqrt(3)}) -- (1,{sqrt(3)});
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[circle, draw, fill=black, scale=0.2] (D) at (0,-3) {};   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[left] at (D.west) {+};
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[circle, draw, fill=black, scale=0.2] (E) at (2,-3) {};   
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\backslash
+node[right] at (E.east) {-}; 
+\end_layout
+
+\begin_layout Plain Layout
+
+		
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Problema 10
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problemas 11:
+\end_layout
+
+\begin_layout Standard
+Resolver los siguientes circuitos siguiendo las leyes de Kirchhoff (
+\begin_inset CommandInset href
+LatexCommand href
+target "https://ekuatio.com/leyes-de-kirchhoff-aplicacion-y-ejercicios-resueltos-paso-a-paso/"
+literal "true"
+
+\end_inset
+
+).
+ Calcular el cuarto ejercicio también por superposición, considerando que
+ las fuentes tienen resistencia interna cero.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/kirchhoff1.png
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Primer circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+ 
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/kirchhoff2.png
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Segundo circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/kirchhoff3.png
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tercer circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/kirchhoff4.png
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Cuarto circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Varios circuitos por Kirchhoff
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "100col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 12:
+\series default
+\emph default
+\color inherit
+ hallar la fórmula del campo magnético provocado a una distancia 
+\begin_inset Quotes cld
+\end_inset
+
+a
+\begin_inset Quotes crd
+\end_inset
+
+ de un conductor, por el que circula una corriente continua I.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 13:
+\series default
+\emph default
+\color inherit
+ hallar la fórmula del campo magnético provocado en una espira de radio
+ 
+\begin_inset Quotes cld
+\end_inset
+
+R
+\begin_inset Quotes crd
+\end_inset
+
+ en su centro.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 14:
+\series default
+\emph default
+\color inherit
+ una bobina de 30 espiras de sección 
+\begin_inset Formula $12.56\,cm^{2}$
+\end_inset
+
+y radio 2 cm está atravesada por una corriente de 3A.
+ Las espiras están muy juntas L<<R.
+ calcular el campo magnético en su centro.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 15:
+\series default
+\emph default
+\color inherit
+ un solenoide de longitud 80 cm y diámetro 1.5 cm está formado por 80 espiras
+ conductoras.
+ Hallar la inducción magnética en su interior si la recorre una intensidad
+ de 1 A.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 16:
+\series default
+\emph default
+\color inherit
+ demostrar que 
+\begin_inset Formula $\epsilon=-\frac{d\phi}{dt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+Problema 17: 
+\series default
+\emph default
+\color inherit
+hallar el valor de la fem en una varilla de 10cm que arrastro por una espira
+ a una velocidad de 5 m/s, sometida a un campo B=1.2T
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\emph on
+\color blue
+* Problema 18: 
+\series default
+\emph default
+\color inherit
+demostrar que el coeficiente de autoinducción de un solenoide es 
+\begin_inset Formula $L=\mu_{0}\cdot\frac{N^{2}\cdot S}{h}$
+\end_inset
+
+, siendo N el número de espiras, S su sección y h su longitud.
+ Calcular el coeficiente de autoinducción de un solenoide de 200 espiras,
+ diámetro de la espira 3 cm y longitud 60 cm.
+ 
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,4979 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage[nointegrals]{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}
+\end_preamble
+\options spanish, dvipsnames,usenames
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End
+\end_local_layout
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 5
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\begin_layout Plain Layout
+6.- https://www.mathcha.io/editor –> para hacer dibujos en tikz
+\end_layout
+
+\begin_layout Plain Layout
+7.- Listas.
+ Primer nivel opciones de enumeración –> 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+8.- Listas.
+ Segundo nivel –> label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) Uso de referencia enumi.
+ o tambien label=
+\backslash
+theenumi.
+\backslash
+arabic*) .
+ theenumi es completo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Corriente Alterna
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Date
+14 - Octubre - 2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Corriente Alterna.
+ Repaso.
+ By Aurelio Gallardo Rodríguez, Is Licensed Under A Creative Commons Reconocimie
+nto-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OLxcolorList2.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ondas senoidales
+\end_layout
+
+\begin_layout Standard
+En Física, tienen gran importancia los fenómenos ondulatorios.
+ Denominamos 
+\series bold
+\color purple
+onda
+\series default
+\color inherit
+ a cualquier magnitud que puede representarse en una gráfica y que varía
+ según la variable 
+\series bold
+\color brown
+tiempo
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tiposOndasAlternas.png
+	lyxscale 20
+	width 14cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tipos de señales ondulatorias
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\series default
+ Tenemos una 
+\series bold
+\color purple
+onda pulsante
+\series default
+\color inherit
+.
+ Se repite en el tiempo, según un período T.
+ o sea, cada 
+\begin_inset Quotes cld
+\end_inset
+
+T
+\begin_inset Quotes crd
+\end_inset
+
+ segundos se repiten los mismos valores.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Tenemos una 
+\series bold
+\color purple
+onda alterna
+\series default
+\color inherit
+, ya que además de ser pulsante toma valores positivos y negativos.
+\end_layout
+
+\begin_layout Enumerate
+Tenemos una 
+\series bold
+\color purple
+onda alterna pura
+\series default
+\color inherit
+, y además 
+\series bold
+\color purple
+senoidal
+\series default
+\color inherit
+ (ver 
+\begin_inset CommandInset href
+LatexCommand href
+name "vídeo"
+target "https://youtu.be/XH3htlWU9N4?si=UErEbrjp_OzmEgnt&t=147"
+literal "false"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Alterna pura
+\series default
+ porque los mismos valores que toma en la zona positiva, los toma en la
+ negativa.
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Senoidal
+\series default
+ porque sus valores se obtienen a través de la función 
+\begin_inset Formula $y=A\cdot sen(k\cdot t)$
+\end_inset
+
+, donde 
+\series bold
+A
+\series default
+ es la amplitud y 
+\begin_inset Quotes cld
+\end_inset
+
+
+\begin_inset Formula $k\cdot t$
+\end_inset
+
+
+\begin_inset Quotes crd
+\end_inset
+
+ el ángulo variable con el tiempo.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Una característica importante de las ondas es su período, o el tiempo 
+\series bold
+
+\begin_inset Quotes cld
+\end_inset
+
+T
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+ que tarda la señal en volver a repetirse.
+ Su inversa es la frecuencia 
+\series bold
+\color blue
+
+\begin_inset Formula $f=1/T$
+\end_inset
+
+
+\series default
+\color inherit
+.
+ Si T en el S.I.
+ viene medido en segundos, la frecuencia se mide en ciclos por segundo o
+ Hertzios (Hz).
+ Otras posibles unidades son ciclos por segundo, ciclos o revoluciones por
+ minuto, etc.
+ 
+\end_layout
+
+\begin_layout Subsection
+Generación de tensión alterna como onda senoidal.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/espiraCuadradaTensionAlterna.png
+	lyxscale 20
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Generación de onda de tensión senoidal
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consideremos la espira girando en un campo magnético.
+ El flujo que atraviesa la espira es:
+\color blue
+ 
+\series bold
+
+\begin_inset Formula $\boldsymbol{\phi=\vec{B}\cdot\vec{S}=B\cdot S\cdot cos(w\cdot t)}$
+\end_inset
+
+
+\series default
+\color inherit
+ , siendo 
+\series bold
+w
+\series default
+ la velocidad angular medida en radianes por segundo y 
+\series bold
+t
+\series default
+ el tiempo considerado.
+ Cuando 
+\begin_inset Formula $w\cdot t=0$
+\end_inset
+
+, el valor del coseno es 
+\series bold
+
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+, la espira está perpendicular al campo y se produce el máximo flujo.
+ 
+\end_layout
+
+\begin_layout Standard
+Y si consideramos la ley de Faraday, obtenemos una expresión para la fuerza
+ electromotriz 
+\begin_inset Formula $\boldsymbol{\varepsilon}$
+\end_inset
+
+ inducida en la espira: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+\epsilon=-\frac{d\phi}{dt}=B\cdot S\cdot w\cdot sen(w\cdot t)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La fem máxima alcanzada se obtiene cuando 
+\begin_inset Formula $sen(w\cdot t)=1$
+\end_inset
+
+, y tiene el valor 
+\begin_inset Formula $E_{max}=B\cdot S\cdot w$
+\end_inset
+
+ , y representa la amplitud de la onda de tensión alterna.
+ 
+\end_layout
+
+\begin_layout Itemize
+La onda empieza a repetirse en los valores de ángulos 
+\begin_inset Formula $w\cdot t=\left\{ 2\pi,4\pi,\ldots,2n\pi\right\} $
+\end_inset
+
+.
+ Como la definición de período nos dice que es el tiempo 
+\begin_inset Quotes cld
+\end_inset
+
+
+\series bold
+T
+\series default
+
+\begin_inset Quotes crd
+\end_inset
+
+ que tarda la señal en repetirse desde que se produce, coincide con el valor
+ de ángulo 
+\begin_inset Formula $2\pi$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Itemize
+Por tanto, el período cumple 
+\begin_inset Formula $w\cdot T=2\cdot\pi$
+\end_inset
+
+.
+ Una expresión para la velocidad angular sería: 
+\color blue
+
+\begin_inset Formula $\boldsymbol{w=\frac{2\cdot\pi}{T}}$
+\end_inset
+
+ 
+\color inherit
+o bien, 
+\begin_inset Formula ${\color{blue}\boldsymbol{w=2\cdot\pi\cdot f}}$
+\end_inset
+
+, bien en función del período o de la frecuencia.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tensionSenoidal.png
+	lyxscale 20
+	width 4cm
+	height 4cm
+	keepAspectRatio
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Tensión alterna en una espira
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Valores máximo, medio y eficaz en una onda senoidal.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement l
+overhang 0in
+width "40col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondaSenoidalGenerica.png
+	lyxscale 30
+	scale 10
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Onda genérica
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Dada la onda senoidal genérica 
+\begin_inset Formula $y=A\cdot sen(wt)$
+\end_inset
+
+, de amplitud 
+\series bold
+\color blue
+A
+\series default
+\color inherit
+ y velocidad angular 
+\series bold
+\color blue
+w
+\series default
+\color inherit
+, definimos los siguientes valores:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+A) 
+\series default
+El valor medio en un período completo es cero.
+ La suma de todos los valores positivos y negativos en un período suman
+ cero.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+B) 
+\series default
+En un semi-período, el 
+\series bold
+valor medio
+\series default
+ de la onda es 
+\begin_inset Formula $\bar{A}=\frac{2}{\Pi}\cdot A$
+\end_inset
+
+.
+ Demostrar en problemas.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+C)
+\series default
+ Se define el valor eficaz como 
+\begin_inset Formula $A_{ef}=\cfrac{A}{\sqrt{2}}$
+\end_inset
+
+.
+ Los valores eficaces son muy usados en el contexto de la electricidad,
+ por razones que veremos posteriormente.
+ Cuando, por ejemplo, decimos que en la red eléctrica de una casa hay 220V
+ de corriente alterna, nos referimos a su valor eficaz.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Desfase
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoDesfase.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondaDesfasada.png
+	lyxscale 30
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Onda adelantada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondaDesfasadaMAS.png
+	lyxscale 30
+	scale 12
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Onda atrasada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito desfasado
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Llamamos desfase al hecho de que la medida de una tensión alterna no es
+ cero cuando empezamos a contar el tiempo, sino otro valor.
+ Por ejemplo, imaginemos la siguiente situación: una fuente de tensión alterna
+ permanente, un interruptor y una resistencia.
+ La caída de la tensión en la resistencia 
+\series bold
+V
+\series default
+, que será alterna porque la fuente original es alterna, se empieza a medir
+ desde que activo el interruptor; en ese momento empieza a correr el tiempo.
+ 
+\end_layout
+
+\begin_layout Standard
+Pero la tensión aplicada en ese momento no tiene que coincidir con el cero;
+ de hecho es más probable que coincida con cualquier otro valor de la onda
+ senoidal.
+ Por lo tanto, la forma de onda que mediremos será algo como la de la figura
+ 5b o 5c.
+\end_layout
+
+\begin_layout Standard
+Si la onda empieza en un valor positivo, como en la figura 5b, decimos que
+ la onda está adelantada y tiene desfase 
+\begin_inset Formula $-\varphi$
+\end_inset
+
+.
+ Su ecuación es 
+\begin_inset Formula $V=A\cdot sen(wt+\varphi)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si la onda empieza en un valor negativo, como en la figura 5c, decimos que
+ la onda está atrasada y tiene desfase 
+\begin_inset Formula $+\varphi$
+\end_inset
+
+.
+ Su ecuación es 
+\begin_inset Formula $V=A\cdot sen(wt-\varphi)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Cuando estudiemos una sola onda senoidal, el desfase de la señal puede ignorarse.
+ El problema estará en cuando combinemos varias señales y estas estén desfasadas
+ unas respecto de otras.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ondas senoidales simultáneas
+\end_layout
+
+\begin_layout Standard
+Si dos magnitudes físicas están relacionadas entre sí , y ambas varían de
+ forma senoidal , estamos hablando de 
+\series bold
+ondas senoidales simultáneas
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+Estudiaremos, por ser las más habituales, las que tienen 
+\series bold
+igual frecuencia
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ondas en fase
+\end_layout
+
+\begin_layout Standard
+Son en las que coinciden en el tiempo los mínimos y los máximos.
+ Por ejemplo, dos ondas de intensidad simultáneas y en fase se representan
+ en la figura 6
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondasSimultaneasEnFase.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ondas de intensidad simultáneas y en fase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Ondas desfasadas adelantadas
+\end_layout
+
+\begin_layout Standard
+Por comodidad, una de las magnitudes senoidales la consideraré con fase
+ 0.
+ En el caso de la figura 7a, la tensión.
+ La intensidad también representada en la figura 7a está adelantada respecto
+ de la tensión en un ángulo 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ El ángulo se toma desde la onda referida (intensidad) hasta la onda base
+ (tensión), por lo que es negativo.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Ondas desfasadas atrasadas
+\end_layout
+
+\begin_layout Standard
+En este caso, figura 7b, la intensidad está atrasada.
+ Como el ángulo 
+\begin_inset Formula $\varphi$
+\end_inset
+
+ se toma desde la onda referida (intensidad) hasta la onda base (tensión),
+ es positivo.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondaDesfasada_I_adelantada.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+adelantada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/ondaDesfasada_I_atrasada.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+retrasada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ondas simultáneas desfasadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Expresión general de una onda desfasada
+\end_layout
+
+\begin_layout Standard
+La expresión general de una onda desfasada (por ejemplo, para la intensidad)
+ sería: 
+\begin_inset Formula $I=I_{max}\cdot sen(wt-\varphi)$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+Si la onda está adelantada, 
+\begin_inset Formula $\varphi<0$
+\end_inset
+
+, su ángulo es negativo 
+\begin_inset Formula $\varphi=-\left|\varphi\right|$
+\end_inset
+
+.
+ Por lo tanto la ecuación queda 
+\begin_inset Formula $I=I_{max}\cdot sen(wt+\left|\varphi\right|)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si la onda está atrasada 
+\begin_inset Formula $\varphi>0$
+\end_inset
+
+, su ángulo es positivo 
+\begin_inset Formula $\varphi=\left|\varphi\right|$
+\end_inset
+
+.
+ Por lo tanto la ecuación queda 
+\begin_inset Formula $I=I_{max}\cdot sen(wt-\left|\varphi\right|)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Sumas de ondas senoidales
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\series default
+Si las ondas están en fase, simplemente se suman sus máximos.
+ por ejemplo, con dos intensidades: 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $I_{1}=I_{1max}\cdot sen(wt)\;\;,\;\;I_{2}=I_{2max}\cdot sen(wt)$
+\end_inset
+
+, luego 
+\begin_inset Formula $I=I_{1}+I_{2}=(I_{1max}+I_{2max})\cdot sen(wt)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate-Resume
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\series default
+Si las ondas están en desfase, tendremos que hacer lo siguiente:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\series default
+
+\begin_inset Formula $I=I_{1}+I_{2}=I_{1max}\cdot sen(wt)+I_{2max}\cdot sen(wt-\varphi)$
+\end_inset
+
+.
+ Y esta expresión se puede igualar, de forma genérica, a una onda 
+\begin_inset Formula $I=I^{*}\cdot sen(wt-\varphi^{*})$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Sumamos vectorialmente los máximos, según la figura 8b.
+\end_layout
+
+\begin_layout Enumerate
+La intensidad 
+\begin_inset Formula $I^{*}$
+\end_inset
+
+ es el módulo del vector suma, y su ángulo de desfase es el ángulo 
+\begin_inset Formula $\varphi^{*}$
+\end_inset
+
+ que forma con la horizontal.
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/sumasOndaFase.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Suma de ondas en fase
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/sumasOndaDesfasadas.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Suma de ondas desfasadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Suma de ondas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color blue
+Ejemplo
+\series default
+\color inherit
+: hallar la expresión algebraica de la suma de dos ondas senoidales de tensión,
+ de 127 V y 220V respectivamente, y 50 Hz de frecuencia.
+ La segunda está adelantada 30º respecto de la primera.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/SumaOndasDesfasadasEjemplo.png
+	lyxscale 30
+	width 18cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ejemplo de suma de ondas desfasadas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nota
+\series default
+: si necesito la resta en vez de la suma, se suma el opuesto de la segunda
+ a la primera.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Producto de ondas senoidales
+\end_layout
+
+\begin_layout Standard
+Como ejemplo, en electricidad es muy frecuente el uso de la multiplicación
+ de la intensidad por la tensión, resultando la magnitud potencia.
+ Si por ejemplo tenemos una tensión 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)$
+\end_inset
+
+ y una intensidad 
+\begin_inset Formula $I=I_{o}\cdot sen(wt)$
+\end_inset
+
+, ambas señales en fase 
+\begin_inset Foot
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Formula $cos(\alpha+\beta)=cos(\alpha)\cdot cos(\beta)-sen(\alpha)\cdot sen(\beta)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Si 
+\begin_inset Formula $\alpha=\beta$
+\end_inset
+
+, entonces 
+\begin_inset Formula $cos(2\alpha)=cos^{2}(\alpha)-sen^{2}(\alpha)=\left[1-sen^{2}(\alpha)\right]-sen^{2}(\alpha)=1-2\cdot sen^{2}(\alpha)$
+\end_inset
+
+.
+ Por lo tanto 
+\begin_inset Formula $sen^{2}(\alpha)=\frac{1-cos(2\alpha)}{2}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="11cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{equation}
+P=I\cdot V=I_{o}\cdot V_{o}\cdot sen^{2}(wt)=I_{o}\cdot V_{o}\cdot\frac{1-cos(2wt)}{2}\label{eq: potencia elemento resistivo}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/productoOndasFase.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fórmula del producto de ondas en fase
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gráfica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Como podemos ver, la resultante es una onda de doble frecuencia, nunca alterna,
+ sino 
+\series bold
+pulsante
+\series default
+ (siempre positiva).
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "50col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si las ondas están desfasadas, 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)$
+\end_inset
+
+ y una intensidad 
+\begin_inset Formula $I=I_{o}\cdot sen(wt-\varphi)$
+\end_inset
+
+, también tenemos una señal de doble frecuencia, aunque más compleja.
+ En el cálculo es útil el seno del ángulo doble
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $sen(2wt)=2\cdot sen(wt)\cdot cos(wt)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="12cm">
+<column alignment="center" valignment="middle" width="5cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula 
+\begin{gather}
+P=I\cdot V=I_{o}\cdot V_{o}\cdot sen(wt)\cdot sen(wt-\varphi)=\nonumber \\
+=I_{o}\cdot V_{o}\cdot\frac{\left[1-cos(2wt)\right]\cdot cos(\varphi)-sen(2wt)\cdot sen(\varphi)}{2}
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/productoOndasDesfase.png
+	lyxscale 30
+	scale 15
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Fórmula del producto de ondas desfasadas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gráfica
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Elementos lineales
+\end_layout
+
+\begin_layout Standard
+Al aplicar una tensión alterna a un circuito, se provoca la circulación
+ de una corriente en el mismo.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum}
+\end_layout
+
+\end_inset
+
+Si la intensidad de corriente que circula es una onda senoidal de igual
+ frecuencia que la onda de tensión alterna aplicada, el circuito tiene una
+ 
+\series bold
+respuesta lineal
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ahora bien, la onda de intensidad podrá estar en fase, o adelantada o atrasada
+ respecto de la onda de tensión.
+ Habrá pues tres tipos de circuitos, con tres tipos de cargas según sea
+ esta respuesta: 
+\series bold
+resistivos, capacitivos e inductivos.
+ 
+\end_layout
+
+\begin_layout Subsection
+Circuito resistivo
+\end_layout
+
+\begin_layout Standard
+En un circuito donde solo existen cargas resistivas puras, la tensión y
+ la intensidad estarán en fase.
+ 
+\series bold
+\emph on
+En todo momento se cumple la ley de Ohm
+\series default
+\emph default
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoResistivo.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito resistivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Circuito inductivo
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Circuito-inductivo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un circuito es 
+\series bold
+inductivo
+\series default
+ puro, cuando al aplicarle una tensión alterna, la onda de la intensidad
+ que lo atraviesa 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum}
+\end_layout
+
+\end_inset
+
+
+\series bold
+está atrasada respecto de ella
+\series default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoInductivo_I.png
+	lyxscale 10
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito inductivo puro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Consistiría en una bobina ideal, con resistencia considerada nula.
+ En este caso sólo debemos considerar su coeficiente de autoinducción L.
+ 
+\end_layout
+
+\begin_layout Standard
+Sabemos que la expresión de la fuerza electromotriz en la bobina (la expresión
+ tiene la 
+\begin_inset Quotes cld
+\end_inset
+
+N
+\begin_inset Quotes crd
+\end_inset
+
+) es 
+\begin_inset Formula $\epsilon=-N\frac{d\phi}{dt}=-L\cdot\frac{dI}{dt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero si observamos el circuito y aplicamos Kirchhoff, tenemos que 
+\begin_inset Formula $V+\varepsilon=0$
+\end_inset
+
+, por lo tanto 
+\begin_inset Formula $V=-\varepsilon=L\cdot\frac{dI}{dt}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si escogemos V, tal que 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)$
+\end_inset
+
+ entonces 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\int\frac{V_{o}}{L}\cdot sen(wt)\cdot dt=\frac{V_{o}}{w\cdot L}\cdot\left[-cos(wt)\right]
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y según las igualdades trigonométricas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+cos(\alpha)=sen\left(\frac{\Pi}{2}-\alpha\right)\quad\mathrm{y}\quad sen(-\beta)=-sen(\beta)\quad\mathrm{luego}\quad-cos(\alpha)=-sen\left(\frac{\Pi}{2}-\alpha\right)=sen\left(\alpha-\frac{\Pi}{2}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V_{o}}{w\cdot L}\cdot sen\left(wt-\frac{\Pi}{2}\right)\quad\mathrm{siendo}\quad V=V_{o}\cdot sen(wt)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto, obtenemos que la intensidad alterna en una bobina ideal se
+ retrasa respecto de la tensión alterna en 90º.
+ Cuando la tensión 
+\begin_inset Quotes cld
+\end_inset
+
+baje
+\begin_inset Quotes crd
+\end_inset
+
+, la intensidad 
+\begin_inset Quotes cld
+\end_inset
+
+sube
+\begin_inset Quotes crd
+\end_inset
+
+ y cuando la tensión tenga un cero la intensidad tendrá un mínimo o un máximo,
+ y viceversa.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoInductivo_II.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito inductivo puro
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El valor máximo que circula de intensidad es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I_{o}=\frac{V_{o}}{w\cdot L}=\frac{V_{o}}{2\cdot\pi\cdot f\cdot L}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y si comparamos con la ley de Ohm, tenemos un término 
+\begin_inset Formula ${\color{blue}2\cdot\pi\cdot f\cdot L}$
+\end_inset
+
+ que en el circuito inductivo parece estar haciendo de resistencia.
+ Este término se denomina reactancia inductiva; la llamaremos 
+\series bold
+
+\begin_inset Formula ${\color{blue}X_{L}}$
+\end_inset
+
+
+\series default
+ y se mide en unidades de Ohmios 
+\series bold
+(
+\begin_inset Formula $\Omega$
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{L}=w\cdot L=2\cdot\pi\cdot f\cdot L
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Así que, entre los valores máximos o los valores eficaces se cumple que:
+ 
+\begin_inset Formula $I_{o}=\frac{V_{o}}{X_{L}}$
+\end_inset
+
+ , 
+\begin_inset Formula $I_{ef}=\frac{V_{ef}}{X_{L}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+reactancia inductiva o inductancia
+\series default
+ se diferencia en una resistencia pura 
+\series bold
+\color blue
+que su valor no es constante
+\series default
+\color inherit
+.
+ Aunque la autoinducción sea constante, seguirá el valor de 
+\begin_inset Formula $X_{L}$
+\end_inset
+
+ dependiendo del valor de la frecuencia de la señal.
+ 
+\end_layout
+
+\begin_layout Subsection
+Circuito capacitivo
+\begin_inset CommandInset label
+LatexCommand label
+name "subsec:Circuito-capacitivo"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Un elemento capacitivo es un elemento que hace lo contrario que la inducción:
+ adelanta la intensidad respecto de la tensión.
+ Un elemento capacitivo puro es un condensador ideal con resistencia infinita.
+ El valor de la capacidad de un condensador viene por la expresión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=C\cdot\frac{dV}{dt}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoCapacitivo.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito capacitivo puro o condensador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si escogemos V, tal que 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)$
+\end_inset
+
+ (como antes) entonces:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=C\cdot\frac{dV}{dt}=C\cdot V_{o}\cdot w\cdot cos(wt)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+sen\left(\alpha+\frac{\Pi}{2}\right)=sen(\alpha)\cdot cos\left(\frac{\Pi}{2}\right)+cos(\alpha)\cdot sen\left(\frac{\Pi}{2}\right)=cos(\alpha)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=I_{o}\cdot sen\left(wt+\frac{\Pi}{2}\right)=C\cdot V_{o}\cdot w\cdot sen\left(wt+\frac{\Pi}{2}\right)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+I_{o}=C\cdot V_{o}\cdot w
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y, si de manera análoga al inductor, definimos una 
+\series bold
+reactancia capacitiva o capacitancia
+\series default
+ como la relación entre V e I.
+ Al igual que la inductancia, no es constante, sino que depende de la frecuencia.
+ Y 
+\begin_inset Formula $X_{C}$
+\end_inset
+
+ se mide también en Ohmios 
+\series bold
+(
+\begin_inset Formula $\Omega$
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{C}=\frac{V}{I}=\frac{1}{C\cdot w}=\frac{1}{2\cdot\pi\cdot f\cdot C}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Nota:
+\series default
+ la capacidad de un condensador se mide en 
+\series bold
+\color blue
+faradios (F)
+\series default
+\color inherit
+.
+ Un faradio se define como la carga que adquiere un condensador de 1 Culombio
+ cuando está sometido a una diferencia de potencial de 1 Voltio.
+ 
+\end_layout
+
+\begin_layout Subsection
+Potencia
+\end_layout
+
+\begin_layout Standard
+La potencia en un circuito absorbida por un componente es el producto de
+ la intensidad y de la tensión.
+ Como estoy aplicando tensiones alternas y provocando consumos de corrientes
+ asimismo alternas, la potencia absorbida será también una onda alterna,
+ 
+\series bold
+instantánea
+\series default
+, es decir conocido su valor en función del tiempo.
+\end_layout
+
+\begin_layout Subsubsection
+Potencia de un circuito resistivo
+\end_layout
+
+\begin_layout Standard
+En un circuito resistivo tenemos los valores en fase de la tensión alterna
+ y la intensidad: 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)\quad e\quad I=I_{o}\cdot sen(wt)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La expresión de la potencia (vista ya en la ecuación 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "eq: potencia elemento resistivo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, punto 1.4.6) sería: 
+\begin_inset Formula $P=I\cdot V=I_{o}\cdot V_{o}\cdot sen^{2}(wt)=I_{o}\cdot V_{o}\cdot\frac{1-cos(2wt)}{2}$
+\end_inset
+
+ siendo 
+\begin_inset Formula $I_{o},\,V_{o}$
+\end_inset
+
+ los valores máximos de la intensidad y de la tensión en la onda.
+ 
+\end_layout
+
+\begin_layout Standard
+Recordemos que tiene 
+\series bold
+\emph on
+forma de onda pulsante
+\series default
+\emph default
+.
+ La señal es siempre positiva, y de frecuencia 
+\begin_inset Formula $2\cdot w$
+\end_inset
+
+, el doble de la frecuencia original.
+ La potencia media calculada en un período o un semi-período (ver problemas)
+ puede demostrarse que es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+P_{m}=\frac{I_{o}\cdot V_{o}}{2}=\frac{I_{o}}{\sqrt{2}}\cdot\frac{V_{o}}{\sqrt{2}}=I_{ef}\cdot V_{ef}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El valor de potencia media (lo llamaremos simplemente 
+\begin_inset Quotes cld
+\end_inset
+
+P
+\begin_inset Quotes crd
+\end_inset
+
+) es el valor que consideremos como potencia eficaz consumida por la resistencia.
+ La llamaremos 
+\series bold
+\color purple
+potencia activa
+\series default
+\color inherit
+, y es la potencia que produce un trabajo útil en el circuito.
+ Su unidad es el 
+\series bold
+Vatio
+\series default
+.
+ Y es simplemente el producto de los valores eficaces.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Potencia en un circuito inductivo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 12
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/potenciaCircuitoInductivo.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia cir.
+ inductivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En un circuito inductivo, recordamos que 
+\begin_inset Formula 
+\[
+I=\frac{V_{o}}{w\cdot L}\cdot sen\left(wt-\frac{\Pi}{2}\right)\quad\mathrm{siendo}\quad V=V_{o}\cdot sen(wt)
+\]
+
+\end_inset
+
+ y además que 
+\begin_inset Formula $-cos(\alpha)=sen\left(\alpha-\frac{\Pi}{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La potencia en un circuito inductivo sería 
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+\begin_inset Formula $sen(2\alpha)=sen\left(\alpha+\alpha\right)=2\cdot sen(\alpha)\cdot cos(\alpha)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+P=I\cdot V=I_{o}\cdot V_{o}\cdot sen(wt)\cdot sen\left(wt-\frac{\Pi}{2}\right)=\\
+=I_{o}\cdot V_{o}\cdot sen(wt)\cdot\left[-cos(wt)\right]=-\frac{I_{o}\cdot V_{o}}{2}\cdot sen(2wt)\nonumber 
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Que es una onda alterna de frecuencia doble.
+ Esta onda tiene un valor medio 
+\begin_inset Formula $P_{m}=0,$
+\end_inset
+
+y una potencia instantánea máxima de 
+\begin_inset Formula $P_{max}=-\frac{I_{o}\cdot V_{o}}{2}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+El hecho de que su potencia media sea cero, significa que durante medio
+ ciclo absorbe energía y durante medio ciclo la disipa.
+ El balance es cero.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "25col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sin embargo, puedo definir una 
+\series bold
+potencia ficticia
+\series default
+ (cuyo significado veremos más adelante) que denotaremos con la letra 
+\series bold
+Q
+\series default
+ y 
+\series bold
+\color blue
+llamaremos potencia reactiva
+\series default
+\color inherit
+ como el producto de los valores eficaces de la onda.
+ recordemos que 
+\begin_inset Formula $I_{ef}=\frac{V_{ef}}{X_{L}}$
+\end_inset
+
+.
+ Por lo tanto...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Q=I_{ef}\cdot V_{ef}=X_{L}\cdot I_{ef}^{2}=\frac{V_{ef}^{2}}{X_{L}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Esta potencia, para distinguirla de la real, no se mide en vatios, sino
+ en una unidad equivalente: 
+\series bold
+voltio-amperio reactivo (VAr)
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Potencia en un circuito capacitivo
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement r
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/potenciaCircuitoCapacitivo.png
+	lyxscale 10
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Potencia cir.
+ capacitivo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+De forma análoga al circuito inductivo, en el capacitivo 
+\begin_inset Formula $I=I_{o}\cdot sen\left(wt+\frac{\Pi}{2}\right)$
+\end_inset
+
+ siendo 
+\begin_inset Formula $V=V_{o}\cdot sen(wt)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{gather}
+P=I\cdot V=I_{o}\cdot V_{o}\cdot sen(wt)\cdot sen\left(wt+\frac{\Pi}{2}\right)=\\
+=I_{o}\cdot V_{o}\cdot sen(wt)\cdot cos(wt)=\frac{I_{o}\cdot V_{o}}{2}\cdot sen(2wt)\nonumber 
+\end{gather}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Y, como en el caso anterior, definiremos 
+\series bold
+\color blue
+la potencia reactiva 
+\series default
+\color inherit
+como 
+\begin_inset Formula $Q=I_{ef}\cdot V_{ef}=X_{C}\cdot I_{ef}^{2}=\frac{V_{ef}^{2}}{X_{C}}$
+\end_inset
+
+, siendo también su unidad el 
+\series bold
+voltio-amperio reactivo (VAr)
+\series default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "25col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La potencia reactiva no siempre se transforma en trabajo útil; más bien
+ se 
+\begin_inset Quotes cld
+\end_inset
+
+almacena
+\begin_inset Quotes crd
+\end_inset
+
+ en los elementos de los circuitos, sin producir un trabajo útil.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Números complejos
+\end_layout
+
+\begin_layout Standard
+Todos conocemos los números reales.
+ Cualquier número que pertenezca a 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ puede representarse en una recta infinita, con valores a la derecha e izquierda
+ del cero.
+ Y podemos hacer cualquier operación con estos números: suma , resta, multiplica
+ción, trigonometría...
+ 
+\end_layout
+
+\begin_layout Standard
+¿Cualquiera? Haz la siguiente operación: 
+\begin_inset Formula $\sqrt{-16}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\sqrt{-16}=\sqrt{-1\cdot16}=\sqrt{-1}\cdot\sqrt{16}=\sqrt{-1}\cdot4
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+¿Y cómo se calcula la raíz del 
+\series bold
+-1
+\series default
+? ¿Hay algún número real que multiplicado por sí mismo dé 
+\series bold
+-1
+\series default
+? La respuesta es no.
+ 
+\end_layout
+
+\begin_layout Standard
+No tenemos que imaginar un número, que representaremos por la letra 
+\begin_inset Quotes cld
+\end_inset
+
+i
+\begin_inset Quotes crd
+\end_inset
+
+ que multiplicado por sí mismo dé -1.
+ 
+\begin_inset Formula $i\cdot i=i^{2}=-1$
+\end_inset
+
+.
+ Si hacemos este 
+\begin_inset Quotes cld
+\end_inset
+
+truco
+\begin_inset Quotes crd
+\end_inset
+
+ podremos calcular la raíz de los números negativos.
+ Entonces 
+\begin_inset Formula $\sqrt{-16}=4\cdot\sqrt{-1}=4\cdot i$
+\end_inset
+
+.
+ Así que la raíz de -16 es cuatro veces el número imaginario 
+\begin_inset Quotes cld
+\end_inset
+
+i
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+¿Y en qué parte de la recta real 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+ los coloco? Bueno, la recta ya está saturada con los reales.
+ No caben más.
+ Así que necesito otra recta donde ponerlos....
+ ¿Y dos rectas...? Pues definen un plano, sobre todo si esta segunda recta
+ la escojo perpendicular a la recta de los reales 
+\begin_inset Formula $\mathbb{R}$
+\end_inset
+
+.
+ Nuestro número 
+\begin_inset Formula $\sqrt{-16}=4\cdot i$
+\end_inset
+
+ lo colocaré en esa recta perpendicular.
+ Así que todos los números 
+\begin_inset Quotes cld
+\end_inset
+
+imaginarios
+\begin_inset Quotes crd
+\end_inset
+
+, resultado de calcular las raíces de números negativos los colocaré en
+ ese eje 
+\begin_inset Quotes cld
+\end_inset
+
+Y
+\begin_inset Quotes crd
+\end_inset
+
+ perpendicular al 
+\begin_inset Quotes cld
+\end_inset
+
+X
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Pero esas rectas forman un plano, y un plano tiene más puntos que sólo los
+ que hay en la línea del eje X o Y.
+ En general todos los puntos de ese plano representan un número que están
+ a un nivel superior al nivel de los números reales: son los 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum}
+\end_layout
+
+\end_inset
+
+
+\series bold
+números complejos
+\series default
+ 
+\begin_inset Formula $\mathbb{C}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/planoComplejo.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Plano complejo y recta real
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Denotaremos un número complejo cualquiera por la combinación de su parte
+ real y su parte imaginaria.
+ Así el número 
+\series bold
+\color blue
+
+\begin_inset Formula $a+bi$
+\end_inset
+
+
+\series default
+\color inherit
+ tendrá una parte real 
+\series bold
+\color purple
+
+\begin_inset Quotes cld
+\end_inset
+
+a
+\begin_inset Quotes crd
+\end_inset
+
+
+\series default
+\color inherit
+ y una parte imaginaria 
+\series bold
+\color red
+
+\begin_inset Quotes cld
+\end_inset
+
+bi
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Operaciones con números complejos
+\end_layout
+
+\begin_layout Standard
+Ver calculadora online: 
+\begin_inset CommandInset href
+LatexCommand href
+name "https://es.symbolab.com/solver/complex-number-calculator"
+target "https://es.symbolab.com/solver/complex-number-calculator"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Suma (resta) de números complejos.
+ Ejemplo: 
+\begin_inset Formula $\left(3+4i\right)+(5-8i)=(3+5)+(4-8)i=8-4i$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Opuesto: el opuesto de 
+\begin_inset Formula $z=a+bi$
+\end_inset
+
+ es 
+\begin_inset Formula $-z=-a-bi$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Multiplicación de números complejos.
+ Ejemplo: 
+\begin_inset Formula $\left(5+4i\right)\cdot\left(7-8i\right)=5\cdot7+4i\cdot7-5\cdot8i-4\cdot8\cdot i\cdot i=35+28i-40i-32\cdot(-1)=67-12i$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Compleja conjugada.
+ 
+\begin_inset Formula $\overline{z}=\overline{a+bi}=a-bi$
+\end_inset
+
+.
+ También se puede expresar como 
+\begin_inset Formula $z'$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Multiplicación de un número complejo por su conjugado:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $z\cdot z'=(a+bi)\cdot(a-bi)=a^{2}-abi+abi-b^{2}i^{2}=a^{2}+b^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $(3+4i)\cdot(3-4i)=9+16=25$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+División de un número entre otro.
+ Se multiplica y divide por el conjugado del denominador.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Ejemplo: 
+\begin_inset Formula $\frac{\left(5+4i\right)}{\left(7-8i\right)}=\frac{\left(5+4i\right)}{\left(7-8i\right)}\cdot\frac{\left(7+8i\right)}{\left(7+8i\right)}=\frac{35+28i+40i-32}{49+64}=\frac{3+68i}{113}=\frac{3}{113}+\frac{68i}{113}=0.026+06i$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection*
+Un número complejo también es un 
+\begin_inset Quotes cld
+\end_inset
+
+vector
+\begin_inset Quotes crd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si nos fijamos, en el plano complejo se representan puntos.
+ A estos puntos puede asociarse un vector, y este vector puede caracterizarse
+ por un módulo y un ángulo o fase.
+ Tengo por tanto dos expresiones equivalente de un número complejo:
+\end_layout
+
+\begin_layout Itemize
+La expresión 
+\series bold
+binómica
+\series default
+: 
+\begin_inset Formula $a+bi$
+\end_inset
+
+ (real - imaginaria)
+\end_layout
+
+\begin_layout Itemize
+La expresión 
+\series bold
+polar
+\series default
+: 
+\begin_inset Formula $r\angle\alpha$
+\end_inset
+
+ (módulo - fase)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/planoComplejoModuloFase.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Representación polar de un número complejo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Pasamos de la expresión binómica a la polar con las fórmulas: 
+\begin_inset Formula $r=\sqrt{a^{2}+b^{2}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\alpha=\arctan\left(\frac{b}{a}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Observar que 
+\begin_inset Formula $r^{2}=z\cdot\overline{z}$
+\end_inset
+
+ , que el módulo al cuadrado es la multiplicación del número complejo por
+ su conjugado.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Pasamos de la expresión polar a la binómica con: 
+\begin_inset Formula $a=r\cdot cos(\alpha)$
+\end_inset
+
+ y 
+\begin_inset Formula $b=r\cdot sen(\alpha)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+La multiplicación de dos complejos en forma polar es muy fácil: 
+\begin_inset Formula $z_{1}=r_{1}\angle\alpha_{1}$
+\end_inset
+
+ y 
+\begin_inset Formula $z_{2}=r_{2}\angle\alpha_{2}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $z_{1}\cdot z_{2}=\left(r_{\text{1}}\cdot r_{2}\right)\angle\left(\alpha_{1}+\alpha_{2}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Formula $\left(3\angle45\text{º}\right)\cdot(-7\angle22\text{º})=-21\angle67\text{º}=21\angle247\text{º}$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Y la división igualmente, ya que 
+\begin_inset Formula $\frac{z_{1}}{z_{2}}=\left(r_{\text{1}}/r_{2}\right)\angle\left(\alpha_{1}-\alpha_{2}\right)$
+\end_inset
+
+ , se dividen los módulos y se restan las fases.
+\end_layout
+
+\begin_layout Itemize
+Y la potencia de un número polar elevado a un número entero 
+\begin_inset Quotes cld
+\end_inset
+
+n
+\begin_inset Quotes crd
+\end_inset
+
+: 
+\begin_inset Formula $z^{n}=r^{n}\angle\left(n\cdot\alpha\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Impedancia
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+NOTA IMPORTANTE:
+\series default
+ en corriente alterna y electrónica suele usarse como número imaginario
+ 
+\begin_inset Formula $\sqrt{-1}=j$
+\end_inset
+
+ , la letra 
+\begin_inset Quotes cld
+\end_inset
+
+j
+\begin_inset Quotes crd
+\end_inset
+
+ en vez de la letra 
+\begin_inset Quotes cld
+\end_inset
+
+i
+\begin_inset Quotes crd
+\end_inset
+
+ para no dar lugar a la confusión con la representación de la intensidad.
+ Lo usaremos a partir de ahora.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 6
+placement r
+overhang 0in
+width "30page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoInductivo_vectores.png
+	lyxscale 10
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inductancia vectores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Recordemos el punto 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Circuito-inductivo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+ En un circuito inductivo obteníamos la reactancia inductiva o inductancia
+ 
+\begin_inset Formula $X_{L}=2\cdot\pi\cdot f\cdot L\;$
+\end_inset
+
+ de la relación de las intensidades y tensiones máximas o eficaces 
+\begin_inset Formula $I_{o}=\frac{V_{o}}{X_{L}},I_{ef}=\frac{V_{ef}}{X_{L}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pero como podemos observar en la figura 18, los valores de tensión e intensidad
+ (máximos) están desfasados.
+ La intensidad está retrasada respecto de la tensión en un ángulo de 
+\begin_inset Formula $\pi/2$
+\end_inset
+
+.
+ ¿Cómo afecta este hecho al cálculo de 
+\begin_inset Formula $X_{L}?$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En efecto, si considero que 
+\begin_inset Formula $I_{o}$
+\end_inset
+
+ y 
+\begin_inset Formula $V_{o}$
+\end_inset
+
+ tienen un carácter vectorial, puedo asignarles también una representación
+ en números complejos.
+ Usando la forma polar, no sólo tendrán un módulo, sino una fase: 
+\begin_inset Formula $V_{o}=V_{o}\angle0\text{º}$
+\end_inset
+
+ e 
+\begin_inset Formula $I_{o}=I_{o}\angle-90\text{º}$
+\end_inset
+
+ .
+ Simplemente se observan los vectores para deducir sus fases como números
+ complejos.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{L}=\frac{V_{o}}{I_{o}}\equiv\frac{V_{o}\angle0\text{º}}{I_{o}\angle-90\text{º}}=X_{L}\angle\left(0\text{º-(-90º)}\right)=X_{L}\angle90º
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La reactancia inductiva, por tanto, puede expresarse como un número complejo
+ 
+\begin_inset Formula $X_{L}=w\cdot L\;j=2\cdot\pi\cdot f\cdot L\;j$
+\end_inset
+
+.
+ En forma vectorial estaría 
+\series bold
+\emph on
+adelantada
+\series default
+\emph default
+ a la tensión y apuntaría en sentido contrario a la intensidad.
+ 
+\end_layout
+
+\begin_layout Standard
+Los diagramas representando en el plano complejo como vectores las impedancias,
+ tensiones o intensidades en un circuito se denominan 
+\series bold
+\color purple
+diagramas de Fresnel
+\series default
+\color inherit
+.
+ Estos diagramas ayudan a resolver e interpretar los circuitos de corriente
+ alterna.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "25col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 6
+placement l
+overhang 0in
+width "30page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoCapacitivo_Vectores.png
+	lyxscale 10
+	width 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Capacitancia vectores
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+De igual modo, en el punto 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "subsec:Circuito-capacitivo"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+ , definíamos la reactancia capacitiva o capacitancia como 
+\begin_inset Formula $X_{C}=\frac{1}{C\cdot w}=\frac{1}{2\cdot\pi\cdot f\cdot C}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Relacionando de forma análoga al caso inductivo, y sabiendo que la intensidad
+ ahora está adelantada respecto de la tensión:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+X_{C}=\frac{V_{o}}{I_{o}}\equiv\frac{V_{o}\angle0\text{º}}{I_{o}\angle90\text{º}}=X_{C}\angle\left(0\text{º-90º}\right)=X_{C}\angle-90º
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Luego la expresión compleja de la reactancia capacitiva sería 
+\begin_inset Formula $X_{C}=\frac{-j}{C\cdot w}=\frac{-j}{2\cdot\pi\cdot f\cdot C}\quad$
+\end_inset
+
+.
+ En forma vectorial estaría 
+\series bold
+\emph on
+atrasada
+\series default
+\emph default
+ respecto de la tensión y apuntaría también al sentido contrario de su intensida
+d.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/XC_XL.png
+	lyxscale 30
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset Formula $X_{L}$
+\end_inset
+
+ y 
+\begin_inset Formula $X_{C}$
+\end_inset
+
+ representación vectorial o fasorial.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "25col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Tenemos pues en un circuito tres posibles elementos receptores:
+\end_layout
+
+\begin_layout Itemize
+La resistencia 
+\series bold
+\color purple
+R
+\series default
+\color inherit
+, cuya expresión en números complejos es simplemente su parte real.
+ Ni siquiera se indica como tal.
+ Se mide en Ohmios.
+\end_layout
+
+\begin_layout Itemize
+Un elemento inductivo 
+\series bold
+\color purple
+
+\begin_inset Formula $X_{L}=2\cdot\pi\cdot f\cdot L\;j\;$
+\end_inset
+
+
+\series default
+\color inherit
+ , cuya expresión es un número complejo con parte imaginaria positiva.
+ 
+\end_layout
+
+\begin_layout Itemize
+Un elemento capacitivo 
+\series bold
+\color purple
+
+\begin_inset Formula $X_{C}=\frac{-j}{2\cdot\pi\cdot f\cdot C}\;$
+\end_inset
+
+
+\series default
+\color inherit
+, cuya expresión es un número complejo con parte imaginaria negativa.
+ 
+\end_layout
+
+\begin_layout Standard
+En la realidad, cualquier elemento receptor genérico, se podrá expresar
+ por un número complejo que tendrá una parte real (asociada a un valor resistivo
+) y una parte imaginaria que le da carácter inductivo o capacitivo, según
+ sea su signo.
+ 
+\end_layout
+
+\begin_layout Standard
+A este valor número complejo
+\series bold
+ 
+\color blue
+Z
+\series default
+\color inherit
+ de un elemento receptor lo llamaré 
+\series bold
+\color blue
+impedancia
+\series default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Standard
+La ley de Ohm, que estudiamos en corriente continua en el caso de las resistenci
+as como 
+\begin_inset Formula $V=I\cdot R$
+\end_inset
+
+, ahora la generalizamos como 
+\begin_inset Formula $V=I\cdot Z$
+\end_inset
+
+.
+ V e I no tendrán ya asociados un valor escalar sino que tienen un carácter
+ vectorial o complejo, añadiendo el factor fase a los cálculos.
+ 
+\end_layout
+
+\begin_layout Standard
+Estudiaremos a continuación circuitos genéricos asociación de resistencias
+ con solenoides y condensadores.
+ 
+\end_layout
+
+\begin_layout Subsection
+Circuito RL
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Electronic_component_inductors.jpg
+	lyxscale 10
+	width 3.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bobinas.
+ Imagen 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikimedia"
+target "https://es.wikipedia.org/wiki/Archivo:Electronic_component_inductors.jpg"
+literal "false"
+
+\end_inset
+
+ By Miguel
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Una bobina, solenoide o choque es una agrupación de espiras de cobre enrollados
+ sobre un núcleo de un elemento ferroso o bien al aire.
+ Un elemento de estas características siempre tendrá asociada una resistencia
+ y una autoinducción.
+ Puede pues representarse como la combinación en serie de una reactancia
+ inductiva y una resistencia (una impedancia con componente inductiva).
+ 
+\end_layout
+
+\begin_layout Standard
+En un circuito de estas características 
+\begin_inset Formula $Z=R+jwL$
+\end_inset
+
+, con lo que la intensidad total sería:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V}{Z}=\frac{V_{o}\angle0\text{º}}{R+jwL}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pasando a una representación polar: 
+\begin_inset Formula $Z=\left|Z\right|\angle\phi$
+\end_inset
+
+ , siendo 
+\begin_inset Formula $\left|Z\right|=\sqrt{R^{2}+w^{2}L^{2}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\phi=\arctan\left(\frac{wL}{R}\right)$
+\end_inset
+
+.
+ Por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V}{Z}=\frac{V_{o}\angle0\text{º}}{R+jwL}=\frac{V_{o}\angle0\text{º}}{\sqrt{R^{2}+w^{2}L^{2}}\;\angle\phi}=\frac{V_{o}}{\sqrt{R^{2}+w^{2}L^{2}}}\;\angle-\phi
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que podemos deducir que el valor instantáneo de la intensidad en
+ ese circuito (atrasado respecto de la tensión) es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V_{o}}{\sqrt{R^{2}+w^{2}L^{2}}}\;sen(wt-\phi)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En módulo, podemos decir siempre que 
+\begin_inset Formula $Z=\frac{V_{o}}{I_{o}}=\frac{V_{ef}}{I_{ef}}$
+\end_inset
+
+ (muchas veces se expresa directamente 
+\begin_inset Formula $Z=\frac{V}{I}$
+\end_inset
+
+, siendo V e I los valores eficaces)
+\end_layout
+
+\begin_layout Standard
+Para este circuito, y de forma más general, podemos calcular tres potencias:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Potencia activa:
+\series default
+\color inherit
+ 
+\begin_inset Formula $P=I^{2}\cdot R=I\cdot V\cdot cos(\phi)$
+\end_inset
+
+, medida en watios y siendo V e I los valores eficaces.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color purple
+Potencia reactiva:
+\series default
+\color inherit
+ 
+\begin_inset Formula $Q=I^{2}\cdot X_{L}=I\cdot V\cdot sen(\phi)$
+\end_inset
+
+, medida en voltio-amperio reactivo (VAr).
+ Con 
+\begin_inset Formula $X_{L}=w\cdot L$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{green!35!black}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Potencia aparente:
+\series default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S=I\cdot V$
+\end_inset
+
+, medida en voltio-amperio.
+ El producto directo de los valores eficaces.
+\end_layout
+
+\begin_layout Standard
+Las tres potencias forman un triángulo de ángulo 
+\begin_inset Formula $\varphi$
+\end_inset
+
+.
+ Un triángulo que es semejante al que forman 
+\begin_inset Formula $\widehat{Z\;R\;X_{L}}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RL_tri_potencias.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Triángulo de potencias en circuito RL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Circuito RC
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/Capacitors_(7189597135).jpg
+	lyxscale 10
+	width 3.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Condensadores.
+ Imagen 
+\begin_inset CommandInset href
+LatexCommand href
+name "Wikimedia"
+target "https://es.wikipedia.org/wiki/Archivo:Capacitors_(7189597135).jpg"
+literal "false"
+
+\end_inset
+
+ By Eric Schrader
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Un condensador está formado por dos capas de material conductor separados
+ por un dieléctrico.
+ Este componente, al conectarlo a una fuente de tensión acumula cargas positivas
+ y negativas en ambas capas.
+ Un condensador no ideal presentará también una pequeña resistencia.
+ 
+\end_layout
+
+\begin_layout Standard
+En un circuito de estas características 
+\begin_inset Formula $Z=R-\frac{j}{wC}$
+\end_inset
+
+, con lo que la intensidad total sería:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V}{Z}=\frac{V_{o}\angle0\text{º}}{R-\frac{j}{wC}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Pasando a una representación polar: 
+\begin_inset Formula $Z=\left|Z\right|\angle\phi$
+\end_inset
+
+ , siendo 
+\begin_inset Formula $\left|Z\right|=\sqrt{R^{2}+\frac{1}{w^{2}\cdot C^{2}}}$
+\end_inset
+
+ y 
+\begin_inset Formula $\phi=\arctan\left(\frac{-1}{w\cdot C\cdot R}\right)=-\arctan\left(\frac{1}{w\cdot C\cdot R}\right)$
+\end_inset
+
+.
+ Por lo tanto:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V}{Z}=\frac{V_{o}\angle0\text{º}}{R-\frac{j}{wC}}=\frac{V_{o}\angle0\text{º}}{\sqrt{R^{2}+\frac{1}{w^{2}\cdot C^{2}}}\;\angle-\left|\phi\right|}=\frac{V_{o}}{\sqrt{R^{2}+\frac{1}{w^{2}\cdot C^{2}}}}\;\angle\left|\phi\right|
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo que podemos deducir que el valor instantáneo de la intensidad en
+ ese circuito (adelantado respecto de la tensión) es:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V_{o}}{\sqrt{R^{2}+\frac{1}{w^{2}\cdot C^{2}}}}\;sen(wt+\left|\phi\right|)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Para este circuito también podemos calcular tres potencias:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Potencia activa:
+\series default
+\color inherit
+ 
+\begin_inset Formula $P=I^{2}\cdot R=I\cdot V\cdot cos(\phi)$
+\end_inset
+
+, medida en watios y siendo V e I los valores eficaces.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color purple
+Potencia reactiva:
+\series default
+\color inherit
+ 
+\begin_inset Formula $Q=I^{2}\cdot X_{C}=I\cdot V\cdot sen(\phi)$
+\end_inset
+
+, medida en voltio-amperio reactivo (VAr).
+ Con 
+\begin_inset Formula $X_{C}=\frac{1}{w\cdot C}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{green!35!black}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Potencia aparente:
+\series default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S=I\cdot V$
+\end_inset
+
+, medida en voltio-amperio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RC_tri_potencias.png
+	lyxscale 30
+	width 10cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Triángulo de potencias en circuito RC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Circuito RLC en serie
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RLC.png
+	lyxscale 30
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito RLC
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Este circuito está compuesto por los tres elementos que hemos tratado hasta
+ ahora dispuestos en serie.
+ 
+\end_layout
+
+\begin_layout Standard
+Su impedancia total será la suma de las tres impedancias (compleja): 
+\begin_inset Formula $Z=R+X_{L}+X_{c}=R+jwL-\frac{j}{wC}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+El módulo de esa impedancia es 
+\begin_inset Formula $Z=\sqrt{R^{2}+\left(wL-\frac{1}{wC}\right)^{2}}$
+\end_inset
+
+ y el ángulo de desfase 
+\begin_inset Formula $\phi=\arctan\left(\frac{wL-\frac{1}{wC}}{R}\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Por lo tanto la expresión de la intensidad:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V}{Z}=\frac{V_{o}\angle0\text{º}}{R+jwL-\frac{j}{wC}}=\frac{V_{o}\angle0\text{º}}{\sqrt{R^{2}+\left(wL-\frac{1}{wC}\right)^{2}}\;\angle\phi}=\frac{V_{o}}{\sqrt{R^{2}+\left(wL-\frac{1}{wC}\right)^{2}}}\;\angle-\phi
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V_{o}}{\sqrt{R^{2}+\left(wL-\frac{1}{wC}\right)^{2}}}\;sen(wt-\phi)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Donde es importante tener en cuenta lo siguiente:
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $wL>\frac{1}{wC}$
+\end_inset
+
+ el ángulo 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es positivo, y la intensidad está 
+\series bold
+retrasada
+\series default
+ respecto de la tensión.
+ El circuito tiene carácter inductivo.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $wL<\frac{1}{wC}$
+\end_inset
+
+ el ángulo 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es negativo, y la intensidad está 
+\series bold
+adelantada
+\series default
+ respecto de la tensión.
+ El circuito tiene carácter capacitivo.
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $wL=\frac{1}{wC}$
+\end_inset
+
+ el ángulo 
+\begin_inset Formula $\phi$
+\end_inset
+
+ es cero.
+ 
+\series bold
+La intensidad y la tensión están en fase
+\series default
+.
+ Cuando esto ocurre se dice que el circuito está en
+\series bold
+\color purple
+ resonancia
+\series default
+\color inherit
+.
+\end_layout
+
+\begin_layout Subsubsection*
+Circuito resonante
+\end_layout
+
+\begin_layout Standard
+En un circuito resonante se cumple que 
+\begin_inset Formula $wL=\frac{1}{wC}$
+\end_inset
+
+.
+ De aquí obtenemos una expresión para la frecuencia 
+\begin_inset Formula $f=\dfrac{1}{2\cdot\pi\cdot\sqrt{L\cdot C}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Fijados en un circuito los valores L y C, solo existe una frecuencia para
+ la que el circuito sea resonante.
+ 
+\series bold
+En un circuito resonante no existe potencia reactiva, solo activa.
+\end_layout
+
+\begin_layout Subsubsection*
+Potencias
+\end_layout
+
+\begin_layout Standard
+Para este circuito podemos calcular tres potencias, como en los circuitos
+ anteriores:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color blue
+Potencia activa:
+\series default
+\color inherit
+ 
+\begin_inset Formula $P=I^{2}\cdot R=I\cdot V\cdot cos(\phi)$
+\end_inset
+
+, medida en watios.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\color purple
+Potencia reactiva:
+\series default
+\color inherit
+ 
+\begin_inset Formula $Q=I\cdot V\cdot sen(\phi)$
+\end_inset
+
+, medida en voltio-amperio reactivo (VAr).
+ Este valor será positivo si el circuito tiene carácter inductivo, y negativo
+ si tiene carácter capacitivo.
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{green!35!black}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Potencia aparente:
+\series default
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula $S=I\cdot V$
+\end_inset
+
+, medida en voltio-amperio.
+ El producto directo de los valores eficaces.
+\end_layout
+
+\begin_layout Subsection
+Circuito RLC en paralelo y circuitos RLC genéricos
+\end_layout
+
+\begin_layout Standard
+Se procede de manera análoga al caso de corriente continua: donde calculábamos
+ resistencias equivalentes y aplicábamos las leyes de Kirchhoff con las
+ resistencias, ahora lo hacemos con las impedancias, teniendo en cuenta
+ que son números complejos.
+ 
+\end_layout
+
+\begin_layout Standard
+Por tanto, los elementos en serie tienen una impedancia equivalente que
+ son la suma de sus impedancias: 
+\begin_inset Formula $Z=Z_{1}+Z_{2}+\cdots+Z_{n}$
+\end_inset
+
+.
+ Los elementos en paralelo suman sus impedancias inversas para calcular
+ la impedancia equivalente: 
+\begin_inset Formula $\frac{1}{Z}=\frac{1}{Z_{1}}+\frac{1}{Z_{2}}+\cdots+\frac{1}{Z_{3}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Resolveremos varios circuitos de este tipo en los problemas.
+\end_layout
+
+\begin_layout Subsection
+Admitancia
+\end_layout
+
+\begin_layout Standard
+Sea una impedancia compleja, 
+\begin_inset Formula $Z=R+jX$
+\end_inset
+
+ genérica.
+ La impedancia es la inversa de esa impedancia 
+\begin_inset Formula $Y=\frac{1}{R+jX}$
+\end_inset
+
+.
+ Haciendo operaciones...
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+Y=\frac{1}{R+jX}=\frac{1}{R+jX}\cdot\frac{R-jX}{R-jX}=\frac{R-jX}{R^{2}+X^{2}}=\frac{R}{R^{2}+X^{2}}-j\cdot\frac{X}{R^{2}+X^{2}}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La 
+\series bold
+\color purple
+admitancia
+\series default
+\color inherit
+ se mide en Siemens (S).
+ 
+\begin_inset Formula $1\,S=1$
+\end_inset
+
+/
+\begin_inset Formula $\varOmega$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Llamamos 
+\series bold
+conductancia
+\series default
+ a la parte real de la admitancia 
+\begin_inset Formula $G=\frac{R}{R^{2}+X^{2}}$
+\end_inset
+
+ y 
+\series bold
+susceptancia
+\series default
+ a la parte imaginaria 
+\begin_inset Formula $B=\frac{X}{R^{2}+X^{2}}$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Cuando tenemos elementos en paralelo, la admitancia del circuito es la suma
+ de las admitancias de cada elemento.
+ 
+\begin_inset Formula $\frac{1}{Z}=\frac{1}{Z_{1}}+\frac{1}{Z_{2}}+\cdots+\frac{1}{Z_{3}}\quad\Rightarrow\quad Y=Y_{1}+Y_{2}+\cdots+Y_{n}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Factor de potencia
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "30page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/FP_motor.jpeg
+	lyxscale 30
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Condensador compensador
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+El factor de potencia es la relación entre la potencia empleada en el circuito
+ para producir un trabajo útil (potencia activa) y la potencia que aparentemente
+ consume el circuito (potencia aparente).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\begin{equation}
+FP=\frac{P}{S}=\frac{I\cdot V\text{\ensuremath{\cdot cos(\phi)}}}{I\cdot V}=cos(\phi)
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Coincide, evidentemente, con el coseno del ángulo de desfase, y es una magnitud
+ adimensional que vale entre 0 y 1.
+ 
+\end_layout
+
+\begin_layout Standard
+En los circuitos de corriente alterna el cálculo del factor de potencia
+ adquiere mucha importancia.
+ El problema radica en que la mayoría de los receptores útiles en un circuito,
+ o bien son resistivos, o bien son inductivos (bobinas en motores) y normalmente
+ estos últimos acumulan una considerable energía magnética que se traduce
+ en una energía o potencia reactiva alta.
+ 
+\end_layout
+
+\begin_layout Standard
+Así, un circuito con motores suele consumir de la red eléctrica (potencia
+ aparente) una cantidad de energía superior a la que realmente moverá el
+ motor.
+ Afortunadamente, sabemos que los circuitos inductivos, que retrasan la
+ intensidad respecto de la tensión, pueden compensarse con partes capacitivas.
+ Si un circuito con motor tiene un factor de potencia bajo, por ejemplo,
+ 0.2 lo ideal es acercarlo al valor de 1.
+ Eso podemos conseguirlo añadiendo al circuito del motor algún condensador,
+ en serie o en paralelo.
+ 
+\end_layout
+
+\end_body
+\end_document

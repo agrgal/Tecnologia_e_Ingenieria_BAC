@@ -1,0 +1,2928 @@
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
+\begin_document
+\begin_header
+\save_transient_properties true
+\origin unavailable
+\textclass article
+\begin_preamble
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}
+\end_preamble
+\options spanish, dvipsnames,usenames,nointegrals
+\use_default_options true
+\begin_modules
+customHeadersFooters
+enumitem
+\end_modules
+\maintain_unincluded_children false
+\begin_local_layout
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End
+\end_local_layout
+\language spanish
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman "times" "default"
+\font_sans "berasans" "default"
+\font_typewriter "courier" "default"
+\font_math "auto" "auto"
+\font_default_family rmdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100 100
+\font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks true
+\pdf_bookmarksnumbered false
+\pdf_bookmarksopen false
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks true
+\pdf_pdfborder true
+\pdf_colorlinks true
+\pdf_backref page
+\pdf_pdfusetitle true
+\papersize a4paper
+\use_geometry true
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine natbib
+\cite_engine_type numerical
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 1
+\use_minted 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 2cm
+\topmargin 2cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 3
+\tocdepth 5
+\paragraph_separation skip
+\defskip medskip
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\bullet 0 3 25 -1
+\bullet 1 5 13 -1
+\bullet 2 3 10 -1
+\bullet 3 5 1 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Notas del preámbulo:
+\end_layout
+
+\begin_layout Plain Layout
+0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+\end_layout
+
+\begin_layout Plain Layout
+1.- 
+\backslash
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
+ para poner el texto de 
+\begin_inset Quotes eld
+\end_inset
+
+figuras...
+\begin_inset Quotes erd
+\end_inset
+
+ muy pequeños y en versalita (sc), y en negrita (bf).
+\end_layout
+
+\begin_layout Plain Layout
+2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+\end_layout
+
+\begin_layout Plain Layout
+3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+\end_layout
+
+\begin_layout Plain Layout
+4.- 
+\backslash
+usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+\end_layout
+
+\begin_layout Plain Layout
+5.- 
+\backslash
+usepackage[T1]{fontenc} 
+\backslash
+usepackage{calligra} –> permite usar tipos de letras extra.
+ Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
+-y-varias-fuentes-latex-en-lyx/,
+\end_layout
+
+\begin_layout Plain Layout
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
+ texto de lo que es el código.
+\end_layout
+
+\begin_layout Plain Layout
+6.- https://www.mathcha.io/editor –> para hacer dibujos en tikz
+\end_layout
+
+\begin_layout Plain Layout
+7.- Listas.
+ Primer nivel opciones de enumeración –> 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+8.- Listas.
+ Segundo nivel –> label=
+\backslash
+Alph{enumi}.
+\backslash
+arabic*) Uso de referencia enumi.
+ o tambien label=
+\backslash
+theenumi.
+\backslash
+arabic*) .
+ theenumi es completo.
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+contentsname} {Índice General}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+
+\series bold
+\shape smallcaps
+\color black
+Electrónica Digital.
+ Circuitos secuenciales
+\end_layout
+
+\begin_layout Author
+por Aurelio Gallardo
+\end_layout
+
+\begin_layout Date
+7 - Noviembre - 2023
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/by-nc-sa.eu_petit.png
+	width 2.5cm
+	height 1cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\family sans
+\shape italic
+\size footnotesize
+\color blue
+Electrónica Digital.
+ Circuitos Secuenciales.
+ By Aurelio Gallardo Rodríguez, Is Licensed Under A Creative Commons Reconocimie
+nto-NoComercial-CompartirIgual 4.0 Internacional License.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand {
+\backslash
+partname} {Apartado}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\shape smallcaps
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+ 
+\backslash
+thispagestyle{empty} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+roman{page}} para numeración en números romanos de las páginas
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+thepage}{
+\backslash
+arabic{page}} 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+setcounter{page}{1}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters 
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/OLxcolorList2.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Introducción
+\end_layout
+
+\begin_layout Standard
+En estos circuitos es fundamental el concepto de
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\emph on
+ memoria
+\series default
+\emph default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+ Ya que para cambiar el estado de las salidas de los circuitos, necesitamos
+ conocer las entradas pero también el 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+ 
+\series bold
+\emph on
+estado de las salidas en un momento anterior
+\series default
+\emph default
+.
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Circuitos secuenciales
+\end_layout
+
+\begin_layout Standard
+Vamos a imaginarnos que en un circuito secuencial tengo varias entradas
+ en un instante de tiempo t, 
+\begin_inset Formula $E_{t}$
+\end_inset
+
+ y varias salidas en ese instante de tiempo 
+\begin_inset Formula $S_{t}$
+\end_inset
+
+.
+ Pero además, 
+\series bold
+tendré un estado interno almacenado 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+.
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+alph*) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+Las salidas serán función de las entradas y del estado interno: 
+\begin_inset Formula $\boldsymbol{S_{t}=f_{1}(E_{t},Q_{t})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Y el estado interno cambiará para un instante posterior 
+\series bold
+\color purple
+t+1
+\series default
+\color inherit
+: 
+\begin_inset Formula $\boldsymbol{Q_{t+1}=f_{2}(E_{t},Q_{t})}$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+El estado interno, las variables lógicas 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+ (variables de estado), almacenan el estado anterior del sistema.
+ 
+\end_layout
+
+\begin_layout Standard
+Los circuito secuenciales más sencillos se denominan 
+\series bold
+\emph on
+\color brown
+biestables
+\series default
+\emph default
+\color inherit
+.
+ Los biestables tienen la capacidad de almacenar un bit de información.
+ Mientras el circuito esté alimentado, y no haya un cambio adecuado en sus
+ entradas, almacenarán ese bit permanentemente.
+ 
+\end_layout
+
+\begin_layout Standard
+También podemos encontrarlos con el nombre de 
+\series bold
+\emph on
+\color brown
+flip-flops
+\series default
+\emph default
+\color inherit
+ o incluso 
+\series bold
+\emph on
+\color brown
+latches
+\series default
+\emph default
+\color inherit
+.
+ 
+\end_layout
+
+\begin_layout Subsubsection*
+Retroalimentación o feedback
+\end_layout
+
+\begin_layout Standard
+En todos los circuitos secuenciales que tienen la capacidad de almacenar
+ información existirá algún tipo de 
+\series bold
+\color brown
+retroalimentación
+\series default
+\color inherit
+: cuando las salidas actúan de alguna manera en las entradas.
+\end_layout
+
+\begin_layout Subsubsection*
+Clasificación de los circuitos secuenciales 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement L
+overhang 0in
+width "35col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/señal_reloj.png
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señal de reloj o clock signal
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Señal-de-reloj"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos clasificarlos en dos grandes grupos:
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+Asíncronos
+\series default
+: los cambios de estado tienen lugar cuando estén presentes las entradas
+ adecuadas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Síncronos
+\series default
+: el cambio de estado se produce cuando están presentes las entradas adecuadas
+ y además se produce la transición de una señal, común a todos los circuitos
+ del sistema, llamada señal de reloj o clock 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Señal-de-reloj"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Biestables o Flip-Flops
+\end_layout
+
+\begin_layout Subsubsection
+Biestable RS (Reset-Set)
+\end_layout
+
+\begin_layout Standard
+Vamos a estudiar el siguiente circuito retroalimentado.
+ La salida 
+\series bold
+q
+\series default
+ del primer NOR alimenta la entrada del segundo, y la salida 
+\series bold
+a
+\series default
+ del segundo, alimenta la entrada del primero.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{2}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="4cm">
+<column alignment="center" valignment="top" width="0.1cm">
+<column alignment="center" valignment="middle" width="5.5cm">
+<column alignment="center" valignment="middle" width="0.1cm">
+<column alignment="center" valignment="middle" width="5.5cm">
+<row>
+<cell alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+1º) Circuito con puertas NOR retroalimentado
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+2º) Tabla de la verdad
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{Cerulean!85!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\color white
+3º) Tabla de fases
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/Circuito_RS_Qa.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Si nos damos cuenta, 
+\series bold
+q
+\series default
+ no depende de sí misma exactamente.
+ Si a 
+\series bold
+q
+\series default
+ lo llamo 
+\begin_inset Formula $Q_{t}$
+\end_inset
+
+, estado en un tiempo t, y en un instante posterior 
+\begin_inset Formula $Q_{t+1},$
+\end_inset
+
+la expresión correcta es:
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Podemos resumir la tabla de la verdad como:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_fases_RS.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{t+1}=\overline{R}\cdot(S+Q_{t})$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Además, la señal 
+\series bold
+a...
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Y analizando con el álgebra de Boole...
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula $a=\overline{(S+q)}=\overline{S}\cdot\overline{q}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Formula $q=\overline{(R+a)}=\overline{R}\cdot\overline{a}=\overline{R}\cdot(S+q)$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\noindent
+\align center
+Cuya tabla de la verdad es:
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace smallskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/tabla_RS.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\color brown
+En un principio, en los biestables se prohíbe la combinación 
+\begin_inset Formula $RS=11$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $a=\overline{(S+Q_{t})}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Si 
+\begin_inset Formula $S=0$
+\end_inset
+
+, entonces 
+\begin_inset Formula $a=\overline{Q_{t}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Si 
+\begin_inset Formula $S=1$
+\end_inset
+
+ , 
+\begin_inset Formula $a=0$
+\end_inset
+
+.
+ En la tabla vemos que si 
+\begin_inset Formula $RS=01$
+\end_inset
+
+, 
+\begin_inset Formula $Q_{t}=1$
+\end_inset
+
+, por lo que vemos que se cumple completamente
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace medskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\color blue
+\begin_inset Formula $\boldsymbol{a=\overline{Q_{t}}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Circuito_RS_Q_Qprima.png
+	lyxscale 50
+	width 2.5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Algunos conceptos en torno a los biestables RS...
+\end_layout
+
+\begin_layout Enumerate
+Si la entrada es siempre RS=00, el estado del sistema no cambia.
+ La salida coincide con el estado 
+\begin_inset Formula $s=Q$
+\end_inset
+
+.
+ En la salida de la otra puerta se puede obtener su inversa.
+\end_layout
+
+\begin_layout Enumerate
+Si la entrada es RS=01, se dice que se ha llevado a cabo un 
+\series bold
+SET
+\series default
+.
+ El estado ha cambiado a Q=1.
+ Si soltamos el SET y volvemos a la entrada RS=00, queda establecido el
+ estado, y almacenado, de 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+Si la entrada es RS=10, se dice que se ha llevado a cabo un 
+\series bold
+RESET
+\series default
+.
+ El estado ha cambiado a Q=0.
+ Si soltamos el RESET y volvemos a la entrada RS=00, queda establecido el
+ estado, y almacenado, de 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Enumerate
+La entrada RS=11 en este biestable queda prohibida.
+ Si nos damos cuenta, no es necesaria para el almacenamiento y el cambio
+ del estado, y usarla puede llevar a problemas de inestabilidad, ya que:
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si R=1, la salida del primer NOR siempre es cero y fuerza a 
+\begin_inset Formula $Q=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Si S=1, la salida del segundo NOR siempre es cero y fuerza a 
+\begin_inset Formula $\overline{Q}=0$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Y como el circuito no puede permanecer siempre forzando 
+\begin_inset Formula $Q=\overline{Q}=0$
+\end_inset
+
+, se inestabiliza.
+\end_layout
+
+\end_deeper
+\begin_layout Subsubsection
+Biestable RS síncrono
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement l
+overhang 0in
+width "40page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RS_asincrono_desestabilizado.png
+	lyxscale 20
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Problema del Biestable
+\begin_inset Newline newline
+\end_inset
+
+RS asíncrono.
+ Cronograma.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Imaginemos un sistema en el que van cambiando las entradas del biestable
+ RS y obtenemos su estado Q.
+ Ya sabemos que no podemos usar el estado RS=11 porque es inestable.
+ Podemos dibujar un gráfico de cómo cambian los estados del biestable RS
+ en función de las señales aplicadas a las entradas RS.
+ Todo se explica muy bien en 
+\begin_inset CommandInset href
+LatexCommand href
+name "este vídeo"
+target "https://youtu.be/KdRcHo1msxI?si=Gbc748y6InKGvxfe"
+literal "false"
+
+\end_inset
+
+.
+ (
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+target "https://youtu.be/KdRcHo1msxI?si=Gbc748y6InKGvxfe"
+
+\end_inset
+
+
+\size default
+).
+\end_layout
+
+\begin_layout Standard
+En un biestable asíncrono, puede pasar que las señales, aunque prohíba explícita
+mente la entrada RS=11 ocurran.
+ Imaginemos que son dos pulsadores manuales o mecánicos.
+ No podemos asegurar que, en algún momento, y quizás por un instante muy
+ pequeño, el paso de RS=01 a RS=10 (o al revés) no sea perfecto y aparezca
+ la señal RS=11, desestabilizando el biestable RS.
+ 
+\end_layout
+
+\begin_layout Standard
+También nos podría pasar que las puertas NOR no fueran exactamente iguales,
+ presentaran retardos distintos y el efecto producido de desestabilización
+ fuese el mismo.
+ 
+\end_layout
+
+\begin_layout Standard
+¿Qué solución puedo darle a este problema? Una forma de solucionarlo es
+ usar una señal externa, denominada reloj (clock), que aplique los cambios
+ en las entradas al circuito cuando estemos seguros de que éstas son estables.
+ El biestable RS que usa esta señal simplemente necesita una puerta AND
+ por cada entrada.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/BiestableRS_síncrono.png
+	lyxscale 50
+	width 6cm
+
+\end_inset
+
+ 
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/BiestableRS_sincrono_cronograma.png
+	lyxscale 20
+	width 6cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Biestable RS Síncrono
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La señal de reloj puede ser de cuatro tipos (
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Señal-de-reloj"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+
+\series default
+ 
+\series bold
+Disparada por nivel:
+\series default
+ cuando la señal de reloj llegue a 
+\series bold
+\color purple
+
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ (nivel alto)
+\series default
+\color inherit
+ activa la puerta AND y se produce el cambio en las entradas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Disparada por flanco de subida (edge triggered - rising edge): 
+\series default
+el cambio se produce en un período mucho más corto de tiempo.
+ Ocurre cuando la señal de reloj 
+\series bold
+\color purple
+cambia del estado bajo al alto
+\series default
+\color inherit
+.
+ También se denomina señal de reloj activada 
+\emph on
+por flanco de subida
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Disparada por nivel en estado bajo:
+\series default
+ cuando la señal de reloj llegue a 
+\series bold
+\color purple
+
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+ (nivel bajo)
+\series default
+\color inherit
+ se activan las entradas.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Disparada por flanco (edge triggered - falling edge): 
+\series default
+ocurre cuando la señal 
+\series bold
+\color purple
+cambia del estado alto al bajo
+\series default
+\color inherit
+.
+ También denominada señal de reloj activada 
+\emph on
+por flanco de bajada
+\emph default
+.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+renewcommand{
+\backslash
+arraystretch}{1}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+array stretch sirve para aumentar el alto de las filas de una tabla.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="9">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="2.5cm">
+<column alignment="center" valignment="middle" width="0.1cm">
+<column alignment="center" valignment="middle" width="2.5cm">
+<column alignment="center" valignment="middle" width="0.1cm">
+<column alignment="center" valignment="middle" width="2.5cm">
+<column alignment="center" valignment="middle" width="0.1cm">
+<column alignment="center" valignment="middle" width="2.5cm">
+<row>
+<cell multirow="3" mroffset="-0.35cm" alignment="left" valignment="middle" rightline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\color red
+RS Simbología
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{red!10!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color purple
+Biestable RS - flanco subida
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{red!10!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color purple
+Biestable RS - flanco bajada
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{red!10!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color purple
+Biestable RS - nivel alto
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{red!10!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+\color purple
+Biestable RS - nivel bajo
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_positive_edge.png
+	lyxscale 20
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_negative_edge.png
+	lyxscale 20
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_nivel_alto.png
+	lyxscale 20
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_nivel_bajo.png
+	lyxscale 20
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Biestable RS Master-Slave
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement r
+overhang 0in
+width "40page%"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/BiestableRS_Master_Slave.png
+	lyxscale 40
+	width 4cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_negative_edge.png
+	lyxscale 20
+	height 1.5cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Biestable RS Master-Slave
+\begin_inset Newline newline
+\end_inset
+
+o Maestro-Esclavo
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Otra estrategia que se usa para conseguir una configuración estable es la
+ de Master-Slave.
+ En ella, el biestable se duplica.
+ Las señales de entrada RS se aplican al master en la transición alta de
+ la señal de reloj cambiando el estado y las salidas del mismo.
+ En la transición del estado bajo del reloj, las salidas del master se aplican
+ como entradas al segundo, el slave, trasvasándolas a la salida.
+ 
+\end_layout
+
+\begin_layout Standard
+En este biestable, las señales conmutan en los 
+\series bold
+\emph on
+flancos de bajada de la señal de reloj
+\series default
+\emph default
+ (no aparecen en la salida hasta que el reloj no tiene un flanco de bajada
+ - de subida en el slave -) .
+ Las entradas RS se leen en los flancos de subida.
+ 
+\series bold
+Por lo tanto es un RS activo por flanco de bajada
+\series default
+.
+ Se representa con un triángulo más un circulito en la señal de reloj.
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Piensa
+\series default
+: ¿Qué debo hacer para construir un biestable RS activo por flanco de subida?
+\end_layout
+
+\begin_layout Subsubsection
+Biestable JK
+\end_layout
+
+\begin_layout Standard
+El biestable JK es una evolución del biestable RS en el que la entrada JK=11
+ está permitida, y ahora, con dicha combinación de entrada, lo que hace
+ es cambiar el estado por su complementado.
+ Podemos encontrar versiones de este biestable o flip-flop JK activado por
+ flanco positivo, o negativo, etc.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="5">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="0.5cm">
+<column alignment="center" valignment="middle" width="7cm">
+<column alignment="center" valignment="middle" width="0.1cm">
+<column alignment="center" valignment="middle" width="2.5cm">
+<row>
+<cell multirow="3" mroffset="-1.5cm" alignment="left" valignment="middle" rightline="true" rotate="90" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{green!40!black}
+\end_layout
+
+\end_inset
+
+
+\series bold
+Biestable JK
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{green!10!white} 
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+Tabla de la verdad y de fases JK (activo flanco subida)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{green!10!white}
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size scriptsize
+Biestable JK - flanco subida
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/JK_tabla_verdad.png
+	lyxscale 20
+	width 5cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/JK_symbol_rising_edge.png
+	lyxscale 20
+	height 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Biestable T
+\end_layout
+
+\begin_layout Standard
+El biestable T (toggle - intercambiar) es un biestable que se construye
+ sencillamente uniendo las entradas J y K.
+ Por tanto en este biestable quedan anuladas la función de set y de reset.
+ Por tanto, cuando T=0, J=K=0 y los estados no cambian.
+ Y cuando T=1, J=K=1 y el biestable bascula.
+\end_layout
+
+\begin_layout Standard
+Una aplicación típica del biestable T consiste en hacer un divisor de frecuencia
+s.
+ Tenemos una señal de reloj 
+\begin_inset Formula $C_{k}$
+\end_inset
+
+ de una frecuencia y al pasarlo por un biestable T la frecuencia se divide
+ entre dos.
+ 
+\end_layout
+
+\begin_layout Standard
+El biestable T no es comercial.
+ Se construye a partir de biestables JK o D.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="3">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="4cm">
+<column alignment="center" valignment="middle" width="4cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/Biestable T con JK.png
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{t+1}=T\oplus Q_{t}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_biestable_T.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Biestable T síncrono a partir de JK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Biestables D
+\end_layout
+
+\begin_layout Standard
+Los biestables D (delay, retraso) también se obtienen en base a biestables
+ JK.
+ Pero esta vez, la señal J se aplica a la K invertida: J=D y K=D'.
+ Los biestables D no tiene sentido usarlos de forma asíncrona, solo síncrona.
+ Cuando reciben un pulso de reloj, almacenan su entrada a la salida.
+ Por eso son también llamados 
+\series bold
+\color purple
+latches
+\series default
+\color inherit
+ (cerrojos).
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="1" columns="4">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="3cm">
+<column alignment="center" valignment="middle" width="3cm">
+<row>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/biestable_D_a_partirdeJK.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $Q_{t+1}=D$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="middle" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/tabla_biestable_D.png
+	lyxscale 50
+	width 3cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename imagenes/biestable_D_simbolo.png
+	lyxscale 50
+	width 2cm
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Biestable D síncrono a partir de JK
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Señales PRESET y CLEAR
+\end_layout
+
+\begin_layout Standard
+Algunos biestables cuentan con dos entradas adicionales 
+\series bold
+PRESET
+\series default
+ y 
+\series bold
+CLEAR
+\series default
+.
+ Son señales asíncronas.
+ Cuando se activa el PRESET, independientemente del estado y de las entradas,
+ la salida del biestable se pone a 
+\begin_inset Quotes cld
+\end_inset
+
+1
+\begin_inset Quotes crd
+\end_inset
+
+ y cuando el CLEAR se pone a 
+\begin_inset Quotes cld
+\end_inset
+
+0
+\begin_inset Quotes crd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Es importante no activar a la vez ambas señales.
+ Pueden activarse según nivel alto o bajo.
+ 
+\end_layout
+
+\begin_layout Subsection
+Algunos circuitos típicos con biestables
+\end_layout
+
+\begin_layout Subsubsection
+Registros de almacenamiento
+\end_layout
+
+\begin_layout Standard
+Un registro de almacenamiento formado por biestables D es un circuito formado
+ por uno o más biestables capaces de almacenar durante un tiempo de la señal
+ de reloj los valores que tenían a la entrada.
+\end_layout
+
+\begin_layout Standard
+En el siguiente circuito con 4 biestables D soy capaz de almacenar 4 bits
+ de información.
+ Cuando se activan según la señal de reloj (flanco de subida), las entradas
+ pasan a las salidas y allí permanecen hasta un nuevo cambio.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RegistroAlmacenamiento.png
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registro de almacenamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Registros de desplazamiento
+\end_layout
+
+\begin_layout Standard
+Son circuitos formados por cerrojos D en serie.
+ La salida de uno es la entrada del siguiente.
+ Almacenan secuencias de señales de entrada serie al ritmo de cambio de
+ la señal de reloj.
+\end_layout
+
+\begin_layout Standard
+Tanto este tipo de circuito como el anterior son la base de sistemas más
+ elaborados denominados 
+\series bold
+\emph on
+memorias
+\series default
+\emph default
+, muy usadas en el mundo de la electrónica y de la informática.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RegistroDesplazamiento.png
+	lyxscale 50
+	height 3cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Registro de desplazamiento
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Contadores
+\end_layout
+
+\begin_layout Standard
+Los contadores son circuitos secuenciales que, en sus salidas, reflejan
+ la cuenta del número de impulsos que han recibido (normalmente en binario).
+ Se fabrican a partir de biestables T (JK) o D.
+ Los contadores pueden ser ascendentes o descendentes.
+ También pueden ser asíncronos (la señal de reloj se aplica solo a la primera
+ entrada) o síncronos (la señal de reloj se aplica a todos los biestables).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/contadorJK.png
+	lyxscale 20
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contador con JK y cuenta asíncrona y señal de RESET
+\begin_inset Newline newline
+\end_inset
+
+Activado por flanco de bajada
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/contadorJK_BCD.png
+	lyxscale 20
+	width 90text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Contador BCD con JK y cuenta asíncrona
+\begin_inset Newline newline
+\end_inset
+
+RESET automático al llegar a 10.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+
+\color purple
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0.5ex"
+width "70col%"
+height "3pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+\start_of_appendix
+Anexo
+\end_layout
+
+\begin_layout Subsection*
+Biestable RS con puertas NAND
+\end_layout
+
+\begin_layout Standard
+Puede construirse un biestable RS con puertas NAND.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+label=➫
+\end_layout
+
+\end_inset
+
+ 
+\series default
+Las entradas que se aplican son las complementadas a R y S.
+ 
+\end_layout
+
+\begin_layout Itemize
+El estado prohibido es ahora el RS=00
+\end_layout
+
+\begin_layout Itemize
+Este circuito RS con puertas NAND también se denomina de inscripción prioritaria.
+ Con puertas NOR, de borrado prioritario
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Para saber más sobre biestables RS:
+\series default
+ 
+\size footnotesize
+
+\begin_inset CommandInset href
+LatexCommand href
+name "https://youtu.be/ipsJB2MKqvU?si=BEnahnNtxa1FwMoD"
+target "https://youtu.be/ipsJB2MKqvU?si=BEnahnNtxa1FwMoD"
+literal "false"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RS_NAND.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset space \quad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/RS_NAND_truth_table.png
+	lyxscale 50
+	width 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito biestable RS con puertas NAND
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

@@ -1,0 +1,10 @@
+Instrucciones de instalación por nahu_22_10 uruario www.taringa.net
+=======================================
+
+1) Instala normalmente (se instala por
+defecto en alemán)
+
+2) Cierra el Fluidsim y ejecuta:
+"FluidSim.Spanish.Pack.by.CHEOPE.exe"
+
+3) Úsalo!

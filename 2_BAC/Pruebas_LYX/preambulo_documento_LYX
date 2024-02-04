@@ -1,0 +1,36 @@
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
+\usepackage{wrapfig}
+\usepackage{tikz}
+\usepackage[siunitx]{circuitikz}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage{wasysym} % symbols
+\usepackage{multicol}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}

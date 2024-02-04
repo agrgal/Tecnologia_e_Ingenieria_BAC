@@ -1,25 +1,86 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
+% \usepackage[dvipsnames]{xcolor} --> como ya esta divpsnames en global, y llama
+% al paquete xcolor, ya se puede usar.
+% \usepackage[usenames,dvipsnames]{color}
+% \usepackage{pdfcolmk}
+ 
+\usepackage[T1]{fontenc}
 \usepackage{wrapfig}
 \usepackage{tikz}
 \usepackage[siunitx]{circuitikz}
-\usepackage{amsmath}
+% \usepackage{mathtools} --> Lo quito. Problemas con doble definición en integrales.
+% \usepackage{amsmath} ya se carga con mathtools
+\usepackage{wasysym} % symbols
 \usepackage{multicol}
-\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{sectsty} % change headings
+\usepackage[bottom]{footmisc} %colocar el pie de página al fondo de la misma
+
+% Zona de los captions de las imágenes
+\usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
+			,textfont={scriptsize,color=Brown}, format=plain
+            ,labelformat=parens, labelsep=period, justification=justified]{caption}
+% \usepackage[font=large]{subfig}
+% https://texdoc.org/serve/caption/0 --< para los caption
+% tiny, scriptsize, footnotesize,  small, normalsize, large, Large
+% bf --> negrita, sc --> versalita
+% font se refiere a todo el texto, labelfont a "Figura..." y textfont al resto del caption
+
+% Para ponerlo en UTF8 ,e n vez del predeterminado escojo 
+% otros UTF8 en Configuración del documento >> idioma. 
+
+% Colores
+\chapterfont{\color{blue}}  % sets colour of chapters
+\sectionfont{\color{BlueViolet}}  % sets colour of sections
+% \definecolor{green}{rgb}{0.25,1,0.25}
+\subsectionfont{\color{CadetBlue}}
+\subsubsectionfont{\color{RawSienna}}
 \end_preamble
-\options spanish
+\options spanish, dvipsnames,usenames,nointegrals
 \use_default_options true
 \begin_modules
 customHeadersFooters
+enumitem
 \end_modules
 \maintain_unincluded_children false
+\begin_local_layout
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End
+\end_local_layout
 \language spanish
 \language_package default
 \inputencoding auto
@@ -34,6 +95,8 @@ customHeadersFooters
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -72,6 +135,7 @@ customHeadersFooters
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -84,7 +148,10 @@ customHeadersFooters
 \tocdepth 3
 \paragraph_separation skip
 \defskip medskip
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -321,6 +388,62 @@ setcounter{page}{1}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
+\begin_layout Plain Layout
+Colores de los títulos
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+chapterfont{
+\backslash
+color{blue}} % sets colour of chapters
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+sectionfont{
+\backslash
+color{cyan}} % sets colour of sections –> https://texdoc.org/serve/xcolor/0
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+definecolor{miPurpura}{rgb}{24.7,0,18} 
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+
+\backslash
+subsectionfont{
+\backslash
+color{miPurpura}}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename ../T17_ELEC_DIGITAL_SECUENCIAL/imagenes/OLxcolorList2.png
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Introducción
 \end_layout
@@ -339,6 +462,7 @@ El organismo de normalización español es
 LatexCommand href
 name "AENOR"
 target "http://www.aenor.es/aenor/inicio/home/home.asp"
+literal "false"
 
 \end_inset
 
@@ -362,6 +486,7 @@ s, simulando las condiciones de trabajo o uso a las que estarán expuestos
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -371,6 +496,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename diagramas/D1_pag7_1A.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -417,15 +544,18 @@ Esquemas Tipos de Ensayo según rigurosidad y naturaleza
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename diagramas/D2_pag7_1C.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -508,9 +638,13 @@ La tensión es la fuerza por unidad de superficie aplicada, siendo la superficie
 \begin_layout Standard
 \noindent
 \align center
-\begin_inset Formula $σ=\dfrac{F}{S_{0}}$
+
+\color purple
+\begin_inset Formula $\boldsymbol{σ=\dfrac{F}{S_{0}}}$
 \end_inset
 
+
+\color inherit
  y se mide en 
 \begin_inset Formula $N/m\text{²}=Pa$
 \end_inset
@@ -530,7 +664,7 @@ La deformación se calcula de forma relativa, en función de la longitud inicial
 \begin_layout Standard
 \noindent
 \align center
-\begin_inset Formula $ε=\frac{L-L_{0}}{L_{0}}=\frac{\text{∆L}}{L_{0}}$
+\begin_inset Formula $\boldsymbol{{\color{purple}ε=\frac{L-L_{0}}{L_{0}}=\frac{\text{∆L}}{L_{0}}}}$
 \end_inset
 
  , siendo la deformación ε una magnitud adimensional.
@@ -552,15 +686,18 @@ Estudio del diagrama
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename diagramas/Diagrama tensión deformación pag8_seccion2.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -603,15 +740,18 @@ Diagrama tensión deformación y esquemas de tracción y fuerzas.
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename diagramas/Zonas del diagrama tensión deformación_pag8_9_seccion2.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -683,9 +823,10 @@ Formas y dimensiones de la probeta
 
 \begin_layout Standard
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -693,7 +834,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/probetas_normalizadas.png
 	lyxscale 25
-	scale 50
+	width 4cm
 
 \end_inset
 
@@ -751,7 +892,33 @@ La longitud calibrada debe ser superior.
 
  es el diámetro de la probeta, la longitud de la parte calibrada debe estar
  en el intervalo 
-\begin_inset Formula $[L_{0}+\nicefrac{\phi}{2},L_{0}+2\phi]$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\boldsymbol{[L_{0}+\nicefrac{\phi}{2},L_{0}+2\phi]}$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
 \end_inset
 
 
@@ -781,7 +948,33 @@ Al igual que antes se marca una longitud
 
 \begin_layout Enumerate
 La longitud calibrada debe estar en el intervalo 
-\begin_inset Formula $[L_{0}+1.5\cdot\sqrt{S_{0}},L_{0}+2.5\cdot\sqrt{S_{0}}]$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Formula $\boldsymbol{[L_{0}+1.5\cdot\sqrt{S_{0}},L_{0}+2.5\cdot\sqrt{S_{0}}]}$
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
 \end_inset
 
 
@@ -803,7 +996,7 @@ cabezas
 
 \series bold
 \shape italic
-\begin_inset Formula $K=\frac{L_{01}}{\sqrt{S_{01}}}=\frac{L_{02}}{\sqrt{S_{02}}}$
+\begin_inset Formula ${\color{purple}K=\frac{L_{01}}{\sqrt{S_{01}}}=\frac{L_{02}}{\sqrt{S_{02}}}}$
 \end_inset
 
  
@@ -820,15 +1013,18 @@ Resultados del ensayo
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename diagramas/Limites_elasticos_zonas_pag10_seccion2.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -871,15 +1067,18 @@ Estudio de la Zona elástica.
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Graphics
 	filename diagramas/Limites_pláticos y rotura_pag10_y_11_seccion2.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -912,13 +1111,6 @@ Estudio de la Zona Plástica.
 \end_layout
 
 \begin_layout Standard
-\begin_inset VSpace smallskip
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 También podemos hablar del 
 \series bold
 trabajo de deformación
@@ -944,7 +1136,7 @@ Fluencia
 
 \begin_layout Standard
 \begin_inset Wrap figure
-lines 0
+lines 12
 placement l
 overhang 0in
 width "50col%"
@@ -956,7 +1148,7 @@ status collapsed
 \begin_inset Graphics
 	filename imagenes/Fluencia.jpg
 	lyxscale 50
-	scale 40
+	scale 30
 
 \end_inset
 
@@ -1051,7 +1243,7 @@ La curva I, corresponde a la tensión aparente frente a las deformaciones
 lines 0
 placement r
 overhang 0in
-width "50col%"
+width "30col%"
 status collapsed
 
 \begin_layout Plain Layout
@@ -1136,7 +1328,11 @@ curva de tracción verdadera
 , pero apenas se utiliza por la dificultad de obtenerla en la práctica (habría
  que conocer la sección exacta en cada punto del ensayo).
  Sin embargo, hay una relación exacta en muchos metales entre la tensión
- y deformación verdaderas: la relación de Hollomon 
+ y deformación verdaderas...
+\end_layout
+
+\begin_layout Standard
+La relación de Hollomon 
 \begin_inset Formula $\sigma_{v}=K\cdot\epsilon_{v}^{n}$
 \end_inset
 
@@ -1181,36 +1377,11 @@ Minimizando la resistencia del material.
 \end_layout
 
 \begin_layout Standard
-En el primer caso, las fuerzas que pensamos que actuarán sobre un elemento
- se multiplican por un factor mayor que la unidad (
-\series bold
-\shape italic
-coeficiente de seguridad
-\series default
-\shape default
-) y se realizan los cálculos de longitudes y secciones en función de este
- factor.
- En el segundo, una tensión indicativa del material (por ejemplo, el límite
- superior de la zona de fluencia o el límite de rotura) y 
-\series bold
-\shape italic
-se divide por un coeficiente mayor que la unidad
-\series default
-\shape default
-, tomando como la tensión máxima que aguantará el material.
-\end_layout
-
-\begin_layout Subsubsection
-Máquinas de tracción
-\end_layout
-
-\begin_layout Standard
-Suele tener estas características: 
 \begin_inset Wrap figure
-lines 0
+lines 8
 placement r
 overhang 0in
-width "50col%"
+width "20col%"
 status collapsed
 
 \begin_layout Plain Layout
@@ -1218,8 +1389,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename imagenes/maquina-hidraulic-ensayo-traccion-umib.png
-	lyxscale 50
-	scale 25
+	lyxscale 20
+	scale 10
 
 \end_inset
 
@@ -1248,6 +1419,36 @@ Máquina de tracción
 
 \end_layout
 
+\begin_layout Standard
+En el primer caso, las fuerzas que pensamos que actuarán sobre un elemento
+ se multiplican por un factor mayor que la unidad (
+\series bold
+\shape italic
+coeficiente de seguridad
+\series default
+\shape default
+) y se realizan los cálculos de longitudes y secciones en función de este
+ factor.
+ En el segundo, una tensión indicativa del material (por ejemplo, el límite
+ superior de la zona de fluencia o el límite de rotura) y 
+\series bold
+\shape italic
+se divide por un coeficiente mayor que la unidad
+\series default
+\shape default
+, tomando como la tensión máxima que aguantará el material.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Máquinas de tracción
+\end_layout
+
+\begin_layout Standard
+\noindent
+Suele tener estas características: 
+\end_layout
+
 \begin_layout Itemize
 Consta de dos dispositivos: uno productor de cargas y otro medidor de cargas
  y desplazamientos.
@@ -1272,10 +1473,13 @@ Algunos vídeos de YouTube
 \end_layout
 
 \begin_layout Enumerate
+
+\size small
 \begin_inset CommandInset href
 LatexCommand href
 name "Ensayo de tracción de la Universidad de Almería"
 target "https://youtu.be/4p7bvJGN4Po"
+literal "false"
 
 \end_inset
 
@@ -1283,10 +1487,13 @@ target "https://youtu.be/4p7bvJGN4Po"
 \end_layout
 
 \begin_layout Enumerate
+
+\size small
 \begin_inset CommandInset href
 LatexCommand href
 name "Ensayo de Tracción Universidad Nacional De Trujillo - Escuela De Ingeniería Mecánica"
 target "https://youtu.be/Klx9KO1gOdI"
+literal "false"
 
 \end_inset
 
@@ -1372,6 +1579,7 @@ Ensayos de dureza al rayado
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1381,6 +1589,8 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename diagramas/Ensayos de dureza al rayado_pag14_seccion4.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
 \end_inset
@@ -1407,13 +1617,6 @@ Ensayos de dureza al rayado.
 
 \end_layout
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1499,10 +1702,39 @@ Dureza Brinell
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+
 \begin_inset Formula 
 \[
-HB=\frac{2\cdot F}{\pi D\cdot\left(D-\sqrt{D^{2}-d^{2}}\right)}
+\mathbf{HB=\frac{2\cdot F}{\pi D\cdot\left(D-\sqrt{D^{2}-d^{2}}\right)}}
 \]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
 
 \end_inset
 
@@ -1524,7 +1756,7 @@ Más consideraciones
 \end_layout
 
 \begin_layout Enumerate
-Ladureza Brinell suele expresarse en 
+La dureza Brinell suele expresarse en 
 \begin_inset Formula $kp/mm^{2}$
 \end_inset
 
@@ -1540,9 +1772,13 @@ El diámetro de la bola no puede ser mayor que el espesor del material.
 \begin_layout Enumerate
 Según los materiales, los ensayos deben cumplir que la fuerza aplicada sea
  proporcional al Diámetro de la bola según una constante 
-\begin_inset Formula $F=K\cdot D^{2}$
+\color purple
+
+\begin_inset Formula $\mathbf{F=K\cdot D^{2}}$
 \end_inset
 
+
+\color inherit
 .
  Esa constante es distinta para cada material; por ejemplo, para el bronce
  y el latón K=5, pero para materiales férricos K=30
@@ -1614,10 +1850,36 @@ El ángulo de 136º no es casual.
 
 \begin_layout Standard
 En realidad, la dureza Vickers usa la misma fórmula que la Brinell: 
-\begin_inset Formula $HV=\frac{F}{S}$
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
 \end_inset
 
- , pero la superficie de penetración, lógicamente, no será la misma, y la
+ 
+\begin_inset Formula $\mathbf{HV=\frac{F}{S}}$
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+, pero la superficie de penetración, lógicamente, no será la misma, y la
  expresión cambia.
 \end_layout
 
@@ -1625,6 +1887,7 @@ En realidad, la dureza Vickers usa la misma fórmula que la Brinell:
 \noindent
 \align center
 \begin_inset Float figure
+placement H
 wide false
 sideways false
 status collapsed
@@ -1634,15 +1897,10 @@ status collapsed
 \align center
 \begin_inset Graphics
 	filename diagramas/Dureza Vickers_pag17_seccion3_2_2.png
+	lyxscale 50
+	width 60page%
 	groupId Esquemas
 
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset VSpace smallskip
 \end_inset
 
 
@@ -1665,15 +1923,858 @@ Dureza Vickers
 
 \end_layout
 
+\begin_layout Enumerate
+La diagonal de la huella se mide mediante el uso de un microscopio.
+\end_layout
+
+\begin_layout Enumerate
+Si la penetración no ha sido totalmente vertical, la huella tendrá dos diagonale
+s (no será cuadrada).
+ Se cogería el valor medio de ambas.
+\end_layout
+
+\begin_layout Enumerate
+Se suele usar una carga de 30kp, aunque pueden variar entre 1 y 120 kp.
+\end_layout
+
+\begin_layout Enumerate
+Debe cumplirse que el espesor de la prueba cumpla 
+\begin_inset Formula $s>8\cdot h\cdot cos(68)\rightarrow s>8\cdot d/7$
+\end_inset
+
+ y para mayor seguridad, 
+\begin_inset Formula $s>1.2\cdot d$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Presenta algunas ventajas: el penetrador siempre es el mismo, y no hay que
+ cambiarlo según la carga; las superficies pueden ser curvas; el valor es
+ independiente prácticamente del valor de la carga y se puede realizar sobre
+ materiales muy duros.
+\end_layout
+
+\begin_layout Subsubsection
+Ensayo Rockwell
+\end_layout
+
 \begin_layout Standard
-\begin_inset VSpace smallskip
+El ensayo Rockwell es un ensayo más impreciso que los anteriores, y mucho
+ más sencillo.
+ Se efectúa de dos formas: 
+\end_layout
+
+\begin_layout Enumerate
+Penetrador: bola de acero de φ = 1,59mm.
+ Para materiales blandos (cuya dureza Vickers estaría entre 60 y 150 HV).
+ Se obtiene la escala Rockwell B (HRB).
+ 
+\end_layout
+
+\begin_layout Enumerate
+Penetrador: cono de diamante de ángulo 
+\begin_inset Formula $120\textdegree$
+\end_inset
+
+ redondeado en su punta con un casquete esférico de 0.2mm de radio.
+ Se obtiene la escala Rockwell C (HRC).
+ 
+\end_layout
+
+\begin_layout Standard
+Los pasos para realizarlo son: 
+\end_layout
+
+\begin_layout Enumerate
+Precarga de 10kp, lo que deja una huella de altura 
+\begin_inset Formula $h_{1}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Carga de: 90kp si medimos escala Rockwell B (HRB) o 140kp si medimos escala
+ Rockwell C (HRC).
+ Se produce una huella de altura 
+\begin_inset Formula $h_{2}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Transcurridos unos segundos se disminuye la fuerza aplicada hasta llegar
+ al valor de la precarga 10kp.
+ Se llegará a una profundidad de 
+\begin_inset Formula $h_{3}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Ya que en el proceso se producen deformaciones plásticas, no elásticas,
+ y el material no se recupera, se cumple que 
+\begin_inset Formula $h_{3}>h_{1}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_layout Enumerate
+Se mide la diferencia entre ambas alturas:
+\begin_inset Formula $e=h_{3}−h_{1}$
+\end_inset
+
+ .
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+En la escala HRC = 100 − e 
+\end_layout
+
+\begin_layout Enumerate
+En la escala HRB = 130 − e 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Normalmente emax = 0,2 · mm y la precisión de e suele ser de ∆e = 0,002
+ · mm
+\end_layout
+
+\begin_layout Section
+Ensayos de resistencia al impacto
+\end_layout
+
+\begin_layout Standard
+Estos ensayos persiguen una medida de la tenacidad: la capacidad de un material
+ de absorber energía sin partirse (normalmente por deformación plástica).
+ Lo contrario de la tenacidad es la fragilidad.
+ Un material tenaz se deformará en gran medida antes de producirse su rotura.
+ Un material frágil apenas se deformará.
+ Los metales muy dúctiles (en los que se producen alargamientos elevados
+ antes de producirse su rotura) suelen ser los más tenaces.
+ 
+\end_layout
+
+\begin_layout Subsection
+Ensayo de tracción por choque 
+\end_layout
+
+\begin_layout Standard
+Se realiza un ensayo de tracción con una aplicación muy rápida de la fuerza.
+ El área comprendida bajo la curva representa el trabajo necesario para
+ partir el material.
+ Si este trabajo es pequeño, el material es frágil.
+ Al contrario, si es grande, el material es tenaz.
+ La tenacidad sería ese trabajo dividido por el volumen de la probeta utilizada.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Ensayo_traccion_por_choque.png
+	lyxscale 20
+	width 8cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ensayo de tracción por choque
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ensayo de flexión por choque o péndulo Charpy 
+\end_layout
+
+\begin_layout Standard
+El más usado es el ensayo de resiliencia o ensayo Charpy.
+ Consiste en golpear una probeta por el lado opuesto a su entallado con
+ un péndulo que se deja caer desde una altura determinada.
+ La diferencia entre las energías potenciales inicial y final del péndulo
+ es la energía consumida por el material al romperse, y viene dada por la
+ expresión: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{Plum!85!black}
+\end_layout
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+\mathbf{KCV=\frac{W}{S_{0}}=\frac{P·L·(cosα_{2}−cosα_{1})}{S_{0}}}
+\]
+
 \end_inset
 
 
 \end_layout
 
 \begin_layout Standard
-tyrty
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+color{black}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Siendo 
+\begin_inset Formula $S_{0}$
+\end_inset
+
+ la sección de la probeta por la parte del entallado, usualmente 
+\begin_inset Formula $80mm^{2}$
+\end_inset
+
+ .
+ La unidad de resiliencia en el S.I.
+ es el 
+\begin_inset Formula $J/m^{2}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Péndulo_de_charpy.png
+	lyxscale 20
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Péndulo de Charpy
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement r
+overhang 0in
+width "30col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/diagrama_resiliencia_frente_a_temperatura.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\shape italic
+\size footnotesize
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de resiliencia frente a temperatura
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Normalmente los péndulos Charpy están normalizados.
+ Su energía inicial suele ser de 300J y en el momento del choque la velocidad
+ es de 5 m/s.
+ Si la probeta no llega a romperse hay que indicar esta circunstancia en
+ los resultados de ensayo.
+ Hay que recordar que este ensayo es distinto al de tracción.
+ En este se produce una flexión, la velocidad es más rápida que en el ensayo
+ de tracción , y, por tanto, hay materiales que se rompen de forma dúctil
+ (con gran deformación) frente a una tracción y de forma frágil en el ensayo
+ de resiliencia.
+\end_layout
+
+\begin_layout Standard
+La tenacidad o resiliencia depende de la temperatura.
+ Un material tenaz, de alta resiliencia, puede, en un intervalo de temperatura
+ pequeño convertirse en un material frágil al disminuir la temperatura.
+ Esto hay que tenerlo en cuenta cuando usamos materiales.
+ El intervalo de temperaturas en el que el material pierde su tenacidad
+ se denomina zona de transición.
+\end_layout
+
+\begin_layout Section
+Ensayos de Fatiga
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename diagramas/Ensayos_de_fatiga.png
+	lyxscale 20
+	width 80page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ensayos por fatiga
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Ensayo por fatiga: flexión rotativa
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement r
+overhang 0in
+width "30col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/diagramas/Maquina_flexion_rotativa.png
+	lyxscale 20
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\shape italic
+\size footnotesize
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Máquina de flexión rotativa
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Consiste en aplicar a una probeta un esfuerzo de flexión constante provo-
+ cado por dos pesos P.
+ Mediante un motor eléctrico se hace girar la probeta, de forma que su parte
+ superior, que estaba sometida a un esfuerzo de compresión, al girar media
+ vuelta se somete a uno de tracción.
+ Se determina el número de ciclos que es capaz de soportar para distintas
+ amplitudes de carga (variando los pesos) antes de producirse la rotura,
+ manteniendo constante la tensión media o la tensión mínima.
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama de Whöler
+\end_layout
+
+\begin_layout Itemize
+Escojo una amplitud de carga 
+\begin_inset Formula $∆σ$
+\end_inset
+
+ amplia, como unos 2/3 de la tensión de rotura por tracción del material.
+\end_layout
+
+\begin_layout Itemize
+Con una probeta, mido el número de ciclos necesarios para que, por fatiga
+ con flexión rotativa, el material se rompa.
+ 
+\end_layout
+
+\begin_layout Itemize
+Escojo otras probetas y voy disminuyendo la amplitud de carga; el número
+ de ciclos aumenta.
+ 
+\end_layout
+
+\begin_layout Itemize
+Represento las amplitudes de carga frente a N, o frente al logN.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+Como se puede ver en la figura 
+\begin_inset CommandInset ref
+LatexCommand eqref
+reference "fig:Diagrama-de-Whöler"
+plural "false"
+caps "false"
+noprefix "false"
+
+\end_inset
+
+, para el acero 1045, por debajo de una amplitud de carga 
+\begin_inset Formula $∆σ_{e}=300MN/m^{2}$
+\end_inset
+
+ , el número N de ciclos de rotura tiende a infinito.
+ Por debajo de ese valor 
+\begin_inset Formula $∆σ_{e}$
+\end_inset
+
+ no se produce rotura por fatiga del material, por lo que se denomina límite
+ de fatiga.
+ Suele ser de 0.4 ó 0.5 veces la carga de rotura del material.
+ Muchos aceros y aleaciones de titanio presentan este comportamiento.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 0
+placement l
+overhang 0in
+width "50col%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/diagramas/diagrama_de_wholer.png
+	lyxscale 20
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\series bold
+\shape italic
+\size footnotesize
+\lang english
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Whöler
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Diagrama-de-Whöler"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Para otras aleaciones no férreas, como el 2014-T6 aluminio de la figura,
+ no hay un valor límite de fatiga definido.
+ Con el número suficiente de ciclos, el material se parte.
+ Se suele tomar como límite de fatiga en estos casos el que se alcanza tras
+ 10 ó 100 millones de ciclos.
+ Para saber más: diagramas de Wholer en Wikipedia (curvas S-N) En componentes
+ que no se agrieten, la fatiga de alto número de ciclos suele seguir la
+ ecuación: 
+\begin_inset Formula $∆σ·N^{a}=b$
+\end_inset
+
+, siendo a y b constantes del material.
+\end_layout
+
+\begin_layout Subsubsection
+Diagrama de Goodman-Smith
+\end_layout
+
+\begin_layout Standard
+Los diagramas de Goodman-Smith representan las tensiones superior e inferior
+ a las que se somete un material en función de la tensión media (eje x).
+ 
+\end_layout
+
+\begin_layout Standard
+Observa bien la gráfica: 
+\end_layout
+
+\begin_layout Itemize
+En el punto O, las tensiones superior e inferior son iguales, luego 
+\begin_inset Formula $σ_{m}=0·MPa$
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+En el punto F, la tensión inferior 
+\begin_inset Formula $σ_{i}=0·MPa$
+\end_inset
+
+ luego 
+\begin_inset Formula $σ_{m}=\frac{σ_{S}}{2}≈300·MPa$
+\end_inset
+
+.
+ En este punto la oscilación es máxima, cualquiera que sea N.
+ 
+\end_layout
+
+\begin_layout Itemize
+Evidentemente, si el valor de la tensión media se aproxima al de rotura
+ teórica, 
+\begin_inset Formula $R_{m}$
+\end_inset
+
+ , las amplitudes (diferencias entre el valor mínimo y máximo) deben ser
+ pequeñas, ya que si no se alcanzaría la rotura del material.
+ Desde el punto F la amplitud de la oscilación se reduce.
+ 
+\end_layout
+
+\begin_layout Itemize
+En la curva de la figura, la rotura se alcanza antes en la práctica: punto
+ G, a 
+\begin_inset Formula $R_{eL}$
+\end_inset
+
+ .
+\end_layout
+
+\begin_layout Standard
+La curva de Goodman-Smith se representa para un número de ciclos N.
+ Si represento la misma curva para un número de ciclos inferior 
+\begin_inset Formula $N_{2}<N$
+\end_inset
+
+, la curva se ensancha y para un número superior, se estrecha: 
+\begin_inset Formula $N_{1}>N$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si aproximo la curva de Goodman-Smith a una recta, en la que 
+\begin_inset Formula $∆σ_{0}$
+\end_inset
+
+ es la amplitud de carga para 
+\begin_inset Formula $σ_{m}=0·MPa$
+\end_inset
+
+ y sabiendo que 
+\begin_inset Formula $σ_{R}$
+\end_inset
+
+ es la resistencia a la rotura por tracción, tenemos que la recta cumple
+ que: 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+\varDelta\sigma=\varDelta\sigma_{0}\cdot\left(1-\frac{\sigma_{m}}{\sigma_{R}}\right)
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/diagramas/diagrama_de_gs_1.png
+	lyxscale 20
+	width 4.5cm
+	height 4cm
+
+\end_inset
+
+
+\begin_inset space \qquad{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/diagramas/diagrama_de_goodman_smith.png
+	lyxscale 20
+	width 4cm
+	height 4cm
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagramas de Goodman-Smith
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ensayos Tecnológicos
+\end_layout
+
+\begin_layout Standard
+Un ensayo tecnológico no es un ensayo que pretende comprobar o medir una
+ magnitud física como los anteriores (ensayos «científicos»), sino que es
+ un ensayo que permite comprobar, bien porque los procedimientos anteriores
+ sean más caros o más inaccesibles, si un material es o no útil a un determinado
+ propósito.
+\end_layout
+
+\begin_layout Standard
+Este tipo de ensayo es muy variado, y pretende emular las condiciones a
+ las que un material se verá sometido en la práctica.
+ En muchos casos, el ensayo depende de la forma geométrica del material.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename /media/misDatos/github/tecing2bac/2_BAC/TEMAS/T1_Materiales_REVISION/diagramas/ensayos_tecnologicos.png
+	lyxscale 20
+	width 70page%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ensayos tecnológicos
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hacer ejercicio sobre ensayos tecnológicos de la hoja de ejercicios.
+\end_layout
+
+\begin_layout Section
+Ensayos no destructivos (control de defectos)
+\end_layout
+
+\begin_layout Standard
+Se utilizan para comprobar, de piezas ya manufacturadas, que no poseen defectos
+ o que los posibles defectos no afectarán a la calidad de la construcción
+ al usarlos.
+ No pueden dejar huella o malformación en la pieza comprobada.
+ Por eso también se denominan no destructivos.
+ No sólo se somete a estos ensayos a una pieza comercializada para comprobar
+ su idoneidad sino que también se usan para comprobar, estando ya en servicio,
+ si mantiene los parámetros de dicha idoneidad.
+ Por ejemplo, el tubo de un gaseoducto no debe presentar grietas al montarse
+ pero también se comprueba ya en servicio.
+\end_layout
+
+\begin_layout Standard
+Entre los métodos destacamos:
+\end_layout
+
+\begin_layout Itemize
+Ensayos macroscópicos: líquidos penetrantes para localizar poros o grietas.
+\end_layout
+
+\begin_layout Itemize
+Ensayos ópticos: microscopios metalográficos –> localización de grietas,
+ poros, tamaño y forma de grano, etc.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ensayos magnéticos: defectos de continuidad (grietas, sopladuras
+\begin_inset Foot
+status open
+
+\begin_layout Plain Layout
+burbujas en el interior de materiales fundidos, atrapadas al solidificarse
+ éste
+\end_layout
+
+\end_inset
+
+ , etc.) así como estado superficial.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ensayos eléctricos: variación de la resistencia eléctrica por presencia
+ de poros, impurezas, grietas (especial- mente en vías de ferrocarril).
+ 
+\end_layout
+
+\begin_layout Itemize
+Ensayos con ultrasonidos (105 a 107 KHz): detectan discontinuidad en los
+ materiales como la profundidad de los defectos.
+ 
+\end_layout
+
+\begin_layout Itemize
+Ensayos con rayos X (espesores de hasta 10 cm) y rayos gamma γ (espesores
+ de hasta 25 cm): radiografías y gammagrafías que ponen de manifiesto cualquier
+ irregularidad.
 \end_layout
 
 \begin_layout Standard
@@ -1706,6 +2807,100 @@ appendixname}{Apéndice}
 
 \begin_layout Section
 Apéndice 1
+\end_layout
+
+\begin_layout Standard
+Ciencia de los materiales.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/playlist?list=PLB82228356728B994 "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensayo de tracción.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=I7hTLXsQc6U&list=PLB82228356728B994"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Standard
+Diagrama tensión-deformación.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=jIxwVfTuK6Q&list=PLB82228356728B994 "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensayo de rotura por impacto.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=HqoTZWB3Q5I&list=PLB82228356728B994 "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensayos de dureza.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=66pznO3EjRU&list=PLB82228356728B994 "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensayo de fatiga: 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=dZLExvQ_7Rg&NR=1&feature=endscreen "
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Clasificación de los ensayos: 
+\begin_inset CommandInset href
+LatexCommand href
+target "http://cmapspublic2.ihmc.us/rid=1H034YQRJ-16MN382-V5J/Ensayos%20de%20materiales.c 16MN382-V5J&partName=htmljpeg"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ensayo de fluencia.
+ 
+\begin_inset CommandInset href
+LatexCommand href
+target "https://www.youtube.com/watch?v=HbgUu-NGWOc&list=PLB82228356728B994"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

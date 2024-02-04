@@ -1,0 +1,29 @@
+Format 66
+
+Style MiParrafo
+ Category      MainText
+ Margin        Static
+ LatexType     Environment
+ LatexName     miparrafo
+ NextNoIndent  1
+ LeftMargin    MMM
+ RightMargin   MMM
+ ParIndent     MM
+ ParSkip       0
+ ItemSep       0
+ TopSep        0.5
+ BottomSep     0.5
+ ParSep        0
+ Align         Block
+ AlignPossible Block, Left, Right, Center
+ Preamble
+   \usepackage{mdframed}
+   \usepackage{xcolor}
+   \newenvironment{miparrafo}
+      {\begin{mdframed}[
+        backgroundcolor=lightgray,
+        linecolor=lightgray 
+      ]\quotation}
+   {\endquotation\end{mdframed}}
+ EndPreamble
+End

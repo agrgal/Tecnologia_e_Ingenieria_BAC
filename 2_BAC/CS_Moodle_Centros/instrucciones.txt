@@ -1,7 +1,7 @@
 Para cortar en trozos
 
-split -a 1 -b 25M CS_TECNOLOGIA_INDUSTRIAL_II_Moodle_2023_2024_de_9_marzo_2024.mbz CS_TECINDUSTRIAL_II_Moodle_2023_2024_de_9_de_marzo_usando_split_
+split -a 1 -b 25M [nombre_fichero].mbz [nombre_fichero]_split_
 
 Para unirlos
 
-cat CS_TECINDUSTRIAL_II_Moodle_2023_2024_de_9_de_marzo_usando_split_* > copiaRestaurada.mbz
+cat [nombre_fichero]_split_* > copiaRestaurada.mbz

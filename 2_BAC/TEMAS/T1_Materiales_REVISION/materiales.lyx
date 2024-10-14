@@ -2029,8 +2029,14 @@ Ya que en el proceso se producen deformaciones plásticas, no elásticas,
 \end_layout
 
 \begin_layout Enumerate
-Se mide la diferencia entre ambas alturas:
-\begin_inset Formula $e=h_{3}−h_{1}$
+Normalmente emax = 0,2 · mm y la precisión de e (una unidad de e) suele
+ ser de ∆e = 0,002 · mm
+\end_layout
+
+\begin_layout Enumerate
+Se mide la diferencia entre ambas alturas y se divide entre la precisión:
+ 
+\begin_inset Formula $e=\frac{h_{3}−h_{1}}{0.002mm}$
 \end_inset
 
  .
@@ -2047,11 +2053,6 @@ En la escala HRB = 130 − e
 \end_layout
 
 \end_deeper
-\begin_layout Enumerate
-Normalmente emax = 0,2 · mm y la precisión de e suele ser de ∆e = 0,002
- · mm
-\end_layout
-
 \begin_layout Section
 Ensayos de resistencia al impacto
 \end_layout

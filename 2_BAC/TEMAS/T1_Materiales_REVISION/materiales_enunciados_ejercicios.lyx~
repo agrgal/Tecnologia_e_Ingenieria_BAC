@@ -1,5 +1,5 @@
-#LyX 2.2 created this file. For more info see http://www.lyx.org/
-\lyxformat 508
+#LyX 2.3 created this file. For more info see http://www.lyx.org/
+\lyxformat 544
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -35,6 +35,8 @@ knitr
 \font_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
+\use_microtype false
+\use_dash_ligatures true
 \graphics default
 \default_output_format default
 \output_sync 0
@@ -73,6 +75,7 @@ knitr
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_minted 0
 \index Index
 \shortcut idx
 \color #008000
@@ -85,7 +88,10 @@ knitr
 \tocdepth 3
 \paragraph_separation skip
 \defskip medskip
-\quotes_language french
+\is_math_indent 0
+\math_numbering_side default
+\quotes_style swiss
+\dynamic_quotes 0
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
@@ -194,7 +200,7 @@ por Aurelio Gallardo
 \noindent
 \align center
 \begin_inset Graphics
-	filename imagenes/by-nc-sa.eu_petit.png
+	filename /home/aurelio/Escritorio/Mias/by-nc-sa.eu_petit.png
 	width 2.5cm
 	height 1cm
 
@@ -396,7 +402,7 @@ Calcula el trabajo realizado para deformar y romper la probeta, según el
 \begin_layout Enumerate
 Tenemos una barra cuadrada de 1cm de lado y 10cm de longitud.
  Se somete a una fuerza de tracción de 8kN con un módulo de Young de 
-\begin_inset Formula $2\,Nm/cm^{2}$
+\begin_inset Formula $2\,MNm/cm^{2}$
 \end_inset
 
 , y su límite de proporcionalidad 100MPa.
@@ -406,11 +412,11 @@ Tenemos una barra cuadrada de 1cm de lado y 10cm de longitud.
 
 \begin_layout Enumerate
 Una barra elástica de acero, con un límite elástico de 
-\begin_inset Formula $5000kp/cm^{2}$
+\begin_inset Formula $5000\;kp/cm^{2}$
 \end_inset
 
 ,es sometida a una fuerza de tracción 
-\begin_inset Formula $8500kp$
+\begin_inset Formula $8500\;kp$
 \end_inset
 
 .
@@ -477,7 +483,7 @@ Esfuerzo
 \begin_inset Text
 
 \begin_layout Plain Layout
-Longitud de medidad (mm)
+Longitud de medida (mm)
 \end_layout
 
 \end_inset
@@ -727,6 +733,191 @@ Alargamiento de rotura
 \end_deeper
 \begin_layout Section
 Ejercicios de Dureza
+\end_layout
+
+\begin_layout Enumerate
+Demuestra la fórmula de la dureza Brinell
+\end_layout
+
+\begin_layout Enumerate
+Para determinar la dureza Brinell de un material se ha utilizado una bola
+ de 5mm de diámetro y se ha elegido una constante K=30, obteniéndose una
+ huella de 2.3mm de diámetro.
+ Calcula: 
+\end_layout
+
+\begin_deeper
+\begin_layout Description
+a) Dureza Brinell del material
+\end_layout
+
+\begin_layout Description
+b) Profundidad de la huella
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Un engranaje de acero tiene en el núcleo una dureza de 200HB y en la superficie
+ de 500HB ¿Por qué? Razona la respuesta.
+\end_layout
+
+\begin_layout Enumerate
+En un ensayo de dureza Brinell se aplica una carga de 3000kp al penetrador,
+ cuyo diámetro es D=10mm.
+ 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Si el diámetro de la huella es d=5mm, calcula la dureza del material.
+ 
+\end_layout
+
+\begin_layout Enumerate
+¿Se obtendría el mismo valor de dureza si D=5mm y la carga fuese de 750kp?
+ ¿Cuál sería el diámetro de la huella en este caso?
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+\noindent
+En un ensayo de dureza Brinell de una chapa de acero aleado de 8mm de espesor,
+ se obtiene una huella de 4mm.
+ Hallar (ver Tabla de Cargas según espesores): a) Dureza del acero, constante
+ del ensayo y diámetro de la bola.
+ b) Resistencia aproximada a la rotura por tracción.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Graphics
+	filename pegado1.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Ejercicios de Dureza RockWell y Vickers
+\end_layout
+
+\begin_layout Enumerate
+En un ensayo de dureza Rockwell B, la profundidad 
+\begin_inset Formula $h_{1}$
+\end_inset
+
+ , cuando se aplica una precarga es de 0.01mm y la profundidad 
+\begin_inset Formula $h_{3}$
+\end_inset
+
+ cuando se mantiene esa precarga después de haber aplicado la totalidad
+ de la carga es 0.144mm ¿Qué dureza tiene el material?
+\end_layout
+
+\begin_layout Enumerate
+Hemos templado acero al carbono y calculamos su dureza Vickers.
+ Con una carga de 30 kp, y los diagonales de la huella 
+\begin_inset Formula $d_{1}=0,25mm$
+\end_inset
+
+ y 
+\begin_inset Formula $d_{2}=0,26mm$
+\end_inset
+
+.
+ Calcular: 
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+La dureza Vickers del acero 
+\end_layout
+
+\begin_layout Enumerate
+Expresar la dureza Vickers si el tiempo de ejercer la carga es de 15s.
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Otros ejercicios
+\end_layout
+
+\begin_layout Enumerate
+En la figura se representa el diagrama de Wöhler de un material obtenido
+ en un ensayo de fatiga con una tensión media igual a cero.
+ ¿Cómo variará la curva si se repite el ensayo aplicando a la probeta una
+ carga de tracción? 
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename pegado2.png
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Diagrama de Wöhler
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+En un ensayo del péndulo de Charpy, la maza de 20kp cayó sobre una probeta
+ de 
+\begin_inset Formula $80·mm^{2}$
+\end_inset
+
+ de sección desde una altura de un metro y se elevó después 60 cm tras la
+ rotura.
+ ¿Cuál es la resiliencia del material?
+\end_layout
+
+\begin_layout Section
+Ensayos tecnológicos
+\end_layout
+
+\begin_layout Enumerate
+
+\series bold
+Ejercicio
+\series default
+: trabajo individual sobre un ensayo tecnológico de los apuntes.
+ Puedes conseguir información general en Wikipedia (
+\begin_inset CommandInset href
+LatexCommand href
+target "https://es.wikipedia.org/wiki/Ensayos_tecnol%C3%B3gicos"
+
+\end_inset
+
+) y más específica en internet.
+ Entre uno y dos folios.
+ Se evaluarán los conceptos técnicos encontrados, los diagramas y/o gráficos
+ hallados.
 \end_layout
 
 \end_body

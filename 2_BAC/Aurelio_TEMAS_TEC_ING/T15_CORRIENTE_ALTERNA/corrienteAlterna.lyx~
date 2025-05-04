@@ -3629,7 +3629,7 @@ status open
 \begin_inset Graphics
 	filename imagenes/circuitoInductivo_vectores.png
 	lyxscale 10
-	width 2cm
+	width 1.5cm
 
 \end_inset
 
@@ -3786,7 +3786,7 @@ status open
 \begin_inset Graphics
 	filename imagenes/circuitoCapacitivo_Vectores.png
 	lyxscale 10
-	width 2cm
+	width 1.5cm
 
 \end_inset
 

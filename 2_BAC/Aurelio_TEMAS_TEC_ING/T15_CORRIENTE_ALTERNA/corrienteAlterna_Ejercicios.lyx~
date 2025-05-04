@@ -6,9 +6,6 @@
 \origin unavailable
 \textclass article
 \begin_preamble
-\usepackage[dvipsnames]{xcolor}
-% \usepackage[usenames,dvipsnames]{color}
-% \usepackage{pdfcolmk}
 \usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}  
 \usepackage[T1]{fontenc}
 \usepackage{wrapfig}
@@ -29,9 +26,9 @@
 \sectionfont{\color{BlueViolet}}  % sets colour of sections
 % \definecolor{green}{rgb}{0.25,1,0.25}
 \subsectionfont{\color{CadetBlue}}
-\subsubsectionfont{\color{RawSienna}}
+\subsubsectionfont{\color{RubineRed}}
 \end_preamble
-\options spanish
+\options spanish, dvipsnames
 \use_default_options true
 \begin_modules
 customHeadersFooters
@@ -59,7 +56,7 @@ Style MiParrafo
  AlignPossible Block, Left, Right, Center
  Preamble
    \usepackage{mdframed}
-   \usepackage{xcolor}
+   % \usepackage{xcolor}
    \newenvironment{miparrafo}
       {\begin{mdframed}[
         backgroundcolor=lightgray,
@@ -709,7 +706,7 @@ Demostrar que tres condensadores en serie tienen una capacidad equivalente
 \end_layout
 
 \begin_layout Subsubsection*
-* Problema 13
+ Problema 13
 \end_layout
 
 \begin_layout Standard

@@ -71,7 +71,7 @@ Style MiParrafo
  AlignPossible Block, Left, Right, Center
  Preamble
    \usepackage{mdframed}
-   \usepackage{xcolor}
+   % \usepackage{xcolor}
    \newenvironment{miparrafo}
       {\begin{mdframed}[
         backgroundcolor=lightgray,

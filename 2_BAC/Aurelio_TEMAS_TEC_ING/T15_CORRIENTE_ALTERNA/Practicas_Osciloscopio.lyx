@@ -1,5 +1,5 @@
-#LyX 2.3 created this file. For more info see http://www.lyx.org/
-\lyxformat 544
+#LyX 2.4 created this file. For more info see https://www.lyx.org/
+\lyxformat 620
 \begin_document
 \begin_header
 \save_transient_properties true
@@ -26,6 +26,9 @@
 % scriptsize, footnotesize,  small, normalsize, large, Large
 % Zona de los captions de las imágenes
 
+\usepackage{tcolorbox} % Cajas de colores
+\usepackage{varwidth} % cajas de ancho variable
+
 \usepackage[font=scriptsize,labelfont={scriptsize,bf,sc,color=CadetBlue}, 
 			,textfont={scriptsize,color=Brown}, format=plain
             ,labelformat=parens, labelsep=period, justification=justified]{caption}
@@ -37,6 +40,9 @@
 \subsectionfont{\color{CadetBlue}}
 \subsubsectionfont{\color{RawSienna}}
 % https://es.overleaf.com/learn/latex/Using_colors_in_LaTeX
+% Added by lyx2lyx
+\setlength{\parskip}{\medskipamount}
+\setlength{\parindent}{0pt}
 \end_preamble
 \options spanish,dvipsnames,usenames
 \use_default_options true
@@ -44,10 +50,9 @@
 customHeadersFooters
 enumitem
 \end_modules
-\maintain_unincluded_children false
+\maintain_unincluded_children no
 \begin_local_layout
 Format 66
-
 Style MiParrafo
  Category      MainText
  Margin        Static
@@ -69,7 +74,7 @@ Style MiParrafo
    \newenvironment{miparrafo}
       {\begin{mdframed}[
         backgroundcolor=lightgray,
-        linecolor=lightgray 
+        linecolor=lightgray
       ]\quotation}
    {\endquotation\end{mdframed}}
  EndPreamble
@@ -77,8 +82,8 @@ End
 \end_local_layout
 \language spanish
 \language_package default
-\inputencoding auto
-\fontencoding global
+\inputencoding auto-legacy
+\fontencoding auto
 \font_roman "times" "default"
 \font_sans "berasans" "default"
 \font_typewriter "courier" "default"
@@ -86,7 +91,9 @@ End
 \font_default_family rmdefault
 \use_non_tex_fonts false
 \font_sc false
-\font_osf false
+\font_roman_osf false
+\font_sans_osf false
+\font_typewriter_osf false
 \font_sf_scale 100 100
 \font_tt_scale 100 100
 \use_microtype false
@@ -96,6 +103,8 @@ End
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement class
+\float_alignment class
 \paperfontsize 11
 \spacing single
 \use_hyperref true
@@ -108,7 +117,7 @@ End
 \pdf_colorlinks true
 \pdf_backref page
 \pdf_pdfusetitle true
-\papersize a4paper
+\papersize a4
 \use_geometry true
 \use_package amsmath 1
 \use_package amssymb 1
@@ -129,7 +138,9 @@ End
 \suppress_date false
 \justification true
 \use_refstyle 1
+\use_formatted_ref 0
 \use_minted 0
+\use_lineno 0
 \index Index
 \shortcut idx
 \color #008000
@@ -140,8 +151,8 @@ End
 \bottommargin 2cm
 \secnumdepth 3
 \tocdepth 3
-\paragraph_separation skip
-\defskip medskip
+\paragraph_separation indent
+\paragraph_indentation default
 \is_math_indent 0
 \math_numbering_side default
 \quotes_style swiss
@@ -149,15 +160,20 @@ End
 \papercolumns 1
 \papersides 1
 \paperpagestyle fancy
+\tablestyle default
 \bullet 0 3 25 -1
 \bullet 1 5 13 -1
 \bullet 2 3 10 -1
 \bullet 3 5 1 -1
 \tracking_changes false
 \output_changes false
+\change_bars false
+\postpone_fragile_content false
 \html_math_output 0
 \html_css_as_file 0
 \html_be_strict false
+\docbook_table_output 0
+\docbook_mathml_prefix 1
 \end_header
 
 \begin_body
@@ -171,14 +187,14 @@ Notas del preámbulo:
 \end_layout
 
 \begin_layout Plain Layout
-0.- Editor latex: https://latex.codecogs.com/eqneditor/editor.php 
+0.- Editor latex:
+ https://latex.codecogs.com/eqneditor/editor.php 
 \end_layout
 
 \begin_layout Plain Layout
 1.- 
 \backslash
-usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption}
- para poner el texto de 
+usepackage[font={footnotesize,sc},textfont={footnotesize,sc,bf}]{caption} para poner el texto de 
 \begin_inset Quotes eld
 \end_inset
 
@@ -186,21 +202,26 @@ figuras...
 \begin_inset Quotes erd
 \end_inset
 
- muy pequeños y en versalita (sc), y en negrita (bf).
+ muy pequeños y en versalita (sc),
+ y en negrita (bf).
 \end_layout
 
 \begin_layout Plain Layout
-2.- wrapfig, para que se puedan poner las imágenes flotantes envueltas (creo)
+2.- wrapfig,
+ para que se puedan poner las imágenes flotantes envueltas (creo)
 \end_layout
 
 \begin_layout Plain Layout
-3.- tikz, circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
+3.- tikz,
+ circuitikz -> para poder dibujar circuitos con LATEX (ver CTRL+L)
 \end_layout
 
 \begin_layout Plain Layout
 4.- 
 \backslash
-usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
+usepackage{amsmath}:
+ mirar bien,
+ pero creo que es para poder usar matemáticas.
 \end_layout
 
 \begin_layout Plain Layout
@@ -209,13 +230,12 @@ usepackage{amsmath}: mirar bien, pero creo que es para poder usar matemáticas.
 usepackage[T1]{fontenc} 
 \backslash
 usepackage{calligra} –> permite usar tipos de letras extra.
- Mirar en esta web: http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas
--y-varias-fuentes-latex-en-lyx/,
+ Mirar en esta web:
+ http://bioinformatiquillo.wordpress.com/2009/03/28/usar-nuevas-y-varias-fuentes-latex-en-lyx/,
 \end_layout
 
 \begin_layout Plain Layout
-5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del
- texto de lo que es el código.
+5a.- Si se utiliza en un párrafo nada más hay que separar un espacio del texto de lo que es el código.
 \end_layout
 
 \begin_layout Plain Layout
@@ -268,7 +288,7 @@ por Aurelio Gallardo
 \begin_inset Graphics
 	filename imagenes/by-nc-sa.eu_petit.png
 	width 2.5cm
-	height 1cm
+	special height=1cm
 
 \end_inset
 
@@ -285,8 +305,8 @@ por Aurelio Gallardo
 Corriente Alterna.
  Ejercicios.
  Repaso.
- By Aurelio Gallardo Rodríguez, Is Licensed Under A Creative Commons Reconocimie
-nto-NoComercial-CompartirIgual 4.0 Internacional License.
+ By Aurelio Gallardo Rodríguez,
+ Is Licensed Under A Creative Commons Reconocimiento-NoComercial-CompartirIgual 4.0 Internacional License.
 \end_layout
 
 \begin_layout Standard
@@ -429,9 +449,9 @@ Comprobar que en un circuito RC donde la resistencia es
 \begin_inset Formula $1\;\mu F$
 \end_inset
 
-, y la tensión de entrada es una señal senoidal de 5V de amplitud y 50Hz
- de frecuencia, el valor de la tensión en el condensador es de 4.77 V desfasados
- -17.44º aproximadamente.
+,
+ y la tensión de entrada es una señal senoidal de 5V de amplitud y 50Hz de frecuencia,
+ el valor de la tensión en el condensador es de 4.77 V desfasados -17.44º aproximadamente.
 \end_layout
 
 \begin_layout Standard
@@ -449,7 +469,9 @@ height "1pt"
 \end_layout
 
 \begin_layout Standard
-En primer lugar, dibujamos el circuito: 
+En primer lugar,
+ dibujamos el circuito:
+ 
 \series bold
 \size small
 \color purple
@@ -475,13 +497,13 @@ lines 10
 placement L
 overhang 0in
 width "40page%"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset ERT
-status collapsed
+status open
 
 \begin_layout Plain Layout
 
@@ -492,7 +514,8 @@ begin{circuitikz}[american]
 
 \begin_layout Plain Layout
 
-	% Fuente senoidal de 5V, 50Hz   
+	% Fuente senoidal de 5V,
+ 50Hz   
 \end_layout
 
 \begin_layout Plain Layout
@@ -504,7 +527,8 @@ draw
 
 \begin_layout Plain Layout
 
-		(0,0) to[sV, l^={
+		(0,0) to[sV,
+ l^={
 \backslash
 shortstack{$V_
 \backslash
@@ -521,7 +545,8 @@ mathrm{in}$=5
 
 \begin_layout Plain Layout
 
-		to[R, l={
+		to[R,
+ l={
 \backslash
 SI{1}{
 \backslash
@@ -532,7 +557,8 @@ ohm}}] (3,3)
 
 \begin_layout Plain Layout
 
-		to[C, l={
+		to[C,
+ l={
 \backslash
 SI{1}{
 \backslash
@@ -565,9 +591,11 @@ draw
 
 \begin_layout Plain Layout
 
-		(3,3) node[circ, label={[font=
+		(3,3) node[circ,
+ label={[font=
 \backslash
-small, yshift=0.1cm]right:{$V_
+small,
+ yshift=0.1cm]right:{$V_
 \backslash
 mathrm{out}$}}] {};
 \end_layout
@@ -594,7 +622,9 @@ usetikzlibrary{arrows} en el preámbulo.
 
 \begin_layout Plain Layout
 
-		node[above, yshift=0.2cm, font=
+		node[above,
+ yshift=0.2cm,
+ font=
 \backslash
 small] {$I_C$};
 \end_layout
@@ -633,12 +663,12 @@ Circuito RC
 \begin_inset Formula $V_{in}=V_{0}\cdot sin(wt)$
 \end_inset
 
-, en este circuito se cumple que 
+,
+ en este circuito se cumple que 
 \begin_inset Formula $V_{in}=i\cdot R+V_{C}$
 \end_inset
 
- y sabemos que la intensidad coincide con la que atraviesa el condensador
- 
+ y sabemos que la intensidad coincide con la que atraviesa el condensador 
 \begin_inset Formula $i=I_{C}=C\cdot\frac{dV_{C}}{dt}$
 \end_inset
 
@@ -647,7 +677,9 @@ Circuito RC
 \begin_inset Formula $X_{C}=\frac{-j}{wC}$
 \end_inset
 
-, podemos expresar entonces: 
+,
+ podemos expresar entonces:
+ 
 \end_layout
 
 \begin_layout Standard
@@ -665,11 +697,13 @@ V_{in}=i\cdot R+i\cdot\left(\frac{-j}{wC}\right)=i\cdot Z\;\rightarrow\;I=\frac{
 \end_layout
 
 \begin_layout Standard
-La impedancia Z podemos calcularla en forma polar: 
+La impedancia Z podemos calcularla en forma polar:
+ 
 \begin_inset Formula $Z=|Z|\angle\Phi$
 \end_inset
 
- , siendo 
+ ,
+ siendo 
 \begin_inset Formula $|Z|=\sqrt{R^{2}+\tfrac{1}{w^{2}C^{2}}}$
 \end_inset
 
@@ -677,7 +711,8 @@ La impedancia Z podemos calcularla en forma polar:
 \begin_inset Formula $\Phi=-\arctan\left(\tfrac{1}{wRC}\right)$
 \end_inset
 
-, por lo tanto tenemos que:
+,
+ por lo tanto tenemos que:
 \end_layout
 
 \begin_layout Standard
@@ -704,13 +739,15 @@ Intensidad que está adelantada en una cantidad
 \begin_inset Formula $I=I_{0}\cdot sin(wt+|\Phi|)$
 \end_inset
 
-, siendo 
+,
+ siendo 
 \begin_inset Formula $I_{0}=\frac{V_{0}}{\sqrt{R^{2}+\tfrac{1}{w^{2}C^{2}}}}$
 \end_inset
 
 .
- La tensión de salida, la caída de tensión en el condensador, podemos calcularla
- como el producto de la intensidad por la impedancia del condensador.
+ La tensión de salida,
+ la caída de tensión en el condensador,
+ podemos calcularla como el producto de la intensidad por la impedancia del condensador.
  
 \end_layout
 
@@ -743,8 +780,9 @@ height "1pt"
 \end_layout
 
 \begin_layout Standard
-Usando las fórmulas que hemos deducido, podemos por tanto calcular los valores
- de intensidad y tensión de salida para el circuito: 
+Usando las fórmulas que hemos deducido,
+ podemos por tanto calcular los valores de intensidad y tensión de salida para el circuito:
+ 
 \end_layout
 
 \begin_layout Enumerate
@@ -789,9 +827,10 @@ Y el valor de la tensión de salida
 \align center
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -804,13 +843,27 @@ status collapsed
 \end_inset
 
 
+\begin_inset space \medspace{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/Circuito_R_C.png
+	lyxscale 5
+	scale 5
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Plain Layout
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Circuito RC con f=50Hz, 5V de entrada, R=1K
+Circuito RC con f=50Hz,
+ 5V de entrada,
+ R=1K
 \begin_inset Formula $\Omega$
 \end_inset
 
@@ -836,8 +889,9 @@ Circuito RC con f=50Hz, 5V de entrada, R=1K
 \end_layout
 
 \begin_layout Standard
-Los valores de la intensidad y de la tensión de salida, tienen las siguientes
- fórmulas temporales: 
+Los valores de la intensidad y de la tensión de salida,
+ tienen las siguientes fórmulas temporales:
+ 
 \end_layout
 
 \begin_layout Itemize
@@ -879,9 +933,10 @@ literal "true"
 \align center
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -936,8 +991,10 @@ height "1pt"
 \end_layout
 
 \begin_layout Standard
-Pero además, podríamos montar el circuito RC físicamente y comprobar, con
- un osciloscopio, los resultados de nuestro problema.
+Pero además,
+ podríamos montar el circuito RC físicamente y comprobar,
+ con un osciloscopio,
+ los resultados de nuestro problema.
  
 \end_layout
 
@@ -950,8 +1007,9 @@ Dado un circuito con una resistencia de
 \begin_inset Formula $C=0.93\mu F$
 \end_inset
 
-, y aplicando una señal senoidal de aproximadamente 5V de amplitud y 50Hz
- de frecuencia, se obtienen los siguientes resultados:
+,
+ y aplicando una señal senoidal de aproximadamente 5V de amplitud y 50Hz de frecuencia,
+ se obtienen los siguientes resultados:
 \end_layout
 
 \begin_layout Enumerate
@@ -984,43 +1042,44 @@ alph*)
 \begin_inset Formula $V_{out}$
 \end_inset
 
-) es de dos unidades aproximadamente; hay que fijarse en el paso por ambas
- señales en 0V.
+) es de dos unidades aproximadamente;
+ hay que fijarse en el paso por ambas señales en 0V.
  Se puede observar que la señal celeste está atrasada respecto de la amarilla.
  Como cada unidad en el eje temporal son 
 \begin_inset Formula $500\mu s$
 \end_inset
 
-, tenemos que la señal está retrasada unos 
+,
+ tenemos que la señal está retrasada unos 
 \begin_inset Formula $1000\mu s=1ms$
 \end_inset
 
 .
- ¿Corresponde éste valor con la teoría? El período de la señal de 50Hz es
- de 
+ ¿Corresponde éste valor con la teoría?
+ El período de la señal de 50Hz es de 
 \begin_inset Formula $T=\frac{1}{f}=\frac{1}{50Hz}=0.02s=20ms$
 \end_inset
 
 .
- Si el período T se corresponde con 360º de desfase, 1ms se corresponde
- con 18º (regla de tres), lo cual está cerca del resultado teórico de 17.44º
- de retraso.
+ Si el período T se corresponde con 360º de desfase,
+ 1ms se corresponde con 18º (regla de tres),
+ lo cual está cerca del resultado teórico de 17.44º de retraso.
  
 \end_layout
 
 \begin_layout Enumerate
-Intentando medir los valores que alcanza el máximo de ambas señales, obtengo
- una diferencia (línea A - línea B) de 420mV.
- La diferencia entre los picos de la señal teórica de entrada y de salida
- es de 
+Intentando medir los valores que alcanza el máximo de ambas señales,
+ obtengo una diferencia (línea A - línea B) de 420mV.
+ La diferencia entre los picos de la señal teórica de entrada y de salida es de 
 \begin_inset Formula $5V-4.77V=0.23V=230mV$
 \end_inset
 
 .
- Tanta discrepancia es debida, con casi toda seguridad, al dispositivo usado
- en la generación de señales que no es capaz de generar una onda senoidal
- convenientemente.
- Sin embargo, queda demostrado que la caída de tensión es del mismo orden.
+ Tanta discrepancia es debida,
+ con casi toda seguridad,
+ al dispositivo usado en la generación de señales que no es capaz de generar una onda senoidal convenientemente.
+ Sin embargo,
+ queda demostrado que la caída de tensión es del mismo orden.
  
 \end_layout
 
@@ -1029,9 +1088,10 @@ Intentando medir los valores que alcanza el máximo de ambas señales, obtengo
 \align center
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1081,8 +1141,7 @@ Otros resultados con el circuito RC.
 \end_layout
 
 \begin_layout Standard
-El producto de los valores RC puede considerarse una constante de tiempo
- 
+El producto de los valores RC puede considerarse una constante de tiempo 
 \begin_inset Formula $\tau=RC$
 \end_inset
 
@@ -1091,8 +1150,8 @@ El producto de los valores RC puede considerarse una constante de tiempo
 \end_layout
 
 \begin_layout Itemize
-Cuando aplicamos una señal de entrada continua, este tiempo se alcanza cuando
- el condensador está cargado al 63.2%.
+Cuando aplicamos una señal de entrada continua,
+ este tiempo se alcanza cuando el condensador está cargado al 63.2%.
  Cuando alcanzamos el tiempo 
 \begin_inset Formula $3\tau$
 \end_inset
@@ -1101,8 +1160,8 @@ Cuando aplicamos una señal de entrada continua, este tiempo se alcanza cuando
 \end_layout
 
 \begin_layout Itemize
-Cuando aplico corriente alterna, la velocidad angular de corte del circuito
- es 
+Cuando aplico corriente alterna,
+ la velocidad angular de corte del circuito es 
 \begin_inset Formula $w_{c}=\frac{1}{RC}$
 \end_inset
 
@@ -1110,12 +1169,14 @@ Cuando aplico corriente alterna, la velocidad angular de corte del circuito
 \begin_inset Formula $f_{c}=\frac{1}{2\cdot\Pi\cdot RC}$
 \end_inset
 
-, y la amplitud de la señal de salida sería 
+,
+ y la amplitud de la señal de salida sería 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{w}{w_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}$
 \end_inset
 
 .
- En el caso de nuestro circuito RC, su frecuencia de corte es 
+ En el caso de nuestro circuito RC,
+ su frecuencia de corte es 
 \begin_inset Formula $f_{c}=\frac{1}{2\cdot\Pi\cdot RC}=\frac{1}{2\Pi\cdot1000\cdot\Omega\cdot1uF}=159.15Hz$
 \end_inset
 
@@ -1134,7 +1195,8 @@ Aplico una señal de entrada de frecuencia
 \end_inset
 
 .
- En ese caso, 
+ En ese caso,
+ 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{2}}=0.71\cdot V_{o}$
 \end_inset
 
@@ -1146,15 +1208,18 @@ Si
 \begin_inset Formula $f=\frac{f_{c}}{2}$
 \end_inset
 
-, tenemos que 
+,
+ tenemos que 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{\left(\frac{1}{2}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{0.25+1}}=0.89\cdot Vo$
 \end_inset
 
- , si por ejemplo 
+ ,
+ si por ejemplo 
 \begin_inset Formula $f=\frac{f_{c}}{10}$
 \end_inset
 
-, tenemos que 
+,
+ tenemos que 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{\left(\frac{1}{10}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{0.01+1}}=0.995\cdot Vo$
 \end_inset
 
@@ -1162,11 +1227,13 @@ Si
 \end_layout
 
 \begin_layout Itemize
-Por el contrario si, 
+Por el contrario si,
+ 
 \begin_inset Formula $f=2\cdot f_{c}$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{4+1}}=\frac{V_{0}}{\sqrt{5}}=0.45\cdot Vo$
 \end_inset
 
@@ -1175,7 +1242,8 @@ Por el contrario si,
 \begin_inset Formula $f=10\cdot f_{c}$
 \end_inset
 
-, 
+,
+ 
 \begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f}{f_{c}}\right)^{2}+1}}=\frac{V_{0}}{\sqrt{100+1}}=\frac{V_{0}}{\sqrt{101}}=0.099\cdot Vo$
 \end_inset
 
@@ -1183,11 +1251,13 @@ Por el contrario si,
 \end_layout
 
 \begin_layout Itemize
-En general, si 
+En general,
+ si 
 \begin_inset Formula $f\ll f_{c}$
 \end_inset
 
-, la señal de salida 
+,
+ la señal de salida 
 \begin_inset Formula $V_{out}\simeq V_{0}$
 \end_inset
 
@@ -1201,8 +1271,8 @@ Pero si
 \begin_inset Formula $f\gg f_{c}$
 \end_inset
 
- ocurre lo contrario: la señal de salida tiende a anularse a mayor frecuencia
- 
+ ocurre lo contrario:
+ la señal de salida tiende a anularse a mayor frecuencia 
 \begin_inset Formula $V_{out}\simeq0\cdot V$
 \end_inset
 
@@ -1218,20 +1288,21 @@ es un filtro
 \series default
 \color inherit
 .
- Deja pasar frecuencias bajas a una dada de corte y no deja pasar las frecuencia
-s superiores a la de corte.
+ Deja pasar frecuencias bajas a una dada de corte y no deja pasar las frecuencias superiores a la de corte.
  Se dice que es un 
 \series bold
 \color teal
-filtro paso bajo, 
+filtro paso bajo,
+ 
 \color inherit
 ya que deja pasar frecuencias bajas y no las altas.
  
 \end_layout
 
 \begin_layout Standard
-Como se puede observar en la Figura 5, al ir aumentando la frecuencia de
- la señal de entrada, la salida del filtro es cada vez más residual.
+Como se puede observar en la Figura 5,
+ al ir aumentando la frecuencia de la señal de entrada,
+ la salida del filtro es cada vez más residual.
  
 \end_layout
 
@@ -1240,9 +1311,10 @@ Como se puede observar en la Figura 5, al ir aumentando la frecuencia de
 \align center
 \begin_inset Float figure
 placement H
+alignment document
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -1300,7 +1372,9 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Señales del osciloscopio a 160Hz, 340Hz, 500Hz y 1KHz
+Señales del osciloscopio a 160Hz,
+ 340Hz,
+ 500Hz y 1KHz
 \end_layout
 
 \end_inset
@@ -1311,6 +1385,1179 @@ Señales del osciloscopio a 160Hz, 340Hz, 500Hz y 1KHz
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Práctica circuito RL
+\end_layout
+
+\begin_layout Standard
+Imaginemos ahora que tenemos un circuito con una inductancia 
+\begin_inset Formula $L=2mH$
+\end_inset
+
+ y una resistencia 
+\begin_inset Formula $R=25\,\Omega$
+\end_inset
+
+,
+ y la tensión de entrada sigue siendo una señal senoidal de 5V de amplitud y 50Hz de frecuencia.
+ Con estos datos...
+ 
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0col%"
+width "60col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En primer lugar,
+ dibujamos el circuito:
+ 
+\series bold
+\size small
+\color purple
+(enlace –> 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Circuito RL - 25 Ohmio - 2mH"
+target "https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmAzNALAdkggnMmAGxFYKSpLkhWQ0CmAtGGAFABuNYyKAHL1x5gMGKOBp0kdadASsATjSJ1uArMhXIBdZHIA2IMkJGGEPLdqixIPRjDAE8qVBjw4XTlttYB3QeBMEbnAtKF9-VSVNbz91aNMhUMhwoxC1MwDRZNiMi3885IwKEF4MAUjhIpBUUrFkAH0iDHrIeu5kPFaEFutIMHrmeobW5IB7MSaxIrwBKWgIHTFUVnGeSc0OmW4EImQi3awwGpnimHgICHNq1iA"
+literal "true"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 10
+placement L
+overhang 0in
+width "40page%"
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}[american]   
+\end_layout
+
+\begin_layout Plain Layout
+
+	% Fuente senoidal de 5V,
+ 50Hz   
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw 
+\end_layout
+
+\begin_layout Plain Layout
+
+		(0,0) to[sV,
+ l^={
+\backslash
+shortstack{$V_
+\backslash
+mathrm{in}$=5
+\backslash
+,V
+\backslash
+
+\backslash
+50
+\backslash
+,Hz}} ] (0,3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		to[R,
+ l={
+\backslash
+SI{25}{
+\backslash
+ohm}}] (3,3)
+\end_layout
+
+\begin_layout Plain Layout
+
+		to[L,
+ l={
+\backslash
+SI{1}{
+\backslash
+milli
+\backslash
+henry}}] (3,0)
+\end_layout
+
+\begin_layout Plain Layout
+
+		-- (0,0);
+\end_layout
+
+\begin_layout Plain Layout
+
+	% Nodo de salida
+\end_layout
+
+\begin_layout Plain Layout
+
+	% Dibuja un círculo y etiqueta Vout
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw
+\end_layout
+
+\begin_layout Plain Layout
+
+		(3,3) node[circ,
+ label={[font=
+\backslash
+small,
+ yshift=0.1cm]right:{$V_
+\backslash
+mathrm{out}$}}] {};
+\end_layout
+
+\begin_layout Plain Layout
+
+	% Corriente Ic como arco sobre el condensador
+\end_layout
+
+\begin_layout Plain Layout
+
+	
+\backslash
+draw[-latex,thick] % -latex le pone la punta de flecha.
+ Hau que usar 
+\backslash
+usetikzlibrary{arrows} en el preámbulo.
+\end_layout
+
+\begin_layout Plain Layout
+
+		(1.5,2) arc (90:-90:0.5)
+\end_layout
+
+\begin_layout Plain Layout
+
+		node[above,
+ yshift=0.2cm,
+ font=
+\backslash
+small] {$I_L$};
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz} 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito RL
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Siendo 
+\begin_inset Formula $V_{in}=V_{0}\cdot sin(wt)$
+\end_inset
+
+,
+ en este circuito se cumple que 
+\begin_inset Formula $V_{in}=i\cdot R+V_{L}$
+\end_inset
+
+ y sabemos que el voltaje en un inductor tiene la expresión..
+ 
+\begin_inset Formula $V_{L}=L\cdot\frac{dI_{L}}{dt}$
+\end_inset
+
+ .
+ Si conocemos que en un inductor la impedancia es 
+\begin_inset Formula $X_{L}=jwL$
+\end_inset
+
+,
+ podemos expresar entonces:
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color blue
+\begin_inset Formula 
+\begin{equation}
+V_{in}=i\cdot R+i\cdot\left(jwL\right)=i\cdot Z\;\rightarrow\;I=\frac{V_{in}}{Z}=\frac{V_{in}}{R+jwL}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+La impedancia Z podemos calcularla en forma polar:
+ 
+\begin_inset Formula $Z=|Z|\angle\Phi$
+\end_inset
+
+ ,
+ siendo 
+\begin_inset Formula $|Z|=\sqrt{R^{2}+\left(wL\right)^{2}}$
+\end_inset
+
+ y el desfase angular 
+\begin_inset Formula $\Phi=\arctan\left(\frac{wL}{R}\right)$
+\end_inset
+
+,
+ por lo tanto tenemos que:
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color blue
+\begin_inset Formula 
+\begin{equation}
+I=\frac{V_{in}}{Z}=\frac{V_{in}}{R+jwL}=\frac{V_{0}\angle0\text{º}}{\sqrt{R^{2}+w^{2}L^{2}}\;\angle|\Phi|}=\frac{V_{0}}{\sqrt{R^{2}+w^{2}L^{2}}}\;\angle-|\Phi|
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Intensidad que está atrasada en una cantidad 
+\begin_inset Formula $|\Phi|=\arctan\left(\frac{wL}{R}\right)$
+\end_inset
+
+ respecto de la tensión.
+ 
+\begin_inset Formula $I=I_{0}\cdot sin(wt-|\Phi|)$
+\end_inset
+
+,
+ siendo 
+\begin_inset Formula $I_{0}=\frac{V_{0}}{\sqrt{R^{2}+w^{2}L^{2}}}$
+\end_inset
+
+.
+ La tensión de salida,
+ la caída de tensión en el inductor,
+ podemos calcularla como el producto de la intensidad por la impedancia del inductor.
+ 
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+\color blue
+\begin_inset Formula 
+\begin{equation}
+V_{out}=I\cdot X_{L}=\frac{V_{0}}{\sqrt{R^{2}+w^{2}L^{2}}}\;\angle-|\Phi|\;\cdot\;\left(wL\right)\angle\frac{\Pi}{2}=\frac{V_{0}}{\sqrt{R^{2}+w^{2}L^{2}}}\;\left(wL\right)\angle-|\Phi|+\frac{\Pi}{2}
+\end{equation}
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0col%"
+width "60col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Usando las fórmulas que hemos deducido,
+ podemos por tanto calcular los valores de intensidad y tensión de salida para el circuito:
+ 
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+Alph*)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Nuestro valor de intensidad es 
+\begin_inset Formula $I=\frac{V_{0}}{\sqrt{R^{2}+w^{2}L^{2}}}\;\angle-\left|\arctan\left(\frac{wL}{R}\right)\right|=\newline=\frac{5V}{\sqrt{\left(25\cdot\Omega\right)^{2}+\left(2\Pi\cdot50Hz\right)^{2}\left(2\cdot10^{-3}H\right)^{2}}}\;\angle-\arctan\left(\frac{2\Pi\cdot50Hz\cdot2mH}{25\,\Omega}\right)={\color{purple}0.199\,mA\,\angle\,-1.44\text{º}}{\color{violet}\simeq0.2\,mA\,\angle\,-1.44\text{º}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Y el valor de la tensión de salida 
+\begin_inset Formula $V_{out}=I\cdot X_{L}=\left(0.2mA\angle\,-1.44\text{º}\right)\cdot(jwL)=\newline=\left(0.2mA\angle\,-1.44\text{º}\right)\cdot\left[\left(2\cdot\pi\cdot50Hz\cdot2\cdot10^{-3}H\right)\angle90\text{º}\right]={\color{purple}0.125V\angle88.56\text{º}}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/circuitoRL.png
+	lyxscale 20
+	scale 25
+
+\end_inset
+
+
+\begin_inset space \medspace{}
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/Circuito_R_L1_L2.png
+	lyxscale 5
+	scale 5
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Circuito RL con f=50Hz,
+ 5V de entrada,
+ R=25
+\begin_inset Formula $\Omega$
+\end_inset
+
+ y 
+\begin_inset Formula $L=2mH$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Los valores de la intensidad y de la tensión de salida,
+ tienen las siguientes fórmulas temporales:
+ 
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $i(t)=0.2\,mA\,\cdot\,sin\left(100\cdot\Pi\cdot t-1.44\textdegree\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Formula $V_{out}(t)=0.125\,V\,\cdot\,sin\left(100\cdot\Pi\cdot t+88.56\textdegree\right)$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+En la simulación,
+ podemos observar que para estos valores,
+ tenemos la gráfica comparativa V
+\size footnotesize
+out
+\size default
+ frente a V
+\size footnotesize
+in
+\size default
+ siguiente:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/RL_Comment.png
+	lyxscale 10
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gráfica en el simulador 
+\begin_inset Formula $V_{out}$
+\end_inset
+
+ frente a 
+\begin_inset Formula $V_{in}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Wrap figure
+lines 7
+placement R
+overhang 0in
+width "20col%"
+status collapsed
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{circuitikz}[american,
+ font=
+\backslash
+scriptsize]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+ctikzset{bipoles/length=0.5cm}
+\end_layout
+
+\begin_layout Plain Layout
+
+% Fuente senoidal de 5V,
+ 50Hz
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+draw
+\end_layout
+
+\begin_layout Plain Layout
+
+(0,-1) to[sV,
+ l^={
+\backslash
+shortstack{$V_
+\backslash
+mathrm{in}$=5
+\backslash
+,V
+\backslash
+
+\backslash
+50
+\backslash
+,Hz}}] (0,0)
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (0,1)
+\end_layout
+
+\begin_layout Plain Layout
+
+to[R,
+ l={
+\backslash
+SI{10.4}{
+\backslash
+ohm}}] (1,1) % Resistencia R en horizontal
+\end_layout
+
+\begin_layout Plain Layout
+
+% Nodo Vout entre R y L1
+\end_layout
+
+\begin_layout Plain Layout
+
+(1,1) node[circ,
+ label={[font=
+\backslash
+small,
+ yshift=0.1cm]right:{$V_
+\backslash
+mathrm{out}$}}] {}
+\end_layout
+
+\begin_layout Plain Layout
+
+to[L,
+ l={
+\backslash
+SI{0.99}{
+\backslash
+milli
+\backslash
+henry}}] (1,0) % Bobina L1 vertical
+\end_layout
+
+\begin_layout Plain Layout
+
+to[R,
+ l={
+\backslash
+SI{17.6}{
+\backslash
+ohm}}] (1,-1) % Resistencia R1 vertical
+\end_layout
+
+\begin_layout Plain Layout
+
+to[L,
+ l={
+\backslash
+SI{1}{
+\backslash
+milli
+\backslash
+henry}}] (1,-2) % Bobina L2 vertical
+\end_layout
+
+\begin_layout Plain Layout
+
+to[R,
+ l={
+\backslash
+SI{17.9}{
+\backslash
+ohm}}] (1,-3) % Resistencia R2 vertical
+\end_layout
+
+\begin_layout Plain Layout
+
+-- (0,-3) -- (0,-1);
+ % Cierre circuito
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{circuitikz}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{
+\backslash
+centering Circuito 
+\backslash
+newline RL Real}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ Estudiar un circuito en la práctica RL puede ser difícil.
+ Los inductores o las bobinas suelen llevar aparejadas resistencias internas con lo que el circuito no es exactamente el mismo que el descrito teóricamente.
+ Intentaremos el estudio práctico del siguiente circuito:
+ 
+\end_layout
+
+\begin_layout Standard
+Circuito con resistencia en serie con dos bobinas reales 
+\series bold
+\size small
+\color purple
+(enlace –> 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Circuito R, L1 y L2"
+target "https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmAzNALAdkggnMmAGxFYKSpLkhWQ0CmAtGGAFABuNYyKAHL1x5gMGKOBp0kdadASsATjSJ1uArMhXIBKmBlYAbEGSEijCHhu1RYcPHmu48RMJGU4C5BLyyjIrAO6C4KYI3OBaUAFBqkqa2lHqcWZCEX6BxuFq5sG+CdkYxEEFRJGGGcjqySCoGmIwcBD1+M6ukO7InrwlforlkFkWlSpY0EQKVTV0GcViYCN4UaEW-EWFfhpYVTG8hU4gogBqAPasGBQgeGFgBMHIohg1s8gA+kQYz5DPZ3i8zwgf0DAz2YX2e3GeqA+UM+qFYRzEbzE3wEUkBYh4dFh8LCiLoyJo1ggEBS1VYQA"
+literal "true"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Standard
+Primero,
+ veremos los valores que el simulador nos ofrece,
+ para posteriormente intentar replicarlos en el laboratorio con el osciloscopio.
+ Mantenemos la frecuencia de 50Hz.
+ A una frecuencia de 50Hz,
+ el voltaje de salida se mantiene en un pico de 
+\begin_inset Formula $V_{out}=3.867\,V.$
+\end_inset
+
+ Si lo comparamos con los 5V de entrada,
+ la señal de salida es el 
+\begin_inset Formula $77\%$
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/R_L1_L2_simulada.png
+	lyxscale 40
+	scale 20
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Señales simuladas a f = 50Hz.
+ Rojo 
+\begin_inset Formula $V_{in}$
+\end_inset
+
+ y en verde 
+\begin_inset Formula $V_{out}$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Si subimos en el simulador la frecuencia a 5000 Hz,
+ podremos observar como el voltaje de salida aumenta a un pico de 
+\begin_inset Formula $V_{out}=4.632\,V$
+\end_inset
+
+.
+ A 
+\begin_inset Formula $f=20\,KHz$
+\end_inset
+
+ alcanza los 
+\begin_inset Formula $V_{out}=4.935\,V$
+\end_inset
+
+.
+ Es decir,
+ a frecuencias más altas,
+ la tensión se va acercando a los 5V.
+ Por el contrario,
+ si bajamos a frecuencias menores de 50Hz;
+ por ejemplo,
+ a 
+\begin_inset Formula $f=1Hz$
+\end_inset
+
+ ,
+ 
+\begin_inset Formula $V_{out}=3.867\,V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Podemos deducir que el circuito no es muy buen filtro paso alto,
+ aunque se nota el efecto.
+ Se debe principalmente a las resistencias internas de los bobinados.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset CommandInset line
+LatexCommand rule
+offset "0col%"
+width "60col%"
+height "1pt"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Del montaje de los circuitos,
+ obtenemos los siguientes resultados (ver gráficas en figura 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Señales-del-osciloscopio-RL1L2"
+plural "false"
+caps "false"
+noprefix "false"
+nolink "false"
+
+\end_inset
+
+) :
+\end_layout
+
+\begin_layout Enumerate
+\begin_inset Argument 1
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+label=
+\backslash
+alph*)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+ La primera imagen muestra la señal de entrada en amarillo a 1Hz de frecuencia.
+ Por razones técnicas no supera 1V de amplitud.
+ Claramente la señal de salida es de mucho menor amplitud que la de la entrada.
+ Puede observarse el efecto del filtro paso alto,
+ que atenúa las frecuencias bajas.
+\end_layout
+
+\begin_layout Enumerate
+La segunda y tercera imágenes muestran la comparación a 50Hz y 1KHz.
+ La señal de salida es algo menor que la de entrada.
+\end_layout
+
+\begin_layout Enumerate
+La última imagen nos permite hacer una comparativa numérica con 1KHz.
+ Los picos de ambas señales de entrada y salida difieren en tres subdivisiones de una cuadrícula vertical (escala 200mV),
+ por lo que difieren aproximadamente en 
+\begin_inset Formula $\frac{3}{5}\cdot200mV=120mV.$
+\end_inset
+
+ Eso quiere decir que si la señal de entrada es de un voltio de amplitud,
+ la de salida tiene 
+\begin_inset Formula $1V-120mV=0.88V$
+\end_inset
+
+.
+ Supone el 88% de la señal.
+ 
+\end_layout
+
+\begin_layout Standard
+Estos resultados son,
+ pues,
+ coherentes con el efecto de filtro paso alto.
+ A más frecuencia,
+ menor atenuación de la señal.
+ 
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Float figure
+placement H
+alignment document
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename imagenes/1Hz_RL1L2.BMP
+	lyxscale 40
+	scale 50
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/50Hz_RL1L2.BMP
+	lyxscale 40
+	scale 50
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/1000Hz_RL1L2.BMP
+	lyxscale 40
+	scale 50
+
+\end_inset
+
+
+\begin_inset space \hspace{}
+\length 1cm
+\end_inset
+
+
+\begin_inset Graphics
+	filename imagenes/1000Hz_dife120mV_Max2V.BMP
+	lyxscale 40
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Señales-del-osciloscopio-RL1L2"
+
+\end_inset
+
+Señales del osciloscopio a 1Hz,
+ 50Hz,
+ 1000Hz
+\begin_inset Newline newline
+\end_inset
+
+ y 1000Hz ampliada (diferencia de 120mV,
+ V
+\begin_inset script subscript
+
+\begin_layout Plain Layout
+in
+\end_layout
+
+\end_inset
+
+=2V) 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Otros resultados teóricos con el circuito RL
+\end_layout
+
+\begin_layout Standard
+Análogamente al estudio que hicimos de frecuencia de corte con el circuito RC,
+ podemos estudiar la frecuencia de corte del circuito RL.
+ Pero en este caso:
+\end_layout
+
+\begin_layout Itemize
+La frecuencia de corte,
+ que puedo calcular a partir de la fórmula 
+\begin_inset Formula $|\Phi|=\arctan\left(\frac{wL}{R}\right)$
+\end_inset
+
+ diciendo que el desfase es de 45º,
+ tendría la expresión:
+ 
+\begin_inset Formula $\frac{w_{c}L}{R}=1\,\Rightarrow f_{c}=\frac{R}{2\cdot\pi\cdot L}$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+En nuestro caso teórico,
+ con 
+\begin_inset Formula $L=2mH$
+\end_inset
+
+ y una resistencia 
+\begin_inset Formula $R=25\,\Omega$
+\end_inset
+
+,
+ 
+\begin_inset Formula $f_{c}=\frac{R}{2\cdot\pi\cdot L}=\frac{25\Omega}{2\cdot\pi\cdot2mH}=1989.44Hz$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+De la expresión 
+\begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{R}{wL}\right)²+1}}$
+\end_inset
+
+ puedo deducir 
+\begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{\left(\frac{f_{c}}{f}\right)²+1}}$
+\end_inset
+
+ para un circuito RL.
+ Así que 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Si 
+\begin_inset Formula $f=f_{c}$
+\end_inset
+
+ entonces 
+\begin_inset Formula $V_{out}=\frac{V_{0}}{\sqrt{2}}$
+\end_inset
+
+ .
+ Si tenemos 5V a la entrada,
+ la salida será 
+\begin_inset Formula $\sim3.54V$
+\end_inset
+
+.
+ Fácil de comprobar con nuestra simulación teórica:
+ 
+\series bold
+\size small
+\color purple
+(enlace –> 
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset href
+LatexCommand href
+name "Circuito RL - 25 Ohmio - 2mH"
+target "https://www.falstad.com/circuit/circuitjs.html?ctz=CQAgjCAMB0l3BWEAmAzNALAdkggnMmAGxFYKSpLkhWQ0CmAtGGAFABuNYyKAHL1x5gMGKOBp0kdadASsATjSJ1uArMhXIBdZHIA2IMkJGGEPLdqixIPRjDAE8qVBjw4XTlttYB3QeBMEbnAtKF9-VSVNbz91aNMhUMhwoxC1MwDRZNiMi3885IwKEF4MAUjhIpBUUrFkAH0iDHrIeu5kPFaEFutIMHrmeobW5IB7MSaxIrwBKWgIHTFUVnGeSc0OmW4EImQi3awwGpnimHgICHNq1iA"
+literal "true"
+
+\end_inset
+
+)
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $f\ll f_{c}$
+\end_inset
+
+,
+ el denominador de la expresión es grande y la señal de salida se atenúa.
+ 
+\begin_inset Formula $V_{out}\simeq0V$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Si 
+\begin_inset Formula $f\gg f_{c}$
+\end_inset
+
+ ,
+ el denominador de la expresión tiende a 1,
+ y por lo tanto 
+\begin_inset Formula $V_{out}\Rightarrow5V$
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+En el estado transitorio de un circuito RL ante una tensión continua,
+ la intensidad crece exponencialmente (constante de tiempo 
+\begin_inset Formula $\tau=R/L$
+\end_inset
+
+).
+ Al crecer la intensidad,
+ aumenta la diferencia de tensión en la resistencia hasta igualar a la de la entrada,
+ y la tensión en la bobina es cada vez más pequeña hasta hacerse cero.
+ Por tanto,
+ se comporta como un conductor ideal dejando pasar toda la intensidad sin resistencia (cortocircuito).
+ 
 \end_layout
 
 \end_body
